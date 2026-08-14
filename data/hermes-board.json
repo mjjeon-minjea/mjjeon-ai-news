@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v2026.8.13",
+      "detail_url": "hermes/items/github-release-370200385.html",
+      "judgment": "시험 후 적용",
+      "published_at": "2026-08-13T20:37:37Z",
+      "source_grade": "official",
+      "source_kind": "release",
+      "stable_id": "github-release:370200385",
+      "status": "active",
+      "title_ko": "v0.20.1 광범위 안정화·수정 패치"
+    },
+    {
+      "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v2026.8.3",
+      "detail_url": "hermes/items/github-release-364368160.html",
+      "judgment": "주요 버전 · 검증 후 적용",
+      "published_at": "2026-08-03T16:57:52Z",
+      "source_grade": "official",
+      "source_kind": "release",
+      "stable_id": "github-release:364368160",
+      "status": "active",
+      "title_ko": "v0.20.0 Herald: 음성·A2A·Webhook·근거 인용"
+    },
+    {
+      "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v2026.7.30",
+      "detail_url": "hermes/items/github-release-362778007.html",
+      "judgment": "패치 · 시험 후 적용",
+      "published_at": "2026-07-30T23:45:37Z",
+      "source_grade": "official",
+      "source_kind": "release",
+      "stable_id": "github-release:362778007",
+      "status": "active",
+      "title_ko": "v0.19.1 게이트웨이·음성·설치 안정화 패치"
+    },
+    {
+      "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v2026.7.20",
+      "detail_url": "hermes/items/github-release-356925384.html",
+      "judgment": "주요 버전 · 정책 대조",
+      "published_at": "2026-07-20T18:35:55Z",
+      "source_grade": "official",
+      "source_kind": "release",
+      "stable_id": "github-release:356925384",
+      "status": "active",
+      "title_ko": "v0.19.0 Quicksilver: 응답속도·승인·전달 내구성"
+    },
+    {
+      "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v2026.7.7.2",
+      "detail_url": "hermes/items/github-release-350673681.html",
+      "judgment": "해당 사용자 적용",
+      "published_at": "2026-07-08T03:11:22Z",
+      "source_grade": "official",
+      "source_kind": "release",
+      "stable_id": "github-release:350673681",
+      "status": "active",
+      "title_ko": "v0.18.2 WhatsApp·Docker 설치 신뢰성 수정"
+    }
+  ],
+  "schema_version": "hermes-board/v1"
+}
