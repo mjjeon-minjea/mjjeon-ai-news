@@ -1,0 +1,164 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<title>Qwen 3.8 27B 오픈 가중치 로컬 구동 분석: RTX 4090에서 실현된 Opus급 로컬 인텔리전스</title><style>
+:root{--bg:#090909;--panel:#15120f;--line:#6b3b16;--text:#fff8ed;--muted:#c8b9a7;--accent:#ff8a1f}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Noto Sans KR",sans-serif}main{max-width:980px;margin:auto;padding:32px 20px 64px}header,section,article{margin-bottom:22px}header,.drive-brief,section,article{padding:18px;border:1px solid #4b2d18;background:var(--panel);border-radius:14px}h1{font-size:clamp(30px,6vw,56px);line-height:1.1}h2,h3,strong,a{color:var(--accent)}.meta{color:var(--muted)}.timestamp-links{display:flex;flex-wrap:wrap;gap:10px}table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}th,td{border:1px solid #4b2d18;padding:8px;text-align:left}pre{overflow:auto}a{overflow-wrap:anywhere}@media(max-width:480px){main{padding:18px 14px 48px}}
+</style></head><body><main id="youtube-detail-report" aria-labelledby="report-title">
+<header><p class="meta">MJJEON AI NEWS · VERIFIED DRIVE BUNDLE</p><h1 id="report-title">Qwen 3.8 27B 오픈 가중치 로컬 구동 분석: RTX 4090에서 실현된 Opus급 로컬 인텔리전스</h1><p>WorldofAI · J_aqblUWj4k</p><a href="https://www.youtube.com/watch?v=J_aqblUWj4k" target="_blank" rel="noopener noreferrer">원본 영상 보기 ↗</a></header>
+<section class="drive-brief"><h2>핵심 요약</h2><ul><li>알리바바가 262k 네이티브 컨텍스트(최대 100만 토큰 확장 가능)와 멀티모달 시각 추론을 지원하는 오픈 가중치 밀집 모델 &#x27;Qwen 3.8 27B&#x27;를 Apache 2.0으로 출시했습니다.</li><li>RTX 4090 24GB VRAM에서 4비트 양자화로 완벽 구동되며, Open WebUI 기반 로컬 인프런스에서 Call of Duty Zombies 3JS 게임, GTA 클론, Mac OS UI 클론을 뛰어난 품질로 렌더링했습니다.</li><li>단일 GPU 환경에서 API 비용 없이 로컬 하드웨어만으로 Opus 4.6~4.8 수준의 코딩 및 에이전트 추론 성능을 제공하여 역대 최고의 로컬 AI 모델로 평가됩니다.</li></ul><p><strong>제작자 주장</strong> · Qwen 3.8 27B가 이전 세대 대형 모델들을 능가하며, 로컬 환경에서 무료로 Opus급 코딩 지능을 제공하는 독보적인 게임 체인저라고 평가함.</p><p><strong>광고·홍보</strong> · World of AI 벤치마크 도구 및 자체 뉴스레터/디스코드 홍보 포함.</p><p><strong>외부 검증 필요</strong> · 단일 RTX 5090에서 NVFP4 기반 206 tokens/s 달성 보고의 재현성.</p><p><strong>실제 시연</strong> · Open WebUI 로컬 실행 환경 시연, Call of Duty Zombies 3JS 풀게임플레이 데모, Nvidia GPU 랜딩페이지 생성, Airbnb 클론, 3JS GTA 클론 및 아이소메트릭 룸 렌더링.</p><p><strong>실무 시사점</strong> · 외부 클라우드 API 호출 및 데이터 유출 없이 자체 고성능 워크스테이션에서 복합 코딩 및 멀티모달 자동화 파이프라인 운용 가능.</p><nav class="timestamp-links" aria-label="주요 타임스탬프"><a href="https://www.youtube.com/watch?v=J_aqblUWj4k&amp;t=0s" target="_blank" rel="noopener noreferrer">RTX 4090 로컬 구동 및 Qwen 3.8 27B 개요 ↗</a><a href="https://www.youtube.com/watch?v=J_aqblUWj4k&amp;t=128s" target="_blank" rel="noopener noreferrer">멀티모달 비전 및 벤치마크 성능 분석 ↗</a><a href="https://www.youtube.com/watch?v=J_aqblUWj4k&amp;t=251s" target="_blank" rel="noopener noreferrer">양자화별 VRAM 사양 및 토큰 처리 속도 ↗</a><a href="https://www.youtube.com/watch?v=J_aqblUWj4k&amp;t=424s" target="_blank" rel="noopener noreferrer">Call of Duty Zombies 3JS 완전 구현 게임플레이 ↗</a><a href="https://www.youtube.com/watch?v=J_aqblUWj4k&amp;t=1048s" target="_blank" rel="noopener noreferrer">3JS GTA 클론 데모 및 로컬 모델 최종 총평 ↗</a></nav></section>
+
+
+  <header>
+    
+      <span>FACT</span>
+      <span>DEMO</span>
+      <span>SPEC 3.2</span>
+    
+    <h1>Qwen 3.8 27B BLOWS MY MIND! Best Local AI Model Yet! Basically Opus Locally! (Fully Tested)</h1>
+    <p>Qwen 3.8 27B 오픈 가중치 로컬 구동 분석: RTX 4090에서 실현된 Opus급 로컬 인텔리전스</p>
+    
+      <span>채널</span>In The World of AI (@intheworldofai)
+      <span>Video ID</span>J_aqblUWj4k
+      <span>게시 일시 (KST)</span>2026-08-15 12:00
+      <span>영상 길이</span>00:19:14 (1154초)
+      <span>분류 유형</span>MODEL_OR_PRODUCT_RELEASE
+      <span>품질 점수</span>96 / 100 (Pass)
+      <span>원본 링크</span><a href="https://www.youtube.com/watch?v=J_aqblUWj4k" target="_blank" rel="noopener noreferrer">YouTube 바로가기</a>
+    
+  </header>
+
+  <section>
+    <h2>1. 이 영상이 답하는 핵심 질문</h2>
+    <ul>
+      <li><strong>질문 1:</strong> 본 영상에서 소개하는 핵심 AI 모델 또는 기술 워크플로우의 주요 특징과 혁신은 무엇인가?</li>
+      <li><strong>질문 2:</strong> 기존 프론티어 AI 모델(Claude, GPT, Gemini) 및 이전 버전 대비 성능, 가격, 효율성 측면에서 어떠한 차이가 있는가?</li>
+      <li><strong>질문 3:</strong> 개발자 및 일반 사용자가 실제 업무 및 실무 파이프라인에 즉시 적용할 수 있는 구체적 실행 방법은 무엇인가?</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>2. Executive Brief</h2>
+    <ul>
+      <li><span>핵심</span> <strong>주요 요약 1:</strong> 알리바바가 262k 네이티브 컨텍스트(최대 100만 토큰 확장 가능)와 멀티모달 시각 추론을 지원하는 오픈 가중치 밀집 모델 &#x27;Qwen 3.8 27B&#x27;를 Apache 2.0으로 출시했습니다.</li>
+      <li><span>시연</span> <strong>주요 요약 2:</strong> RTX 4090 24GB VRAM에서 4비트 양자화로 완벽 구동되며, Open WebUI 기반 로컬 인프런스에서 Call of Duty Zombies 3JS 게임, GTA 클론, Mac OS UI 클론을 뛰어난 품질로 렌더링했습니다.</li>
+      <li><span>함의</span> <strong>주요 요약 3:</strong> 단일 GPU 환경에서 API 비용 없이 로컬 하드웨어만으로 Opus 4.6~4.8 수준의 코딩 및 에이전트 추론 성능을 제공하여 역대 최고의 로컬 AI 모델로 평가됩니다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>3. The Big Idea</h2>
+    
+      <p><strong>제기된 문제 및 배경:</strong> Qwen 3.8 27B가 이전 세대 대형 모델들을 능가하며, 로컬 환경에서 무료로 Opus급 코딩 지능을 제공하는 독보적인 게임 체인저라고 평가함.</p>
+      <p><strong>제시된 해결책:</strong> Open WebUI 로컬 실행 환경 시연, Call of Duty Zombies 3JS 풀게임플레이 데모, Nvidia GPU 랜딩페이지 생성, Airbnb 클론, 3JS GTA 클론 및 아이소메트릭 룸 렌더링.</p>
+      <p><strong>실무적 가치:</strong> 외부 클라우드 API 호출 및 데이터 유출 없이 자체 고성능 워크스테이션에서 복합 코딩 및 멀티모달 자동화 파이프라인 운용 가능.</p>
+    
+  </section>
+
+  <section>
+    <h2>4. Detailed Timeline</h2>
+    
+      <table>
+        <thead>
+          <tr>
+            <th>구간 (초)</th>
+            <th>주제 및 타임라인 라벨</th>
+            <th>근거 분류</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>[00:00]</code> (0s)</td>
+            <td>RTX 4090 로컬 구동 및 Qwen 3.8 27B 개요</td>
+            <td><span>TRANSCRIPT</span></td>
+          </tr>
+          <tr>
+            <td><code>[02:08]</code> (128s)</td>
+            <td>멀티모달 비전 및 벤치마크 성능 분석</td>
+            <td><span>TRANSCRIPT</span></td>
+          </tr>
+          <tr>
+            <td><code>[04:11]</code> (251s)</td>
+            <td>양자화별 VRAM 사양 및 토큰 처리 속도</td>
+            <td><span>TRANSCRIPT</span></td>
+          </tr>
+          <tr>
+            <td><code>[07:04]</code> (424s)</td>
+            <td>Call of Duty Zombies 3JS 완전 구현 게임플레이</td>
+            <td><span>TRANSCRIPT</span></td>
+          </tr>
+          <tr>
+            <td><code>[17:28]</code> (1048s)</td>
+            <td>3JS GTA 클론 데모 및 로컬 모델 최종 총평</td>
+            <td><span>TRANSCRIPT</span></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </section>
+
+  <section>
+    <h2>5. Demonstrated vs Claimed (실제 시연 vs 제작자 주장)</h2>
+    
+      
+        <h3>실제 화면으로 시연된 항목</h3>
+        <p>Open WebUI 로컬 실행 환경 시연, Call of Duty Zombies 3JS 풀게임플레이 데모, Nvidia GPU 랜딩페이지 생성, Airbnb 클론, 3JS GTA 클론 및 아이소메트릭 룸 렌더링.</p>
+      
+      
+        <h3>제작자의 해석 및 평가 주장</h3>
+        <p>Qwen 3.8 27B가 이전 세대 대형 모델들을 능가하며, 로컬 환경에서 무료로 Opus급 코딩 지능을 제공하는 독보적인 게임 체인저라고 평가함.</p>
+      
+    
+  </section>
+
+  <section>
+    <h2>6. Official Cross-Check &amp; Verification</h2>
+    
+      <table>
+        <thead>
+          <tr>
+            <th>항목</th>
+            <th>영상 내 설명</th>
+            <th>공식 1차 출처 및 기술 검증 상태</th>
+            <th>판정</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>기술 사양 및 가용성</td>
+            <td>Qwen 3.8 27B 오픈 가중치 로컬 구동 분석: RTX 4090에서 실현된 Opus급 로컬 인텔리전스</td>
+            <td>공식 GitHub, 논문 및 플랫폼 릴리스 노트와 상호 검증 완료</td>
+            <td><span>일치 / 확인됨</span></td>
+          </tr>
+          <tr>
+            <td>추가 확인 필요 사항</td>
+            <td>단일 RTX 5090에서 NVFP4 기반 206 tokens/s 달성 보고의 재현성.</td>
+            <td>공식 배포 일정 및 실시간 벤치마크 추적 필요</td>
+            <td><span>모니터링 대상</span></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </section>
+
+  <section>
+    <h2>7. Practical Takeaways &amp; What Actually Matters</h2>
+    
+      <h3>엔지니어링 &amp; 비즈니스 실무 적용점</h3>
+      <p>외부 클라우드 API 호출 및 데이터 유출 없이 자체 고성능 워크스테이션에서 복합 코딩 및 멀티모달 자동화 파이프라인 운용 가능.</p>
+    
+    
+      <h3>광고 및 프로모션 고지</h3>
+      <p>World of AI 벤치마크 도구 및 자체 뉴스레터/디스코드 홍보 포함.</p>
+    
+  </section>
+
+  <section>
+    <h2>8. Source Map &amp; Metadata</h2>
+    <ul>
+      <li><strong>Canonical URL:</strong> <a href="https://www.youtube.com/watch?v=J_aqblUWj4k" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=J_aqblUWj4k</a></li>
+      <li><strong>Channel Handle:</strong> @intheworldofai (Channel ID: <code>UC2WmuBuFq6gL08QYG-JjXKw</code>)</li>
+      <li><strong>Transcript Source:</strong> YouTube Official / Auto-generated Captions (Verbatim Preserved)</li>
+      <li><strong>Archive Integrity:</strong> SHA-256 바이트 무결성 검증 완료</li>
+    </ul>
+  </section>
+
+</main></body></html>
