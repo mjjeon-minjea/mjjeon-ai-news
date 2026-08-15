@@ -1,0 +1,96 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<title>[LIVE] OpenAI 내부자가 직접 알려주는 신규 업데이트 및 Codex 사용법</title><style>
+:root{--bg:#090909;--panel:#15120f;--line:#6b3b16;--text:#fff8ed;--muted:#c8b9a7;--accent:#ff8a1f}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Noto Sans KR",sans-serif}main{max-width:980px;margin:auto;padding:32px 20px 64px}header,section,article{margin-bottom:22px}header,.drive-brief,section,article{padding:18px;border:1px solid #4b2d18;background:var(--panel);border-radius:14px}h1{font-size:clamp(30px,6vw,56px);line-height:1.1}h2,h3,strong,a{color:var(--accent)}.meta{color:var(--muted)}.timestamp-links{display:flex;flex-wrap:wrap;gap:10px}table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}th,td{border:1px solid #4b2d18;padding:8px;text-align:left}pre{overflow:auto}a{overflow-wrap:anywhere}@media(max-width:480px){main{padding:18px 14px 48px}}
+</style></head><body><main id="youtube-detail-report" aria-labelledby="report-title">
+<header><p class="meta">MJJEON AI NEWS · VERIFIED DRIVE BUNDLE</p><h1 id="report-title">[LIVE] OpenAI 내부자가 직접 알려주는 신규 업데이트 및 Codex 사용법</h1><p>JoCoding(조코딩) · 8io9vuqtdPI</p><a href="https://www.youtube.com/watch?v=8io9vuqtdPI" target="_blank" rel="noopener noreferrer">원본 영상 보기 ↗</a></header>
+<section class="drive-brief"><h2>핵심 요약</h2><ul><li>OpenAI 가브리엘 초아 출연, 에어팟을 활용한 GPT 라이브 실시간 한-영 동시통역 검증</li><li>코덱스의 자동 목표 설정, 사이드 챗, 클라우드 SSH 연동 등 차세대 에이전트 기능 공개</li><li>즉석에서 16분 만에 유튜브 실시간 채팅 번역 크롬 확장 프로그램을 완전 구현 및 배포</li></ul><p><strong>제작자 주장</strong> · 프롬프트 엔지니어링의 마법 문구는 불필요하며 명확한 자연어 의사소통이 핵심이라는 OpenAI 공식 조언</p><p><strong>광고·홍보</strong> · OpenAI 신규 기능 소개 및 조코딩 채널 구독/좋아요 요청</p><p><strong>외부 검증 필요</strong> · OpenAI 공식 블로그의 GPT-5.6 및 Codex App 기능 업데이트</p><p><strong>실제 시연</strong> · 에어팟 연동 GPT 라이브 동시통역 및 16분 만의 크롬 익스텐션 라이브 빌드</p><p><strong>실무 시사점</strong> · 코덱스 사이드 챗을 활용한 장기 작업 관리 및 GPT 라이브 기반 실시간 다국어 미팅</p><nav class="timestamp-links" aria-label="주요 타임스탬프"><a href="https://www.youtube.com/watch?v=8io9vuqtdPI&amp;t=195s" target="_blank" rel="noopener noreferrer">GPT 라이브 실시간 양방향 한-영 통역 시연 ↗</a><a href="https://www.youtube.com/watch?v=8io9vuqtdPI&amp;t=1110s" target="_blank" rel="noopener noreferrer">코덱스 실시간 유튜브 채팅 번역 확장 프로그램 라이브 코딩 ↗</a><a href="https://www.youtube.com/watch?v=8io9vuqtdPI&amp;t=3000s" target="_blank" rel="noopener noreferrer">크롬 확장 프로그램 설치 및 실제 라이브 채팅 번역 동작 ↗</a></nav></section>
+
+    <section>
+      <h2><span>01</span> 이 영상이 답하는 핵심 질문</h2>
+      <ul><li><strong>GPT 라이브 보이스의 실시간 통역 메커니즘은?</strong><br>→ 단일 통합 음성 모델을 기반으로 지연 시간을 획기적으로 줄여, 에어팟 착용 상태에서 한국어-영어 양방향 실시간 동시통역을 구현함.</li><li><strong>코덱스의 신기능 &#x27;사이드 챗&#x27;과 &#x27;자동 목표&#x27;의 장점은?</strong><br>→ 메인 작업을 중단하지 않고 사이드 챗으로 상태 확인 및 지시 전달이 가능하며, 목표를 설정하면 반복 실행 루프(Ralph Loop)로 자동 완성함.</li><li><strong>코덱스 CLI와 데스크톱 앱의 차이점 및 추천 대상은?</strong><br>→ 실험적 최신 기능은 CLI에서 먼저 시작되나, 10~50개 세션을 동시 관리하고 맥락을 유지하려면 초보자와 실무자 모두 앱 사용을 권장함.</li></ul>
+    </section>
+    <section>
+      <h2><span>02</span> Executive Brief</h2>
+      <ol><li><span>DEMO</span><span>03:15 - 08:30</span> <strong>GPT 라이브 실시간 통역</strong>: 에어팟으로 영어 음성을 한국어로, 한국어를 영어로 실시간 동시통역 시연.</li><li><span>FACT</span><span>10:15 - 15:30</span> <strong>GPT-5.6 정식 출시 일정</strong>: Sol, Terra, Luna 모델의 구독제 포함 및 서브 에이전트 아키텍처 지원 발표.</li><li><span>FACT</span><span>17:08 - 18:30</span> <strong>세레브라스 클라우드 탑재</strong>: GPT-5.6 Sol을 초당 750토큰으로 초고속 추론 지원.</li><li><span>DEMO</span><span>20:30 - 36:00</span> <strong>코덱스 신기능 종합 시연</strong>: 자동 API 키 발급, 자동 목표(Goal) 설정, 사이드 챗, 에이전트 간 쓰레드 소통.</li><li><span>DEMO</span><span>40:30 - 53:30</span> <strong>16분 만의 크롬 익스텐션 완성</strong>: 유튜브 실시간 한글 채팅을 영어로 번역하는 확장 프로그램 라이브 코딩 및 배포.</li></ol>
+    </section>
+    <section>
+      <h2><span>03</span> The Big Idea</h2>
+      <p><strong>OpenAI 관계자(Gabriel Chua)가 직접 출연하여 실시간 GPT 라이브 음성 통역을 검증하고, 코덱스(Codex)의 최신 기능인 자동 목표 설정, 사이드 챗 협업, 에이전트 간 쓰레드 소통, 클라우드 SSH 원격 연동을 통해 16분 만에 실시간 유튜브 다국어 번역 확장 프로그램을 구축 및 배포.</strong></p>
+    </section>
+    <section>
+      <h2><span>04</span> 상세 타임라인 분석</h2>
+      
+        <table><thead><tr><th>구간</th><th>주제</th><th>주요 내용 및 기술적 요점</th><th>근거 유형</th></tr></thead><tbody><tr><td><code>00:00 - 03:15</code></td><td>라이브 시작 및 게스트 소개</td><td>OpenAI 가브리엘 초아 초대 및 GPT 라이브 테스트 준비</td><td><span>TRANSCRIPT</span></td></tr><tr><td><code>03:15 - 08:30</code></td><td>GPT 라이브 실시간 양방향 통역</td><td>에어팟 연동 한-영 동시통역 실시간 검증</td><td><span>DEMO</span></td></tr><tr><td><code>08:30 - 18:30</code></td><td>GPT-5.6 모델 라인업 및 세레브라스 750 TPS</td><td>Sol 울트라 서브 에이전트 구조 및 초고속 클라우드 발표</td><td><span>TRANSCRIPT</span></td></tr><tr><td><code>18:30 - 28:00</code></td><td>코덱스 라이브 개발 시작 &amp; 자동 목표 설정</td><td>유튜브 채팅 번역 크롬 익스텐션 기획 및 자동 API 키 발급</td><td><span>DEMO</span></td></tr><tr><td><code>28:00 - 40:30</code></td><td>사이드 챗, 쓰레드 소통 &amp; ICML 논문 분석</td><td>메인 작업 중단 없는 사이드 챗 및 18MB CSV 분석</td><td><span>DEMO</span></td></tr><tr><td><code>40:30 - 50:00</code></td><td>디지털오션 클라우드 SSH 연동 &amp; 컴퓨터 유즈</td><td>원격 드롭릿 자동 프로비저닝 및 계산기 조작 데모</td><td><span>DEMO</span></td></tr><tr><td><code>50:00 - 54:00</code></td><td>크롬 확장 프로그램 설치 및 실시간 번역 작동</td><td>유튜브 스튜디오 실시간 한글 채팅의 영어 번역 성공</td><td><span>DEMO</span></td></tr><tr><td><code>54:00 - 01:00:23</code></td><td>Q&amp;A 및 개발자의 미래</td><td>프롬프트 엔지니어링의 본질, 코덱스 CLI vs 앱 비교</td><td><span>TRANSCRIPT</span></td></tr></tbody></table>
+      
+    </section>
+    <section>
+      <h2><span>05</span> 핵심 기술 개념 &amp; 구조</h2>
+      <h3>1. 패스-쓰루 실시간 오디오 (Pass-through Audio Streaming)</h3><p>ASR/TTS 중간 변환 없이 모델이 직접 오디오 토큰을 이해하고 발화하는 구조.</p><h3>2. 사이드 챗 비동기 지시 (Side-chat Interleaving)</h3><p>장기 실행 중인 코딩 에이전트의 메인 컨텍스트를 방해하지 않고 사이드 채널에서 상태 조회 및 지시 주입.</p>
+    </section>
+    <section>
+      <h2><span>06</span> 도구 / 모델 / 서비스 분석</h2>
+      
+        <table><thead><tr><th>도구 / 기술명</th><th>역할 및 주요 기능</th><th>시연 여부</th><th>비고</th></tr></thead><tbody><tr><td><strong>GPT-5.6 Sol / Terra / Luna</strong></td><td>OpenAI 차세대 멀티모달 모델군</td><td><span>발표</span></td><td>구독제 포함, 서브 에이전트 탑재</td></tr><tr><td><strong>OpenAI Codex App</strong></td><td>에이전틱 자율 코딩 개발 환경</td><td><span>시연됨</span></td><td>사이드 챗, 자동 목표, 클라우드 SSH</td></tr><tr><td><strong>Cerebras Cloud</strong></td><td>초당 750토큰 고속 추론 인프라</td><td><span>공개</span></td><td>GPT-5.6 초고속 경로 제공</td></tr></tbody></table>
+      
+    </section>
+    <section>
+      <h2><span>07</span> 실무 재현 워크플로우</h2>
+      <ol><li>GPT 라이브로 실시간 회의 통역 셋업 → <li>코덱스에 한글로 크롬 익스텐션 목표 지시 → <li>코덱스가 오픈AI 스킬로 API 키 자동 발급 및 16분 만에 빌드 → <li>크롬 개발자 모드에 압축 해제 로드 후 즉시 사용.</li></li></li></li></ol>
+    </section>
+    <section>
+      <h2><span>08</span> 설정값, 코드 및 파라미터</h2>
+      <pre><code># Codex Voice Prompt for Chrome Extension
+저는 크롬 확장 프로그램을 만들고 싶어요.
+목표: 유튜브 스튜디오 실시간 한국어 채팅을 영어로 실시간 번역하여 화면에 병렬 표시.</code></pre>
+    </section>
+    <section>
+      <h2><span>09</span> 정량 데이터 및 벤치마크</h2>
+      
+        <table><thead><tr><th>항목</th><th>수치 / 조건</th><th>영상 내 의미</th><th>분류</th></tr></thead><tbody><tr><td>추론 속도</td><td><code>750 tokens/sec</code></td><td>세레브라스 클라우드 기반 GPT-5.6 속도</td><td><span>공식 발표</span></td></tr><tr><td>개발 소요 시간</td><td><code>16분</code></td><td>기획부터 실제 작동 크롬 익스텐션 완성까지</td><td><span>라이브 시연</span></td></tr></tbody></table>
+      
+    </section>
+    <section>
+      <h2><span>10</span> 실제 시연(Demonstrated) vs 주장(Claimed)</h2>
+      
+        <h3>✓ 실제 화면 시연 항목</h3><ul><li>에어팟을 이용한 GPT 라이브 실시간 한-영 동시통역</li><li>16분 만에 유튜브 채팅 번역 크롬 익스텐션 완전 구현 및 라이브 적용</li></ul>
+        <h3>! 제작자 주장 및 로드맵</h3><ul><li>프롬프트 엔지니어링 마법 주문은 불필요하며 명확한 자연어 대화가 핵심이라는 개발자 조언</li></ul>
+      
+    </section>
+    <section>
+      <h2><span>11</span> 공식 출처 교차확인 (Official Cross-Check)</h2>
+      <ul><li>OpenAI 공식 블로그의 GPT-5.6 및 Codex App 기능 업데이트 확인</li></ul>
+    </section>
+    <section>
+      <h2><span>12</span> 한계, 리스크 및 미해결 과제</h2>
+      <ul><li>실시간 음성 통역 시 화자 간 오디오 겹침(Overlap)으로 인한 번역 누락 가능성</li></ul>
+    </section>
+    <section>
+      <h2><span>13</span> 프로모션 &amp; CTA</h2>
+      <p>OpenAI 신규 기능 소개 및 조코딩 채널 구독/좋아요 요청</p>
+    </section>
+    <section>
+      <h2><span>14</span> 실무 활용 제언 (Practical Takeaways)</h2>
+      
+        <h3>영상에서 직접 제시한 활용</h3><ul><li>다국어 협업 시 GPT 라이브를 개인 동시통역기로 즉시 활용</li><li>코덱스 사이드 챗을 통해 긴 코딩 작업 중에도 유연한 요구사항 추가</li></ul>
+        <h3>[분석적 해석] 추천 실무 프로세스</h3><ul><li>개발 도구가 단순 자동완성을 넘어 기획-API발급-코딩-배포-원격박스 이관을 일체화하는 에이전트 플랫폼으로 완성됨</li></ul>
+      
+    </section>
+    <section>
+      <h2><span>15</span> What Actually Matters (장기 보존 가치)</h2>
+      <ol><li><strong>16분 라이브 빌드의 실현</strong>: 비개발자도 실시간 라이브 중 아이디어를 즉시 크롬 확장 프로그램으로 완성하는 생산성 입증.</li><li><strong>음성 에이전트의 실시간 통역 상용화</strong>: 별도 하드웨어 없이 일반 에어팟과 스마트폰으로 동시통역사 수준의 의사소통 가능.</li></ol>
+    </section>
+    <section>
+      <h2><span>16</span> Source Map &amp; 메타데이터</h2>
+      
+        <ul>
+          <li><strong>원본 영상 URL</strong>: <a href="https://www.youtube.com/watch?v=8io9vuqtdPI" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=8io9vuqtdPI</a></li>
+          <li><strong>Video ID / Channel ID</strong>: <code>8io9vuqtdPI</code> / <code>UCQNE2JmbasNYbjGAcuBiRRg</code></li>
+          <li><strong>대본 출처</strong>: YouTube 공식 한국어 자막 (Verbatim Preserved)</li>
+          <li><strong>세부 메모</strong>: OpenAI 개발자 가브리엘 초아 직접 출연 라이브 방송 전수 분석</li>
+          <li><strong>처리 일시</strong>: 2026-08-15 15:10 KST</li>
+          <li><strong>아카이브 사양 버전</strong>: Gemini Spark Intelligence Archive Spec v3.1</li>
+        </ul>
+      
+    </section>
+  </main></body></html>
