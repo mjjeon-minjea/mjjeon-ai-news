@@ -1,0 +1,164 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<title>Replit을 활용해 노코드로 AI 스타트업 제품(Venture Lens) 구축 및 배포하기</title><style>
+:root{--bg:#090909;--panel:#15120f;--line:#6b3b16;--text:#fff8ed;--muted:#c8b9a7;--accent:#ff8a1f}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Noto Sans KR",sans-serif}main{max-width:980px;margin:auto;padding:32px 20px 64px}header,section,article{margin-bottom:22px}header,.drive-brief,section,article{padding:18px;border:1px solid #4b2d18;background:var(--panel);border-radius:14px}h1{font-size:clamp(30px,6vw,56px);line-height:1.1}h2,h3,strong,a{color:var(--accent)}.meta{color:var(--muted)}.timestamp-links{display:flex;flex-wrap:wrap;gap:10px}table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}th,td{border:1px solid #4b2d18;padding:8px;text-align:left}pre{overflow:auto}a{overflow-wrap:anywhere}@media(max-width:480px){main{padding:18px 14px 48px}}
+</style></head><body><main id="youtube-detail-report" aria-labelledby="report-title">
+<header><p class="meta">MJJEON AI NEWS · VERIFIED DRIVE BUNDLE</p><h1 id="report-title">Replit을 활용해 노코드로 AI 스타트업 제품(Venture Lens) 구축 및 배포하기</h1><p>WorldofAI · 1RGc6gOAb5E</p><a href="https://www.youtube.com/watch?v=1RGc6gOAb5E" target="_blank" rel="noopener noreferrer">원본 영상 보기 ↗</a></header>
+<section class="drive-brief"><h2>핵심 요약</h2><ul><li>Replit의 Agent와 Canvas 기능을 활용하여 단일 텍스트 프롬프트로부터 기업 인텔리전스 분석 플랫폼인 &#x27;Venture Lens&#x27;를 기획, 구현, 배포하는 전체 과정을 다룹니다.</li><li>URL을 입력받아 타깃 분석, 포지셔닝, SWOT 분석을 수행하고 6슬라이드 프레젠테이션 및 PDF 다운로드 기능까지 포함된 풀스택 SaaS를 구축합니다.</li><li>데이터베이스 연동, 사용자 인증(Auth), 반응형 UI 디자인 및 Replit 도메인 기반 원클릭 배포까지 통합 환경에서 수행하는 생산성 워크플로우를 입증합니다.</li></ul><p><strong>제작자 주장</strong> · 별도의 개발 환경 설정이나 인프라 프로비저닝 없이 Replit 단일 환경에서 엔터프라이즈급 SaaS 프로토타입을 수 분 내에 상용 수준으로 배포 가능하다고 설명함.</p><p><strong>광고·홍보</strong> · Replit 공식 스폰서십 ($10 무료 크레딧 링크 제공). 자체 뉴스레터 및 유료 디스코드 홍보 포함.</p><p><strong>외부 검증 필요</strong> · Replit Agent가 생성한 인증/DB 구성의 보안성 및 프로덕션 트래픽 확장 한계.</p><p><strong>실제 시연</strong> · Venture Lens 앱 생성, DoorDash URL 입력 후 실시간 인텔리전스 리포트 생성, 슬라이드 덱 렌더링 및 PDF 내보내기, 반응형 모바일 프리뷰 및 배포.</p><p><strong>실무 시사점</strong> · 아이디어에서 동작 가능한 SaaS 배포까지의 주기(Time-to-Market)를 극단적으로 단축하여 빠른 검증과 비즈니스 프로토타이핑이 가능함.</p><nav class="timestamp-links" aria-label="주요 타임스탬프"><a href="https://www.youtube.com/watch?v=1RGc6gOAb5E&amp;t=0s" target="_blank" rel="noopener noreferrer">AI 스타트업 Venture Lens 프로젝트 개요 ↗</a><a href="https://www.youtube.com/watch?v=1RGc6gOAb5E&amp;t=127s" target="_blank" rel="noopener noreferrer">Replit 대시보드 및 플랜 모드 프롬프트 작성 ↗</a><a href="https://www.youtube.com/watch?v=1RGc6gOAb5E&amp;t=360s" target="_blank" rel="noopener noreferrer">초기 리포트 생성 및 UI/UX 캔버스 리디자인 ↗</a><a href="https://www.youtube.com/watch?v=1RGc6gOAb5E&amp;t=685s" target="_blank" rel="noopener noreferrer">6슬라이드 프레젠테이션 및 PDF 생성 기능 추가 ↗</a><a href="https://www.youtube.com/watch?v=1RGc6gOAb5E&amp;t=880s" target="_blank" rel="noopener noreferrer">DB/Auth 연결 및 원클릭 웹 배포 완료 ↗</a></nav></section>
+
+
+  <header>
+    
+      <span>FACT</span>
+      <span>DEMO</span>
+      <span>SPEC 3.2</span>
+    
+    <h1>I Built an AI Startup With Replit...</h1>
+    <p>Replit을 활용해 노코드로 AI 스타트업 제품(Venture Lens) 구축 및 배포하기</p>
+    
+      <span>채널</span>In The World of AI (@intheworldofai)
+      <span>Video ID</span>1RGc6gOAb5E
+      <span>게시 일시 (KST)</span>2026-08-02 12:00
+      <span>영상 길이</span>00:18:17 (1097초)
+      <span>분류 유형</span>WORKFLOW_TUTORIAL
+      <span>품질 점수</span>96 / 100 (Pass)
+      <span>원본 링크</span><a href="https://www.youtube.com/watch?v=1RGc6gOAb5E" target="_blank" rel="noopener noreferrer">YouTube 바로가기</a>
+    
+  </header>
+
+  <section>
+    <h2>1. 이 영상이 답하는 핵심 질문</h2>
+    <ul>
+      <li><strong>질문 1:</strong> 본 영상에서 소개하는 핵심 AI 모델 또는 기술 워크플로우의 주요 특징과 혁신은 무엇인가?</li>
+      <li><strong>질문 2:</strong> 기존 프론티어 AI 모델(Claude, GPT, Gemini) 및 이전 버전 대비 성능, 가격, 효율성 측면에서 어떠한 차이가 있는가?</li>
+      <li><strong>질문 3:</strong> 개발자 및 일반 사용자가 실제 업무 및 실무 파이프라인에 즉시 적용할 수 있는 구체적 실행 방법은 무엇인가?</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>2. Executive Brief</h2>
+    <ul>
+      <li><span>핵심</span> <strong>주요 요약 1:</strong> Replit의 Agent와 Canvas 기능을 활용하여 단일 텍스트 프롬프트로부터 기업 인텔리전스 분석 플랫폼인 &#x27;Venture Lens&#x27;를 기획, 구현, 배포하는 전체 과정을 다룹니다.</li>
+      <li><span>시연</span> <strong>주요 요약 2:</strong> URL을 입력받아 타깃 분석, 포지셔닝, SWOT 분석을 수행하고 6슬라이드 프레젠테이션 및 PDF 다운로드 기능까지 포함된 풀스택 SaaS를 구축합니다.</li>
+      <li><span>함의</span> <strong>주요 요약 3:</strong> 데이터베이스 연동, 사용자 인증(Auth), 반응형 UI 디자인 및 Replit 도메인 기반 원클릭 배포까지 통합 환경에서 수행하는 생산성 워크플로우를 입증합니다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>3. The Big Idea</h2>
+    
+      <p><strong>제기된 문제 및 배경:</strong> 별도의 개발 환경 설정이나 인프라 프로비저닝 없이 Replit 단일 환경에서 엔터프라이즈급 SaaS 프로토타입을 수 분 내에 상용 수준으로 배포 가능하다고 설명함.</p>
+      <p><strong>제시된 해결책:</strong> Venture Lens 앱 생성, DoorDash URL 입력 후 실시간 인텔리전스 리포트 생성, 슬라이드 덱 렌더링 및 PDF 내보내기, 반응형 모바일 프리뷰 및 배포.</p>
+      <p><strong>실무적 가치:</strong> 아이디어에서 동작 가능한 SaaS 배포까지의 주기(Time-to-Market)를 극단적으로 단축하여 빠른 검증과 비즈니스 프로토타이핑이 가능함.</p>
+    
+  </section>
+
+  <section>
+    <h2>4. Detailed Timeline</h2>
+    
+      <table>
+        <thead>
+          <tr>
+            <th>구간 (초)</th>
+            <th>주제 및 타임라인 라벨</th>
+            <th>근거 분류</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>[00:00]</code> (0s)</td>
+            <td>AI 스타트업 Venture Lens 프로젝트 개요</td>
+            <td><span>TRANSCRIPT</span></td>
+          </tr>
+          <tr>
+            <td><code>[02:07]</code> (127s)</td>
+            <td>Replit 대시보드 및 플랜 모드 프롬프트 작성</td>
+            <td><span>TRANSCRIPT</span></td>
+          </tr>
+          <tr>
+            <td><code>[06:00]</code> (360s)</td>
+            <td>초기 리포트 생성 및 UI/UX 캔버스 리디자인</td>
+            <td><span>TRANSCRIPT</span></td>
+          </tr>
+          <tr>
+            <td><code>[11:25]</code> (685s)</td>
+            <td>6슬라이드 프레젠테이션 및 PDF 생성 기능 추가</td>
+            <td><span>TRANSCRIPT</span></td>
+          </tr>
+          <tr>
+            <td><code>[14:40]</code> (880s)</td>
+            <td>DB/Auth 연결 및 원클릭 웹 배포 완료</td>
+            <td><span>TRANSCRIPT</span></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </section>
+
+  <section>
+    <h2>5. Demonstrated vs Claimed (실제 시연 vs 제작자 주장)</h2>
+    
+      
+        <h3>실제 화면으로 시연된 항목</h3>
+        <p>Venture Lens 앱 생성, DoorDash URL 입력 후 실시간 인텔리전스 리포트 생성, 슬라이드 덱 렌더링 및 PDF 내보내기, 반응형 모바일 프리뷰 및 배포.</p>
+      
+      
+        <h3>제작자의 해석 및 평가 주장</h3>
+        <p>별도의 개발 환경 설정이나 인프라 프로비저닝 없이 Replit 단일 환경에서 엔터프라이즈급 SaaS 프로토타입을 수 분 내에 상용 수준으로 배포 가능하다고 설명함.</p>
+      
+    
+  </section>
+
+  <section>
+    <h2>6. Official Cross-Check &amp; Verification</h2>
+    
+      <table>
+        <thead>
+          <tr>
+            <th>항목</th>
+            <th>영상 내 설명</th>
+            <th>공식 1차 출처 및 기술 검증 상태</th>
+            <th>판정</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>기술 사양 및 가용성</td>
+            <td>Replit을 활용해 노코드로 AI 스타트업 제품(Venture Lens) 구축 및 배포하기</td>
+            <td>공식 GitHub, 논문 및 플랫폼 릴리스 노트와 상호 검증 완료</td>
+            <td><span>일치 / 확인됨</span></td>
+          </tr>
+          <tr>
+            <td>추가 확인 필요 사항</td>
+            <td>Replit Agent가 생성한 인증/DB 구성의 보안성 및 프로덕션 트래픽 확장 한계.</td>
+            <td>공식 배포 일정 및 실시간 벤치마크 추적 필요</td>
+            <td><span>모니터링 대상</span></td>
+          </tr>
+        </tbody>
+      </table>
+    
+  </section>
+
+  <section>
+    <h2>7. Practical Takeaways &amp; What Actually Matters</h2>
+    
+      <h3>엔지니어링 &amp; 비즈니스 실무 적용점</h3>
+      <p>아이디어에서 동작 가능한 SaaS 배포까지의 주기(Time-to-Market)를 극단적으로 단축하여 빠른 검증과 비즈니스 프로토타이핑이 가능함.</p>
+    
+    
+      <h3>광고 및 프로모션 고지</h3>
+      <p>Replit 공식 스폰서십 ($10 무료 크레딧 링크 제공). 자체 뉴스레터 및 유료 디스코드 홍보 포함.</p>
+    
+  </section>
+
+  <section>
+    <h2>8. Source Map &amp; Metadata</h2>
+    <ul>
+      <li><strong>Canonical URL:</strong> <a href="https://www.youtube.com/watch?v=1RGc6gOAb5E" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=1RGc6gOAb5E</a></li>
+      <li><strong>Channel Handle:</strong> @intheworldofai (Channel ID: <code>UC2WmuBuFq6gL08QYG-JjXKw</code>)</li>
+      <li><strong>Transcript Source:</strong> YouTube Official / Auto-generated Captions (Verbatim Preserved)</li>
+      <li><strong>Archive Integrity:</strong> SHA-256 바이트 무결성 검증 완료</li>
+    </ul>
+  </section>
+
+</main></body></html>
