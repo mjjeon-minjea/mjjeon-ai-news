@@ -1,0 +1,97 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<title>Composio 8개 하네스 벤치마크와 경량 Pi Agent의 최고 효율 입증</title><style>
+:root{--bg:#090909;--panel:#15120f;--line:#6b3b16;--text:#fff8ed;--muted:#c8b9a7;--accent:#ff8a1f}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Noto Sans KR",sans-serif}main{max-width:980px;margin:auto;padding:32px 20px 64px}header,section,article{margin-bottom:22px}header,.drive-brief,section,article{padding:18px;border:1px solid #4b2d18;background:var(--panel);border-radius:14px}h1{font-size:clamp(30px,6vw,56px);line-height:1.1}h2,h3,strong,a{color:var(--accent)}.meta{color:var(--muted)}.timestamp-links{display:flex;flex-wrap:wrap;gap:10px}table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}th,td{border:1px solid #4b2d18;padding:8px;text-align:left}pre{overflow:auto}a{overflow-wrap:anywhere}@media(max-width:480px){main{padding:18px 14px 48px}}
+</style></head><body><main id="youtube-detail-report" aria-labelledby="report-title">
+<header><p class="meta">MJJEON AI NEWS · VERIFIED DRIVE BUNDLE</p><h1 id="report-title">Composio 8개 하네스 벤치마크와 경량 Pi Agent의 최고 효율 입증</h1><p>Julian Goldie SEO · j3c35v386T0</p><a href="https://www.youtube.com/watch?v=j3c35v386T0" target="_blank" rel="noopener noreferrer">원본 영상 보기 ↗</a></header>
+<section class="drive-brief"><h2>핵심 요약</h2><ul><li>Composio의 8개 에이전트 하네스 공개 테스트에서 동일 모델(DeepSeek V4 Flash) 기준 47%~67%의 20%p 성능 격차가 발생했습니다.</li><li>바닐라 MCP 플러그인만 장착한 경량 Pi Agent가 30개 중 20개 작업을 132초 만에 완수하여 1위를 차지했으며, 헤비급 하네스는 토큰 과부하(3.5M)로 타임아웃을 겪었습니다.</li><li>결과의 성패를 좌우하는 것은 모델 자체의 크기가 아니라 최단 실행 경로를 제공하는 &#x27;하네스 배율(Harness Multiplier)&#x27;임을 증명했습니다.</li></ul><p><strong>제작자 주장</strong> · 플래그십 모델에 복잡한 플러그인을 얹는 것보다 빠른 경량 모델에 간결한 하네스를 조합하는 것이 실무에서 훨씬 우수하다고 주장함.</p><p><strong>광고·홍보</strong> · AI Profit Boardroom(Agent OS, 4회 주간 코칭) 안내.</p><p><strong>외부 검증 필요</strong> · 단일 벤치마크(DeepSeek V4 Flash 고정 30개 태스크) 외 타 모델(Claude, GPT)과의 페어링 결과 검증 필요.</p><p><strong>실제 시연</strong> · Composio 벤치마크 데이터 비교, Pi vs Prime 세션 토큰 소모량 분석 및 4단계 실무 테스트 방법론.</p><p><strong>실무 시사점</strong> · 자신의 실제 업무 3가지를 선정하여 동일 프롬프트로 복수 하네스를 테스트하고 최적 페어링을 도출할 것.</p><nav class="timestamp-links" aria-label="주요 타임스탬프"><a href="https://www.youtube.com/watch?v=j3c35v386T0&amp;t=53s" target="_blank" rel="noopener noreferrer">Composio 8개 하네스 30개 태스크 벤치마크 개요 ↗</a><a href="https://www.youtube.com/watch?v=j3c35v386T0&amp;t=99s" target="_blank" rel="noopener noreferrer">Pi Agent 20/30 성공 및 132초 속도 기록 ↗</a><a href="https://www.youtube.com/watch?v=j3c35v386T0&amp;t=182s" target="_blank" rel="noopener noreferrer">하네스 배율(Harness Multiplier) 20%p 성능 격차 법칙 ↗</a><a href="https://www.youtube.com/watch?v=j3c35v386T0&amp;t=300s" target="_blank" rel="noopener noreferrer">헤비급 하네스의 3.5M 토큰 과부하 및 타임아웃 분석 ↗</a><a href="https://www.youtube.com/watch?v=j3c35v386T0&amp;t=548s" target="_blank" rel="noopener noreferrer">실무 4단계 미니 벤치마크 실행 프로토콜 ↗</a></nav></section>
+
+      <section>
+        <h2>2. Executive Summary (핵심 요약)</h2>
+        
+          <ul>
+            <li><span>00:00–00:45</span><strong>Composio 공개 벤치마크 결과:</strong> 동일 모델(DeepSeek V4 Flash)로 하네스에 따라 47%~67%의 20%p 성능 격차 발생. (영상 확인)</li>
+<li><span>00:46–01:34</span><strong>하네스(Harness)의 정의:</strong> 모델이 &#x27;엔진&#x27;이라면 하네스는 &#x27;차체&#x27;. 계획, 도구 사용, 에러 처리, 종료 시점을 결정. (영상 확인)</li>
+<li><span>01:35–02:37</span><strong>주요 하네스별 성적 비교:</strong> Pi Agent(20/30, 132초), Deep Agents(16/30, 187초), Hermes(15/30, 175초), Prime Agent(15/24, 242초). (영상 확인)</li>
+<li><span>02:38–03:40</span><strong>하네스 배율(Harness Multiplier) 법칙:</strong> 모델보다 하네스 조합이 결과의 성패와 속도를 좌우함. (영상 확인)</li>
+<li><span>04:27–05:46</span><strong>경량 바닐라(Pi)의 승리 vs 헤비급(Prime)의 실패 분석:</strong> 350만 토큰/33개 툴콜 과부하로 인한 타임아웃 발생. (영상 확인)</li>
+<li><span>05:47–06:46</span><strong>복잡성의 역설:</strong> 불필요한 도구와 장황한 지시문은 에이전트의 경로 이탈과 연쇄 실패를 유발함. (영상 확인)</li>
+<li><span>06:51–08:30</span><strong>비개발자 관점의 3대 오해 교정 (최고급 플래그십 모델 맹신, 코더 전유물 인식, 에이전트 무용론). (영상 확인):</strong></li>
+<li><span>09:03–10:25</span><strong>실무 적용 4단계 미니 벤치마크 방법론 (3개 실제 업무 → 동일 프롬프트 비교 → 소요시간/수정공수 측정 → 최적 조합 채택). (영상 확인):</strong></li>
+
+          </ul>
+        
+      </section>
+
+      <section>
+        <h2>3. The Big Idea (핵심 전환)</h2>
+        
+          <p><strong>1. 직면 과제:</strong> 대부분의 사용자는 어떤 LLM 모델(GPT vs Claude vs DeepSeek)을 쓸지만 고민하고, 정작 실행 환경인 하네스(Harness)의 영향력을 간과함.</p><br>
+          <p><strong>2. 솔루션 아키텍처:</strong> Composio의 정밀 벤치마크를 통해 검증되었듯, 빠르고 가벼운 모델이라도 불필요한 레이어가 없는 깔끔한 하네스(MCP 플러그인 기반 바닐라 Pi)에 탑재할 때 최고 성공률(67%)과 최단 시간(132초)을 달성함.</p><br>
+          <p><strong>3. 차별점 및 전략:</strong> 무조건 많은 툴과 거대한 프롬프트를 얹는 헤비급 구성(3.5M 토큰 초과)은 오히려 에러와 타임아웃을 유발하며, &#x27;간결한 최단 경로&#x27;를 제공하는 하네스가 실전에서 승리함.</p><br>
+          <p><strong>4. 최종 결론:</strong> 제품의 완성도는 &#x27;모델 자체&#x27;가 아니라 &#x27;모델 + 하네스 페어링&#x27;에 있으므로, 자신의 실제 업무 3가지를 기준으로 직접 테스트해 최적 조합을 선택해야 함.</p>
+        
+      </section>
+
+      <section>
+        <h2>4. Key Concepts &amp; Technology (핵심 개념 및 기술)</h2>
+        Harness Multiplier (하네스 배율)<p><strong>영상에서의 의미:</strong> 동일한 AI 모델이라도 이를 감싸는 하네스(도구/프롬프트/메모리 체계)에 따라 성공률이 20%p 이상 변동하는 현상.</p>
+Vanilla Lightweight Setup<p><strong>영상에서의 의미:</strong> 과도한 커스텀 레이어 없이 표준 MCP 어댑터만 장착하여 에이전트의 판단 경로를 단순화한 경량 환경.</p>
+Context Bloat &amp; Choking<p><strong>영상에서의 의미:</strong> 세션당 수백만 토큰과 수십 개 툴 호출이 누적되어 평가 시스템조차 채점 불가능(타임아웃)에 빠지는 현상.</p>
+Model-Harness Pairing<p><strong>영상에서의 의미:</strong> 특정 모델의 강점(속도, 추론 등)과 하네스의 인터페이스가 최적의 시너지를 내는 결합 관계.</p>
+
+      </section>
+
+      <section>
+        <h2>5. Tools, Products &amp; Models (도구 및 플랫폼 분석)</h2>
+        Pi Agent<p><strong>개발/출처:</strong> Composio / Open Source</p><p><strong>영상에서의 용도:</strong> 미니멀한 구조와 표준 MCP 서버 플러그인을 채택한 초경량 에이전트 하네스</p><p><strong>핵심 특징:</strong> DeepSeek V4 Flash 환경에서 최고 성공률(20/30) 및 최단 시간 기록</p><p><strong>주의/제한사항:</strong> 고난도 복합 추론 시 기능 확장 필요</p><p><strong>타임스탬프:</strong> 01:35</p>
+DeepSeek V4 Flash<p><strong>개발/출처:</strong> DeepSeek</p><p><strong>영상에서의 용도:</strong> 속도와 경제성에 최적화된 고속 경량 LLM</p><p><strong>핵심 특징:</strong> 벤치마크 고정 모델로 활용되어 하네스 성능 차이 입증</p><p><strong>주의/제한사항:</strong> 플래그십 모델 대비 복합 추론 한계</p><p><strong>타임스탬프:</strong> 00:53</p>
+Deep Agents (LangChain)<p><strong>개발/출처:</strong> LangChain</p><p><strong>영상에서의 용도:</strong> LangChain 기반 구조화 에이전트 프레임워크</p><p><strong>핵심 특징:</strong> 30개 중 16개 작업 완수</p><p><strong>주의/제한사항:</strong> 중간 수준의 실행 속도(187초)</p><p><strong>타임스탬프:</strong> 01:44</p>
+Composio Benchmark Suite<p><strong>개발/출처:</strong> Composio</p><p><strong>영상에서의 용도:</strong> 8개 하네스 및 30개 에이전틱 실무 태스크 평가 프레임워크</p><p><strong>핵심 특징:</strong> 하네스별 성공률, 속도, 토큰 소모량 정량 측정</p><p><strong>주의/제한사항:</strong> 공식 리포트</p><p><strong>타임스탬프:</strong> 00:46</p>
+
+      </section>
+
+      <section>
+        <h2>6. Numbers &amp; Benchmarks (핵심 수치 및 실증 데이터)</h2>
+        <table>
+          <thead>
+            <tr><th>지표 / 항목</th><th>수치</th><th>맥락 및 의미</th><th>타임스탬프</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Pi Agent 작업 성공수</strong></td><td>20 / 30 (66.7%)</td><td>DeepSeek-V4-Flash 탑재 시 30개 태스크 중 성공 개수 (1위)</td><td>01:35</td></tr>
+<tr><td><strong>하네스별 성공률 편차</strong></td><td>47% ~ 67% (20%p)</td><td>동일 모델 기준 최하위 하네스와 최상위 하네스 간의 성공률 격차</td><td>02:47</td></tr>
+<tr><td><strong>중앙값 소요 시간(Pi)</strong></td><td>132 초</td><td>Pi Agent의 태스크 완료 중앙값 시간 (헤비급 하네스 대비 110초 단축)</td><td>02:09</td></tr>
+<tr><td><strong>헤비급 세션 토큰 소모</strong></td><td>최대 3,500,000 토큰</td><td>과도한 툴콜(33회)로 채점 타임아웃을 유발한 세션의 토큰 수</td><td>05:00</td></tr>
+<tr><td><strong>타임아웃 탈락 런</strong></td><td>6 개 세션</td><td>채점 시스템 한계로 기록에서 제외된 헤비급 에이전트 실행 수</td><td>01:54</td></tr>
+<tr><td><strong>커뮤니티 회원수</strong></td><td>3,700+ 명</td><td>다양한 모델-하네스 페어링을 테스트 중인 비즈니스 오너 수</td><td>04:18</td></tr>
+
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>7. Practical Takeaways &amp; What Actually Matters (실무 적용 및 핵심 가치)</h2>
+        
+          <ul>
+            <li><strong>엔진 기반 자동화 정착:</strong> 일회성 프롬프트 질의가 아닌, 검증된 SOP와 체크 게이트를 탑재한 지속형 에이전트 루프 운영.</li>
+            <li><strong>Information Gain 확보:</strong> 단순 요약 텍스트 생성이 아닌 실제 고객 결과, 수치, 케이스 스터디를 주입하여 구글 및 AI 검색 엔진의 인용 유도.</li>
+            <li><strong>성능과 경량화의 균형:</strong> 무조건 무거운 도구를 나열하기보다 작업 목적에 맞는 깔끔한 하네스 페어링 구축.</li>
+          </ul>
+        
+      </section>
+
+      <section>
+        <h2>8. Source Metadata (출처 정보)</h2>
+        
+          <table>
+            <tbody>
+              <tr><th>YouTube URL</th><td><a href="https://www.youtube.com/watch?v=j3c35v386T0" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=j3c35v386T0</a></td></tr>
+              <tr><th>Video ID</th><td><code>j3c35v386T0</code></td></tr>
+              <tr><th>Channel</th><td>Julian Goldie SEO (<code>UCGpsgNbzdF7BECCVbB1COHw</code>)</td></tr>
+              <tr><th>Published Date</th><td>2026-08-12 14:00 (KST)</td></tr>
+              <tr><th>Transcript Source</th><td>YouTube Official English Captions</td></tr>
+            </tbody>
+          </table>
+        
+      </section>
+    </main></body></html>
