@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-08-17 운영 아침 브리핑</title>
+<style>
+:root{color-scheme:dark}body{margin:0;background:#0a0b14;color:#f7f5ff;font:16px/1.65 Inter,ui-sans-serif,system-ui,sans-serif}main{max-width:760px;margin:0 auto;padding:32px 20px 64px}.kicker{margin:0;color:#f1b86a;font:800 12px/1 ui-monospace,monospace;letter-spacing:.12em}h1{margin:8px 0 6px;font-size:34px;line-height:1.2;letter-spacing:-.04em}h2{margin:0 0 12px;font-size:20px}p{margin:8px 0}section{margin:24px 0;padding:20px;border:1px solid #302d49;border-radius:16px;background:#111322}ul,ol{margin:0;padding-left:21px}li{margin:8px 0}.metric{font-weight:750}.warn{color:#ffd082}.muted{color:#bdb8cf}a{color:#b8a1ff}
+</style>
+</head>
+<body>
+<main>
+<p class="kicker">MORNING BRIEFING · 2026.08.17</p>
+<h1>운영 아침 브리핑</h1>
+<p class="muted">조회 구간: 2026-08-16 06:30 — 2026-08-17 06:30 KST · 생성: 2026-08-17 06:35 KST</p>
+
+<section>
+<h2>결론</h2>
+<p>진행 중 Kanban은 없고, 운영 인계는 비어 있습니다. 다만 Hermes 공식 최신 버전이 설치본보다 1개 릴리스 앞서 있으며, 공식 업데이트 감지 Cron 1건은 원격 검증 미확인으로 실패 상태입니다.</p>
+</section>
+
+<section>
+<h2>현황</h2>
+<ul>
+<li><span class="metric">Cron 10개 · 정상 8 · 실패 1</span> — 실패: <span class="warn">MJJEON Hermes official update detector</span> (원격 검증 미확인).</li>
+<li><span class="metric">Cron 상태 미기록 1</span> — 고광렬 06:30 KST 아침 브리핑은 첫 실행 결과가 아직 기록되지 않았습니다.</li>
+<li><span class="metric">Kanban 진행 0 · 막힘 3</span> — 전체 상태는 완료 38, 보관 22, 막힘 3입니다.</li>
+<li><span class="metric">Hermes 설치 v0.20.1 · 공식 최신 v0.20.2</span> — 업데이트 확인이 필요합니다.</li>
+</ul>
+</section>
+
+<section>
+<h2>직전 구간 인수인계</h2>
+<ul>
+<li>고광렬 HANDOFF는 <strong>NO_ACTIVE_WORK</strong>입니다. 06:30 아침 브리핑 Cron이 등록되어 이번 구간에 첫 실행 시점에 도달했습니다.</li>
+<li>Wiki 일일 마감은 repaired 상태로 끝났습니다. 이벤트 0건, 원본 변경 없음, 변경 파일 7건으로 기록됐습니다.</li>
+<li>Wiki 증분 정본화는 06:17 KST에 성공했으며 실패 이벤트는 0건입니다.</li>
+<li>각 profile의 당일 conversation 문서는 새로 생성되지 않았습니다. 확인 가능한 사용자 지시·운영 인수인계 추가분은 없습니다.</li>
+</ul>
+</section>
+
+<section>
+<h2>관찰 필요</h2>
+<ol>
+<li>Hermes v0.20.2 적용 여부는 운영 승인 범위에서 판단합니다. 이 브리핑에서는 변경을 수행하지 않았습니다.</li>
+<li>업데이트 감지 Cron의 원격 검증 경로를 다음 정상 실행 전에 확인합니다. 실패 job의 자동 재실행·배포는 수행하지 않았습니다.</li>
+</ol>
+</section>
+
+<p><a href="../index.html">← 메인으로</a></p>
+</main>
+</body>
+</html>
