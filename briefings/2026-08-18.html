@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-08-18 운영 아침 브리핑</title>
+<style>
+:root{color-scheme:dark}body{margin:0;background:#0a0b14;color:#f7f5ff;font:16px/1.65 Inter,ui-sans-serif,system-ui,sans-serif}main{max-width:760px;margin:0 auto;padding:32px 20px 64px}.kicker{margin:0;color:#f1b86a;font:800 12px/1 ui-monospace,monospace;letter-spacing:.12em}h1{margin:8px 0 6px;font-size:34px;line-height:1.2;letter-spacing:-.04em}h2{margin:0 0 12px;font-size:20px}p{margin:8px 0}section{margin:24px 0;padding:20px;border:1px solid #302d49;border-radius:16px;background:#111322}ul,ol{margin:0;padding-left:21px}li{margin:8px 0}.metric{font-weight:750}.warn{color:#ffd082}.bad{color:#ff9e9e}.muted{color:#bdb8cf}a{color:#b8a1ff}
+</style>
+</head>
+<body>
+<main>
+<p class="kicker">MORNING BRIEFING · 2026.08.18</p>
+<h1>운영 아침 브리핑</h1>
+<p class="muted">조회 구간: 2026-08-17 06:30 — 2026-08-18 06:30 KST · 생성: 2026-08-18 06:36 KST</p>
+
+<section>
+<h2>결론</h2>
+<p><span class="bad">처리 필요 1건</span>입니다. <strong>MJJEON Drive YouTube web ingest</strong>가 360초 제한으로 시간 초과했고 연속 5회 실패로 집계됐습니다. Hermes는 v0.20.2로 교체·7개 Gateway 및 Discord 재연결 검증까지 끝났지만, 공식 최신 v0.20.3보다 1개 릴리스 뒤입니다.</p>
+</section>
+
+<section>
+<h2>현황</h2>
+<ul>
+<li><span class="metric">Cron 총 12개</span></li>
+<li><span class="metric">Cron 정상 11개</span> — qms-staging-watch, MJJEON AI NEWS — Neoguri hourly collector, Default+role Gateway supervisor keeper, Codex 주간 한도 주의·경고, v0.20.2 교체 결과 보고, v0.20.2 재시도 결과 보고, 고광렬 06:30 KST 아침 브리핑, jjakgwi-wiki-daily-close-kst, jjakgwi-wiki-curation-6h-kst, jjakgwi-conversation-growth-review-6h-kst, MJJEON Hermes official update detector.</li>
+<li><span class="metric">Cron 검증 대기 0개</span> — 없음. <span class="metric">미기록 0개</span> — 없음.</li>
+<li><span class="metric">Cron 실패 1개</span> — <span class="bad">MJJEON Drive YouTube web ingest</span> (script timeout after 360s, 연속 5회).</li>
+<li><span class="metric">Kanban 진행 0건</span></li>
+<li><span class="metric">Kanban 막힘 3건</span></li>
+<li><span class="metric">Hermes 설치 v0.20.2</span> (Docker, upstream 7a2ad9ae) · <a href="https://github.com/NousResearch/hermes-agent/releases/tag/v2026.8.16.2">공식 최신 v0.20.3 (2026.8.16.2)</a>.</li>
+</ul>
+</section>
+
+<section>
+<h2>직전 구간 인수인계</h2>
+<ul>
+<li>v0.20.1 → v0.20.2 첫 이미지 교체는 포트 4861 점유로 중단되어 롤백됐습니다. 같은 날 재시도는 성공했으며, 7개 Gateway 기동·7개 Discord 연결·기존 컨테이너명 유지를 확인했습니다.</li>
+<li>Wiki 일일 마감은 00:05 KST에 <strong>repaired</strong> 상태로 끝났습니다. 이벤트 0건, 원본 변경 없음, 변경 파일 7건입니다.</li>
+<li>Wiki 증분 정본화는 06:17 KST에 마지막 성공 시각이 갱신됐습니다.</li>
+<li>전 profile HANDOFF·MEMORY·conversation·Wiki의 해당 구간 추가분을 대조했습니다. 위 항목 외 새 인수인계·지시·사고는 확인되지 않았습니다.</li>
+</ul>
+</section>
+
+<section>
+<h2>관찰 필요</h2>
+<ol>
+<li>Drive YouTube ingest의 360초 시간 초과 원인과 재처리 필요성을 확인합니다. 이번 브리핑에서는 재실행·배포·설정 변경을 하지 않았습니다.</li>
+<li>Hermes v0.20.3 적용 여부는 운영 승인 범위에서 판단합니다. 이번 브리핑에서는 업데이트를 수행하지 않았습니다.</li>
+</ol>
+</section>
+
+<p><a href="../index.html">← 메인으로</a></p>
+</main>
+</body>
+</html>
