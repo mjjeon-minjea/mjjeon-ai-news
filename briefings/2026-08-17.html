@@ -16,14 +16,14 @@
 
 <section>
 <h2>결론</h2>
-<p>진행 중 Kanban은 없고, 운영 인계는 비어 있습니다. 다만 Hermes 공식 최신 버전이 설치본보다 1개 릴리스 앞서 있으며, 공식 업데이트 감지 Cron 1건은 원격 검증 미확인으로 실패 상태입니다.</p>
+<p>진행 중 Kanban은 없고, 운영 인계는 비어 있습니다. Hermes 공식 최신 버전이 설치본보다 1개 릴리스 앞서 있습니다. 업데이트 감지 Cron은 실패가 아니라 보조 X 글의 공개 확인 대기입니다.</p>
 </section>
 
 <section>
 <h2>현황</h2>
 <ul>
-<li><span class="metric">Cron 10개 · 정상 8 · 실패 1</span> — 실패: <span class="warn">MJJEON Hermes official update detector</span> (원격 검증 미확인).</li>
-<li><span class="metric">Cron 상태 미기록 1</span> — 고광렬 06:30 KST 아침 브리핑은 첫 실행 결과가 아직 기록되지 않았습니다.</li>
+<li><span class="metric">Cron 10개 · 정상 9 · 검증 대기 1</span> — 검증 대기: <span class="warn">MJJEON Hermes official update detector</span> (보조 X 글 공개 확인 미완료). 실패 0.</li>
+<li><span class="metric">고광렬 06:30 Cron</span> — 첫 실행은 정상 완료됐습니다.</li>
 <li><span class="metric">Kanban 진행 0 · 막힘 3</span> — 전체 상태는 완료 38, 보관 22, 막힘 3입니다.</li>
 <li><span class="metric">Hermes 설치 v0.20.1 · 공식 최신 v0.20.2</span> — 업데이트 확인이 필요합니다.</li>
 </ul>
@@ -43,7 +43,7 @@
 <h2>관찰 필요</h2>
 <ol>
 <li>Hermes v0.20.2 적용 여부는 운영 승인 범위에서 판단합니다. 이 브리핑에서는 변경을 수행하지 않았습니다.</li>
-<li>업데이트 감지 Cron의 원격 검증 경로를 다음 정상 실행 전에 확인합니다. 실패 job의 자동 재실행·배포는 수행하지 않았습니다.</li>
+<li>업데이트 감지 Cron은 보조 X 글 공개 확인 대기입니다. 실패로 보지 않습니다. 자동 재실행·배포는 수행하지 않았습니다.</li>
 </ol>
 </section>
 
