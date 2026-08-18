@@ -1,0 +1,88 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<title>Hermes AI가 다중 에이전트를 시각적 로스터로 관리하고 상호 통신할 수 있는 오픈소스 &#x27;Bot Mode&#x27; 공개</title><style>
+:root{--bg:#090909;--panel:#15120f;--line:#6b3b16;--text:#fff8ed;--muted:#c8b9a7;--accent:#ff8a1f}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Noto Sans KR",sans-serif}main{max-width:980px;margin:auto;padding:32px 20px 64px}header,section,article{margin-bottom:22px}header,.drive-brief,section,article{padding:18px;border:1px solid #4b2d18;background:var(--panel);border-radius:14px}h1{font-size:clamp(30px,6vw,56px);line-height:1.1}h2,h3,strong,a{color:var(--accent)}.meta{color:var(--muted)}.timestamp-links{display:flex;flex-wrap:wrap;gap:10px}table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}th,td{border:1px solid #4b2d18;padding:8px;text-align:left}pre{overflow:auto}a{overflow-wrap:anywhere}@media(max-width:480px){main{padding:18px 14px 48px}}
+</style></head><body><main id="youtube-detail-report" aria-labelledby="report-title">
+<header><p class="meta">MJJEON AI NEWS · VERIFIED DRIVE BUNDLE</p><h1 id="report-title">Hermes AI가 다중 에이전트를 시각적 로스터로 관리하고 상호 통신할 수 있는 오픈소스 &#x27;Bot Mode&#x27; 공개</h1><p>Julian Goldie SEO · 2HoLCGT_3_U</p><a href="https://www.youtube.com/watch?v=2HoLCGT_3_U" target="_blank" rel="noopener noreferrer">원본 영상 보기 ↗</a></header>
+<section class="drive-brief"><h2>핵심 요약</h2><ul><li>Hermes AI가 다중 에이전트를 시각적 로스터로 관리하고 상호 통신할 수 있는 오픈소스 &#x27;Bot Mode&#x27; 공개</li><li>각 에이전트별 개별 메모리, 독립 모델 배정, Soul 파일(페르소나), 백그라운드 스케줄러(루틴)를 단일 패널에서 구동</li><li>에이전트 간 멘션(@bot_name) 및 인박스를 통한 자율적 작업 위임과 결과 취합 워크플로우 실증</li></ul><p><strong>제작자 주장</strong> · </p><p><strong>광고·홍보</strong> · </p><p><strong>외부 검증 필요</strong> · </p><p><strong>실제 시연</strong> · </p><p><strong>실무 시사점</strong> · </p><nav class="timestamp-links" aria-label="주요 타임스탬프"><a href="https://www.youtube.com/watch?v=2HoLCGT_3_U&amp;t=0s" target="_blank" rel="noopener noreferrer">Hermes AI Bot Mode 소개 및 아키텍처 개요 ↗</a><a href="https://www.youtube.com/watch?v=2HoLCGT_3_U&amp;t=74s" target="_blank" rel="noopener noreferrer">에이전트 로스터 및 개별 메모리/모델 구성 ↗</a><a href="https://www.youtube.com/watch?v=2HoLCGT_3_U&amp;t=104s" target="_blank" rel="noopener noreferrer">에이전트 간 멘션 및 자율 메시징 실증 ↗</a><a href="https://www.youtube.com/watch?v=2HoLCGT_3_U&amp;t=184s" target="_blank" rel="noopener noreferrer">스케줄러 기반 무인 루틴 자동화 ↗</a><a href="https://www.youtube.com/watch?v=2HoLCGT_3_U&amp;t=230s" target="_blank" rel="noopener noreferrer">Soul 파일 페르소나 정의 및 에이전트 복제 ↗</a></nav></section>
+
+
+    
+        <span>YouTube Intelligence Report · #040</span>
+        <h1>NEW Hermes AI Agent Bot Mode is WILD!  🤯</h1>
+        
+            <strong>채널:</strong> Julian Goldie SEO
+            <strong>영상 ID:</strong> 2HoLCGT_3_U
+            <strong>게시일:</strong> 2026-08-16
+            <strong>영상 길이:</strong> PT8M13S
+            <strong>조회수:</strong> 3,647회
+            <strong>좋아요:</strong> 80개
+        
+    
+    
+        <h2>1. 핵심 총괄 요약 (Executive Summary)</h2>
+        
+            <ul>
+                <li><strong>주요 핵심:</strong> Hermes AI가 다중 에이전트를 시각적 로스터로 관리하고 상호 통신할 수 있는 오픈소스 &#x27;Bot Mode&#x27; 공개</li><li><strong>주요 핵심:</strong> 각 에이전트별 개별 메모리, 독립 모델 배정, Soul 파일(페르소나), 백그라운드 스케줄러(루틴)를 단일 패널에서 구동</li><li><strong>주요 핵심:</strong> 에이전트 간 멘션(@bot_name) 및 인박스를 통한 자율적 작업 위임과 결과 취합 워크플로우 실증</li>
+            </ul>
+        
+
+        <h2>2. 기술 아키텍처 및 메커니즘 분석</h2>
+        <p>Hermes Bot Mode는 Nous Research의 수석 엔지니어 Technium이 공개한 오픈소스 데스크톱 플러그인으로, 분절된 개별 에이전트 세션을 통합된 로스터 패널로 결합합니다. 각 에이전트는 독립적인 아바타, 개별 컨텍스트 메모리, 고유 LLM 백엔드, 그리고 행동 지침을 정의하는 Soul(페르소나) 파일을 가집니다. 에이전트 간 메시징 인박스와 멘션 시스템을 통해 상호 간에 작업을 전달하고 결과를 수신하는 다중 에이전트 오케스트레이션 아키텍처를 제공합니다.</p>
+
+        <h2>3. 핵심 기능 및 워크플로우 실증</h2>
+        <ul>
+            <li><strong>에이전트 로스터 및 개별 모델 지정:</strong> 경쟁사 트래킹(Oracle), 콘텐츠 발굴(Astros), 음성 응답(Apollo), 스크립트 작성(Muse) 등 역할별 에이전트 분할 및 최적 모델 할당</li><li><strong>자율 메시징 및 작업 인계:</strong> @researcher 멘션으로 리서치 에이전트에 실시간 데이터 조회를 요청하고 결과를 메인 초안에 자동 병합</li><li><strong>백그라운드 루틴 자동화:</strong> Hermes 내장 스케줄러를 활용해 매일 아침 인박스 요약, 정오 업계 동향 분석, 매주 월요일 콘텐츠 아이디어 도출 자동 실행</li><li><strong>Soul 파일 기반 에이전트 복제:</strong> 검증된 에이전트의 페르소나, 스킬, 메모리 설정을 그대로 복제하여 신규 업무 전담 봇 즉시 배포</li>
+        </ul>
+
+        <h2>4. 벤치마크 및 정량 실측치 비교</h2>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>평가 지표 / 대상</th>
+                        <th>측정 결과 / 성능 수치</th>
+                        <th>경쟁 모델 대비 분석 / 비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>다중 에이전트 인박스 전달</strong></td><td>배치 실행 주기 연동</td><td>실시간 소켓 즉각 전달이 아닌 다음 실행 주기 확인 방식</td></tr><tr><td><strong>운영 환경</strong></td><td>로컬 데스크톱 전용</td><td>서버 단독 백엔드 구동 불가 (Hermes Desktop App 필수)</td></tr><tr><td><strong>그룹 채팅 지원</strong></td><td>1:1 멘션/전달 지원</td><td>단일 통합 단체 채팅방은 미지원 (개별 봇 세션 간 라우팅)</td></tr>
+                </tbody>
+            </table>
+        
+
+        <h2>5. 검증: 시연된 기능 vs 마케팅 주장 (Claim vs Reality)</h2>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>영상 내 주장 (Claim)</th>
+                        <th>실제 시연 및 객관적 한계 (Reality &amp; Constraints)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>완전 자동화 팀 자율 운영</td><td>실제로는 각 봇의 프롬프트 지침(Soul 파일)과 스케줄 루틴이 명확히 정의되어야 유의미한 동작 가능</td></tr><tr><td>GrokBot 완전 대체</td><td>GrokBot 대비 오픈소스 및 무료 모델 연동의 장점이 있으나 클라우드 상시 가동이 아닌 로컬 데스크톱 의존성 존재</td></tr>
+                </tbody>
+            </table>
+        
+
+        <h2>6. 실무 적용 및 비즈니스 워크플로우 가이드</h2>
+        
+            <ol>
+                <li><strong>단계 1:</strong> Hermes Desktop 앱 설치 및 Bot Mode 플러그인 활성화</li><li><strong>단계 2:</strong> 업무 도메인별 에이전트 생성 (Oracle, Astros, Muse 등) 및 Soul 파일 작성</li><li><strong>단계 3:</strong> 각 에이전트의 특성에 맞는 LLM 모델 배정 (로컬 모델 또는 API 키 연동)</li><li><strong>단계 4:</strong> 스케줄러를 통해 반복 업무 루틴 등록 및 @멘션 기반 협업 테스트</li>
+            </ol>
+        
+
+        <h2>7. 엔지니어링 주의사항 및 한계점</h2>
+        
+            <ul>
+                <li>로컬 데스크톱 앱이 실행 중인 머신에서만 작동 (독립 서버 환경 미지원)</li><li>에이전트 간 메시지 전달이 실시간 푸시가 아닌 실행 주기 기반 동기화</li><li>다자간 동시 참여 그룹 채팅은 불가능하며 1:1 메시지 위임 구조로 제한</li>
+            </ul>
+        
+    
+    
+        <p>본 인텔리전스 리포트는 Julian Goldie SEO 영상 대본을 기반으로 자동 추출·검증된 기술 분석서입니다.</p>
+        <p>원본 영상: <a href="https://www.youtube.com/watch?v=2HoLCGT_3_U" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=2HoLCGT_3_U</a> · 스키마: mjjeon-youtube-web/v1</p>
+    
+
+</main></body></html>
