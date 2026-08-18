@@ -1,0 +1,88 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<title>Daniel Agrees가 개발한 Claude Code 전용 오픈소스 플러그인 &#x27;Claude Obsidian v2.1&#x27; 공개</title><style>
+:root{--bg:#090909;--panel:#15120f;--line:#6b3b16;--text:#fff8ed;--muted:#c8b9a7;--accent:#ff8a1f}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Noto Sans KR",sans-serif}main{max-width:980px;margin:auto;padding:32px 20px 64px}header,section,article{margin-bottom:22px}header,.drive-brief,section,article{padding:18px;border:1px solid #4b2d18;background:var(--panel);border-radius:14px}h1{font-size:clamp(30px,6vw,56px);line-height:1.1}h2,h3,strong,a{color:var(--accent)}.meta{color:var(--muted)}.timestamp-links{display:flex;flex-wrap:wrap;gap:10px}table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}th,td{border:1px solid #4b2d18;padding:8px;text-align:left}pre{overflow:auto}a{overflow-wrap:anywhere}@media(max-width:480px){main{padding:18px 14px 48px}}
+</style></head><body><main id="youtube-detail-report" aria-labelledby="report-title">
+<header><p class="meta">MJJEON AI NEWS · VERIFIED DRIVE BUNDLE</p><h1 id="report-title">Daniel Agrees가 개발한 Claude Code 전용 오픈소스 플러그인 &#x27;Claude Obsidian v2.1&#x27; 공개</h1><p>Julian Goldie SEO · Gom-GwlZIYk</p><a href="https://www.youtube.com/watch?v=Gom-GwlZIYk" target="_blank" rel="noopener noreferrer">원본 영상 보기 ↗</a></header>
+<section class="drive-brief"><h2>핵심 요약</h2><ul><li>Daniel Agrees가 개발한 Claude Code 전용 오픈소스 플러그인 &#x27;Claude Obsidian v2.1&#x27; 공개</li><li>캡처(Capture) → 증거 그라운딩(Ground) → 지식 연결(Connect) → 질문 활용(Use)의 4단계 지식 복리 사이클</li><li>15개 내장 스킬(인제스트, 캔버스 맵메이커, 변경 이력 히스토리언, 클린업) 및 PARA 분류 체계 네이티브 지원</li></ul><p><strong>제작자 주장</strong> · </p><p><strong>광고·홍보</strong> · </p><p><strong>외부 검증 필요</strong> · </p><p><strong>실제 시연</strong> · </p><p><strong>실무 시사점</strong> · </p><nav class="timestamp-links" aria-label="주요 타임스탬프"><a href="https://www.youtube.com/watch?v=Gom-GwlZIYk&amp;t=0s" target="_blank" rel="noopener noreferrer">Claude Obsidian 2.0 소개 및 금붕어 문제 해결 ↗</a><a href="https://www.youtube.com/watch?v=Gom-GwlZIYk&amp;t=79s" target="_blank" rel="noopener noreferrer">4단계 지식 복리 사이클 (Capture, Ground, Connect, Use) ↗</a><a href="https://www.youtube.com/watch?v=Gom-GwlZIYk&amp;t=200s" target="_blank" rel="noopener noreferrer">15개 핵심 스킬 분석 (인제스트, 캔버스, 히스토리언) ↗</a><a href="https://www.youtube.com/watch?v=Gom-GwlZIYk&amp;t=280s" target="_blank" rel="noopener noreferrer">콘텐츠 기획 및 온보딩 플로우 실무 적용 ↗</a><a href="https://www.youtube.com/watch?v=Gom-GwlZIYk&amp;t=354s" target="_blank" rel="noopener noreferrer">PARA 분류 모드 활성화 및 실전 3대 팁 ↗</a></nav></section>
+
+
+    
+        <span>YouTube Intelligence Report · #056</span>
+        <h1>Claude + Obsidian 2.0 Just Changed AI Workflows</h1>
+        
+            <strong>채널:</strong> Julian Goldie SEO
+            <strong>영상 ID:</strong> Gom-GwlZIYk
+            <strong>게시일:</strong> 2026-08-17
+            <strong>영상 길이:</strong> PT7M51S
+            <strong>조회수:</strong> 260회
+            <strong>좋아요:</strong> 10개
+        
+    
+    
+        <h2>1. 핵심 총괄 요약 (Executive Summary)</h2>
+        
+            <ul>
+                <li><strong>주요 핵심:</strong> Daniel Agrees가 개발한 Claude Code 전용 오픈소스 플러그인 &#x27;Claude Obsidian v2.1&#x27; 공개</li><li><strong>주요 핵심:</strong> 캡처(Capture) → 증거 그라운딩(Ground) → 지식 연결(Connect) → 질문 활용(Use)의 4단계 지식 복리 사이클</li><li><strong>주요 핵심:</strong> 15개 내장 스킬(인제스트, 캔버스 맵메이커, 변경 이력 히스토리언, 클린업) 및 PARA 분류 체계 네이티브 지원</li>
+            </ul>
+        
+
+        <h2>2. 기술 아키텍처 및 메커니즘 분석</h2>
+        <p>Claude Obsidian 2.0은 Claude Code의 지식 휘발성(일명 &#x27;금붕어 문제&#x27;)을 영구 해결하기 위해 설계된 오픈소스 지식 관리 플러그인입니다. 사용자의 로컬 마크다운 파일 시스템을 기반으로 동작하며 클라우드 종속성이 없습니다. 핵심 아키텍처는 모든 지식 주장에 대해 원천 출처 포인터를 유지하는 &#x27;Grounding First&#x27; 원칙을 준수하며, 15개의 전용 스킬이 단일한 출처 인덱싱 및 연결 규칙에 따라 작동합니다. Agent OS와 연동되어 모든 하위 에이전트의 단일 진실 공급원(Single Source of Truth)으로 기능합니다.</p>
+
+        <h2>3. 핵심 기능 및 워크플로우 실증</h2>
+        <ul>
+            <li><strong>인박스 자동 인제스트 &amp; 연결:</strong> 문서, 비디오 대본, 회의록을 인박스에 넣고 실행하면 Claude가 지식 그래프로 자동 분류 및 상호 연결</li><li><strong>증거 기반 정직한 질의응답:</strong> 볼트 내 확실한 출처가 없는 경우 추측을 배제하고 정보 부족을 사용자에게 명확히 고지</li><li><strong>Obsidian Canvas 시각화 맵 생성:</strong> 복합 프로젝트 및 특정 도메인 토픽을 한눈에 조망할 수 있는 시각적 캔버스 다이어그램 자동 작성</li><li><strong>PARA 프레임워크 기반 자동 폴더 라우팅:</strong> 프로젝트(Projects), 영역(Areas), 자원(Resources), 아카이브(Archives) 분류 체계로 신규 노트 자동 정리</li>
+        </ul>
+
+        <h2>4. 벤치마크 및 정량 실측치 비교</h2>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>평가 지표 / 대상</th>
+                        <th>측정 결과 / 성능 수치</th>
+                        <th>경쟁 모델 대비 분석 / 비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>라이선스 및 비용</strong></td><td>MIT 오픈소스 / 100% 무료</td><td>로컬 플레인 텍스트 마크다운 기반으로 구독료 없음</td></tr><tr><td><strong>내장 스킬 수</strong></td><td>15개 모듈형 스킬</td><td>인제스트, 질의응답, 캔버스 맵, 변경 이력, 링크 클린업 등</td></tr><tr><td><strong>데이터 주권</strong></td><td>로컬 단독 저장</td><td>외부 클라우드 DB 유출 없이 사용자 로컬 머신 완전 소유</td></tr>
+                </tbody>
+            </table>
+        
+
+        <h2>5. 검증: 시연된 기능 vs 마케팅 주장 (Claim vs Reality)</h2>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>영상 내 주장 (Claim)</th>
+                        <th>실제 시연 및 객관적 한계 (Reality &amp; Constraints)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>기존 볼트 구조 훼손</td><td>Safe Adopt 옵션이 기본 제공되어 기존 노트 체계를 손상하지 않고 점진적으로 지식 그래프 구축</td></tr><tr><td>인터넷 자동 검색</td><td>사용자가 명시적으로 허용(Explicit Permission)한 경우에만 외부 웹 리서치 스킬 동작</td></tr>
+                </tbody>
+            </table>
+        
+
+        <h2>6. 실무 적용 및 비즈니스 워크플로우 가이드</h2>
+        
+            <ol>
+                <li><strong>단계 1:</strong> Claude Code 환경에 Claude Obsidian 2.1 플러그인 설치</li><li><strong>단계 2:</strong> 설정에서 PARA 모드를 활성화하여 지식 라우팅 구조 지정</li><li><strong>단계 3:</strong> 인박스 폴더에 리서치 자료 및 대본을 투입하고 인제스트 스킬 실행</li><li><strong>단계 4:</strong> Agent OS 대시보드에 메모리 볼트로 마운트하여 다중 에이전트 공유</li>
+            </ol>
+        
+
+        <h2>7. 엔지니어링 주의사항 및 한계점</h2>
+        
+            <ul>
+                <li>원천 소스의 품질과 명확성에 따라 인제스트 및 연결 품질이 결정됨</li><li>대규모 볼트 인제스트 시 초기 토큰 소비량 발생</li>
+            </ul>
+        
+    
+    
+        <p>본 인텔리전스 리포트는 Julian Goldie SEO 영상 대본을 기반으로 자동 추출·검증된 기술 분석서입니다.</p>
+        <p>원본 영상: <a href="https://www.youtube.com/watch?v=Gom-GwlZIYk" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=Gom-GwlZIYk</a> · 스키마: mjjeon-youtube-web/v1</p>
+    
+
+</main></body></html>
