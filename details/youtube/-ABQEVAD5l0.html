@@ -1,0 +1,88 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<title>DeepSeek Harness(DSH, 13.6만 스타)와 Hermes Agent(22.6만 스타)의 오픈소스 프레임워크 전격 비교 분석</title><style>
+:root{--bg:#090909;--panel:#15120f;--line:#6b3b16;--text:#fff8ed;--muted:#c8b9a7;--accent:#ff8a1f}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Noto Sans KR",sans-serif}main{max-width:980px;margin:auto;padding:32px 20px 64px}header,section,article{margin-bottom:22px}header,.drive-brief,section,article{padding:18px;border:1px solid #4b2d18;background:var(--panel);border-radius:14px}h1{font-size:clamp(30px,6vw,56px);line-height:1.1}h2,h3,strong,a{color:var(--accent)}.meta{color:var(--muted)}.timestamp-links{display:flex;flex-wrap:wrap;gap:10px}table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}th,td{border:1px solid #4b2d18;padding:8px;text-align:left}pre{overflow:auto}a{overflow-wrap:anywhere}@media(max-width:480px){main{padding:18px 14px 48px}}
+</style></head><body><main id="youtube-detail-report" aria-labelledby="report-title">
+<header><p class="meta">MJJEON AI NEWS · VERIFIED DRIVE BUNDLE</p><h1 id="report-title">DeepSeek Harness(DSH, 13.6만 스타)와 Hermes Agent(22.6만 스타)의 오픈소스 프레임워크 전격 비교 분석</h1><p>Julian Goldie SEO · -ABQEVAD5l0</p><a href="https://www.youtube.com/watch?v=-ABQEVAD5l0" target="_blank" rel="noopener noreferrer">원본 영상 보기 ↗</a></header>
+<section class="drive-brief"><h2>핵심 요약</h2><ul><li>DeepSeek Harness(DSH, 13.6만 스타)와 Hermes Agent(22.6만 스타)의 오픈소스 프레임워크 전격 비교 분석</li><li>Cordis 기반의 완전 모듈형 플러그인 설계(DSH) vs 20+ 플랫폼 옴니채널 연동 및 자체 개선 루프(Hermes)</li><li>코딩 및 커스텀 UI 제작은 DeepSeek Harness(Creator Mode), 백그라운드 스케줄링 및 챗봇 연동은 Hermes 권장</li></ul><p><strong>제작자 주장</strong> · </p><p><strong>광고·홍보</strong> · </p><p><strong>외부 검증 필요</strong> · </p><p><strong>실제 시연</strong> · </p><p><strong>실무 시사점</strong> · </p><nav class="timestamp-links" aria-label="주요 타임스탬프"><a href="https://www.youtube.com/watch?v=-ABQEVAD5l0&amp;t=0s" target="_blank" rel="noopener noreferrer">DeepSeek Harness vs Hermes 비교 개요 ↗</a><a href="https://www.youtube.com/watch?v=-ABQEVAD5l0&amp;t=77s" target="_blank" rel="noopener noreferrer">DeepSeek Harness &#x27;Everything is a Plugin&#x27; 아키텍처 ↗</a><a href="https://www.youtube.com/watch?v=-ABQEVAD5l0&amp;t=150s" target="_blank" rel="noopener noreferrer">Hermes 3계층 메모리 및 20+ 플랫폼 연동 구조 ↗</a><a href="https://www.youtube.com/watch?v=-ABQEVAD5l0&amp;t=250s" target="_blank" rel="noopener noreferrer">실제 코딩 및 안정성 실측 비교 ↗</a><a href="https://www.youtube.com/watch?v=-ABQEVAD5l0&amp;t=328s" target="_blank" rel="noopener noreferrer">Creator Mode vs 커스텀 워크플로우 제작 난이도 ↗</a></nav></section>
+
+
+    
+        <span>YouTube Intelligence Report · #053</span>
+        <h1>DeepSeek Harness vs Hermes: Best AI Agent?</h1>
+        
+            <strong>채널:</strong> Julian Goldie SEO
+            <strong>영상 ID:</strong> -ABQEVAD5l0
+            <strong>게시일:</strong> 2026-08-17
+            <strong>영상 길이:</strong> PT13M32S
+            <strong>조회수:</strong> 1,370회
+            <strong>좋아요:</strong> 49개
+        
+    
+    
+        <h2>1. 핵심 총괄 요약 (Executive Summary)</h2>
+        
+            <ul>
+                <li><strong>주요 핵심:</strong> DeepSeek Harness(DSH, 13.6만 스타)와 Hermes Agent(22.6만 스타)의 오픈소스 프레임워크 전격 비교 분석</li><li><strong>주요 핵심:</strong> Cordis 기반의 완전 모듈형 플러그인 설계(DSH) vs 20+ 플랫폼 옴니채널 연동 및 자체 개선 루프(Hermes)</li><li><strong>주요 핵심:</strong> 코딩 및 커스텀 UI 제작은 DeepSeek Harness(Creator Mode), 백그라운드 스케줄링 및 챗봇 연동은 Hermes 권장</li>
+            </ul>
+        
+
+        <h2>2. 기술 아키텍처 및 메커니즘 분석</h2>
+        <p>DeepSeek Harness는 Cordis 프레임워크 기반의 레고 블록형 아키텍처로 UI, 도구, 시스템 프롬프트, 샌드박스, 에이전트 루프까지 모든 구성 요소가 플러그인으로 교체 가능하며 로컬 웹 기반(포트 3080)으로 실행됩니다. 반면 Hermes Agent는 Nous Research가 개발한 에이전트로 3계층 메모리 시스템과 자체 스킬 개선 루프(Self-improvement loop)를 갖추고 있으며, Telegram, Discord, WhatsApp 등 20개 이상의 메시징 플랫폼 게이트웨이 연동에 최적화되어 있습니다.</p>
+
+        <h2>3. 핵심 기능 및 워크플로우 실증</h2>
+        <ul>
+            <li><strong>DeepSeek Harness Creator Mode 워크플로우:</strong> 자연어 프롬프트(&#x27;우측 하단에 오늘의 3대 작업 패널 생성&#x27;)로 실시간 UI 위젯 및 도구 플러그인 즉시 생성 및 마운트</li><li><strong>Hermes 백그라운드 스케줄링 &amp; 멀티채널 연동:</strong> Hermes Oracle(뉴스 분석), Hermes Muse(스크립트 제작) 등 특화 봇을 Telegram/Slack과 연동하여 정기 보고서 수신</li><li><strong>통합 Agent OS 하이브리드 운영:</strong> 단일 Agent OS 대시보드 내에 DeepSeek Harness(코딩/UI 빌드)와 Hermes(상시 루틴/리서치)를 나란히 배치하여 역할 분담</li>
+        </ul>
+
+        <h2>4. 벤치마크 및 정량 실측치 비교</h2>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>평가 지표 / 대상</th>
+                        <th>측정 결과 / 성능 수치</th>
+                        <th>경쟁 모델 대비 분석 / 비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>GitHub Stars</strong></td><td>136,000+ Stars</td><td>226,000+ Stars (최대 규모 오픈 에이전트)</td></tr><tr><td><strong>핵심 강점</strong></td><td>Cordis 모듈형 플러그인 &amp; 무부작용 롤백</td><td>3계층 메모리 &amp; 자율 스킬 개선 루프</td></tr><tr><td><strong>실행 환경</strong></td><td>로컬 웹 (localhost:3080)</td><td>CLI, 데스크톱 앱, Docker, 20+ 메시징 채널</td></tr><tr><td><strong>최적 사용처</strong></td><td>코딩, 앱 빌딩, 커스텀 대시보드</td><td>백그라운드 스케줄 루틴, 팀 메시징 연동</td></tr>
+                </tbody>
+            </table>
+        
+
+        <h2>5. 검증: 시연된 기능 vs 마케팅 주장 (Claim vs Reality)</h2>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>영상 내 주장 (Claim)</th>
+                        <th>실제 시연 및 객관적 한계 (Reality &amp; Constraints)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>하나만 선택해야 함</td><td>실제로는 Agent OS 대시보드에 둘 다 연동하여 코딩용(DSH)과 루틴용(Hermes)으로 병행하는 것이 최적</td></tr><tr><td>Hermes는 코딩 전용</td><td>Hermes는 장기 복합 코딩보다는 일회성 작업, 스케줄링, 소통 중심에 특화됨</td></tr>
+                </tbody>
+            </table>
+        
+
+        <h2>6. 실무 적용 및 비즈니스 워크플로우 가이드</h2>
+        
+            <ol>
+                <li><strong>단계 1:</strong> 코딩 및 대시보드 구축 필요 시 DeepSeek Harness 로컬 실행 후 Creator Mode 활용</li><li><strong>단계 2:</strong> 정기 뉴스 스캔 및 메신저 알림 필요 시 Hermes 설치 및 프로필/루틴 설정</li><li><strong>단계 3:</strong> OpenCode의 DeepSeek V4 Flash 등 무료 모델을 두 하네스에 각각 연결하여 비용 제로화</li><li><strong>단계 4:</strong> Agent OS 환경에 두 에이전트 탭을 마운트하여 협업 구조 완성</li>
+            </ol>
+        
+
+        <h2>7. 엔지니어링 주의사항 및 한계점</h2>
+        
+            <ul>
+                <li>DeepSeek Harness는 버전 0.1 개발자 프리뷰로 추후 플러그인 규격 업데이트 가능성</li><li>Hermes는 설정 요소가 많아 초보자의 경우 프로필 및 모델 핀 설정 시 혼선 주의</li>
+            </ul>
+        
+    
+    
+        <p>본 인텔리전스 리포트는 Julian Goldie SEO 영상 대본을 기반으로 자동 추출·검증된 기술 분석서입니다.</p>
+        <p>원본 영상: <a href="https://www.youtube.com/watch?v=-ABQEVAD5l0" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=-ABQEVAD5l0</a> · 스키마: mjjeon-youtube-web/v1</p>
+    
+
+</main></body></html>
