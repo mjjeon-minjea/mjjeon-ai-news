@@ -1,0 +1,88 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<title>DeepSeek Harness(DSH, Cordis 아키텍처 기반) 오픈소스 공개 및 GitHub 11.5만 스타 돌파</title><style>
+:root{--bg:#090909;--panel:#15120f;--line:#6b3b16;--text:#fff8ed;--muted:#c8b9a7;--accent:#ff8a1f}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Noto Sans KR",sans-serif}main{max-width:980px;margin:auto;padding:32px 20px 64px}header,section,article{margin-bottom:22px}header,.drive-brief,section,article{padding:18px;border:1px solid #4b2d18;background:var(--panel);border-radius:14px}h1{font-size:clamp(30px,6vw,56px);line-height:1.1}h2,h3,strong,a{color:var(--accent)}.meta{color:var(--muted)}.timestamp-links{display:flex;flex-wrap:wrap;gap:10px}table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}th,td{border:1px solid #4b2d18;padding:8px;text-align:left}pre{overflow:auto}a{overflow-wrap:anywhere}@media(max-width:480px){main{padding:18px 14px 48px}}
+</style></head><body><main id="youtube-detail-report" aria-labelledby="report-title">
+<header><p class="meta">MJJEON AI NEWS · VERIFIED DRIVE BUNDLE</p><h1 id="report-title">DeepSeek Harness(DSH, Cordis 아키텍처 기반) 오픈소스 공개 및 GitHub 11.5만 스타 돌파</h1><p>Julian Goldie SEO · 7a04lA_-7TA</p><a href="https://www.youtube.com/watch?v=7a04lA_-7TA" target="_blank" rel="noopener noreferrer">원본 영상 보기 ↗</a></header>
+<section class="drive-brief"><h2>핵심 요약</h2><ul><li>DeepSeek Harness(DSH, Cordis 아키텍처 기반) 오픈소스 공개 및 GitHub 11.5만 스타 돌파</li><li>모든 구성 요소가 플러그인(UI, 도구, 시스템 프롬프트, 샌드박스, 에이전트 루프)으로 치환 가능한 모듈형 설계</li><li>Trajectory 뷰를 통한 완벽한 추론 과정 검사, 세션 로그 내보내기, Creator Mode 기반 자연어 플러그인 즉시 생성 지원</li></ul><p><strong>제작자 주장</strong> · </p><p><strong>광고·홍보</strong> · </p><p><strong>외부 검증 필요</strong> · </p><p><strong>실제 시연</strong> · </p><p><strong>실무 시사점</strong> · </p><nav class="timestamp-links" aria-label="주요 타임스탬프"><a href="https://www.youtube.com/watch?v=7a04lA_-7TA&amp;t=0s" target="_blank" rel="noopener noreferrer">DeepSeek Harness 1시간 완성 코스 개요 ↗</a><a href="https://www.youtube.com/watch?v=7a04lA_-7TA&amp;t=124s" target="_blank" rel="noopener noreferrer">Level 1: 모델 vs 하네스 개념 및 로컬 설치 ↗</a><a href="https://www.youtube.com/watch?v=7a04lA_-7TA&amp;t=366s" target="_blank" rel="noopener noreferrer">무료 모델(OpenCode/OpenRouter) 연결법 ↗</a><a href="https://www.youtube.com/watch?v=7a04lA_-7TA&amp;t=833s" target="_blank" rel="noopener noreferrer">Trajectory View를 통한 실행 과정 추적 및 디버깅 ↗</a><a href="https://www.youtube.com/watch?v=7a04lA_-7TA&amp;t=1226s" target="_blank" rel="noopener noreferrer">Level 2: Cordis 플러그인 아키텍처 및 4개 모드 ↗</a></nav></section>
+
+
+    
+        <span>YouTube Intelligence Report · #042</span>
+        <h1>DeepSeek Harness: FREE 1 Hour Course!</h1>
+        
+            <strong>채널:</strong> Julian Goldie SEO
+            <strong>영상 ID:</strong> 7a04lA_-7TA
+            <strong>게시일:</strong> 2026-08-17
+            <strong>영상 길이:</strong> PT58M43S
+            <strong>조회수:</strong> 5,804회
+            <strong>좋아요:</strong> 161개
+        
+    
+    
+        <h2>1. 핵심 총괄 요약 (Executive Summary)</h2>
+        
+            <ul>
+                <li><strong>주요 핵심:</strong> DeepSeek Harness(DSH, Cordis 아키텍처 기반) 오픈소스 공개 및 GitHub 11.5만 스타 돌파</li><li><strong>주요 핵심:</strong> 모든 구성 요소가 플러그인(UI, 도구, 시스템 프롬프트, 샌드박스, 에이전트 루프)으로 치환 가능한 모듈형 설계</li><li><strong>주요 핵심:</strong> Trajectory 뷰를 통한 완벽한 추론 과정 검사, 세션 로그 내보내기, Creator Mode 기반 자연어 플러그인 즉시 생성 지원</li>
+            </ul>
+        
+
+        <h2>2. 기술 아키텍처 및 메커니즘 분석</h2>
+        <p>DeepSeek Harness는 Cordis 프레임워크에 기반한 극도로 모듈화된 에이전트 하네스입니다. 핵심 설계 사상은 &#x27;Everything is a plugin&#x27;으로 사이드바, 도구, 샌드박스, 시스템 프롬프트, 심지어 에이전트 루프 자체까지 교체 가능합니다. Trajectory View를 통해 에이전트의 사고 과정, 실행 명령, 입력/출력 페이로드를 그래픽 패널로 실시간 검사할 수 있으며, MCP(Model Context Protocol), Agent Client Protocol, Claude.md / Agents.md 파일 표준과 완벽히 호환됩니다.</p>
+
+        <h2>3. 핵심 기능 및 워크플로우 실증</h2>
+        <ul>
+            <li><strong>4단계 프리셋 모드:</strong> Standard(일상 업무), Code(복합 개발), Minimal(초경량 질의응답), Creator(자연어 프롬프트 기반 플러그인 즉시 생성)</li><li><strong>Creator Mode 플러그인 생성:</strong> &#x27;우측 하단에 오늘 할 일 체크 패널 생성&#x27;과 같은 단일 프롬프트로 UI 컴포넌트 실시간 개발 및 즉시 마운트</li><li><strong>Trajectory 디버깅:</strong> 에이전트가 잘못된 폴더를 읽거나 오류가 발생했을 때 정확한 단계로 이동하여 프롬프트 및 파일 수정 후 재실행</li><li><strong>무료 모델 백엔드 연동:</strong> OpenCode 또는 OpenRouter를 연결하여 DeepSeek V4 Flash 등 무료 모델을 하네스에 플러그인하여 완전 무료 구동</li>
+        </ul>
+
+        <h2>4. 벤치마크 및 정량 실측치 비교</h2>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>평가 지표 / 대상</th>
+                        <th>측정 결과 / 성능 수치</th>
+                        <th>경쟁 모델 대비 분석 / 비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>GitHub Stars</strong></td><td>115,000+ Stars</td><td>출시 직후 역사상 가장 빠른 성장세를 기록한 AI 오픈소스 프로젝트 중 하나</td></tr><tr><td><strong>커뮤니티 플러그인</strong></td><td>300+ 공식 등록</td><td>지식, 미디어, 워크플로우, 통합 도구 등 다양한 카테고리 형성</td></tr><tr><td><strong>Cordis 수학적 프레임워크</strong></td><td>무부작용 롤백 보장</td><td>플러그인 추가/제거 시 시스템 간섭 및 잔여 상태 없는 가역적 아키텍처</td></tr>
+                </tbody>
+            </table>
+        
+
+        <h2>5. 검증: 시연된 기능 vs 마케팅 주장 (Claim vs Reality)</h2>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>영상 내 주장 (Claim)</th>
+                        <th>실제 시연 및 객관적 한계 (Reality &amp; Constraints)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>완전 무결한 AI 직원</td><td>현재 버전 0.1 개발자 프리뷰 상태로 플러그인 버전 업데이트에 따른 일시적 파손 가능성 존재</td></tr><tr><td>완전 무료 시스템</td><td>하네스 자체는 MIT 무료 오픈소스이나 프론티어 V4 Pro 모델 사용 시 API 비용 발생 (무료 모델 연동 시 해결)</td></tr>
+                </tbody>
+            </table>
+        
+
+        <h2>6. 실무 적용 및 비즈니스 워크플로우 가이드</h2>
+        
+            <ol>
+                <li><strong>단계 1:</strong> Node.js 설치 후 터미널 단일 명령어로 DeepSeek Harness 로컬 실행 (localhost:3080)</li><li><strong>단계 2:</strong> DeepSeek API 키 입력 또는 OpenCode/OpenRouter 무료 프로바이더 설정</li><li><strong>단계 3:</strong> 격리된 로컬 작업 폴더(Workspace) 지정 및 Agents.md 컨텍스트 문서 배치</li><li><strong>단계 4:</strong> Trajectory 뷰 및 Creator Mode를 활용하여 커스텀 대시보드와 자동화 루틴 구축</li>
+            </ol>
+        
+
+        <h2>7. 엔지니어링 주의사항 및 한계점</h2>
+        
+            <ul>
+                <li>버전 0.1 프리뷰 단계로 기능 및 플러그인 명세의 변경 가능성</li><li>Full Access 권한 활성화 시 로컬 파일 시스템 변경 작업에 대한 사용자 주의 요구</li>
+            </ul>
+        
+    
+    
+        <p>본 인텔리전스 리포트는 Julian Goldie SEO 영상 대본을 기반으로 자동 추출·검증된 기술 분석서입니다.</p>
+        <p>원본 영상: <a href="https://www.youtube.com/watch?v=7a04lA_-7TA" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=7a04lA_-7TA</a> · 스키마: mjjeon-youtube-web/v1</p>
+    
+
+</main></body></html>
