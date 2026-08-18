@@ -1,0 +1,88 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<title>2026년 8월 13일 공개 후 24시간 내 GitHub 60,000 스타를 달성한 DeepSeek Harness v0.1 오픈소스(MIT) 아키텍처 분석</title><style>
+:root{--bg:#090909;--panel:#15120f;--line:#6b3b16;--text:#fff8ed;--muted:#c8b9a7;--accent:#ff8a1f}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Noto Sans KR",sans-serif}main{max-width:980px;margin:auto;padding:32px 20px 64px}header,section,article{margin-bottom:22px}header,.drive-brief,section,article{padding:18px;border:1px solid #4b2d18;background:var(--panel);border-radius:14px}h1{font-size:clamp(30px,6vw,56px);line-height:1.1}h2,h3,strong,a{color:var(--accent)}.meta{color:var(--muted)}.timestamp-links{display:flex;flex-wrap:wrap;gap:10px}table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}th,td{border:1px solid #4b2d18;padding:8px;text-align:left}pre{overflow:auto}a{overflow-wrap:anywhere}@media(max-width:480px){main{padding:18px 14px 48px}}
+</style></head><body><main id="youtube-detail-report" aria-labelledby="report-title">
+<header><p class="meta">MJJEON AI NEWS · VERIFIED DRIVE BUNDLE</p><h1 id="report-title">2026년 8월 13일 공개 후 24시간 내 GitHub 60,000 스타를 달성한 DeepSeek Harness v0.1 오픈소스(MIT) 아키텍처 분석</h1><p>Julian Goldie SEO · ED5hWuqqvE4</p><a href="https://www.youtube.com/watch?v=ED5hWuqqvE4" target="_blank" rel="noopener noreferrer">원본 영상 보기 ↗</a></header>
+<section class="drive-brief"><h2>핵심 요약</h2><ul><li>2026년 8월 13일 공개 후 24시간 내 GitHub 60,000 스타를 달성한 DeepSeek Harness v0.1 오픈소스(MIT) 아키텍처 분석</li><li>모델, 도구, 메모리, 샌드박스, 추론 루프가 모두 플러그인화된 완전 모듈형 하네스 및 단일 명령어 로컬 브라우저 구동</li><li>에이전트 실행 기록을 영구 보존하는 Trajectory View 및 Agent OS 다중 에이전트 공유 메모리 스택 통합</li></ul><p><strong>제작자 주장</strong> · </p><p><strong>광고·홍보</strong> · </p><p><strong>외부 검증 필요</strong> · </p><p><strong>실제 시연</strong> · </p><p><strong>실무 시사점</strong> · </p><nav class="timestamp-links" aria-label="주요 타임스탬프"><a href="https://www.youtube.com/watch?v=ED5hWuqqvE4&amp;t=0s" target="_blank" rel="noopener noreferrer">DeepSeek Harness 출시 배경 및 6만 스타 돌파 ↗</a><a href="https://www.youtube.com/watch?v=ED5hWuqqvE4&amp;t=46s" target="_blank" rel="noopener noreferrer">하네스(Harness)의 개념: 두뇌와 신체의 결합 ↗</a><a href="https://www.youtube.com/watch?v=ED5hWuqqvE4&amp;t=84s" target="_blank" rel="noopener noreferrer">완전 모듈형 플러그인 아키텍처 및 자동차 비유 ↗</a><a href="https://www.youtube.com/watch?v=ED5hWuqqvE4&amp;t=145s" target="_blank" rel="noopener noreferrer">v0.1 개발자 프리뷰의 현실적 한계와 주의사항 ↗</a><a href="https://www.youtube.com/watch?v=ED5hWuqqvE4&amp;t=222s" target="_blank" rel="noopener noreferrer">Agent OS와의 통합 및 단일 공유 메모리 ↗</a></nav></section>
+
+
+    
+        <span>YouTube Intelligence Report · #060</span>
+        <h1>NEW DeepSeek Harness is Crazy Good! ( Run it LOCALLY! ) 🤯</h1>
+        
+            <strong>채널:</strong> Julian Goldie SEO
+            <strong>영상 ID:</strong> ED5hWuqqvE4
+            <strong>게시일:</strong> 2026-08-18
+            <strong>영상 길이:</strong> PT8M43S
+            <strong>조회수:</strong> 2,542회
+            <strong>좋아요:</strong> 59개
+        
+    
+    
+        <h2>1. 핵심 총괄 요약 (Executive Summary)</h2>
+        
+            <ul>
+                <li><strong>주요 핵심:</strong> 2026년 8월 13일 공개 후 24시간 내 GitHub 60,000 스타를 달성한 DeepSeek Harness v0.1 오픈소스(MIT) 아키텍처 분석</li><li><strong>주요 핵심:</strong> 모델, 도구, 메모리, 샌드박스, 추론 루프가 모두 플러그인화된 완전 모듈형 하네스 및 단일 명령어 로컬 브라우저 구동</li><li><strong>주요 핵심:</strong> 에이전트 실행 기록을 영구 보존하는 Trajectory View 및 Agent OS 다중 에이전트 공유 메모리 스택 통합</li>
+            </ul>
+        
+
+        <h2>2. 기술 아키텍처 및 메커니즘 분석</h2>
+        <p>DeepSeek Harness는 LLM(두뇌)을 실제 작업 수행 에이전트(신체, 도구, 메모리, 샌드박스)로 감싸는 차세대 모듈형 하네스 프레임워크입니다. 핵심 철학은 &#x27;Everything is a Plugin&#x27;으로, 모델뿐만 아니라 툴셋, 메모리 시스템, 실행 샌드박스, 생각-행동-검증(Think-Act-Check) 추론 루프 전체가 탈부착 가능한 플러그인 구조로 설계되었습니다. 터미널 단일 명령어로 로컬 브라우저 UI가 구동되며, 기존 `agents.md`, `claude.md` 지침 파일을 완벽 호환합니다.</p>
+
+        <h2>3. 핵심 기능 및 워크플로우 실증</h2>
+        <ul>
+            <li><strong>4대 실행 모드 선택:</strong> 표준 작업 모드(Standard), 코드 직접 호출 모드(Code-calling), 단순 작업용 미니멀 모드(Minimal), 신규 생성 모드(Creation) 중 최적 프로파일 로딩</li><li><strong>투명한 궤적(Trajectory View) 검증:</strong> 에이전트가 확인한 모든 컨텍스트와 실행 단계를 변경 불가능한 로그로 기록하고 일시정지, 포크(Fork), 리플레이 지원</li><li><strong>플러그인 핫 스왑:</strong> 새로운 메모리 시스템이나 외부 API 등장 시 전체 시스템을 재구축할 필요 없이 해당 플러그인만 즉시 교체</li><li><strong>Agent OS 다중 에이전트 통합:</strong> 밤새 발생한 이벤트 요약 및 차일 과제 큐를 처리하는 에이전트의 하위 엔진으로 하네스 연결</li>
+        </ul>
+
+        <h2>4. 벤치마크 및 정량 실측치 비교</h2>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>평가 지표 / 대상</th>
+                        <th>측정 결과 / 성능 수치</th>
+                        <th>경쟁 모델 대비 분석 / 비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>GitHub Star 성장 속도</strong></td><td>공개 24시간 내 60,000+ 달성</td><td>2026년 최단시간 스타 획득 오픈소스 프로젝트 기록</td></tr><tr><td><strong>라이선스</strong></td><td>MIT 완전 오픈소스</td><td>상업적 이용, 커스텀 수정, 사내 폐쇄망 배포 무료 지원</td></tr><tr><td><strong>구동 방식</strong></td><td>단일 명령어 로컬 실행</td><td>클라우드 가입 없이 로컬 머신에서 브라우저 UI 직접 연동</td></tr>
+                </tbody>
+            </table>
+        
+
+        <h2>5. 검증: 시연된 기능 vs 마케팅 주장 (Claim vs Reality)</h2>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>영상 내 주장 (Claim)</th>
+                        <th>실제 시연 및 객관적 한계 (Reality &amp; Constraints)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>즉시 프로덕션 전면 적용</td><td>현재 v0.1 개발자 프리뷰 버전으로 공식 문서상 Breaking Change 및 플러그인 호환성 변경 경고 명시 (테스트/실험 권장)</td></tr><tr><td>DeepSeek 모델 전용 종속</td><td>플러그인 구조 덕분에 DeepSeek V4 Pro뿐만 아니라 로컬 오픈 모델, 타사 상용 모델로 자유롭게 교체 가능</td></tr>
+                </tbody>
+            </table>
+        
+
+        <h2>6. 실무 적용 및 비즈니스 워크플로우 가이드</h2>
+        
+            <ol>
+                <li><strong>단계 1:</strong> 터미널에서 DeepSeek Harness 실행 명령어를 입력하여 로컬 브라우저 UI 가동</li><li><strong>단계 2:</strong> 기존 프로젝트의 `agents.md` 지침 파일 연결</li><li><strong>단계 3:</strong> 작업 목적에 맞춰 4가지 모드(Standard, Code-calling, Minimal, Creation) 중 선택</li><li><strong>단계 4:</strong> Trajectory View를 통해 에이전트의 판단 흐름을 실시간 모니터링하고 피드백 적용</li>
+            </ol>
+        
+
+        <h2>7. 엔지니어링 주의사항 및 한계점</h2>
+        
+            <ul>
+                <li>v0.1 초기 버전이므로 향후 업데이트 시 플러그인 인터페이스 변경 가능성 존재</li><li>300개 이상의 커뮤니티 플러그인 중 일부 유지보수 중단 플러그인 검별 필요</li>
+            </ul>
+        
+    
+    
+        <p>본 인텔리전스 리포트는 Julian Goldie SEO 영상 대본을 기반으로 자동 추출·검증된 기술 분석서입니다.</p>
+        <p>원본 영상: <a href="https://www.youtube.com/watch?v=ED5hWuqqvE4" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=ED5hWuqqvE4</a> · 스키마: mjjeon-youtube-web/v1</p>
+    
+
+</main></body></html>
