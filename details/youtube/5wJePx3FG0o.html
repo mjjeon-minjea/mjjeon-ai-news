@@ -1,0 +1,88 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<title>알리바바 Qwen 3.8-27B 모델의 Ollama 원라인 배포(`ollama run qwen3.8`) 및 100% 로컬 오프라인 구동 가이드</title><style>
+:root{--bg:#090909;--panel:#15120f;--line:#6b3b16;--text:#fff8ed;--muted:#c8b9a7;--accent:#ff8a1f}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Noto Sans KR",sans-serif}main{max-width:980px;margin:auto;padding:32px 20px 64px}header,section,article{margin-bottom:22px}header,.drive-brief,section,article{padding:18px;border:1px solid #4b2d18;background:var(--panel);border-radius:14px}h1{font-size:clamp(30px,6vw,56px);line-height:1.1}h2,h3,strong,a{color:var(--accent)}.meta{color:var(--muted)}.timestamp-links{display:flex;flex-wrap:wrap;gap:10px}table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}th,td{border:1px solid #4b2d18;padding:8px;text-align:left}pre{overflow:auto}a{overflow-wrap:anywhere}@media(max-width:480px){main{padding:18px 14px 48px}}
+</style></head><body><main id="youtube-detail-report" aria-labelledby="report-title">
+<header><p class="meta">MJJEON AI NEWS · VERIFIED DRIVE BUNDLE</p><h1 id="report-title">알리바바 Qwen 3.8-27B 모델의 Ollama 원라인 배포(`ollama run qwen3.8`) 및 100% 로컬 오프라인 구동 가이드</h1><p>Julian Goldie SEO · 5wJePx3FG0o</p><a href="https://www.youtube.com/watch?v=5wJePx3FG0o" target="_blank" rel="noopener noreferrer">원본 영상 보기 ↗</a></header>
+<section class="drive-brief"><h2>핵심 요약</h2><ul><li>알리바바 Qwen 3.8-27B 모델의 Ollama 원라인 배포(`ollama run qwen3.8`) 및 100% 로컬 오프라인 구동 가이드</li><li>텍스트 질의응답을 넘어 스크린샷/도표/장시간 녹화 비디오를 직접 분석하고 자율 피드백 루프를 수행하는 Agentic VLM</li><li>터미널 73점, 소프트웨어 문제 해결 61점, 실전 코딩 42점(3배 향상) 및 25.6만~100만 확장 컨텍스트, 씽킹 모드 온/오프 제어</li></ul><p><strong>제작자 주장</strong> · </p><p><strong>광고·홍보</strong> · </p><p><strong>외부 검증 필요</strong> · </p><p><strong>실제 시연</strong> · </p><p><strong>실무 시사점</strong> · </p><nav class="timestamp-links" aria-label="주요 타임스탬프"><a href="https://www.youtube.com/watch?v=5wJePx3FG0o&amp;t=0s" target="_blank" rel="noopener noreferrer">Qwen 3.8-27B Ollama 출시 및 로컬 구동 개요 ↗</a><a href="https://www.youtube.com/watch?v=5wJePx3FG0o&amp;t=65s" target="_blank" rel="noopener noreferrer">단순 챗봇에서 자율 에이전트로의 진화 ↗</a><a href="https://www.youtube.com/watch?v=5wJePx3FG0o&amp;t=108s" target="_blank" rel="noopener noreferrer">알리바바 공식 벤치마크 (터미널, 결함 수정, 코딩 3배 상승) ↗</a><a href="https://www.youtube.com/watch?v=5wJePx3FG0o&amp;t=150s" target="_blank" rel="noopener noreferrer">장시간 비디오/이미지 시각 분석 실무 적용 ↗</a><a href="https://www.youtube.com/watch?v=5wJePx3FG0o&amp;t=253s" target="_blank" rel="noopener noreferrer">25.6만~100만 토큰 컨텍스트 윈도우 및 씽킹 모드 ↗</a></nav></section>
+
+
+    
+        <span>YouTube Intelligence Report · #063</span>
+        <h1>Qwen 3.8 27B is NOW on Ollama… This is CRAZY!</h1>
+        
+            <strong>채널:</strong> Julian Goldie SEO
+            <strong>영상 ID:</strong> 5wJePx3FG0o
+            <strong>게시일:</strong> 2026-08-18
+            <strong>영상 길이:</strong> PT8M11S
+            <strong>조회수:</strong> 411회
+            <strong>좋아요:</strong> 10개
+        
+    
+    
+        <h2>1. 핵심 총괄 요약 (Executive Summary)</h2>
+        
+            <ul>
+                <li><strong>주요 핵심:</strong> 알리바바 Qwen 3.8-27B 모델의 Ollama 원라인 배포(`ollama run qwen3.8`) 및 100% 로컬 오프라인 구동 가이드</li><li><strong>주요 핵심:</strong> 텍스트 질의응답을 넘어 스크린샷/도표/장시간 녹화 비디오를 직접 분석하고 자율 피드백 루프를 수행하는 Agentic VLM</li><li><strong>주요 핵심:</strong> 터미널 73점, 소프트웨어 문제 해결 61점, 실전 코딩 42점(3배 향상) 및 25.6만~100만 확장 컨텍스트, 씽킹 모드 온/오프 제어</li>
+            </ul>
+        
+
+        <h2>2. 기술 아키텍처 및 메커니즘 분석</h2>
+        <p>Qwen 3.8-27B는 일반 소비자용 게이밍 랩탑 및 Apple Silicon Mac 환경에서 로컬로 원활히 동작하도록 최적화된 270억 파라미터 고밀도(Dense) 비전 언어 모델(VLM)입니다. `ollama run qwen3.8` 단 한 줄의 명령어로 클라우드 종속성 없이 로컬 오프라인 다운로드 및 실행이 가능합니다. 텍스트뿐만 아니라 이미지, 복잡한 스프레드시트 캡처, 장시간 비디오 영상을 직접 입력받아 이해하며, 단계별 계획 수립과 자체 검증을 거치는 자율 에이전트 루프를 네이티브 지원합니다.</p>
+
+        <h2>3. 핵심 기능 및 워크플로우 실증</h2>
+        <ul>
+            <li><strong>고객 미팅 녹화 영상 분석:</strong> 1시간 이상의 비디오 회의 녹화본을 입력하여 미팅 중 합의된 약속 사항 및 액션 아이템 목록 자동 추출</li><li><strong>웹사이트 및 스프레드시트 시각적 감사:</strong> 웹페이지 UI 캡처본 또는 엑셀 오류 화면을 보고 디자인 결함 및 데이터 불일치 지점 자동 진단</li><li><strong>동적 씽킹(Thinking) 모드 제어:</strong> 단순 응답 요청 시 빠른 답변 모드, 복합 코딩/기획 시 추론 모드를 활성화하여 연산 리소스 최적화</li><li><strong>기존 에이전트 도구 슬롯 연동:</strong> Claude Code, OpenCode, Hermes Agent, Pi 등 개발자가 사용하는 기존 CLI/하네스에 로컬 백엔드로 직결</li>
+        </ul>
+
+        <h2>4. 벤치마크 및 정량 실측치 비교</h2>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>평가 지표 / 대상</th>
+                        <th>측정 결과 / 성능 수치</th>
+                        <th>경쟁 모델 대비 분석 / 비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>터미널 실전 태스크</strong></td><td>73점 (이전 63점 대비 대폭 상승)</td><td>CLI 환경 내 자율 커맨드 실행 및 작업 완결력</td></tr><tr><td><strong>소프트웨어 결함 해결</strong></td><td>61점 (이전 53점 대비 상승)</td><td>실제 코드베이스 내 버그 식별 및 패치 성능</td></tr><tr><td><strong>실전 엔지니어링 코딩</strong></td><td>42점 (이전 13점 대비 3배 이상 폭증)</td><td>복합 실무 프로그래밍 벤치마크 급상승</td></tr>
+                </tbody>
+            </table>
+        
+
+        <h2>5. 검증: 시연된 기능 vs 마케팅 주장 (Claim vs Reality)</h2>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>영상 내 주장 (Claim)</th>
+                        <th>실제 시연 및 객관적 한계 (Reality &amp; Constraints)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>모든 저사양 PC 무조건 구동</td><td>표준 다운로드 크기는 18GB이며 장시간 영상/문서 처리 시 충분한 VRAM(16GB~24GB) 권장 (저사양은 경량 양자화 버전 권장)</td></tr><tr><td>단순 텍스트 LLM</td><td>텍스트를 넘어 차트, 도표, 장시간 녹화 영상을 직접 이해하는 멀티모달 비전 언어 모델</td></tr>
+                </tbody>
+            </table>
+        
+
+        <h2>6. 실무 적용 및 비즈니스 워크플로우 가이드</h2>
+        
+            <ol>
+                <li><strong>단계 1:</strong> 터미널에서 `ollama run qwen3.8` 실행하여 로컬 모델 인스턴스 초기화</li><li><strong>단계 2:</strong> 영상/이미지 분석 필요 시 해당 미디어 파일 경로 전달</li><li><strong>단계 3:</strong> Claude Code 또는 Hermes Agent의 로컬 엔드포인트 URL로 Qwen 3.8 지정</li><li><strong>단계 4:</strong> Apache 2.0 라이선스 기반으로 사내 프라이빗 데이터 분석 파이프라인 구축</li>
+            </ol>
+        
+
+        <h2>7. 엔지니어링 주의사항 및 한계점</h2>
+        
+            <ul>
+                <li>대용량 비디오 인풋 처리 시 로컬 GPU 메모리 점유율 상승</li><li>제시된 수치는 알리바바 자체 내부 테스트 결과이므로 외부 독립 벤치마크와 소폭 차이 가능</li>
+            </ul>
+        
+    
+    
+        <p>본 인텔리전스 리포트는 Julian Goldie SEO 영상 대본을 기반으로 자동 추출·검증된 기술 분석서입니다.</p>
+        <p>원본 영상: <a href="https://www.youtube.com/watch?v=5wJePx3FG0o" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=5wJePx3FG0o</a> · 스키마: mjjeon-youtube-web/v1</p>
+    
+
+</main></body></html>
