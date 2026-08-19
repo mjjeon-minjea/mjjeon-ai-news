@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-08-20 운영 아침 브리핑</title>
+  <style>
+    :root { --ink:#162033; --muted:#5c687d; --line:#dce3ee; --paper:#ffffff; --bg:#f5f7fb; --blue:#2257d6; --red:#b42318; --amber:#9a6700; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:Inter, Pretendard, "Noto Sans KR", Arial, sans-serif; line-height:1.65; }
+    main { max-width:880px; margin:32px auto; padding:0 20px 40px; }
+    header, section { background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:24px; margin-top:16px; }
+    header { border-top:5px solid var(--blue); }
+    h1 { margin:0; font-size:1.65rem; letter-spacing:-.03em; }
+    h2 { margin:0 0 12px; font-size:1.05rem; }
+    .meta, .note { color:var(--muted); font-size:.9rem; }
+    .summary { margin:16px 0 0; font-size:1.04rem; font-weight:650; }
+    .status { margin:12px 0 0; padding:13px 14px; border-radius:9px; background:#f8faff; border-left:4px solid var(--blue); }
+    ul { margin:0; padding-left:20px; }
+    li + li { margin-top:8px; }
+    .warn { color:var(--red); font-weight:700; }
+    .hold { color:var(--amber); font-weight:700; }
+    a { color:var(--blue); }
+    footer { color:var(--muted); font-size:.82rem; text-align:center; margin-top:18px; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>2026-08-20 운영 아침 브리핑</h1>
+      <p class="meta">변경 확인 범위: 2026-08-19 06:30–2026-08-20 06:30 KST · 작성: 2026-08-20 06:35 KST</p>
+      <p class="summary">결론: 전일분 캘린더 동기화 작업이 추가되어 첫 실행은 정상 완료했습니다. 현재 Cron 실패 2건과 Kanban 막힘 3건은 남아 있으며, Hermes는 설치본보다 공식 최신본이 2개 릴리스 앞섭니다.</p>
+    </header>
+
+    <section>
+      <h2>직전 06:30 이후 인수인계</h2>
+      <ul>
+        <li><strong>calendar-yesterday-sync</strong>가 2026-08-19 23:32 KST에 등록됐습니다. 전일분 Google Calendar 동기화 작업이며, 첫 실행(2026-08-20 00:30 KST)은 정상으로 기록됐습니다.</li>
+        <li>전 profile HANDOFF에는 이 기간의 변경이 없었습니다. default MEMORY에는 위 전일분 동기화 운영 기준이 반영됐습니다.</li>
+        <li>해당 기간에 확인된 canonical Wiki 본문 변경과 profile conversation 변경 기록은 없었습니다. 토큰 사용량 이벤트성 기록은 인수인계 변경으로 집계하지 않았습니다.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Cron 현황</h2>
+      <p class="status"><strong>Cron</strong> — 총 13 · 정상 11 · <span class="hold">검증 대기 0 (없음)</span> · <span class="warn">실패 2: MJJEON AI NEWS — Neoguri hourly collector, MJJEON Drive YouTube web ingest</span> · 미기록 0</p>
+      <p class="note">검증 대기는 실패로 집계하지 않았습니다.</p>
+    </section>
+
+    <section>
+      <h2>Kanban 현황</h2>
+      <p class="status"><strong>Kanban</strong> — 진행 0 · 막힘 3</p>
+    </section>
+
+    <section>
+      <h2>Hermes Agent 버전</h2>
+      <ul>
+        <li>설치 버전: <strong>v0.20.2 (2026.8.16)</strong></li>
+        <li>공식 최신 버전: <strong>v0.20.4 (2026.8.18)</strong></li>
+        <li>판단: 최신 버전과 차이가 있어 업데이트 검토가 필요합니다.</li>
+      </ul>
+      <p class="note">공식 최신 버전 확인: <a href="https://github.com/NousResearch/hermes-agent/releases">NousResearch/hermes-agent Releases</a></p>
+    </section>
+
+    <footer>운영 인수인계 전용 브리핑 · 뉴스 및 배포 작업은 포함하지 않음</footer>
+  </main>
+</body>
+</html>
