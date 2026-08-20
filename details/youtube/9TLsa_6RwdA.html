@@ -1,0 +1,88 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<title>Milan Soni가 개발한 XAI GrokBot의 100% 무료 오픈소스 대안 &#x27;OpenMausBot&#x27; 아키텍처 분석</title><style>
+:root{--bg:#090909;--panel:#15120f;--line:#6b3b16;--text:#fff8ed;--muted:#c8b9a7;--accent:#ff8a1f}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Noto Sans KR",sans-serif}main{max-width:980px;margin:auto;padding:32px 20px 64px}header,section,article{margin-bottom:22px}header,.drive-brief,section,article{padding:18px;border:1px solid #4b2d18;background:var(--panel);border-radius:14px}h1{font-size:clamp(30px,6vw,56px);line-height:1.1}h2,h3,strong,a{color:var(--accent)}.meta{color:var(--muted)}.timestamp-links{display:flex;flex-wrap:wrap;gap:10px}table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}th,td{border:1px solid #4b2d18;padding:8px;text-align:left}pre{overflow:auto}a{overflow-wrap:anywhere}@media(max-width:480px){main{padding:18px 14px 48px}}
+</style></head><body><main id="youtube-detail-report" aria-labelledby="report-title">
+<header><p class="meta">MJJEON AI NEWS · VERIFIED DRIVE BUNDLE</p><h1 id="report-title">Milan Soni가 개발한 XAI GrokBot의 100% 무료 오픈소스 대안 &#x27;OpenMausBot&#x27; 아키텍처 분석</h1><p>Julian Goldie SEO · 9TLsa_6RwdA</p><a href="https://www.youtube.com/watch?v=9TLsa_6RwdA" target="_blank" rel="noopener noreferrer">원본 영상 보기 ↗</a></header>
+<section class="drive-brief"><h2>핵심 요약</h2><ul><li>Milan Soni가 개발한 XAI GrokBot의 100% 무료 오픈소스 대안 &#x27;OpenMausBot&#x27; 아키텍처 분석</li><li>에이전트별 독립 모델 선택기(Opus, Sonnet, Haiku, Codex, Grok), 가상 리눅스 데스크톱 및 500개 이상 앱 원클릭 연동</li><li>보안 권한 승인 카드 시스템 및 Claude 스킬 자동 동기화를 통한 로컬 데이터 주권 확보 실증</li></ul><p><strong>제작자 주장</strong> · </p><p><strong>광고·홍보</strong> · </p><p><strong>외부 검증 필요</strong> · </p><p><strong>실제 시연</strong> · </p><p><strong>실무 시사점</strong> · </p><nav class="timestamp-links" aria-label="주요 타임스탬프"><a href="https://www.youtube.com/watch?v=9TLsa_6RwdA&amp;t=0s" target="_blank" rel="noopener noreferrer">OpenMausBot 출시 배경 및 GrokBot 웨이트리스트 해소 ↗</a><a href="https://www.youtube.com/watch?v=9TLsa_6RwdA&amp;t=81s" target="_blank" rel="noopener noreferrer">사이드바 에이전트 팀 및 개별 모델 선택기(Picker) ↗</a><a href="https://www.youtube.com/watch?v=9TLsa_6RwdA&amp;t=120s" target="_blank" rel="noopener noreferrer">Claude Skills 자동 임포트 및 Agent OS 연동 ↗</a><a href="https://www.youtube.com/watch?v=9TLsa_6RwdA&amp;t=170s" target="_blank" rel="noopener noreferrer">에이전트 전용 가상 리눅스 데스크톱 및 라이브 프리뷰 ↗</a><a href="https://www.youtube.com/watch?v=9TLsa_6RwdA&amp;t=217s" target="_blank" rel="noopener noreferrer">로컬 보안 권한 승인 카드 시스템 및 500+ 앱 연동 ↗</a></nav></section>
+
+
+    
+        <span>YouTube Intelligence Report · #079</span>
+        <h1>NEW OpenMaus Bot is ABSURD! 🤯</h1>
+        
+            <strong>채널:</strong> Julian Goldie SEO
+            <strong>영상 ID:</strong> 9TLsa_6RwdA
+            <strong>게시일:</strong> 2026-08-19
+            <strong>영상 길이:</strong> PT7M36S
+            <strong>조회수:</strong> 111회
+            <strong>좋아요:</strong> 3개
+        
+    
+    
+        <h2>1. 핵심 총괄 요약 (Executive Summary)</h2>
+        
+            <ul>
+                <li><strong>주요 핵심:</strong> Milan Soni가 개발한 XAI GrokBot의 100% 무료 오픈소스 대안 &#x27;OpenMausBot&#x27; 아키텍처 분석</li><li><strong>주요 핵심:</strong> 에이전트별 독립 모델 선택기(Opus, Sonnet, Haiku, Codex, Grok), 가상 리눅스 데스크톱 및 500개 이상 앱 원클릭 연동</li><li><strong>주요 핵심:</strong> 보안 권한 승인 카드 시스템 및 Claude 스킬 자동 동기화를 통한 로컬 데이터 주권 확보 실증</li>
+            </ul>
+        
+
+        <h2>2. 기술 아키텍처 및 메커니즘 분석</h2>
+        <p>OpenMausBot은 웨이트리스트와 토큰 제한이 있는 GrokBot의 한계를 극복하기 위해 탄생한 오픈소스 데스크톱 애플리케이션입니다. 사용자가 이미 로그인한 Claude, Codex, Grok 도구와 직접 연동되며, 사이드바의 각 에이전트마다 개별 모델과 가상 리눅스 환경을 부여합니다. 파일 변경이나 터미널 명령 실행 전 사용자 승인 팝업 카드를 띄워 로컬 보안을 엄격히 통제합니다.</p>
+
+        <h2>3. 핵심 기능 및 워크플로우 실증</h2>
+        <ul>
+            <li><strong>사이드바 에이전트 팀 및 모델 피커:</strong> 직무별 에이전트에 Claude Sonnet, Haiku, Codex 등을 개별 할당하여 메시징 앱 형태로 운용</li><li><strong>기존 Claude Skills 자동 임포트:</strong> Claude Code에서 이미 작성된 키워드 리서치 및 콘텐츠 스킬을 재작성 없이 즉각 로드</li><li><strong>가상 리눅스 데스크톱 라이브 뷰:</strong> 에이전트가 폼을 작성하거나 파일을 정리하는 브라우저/데스크톱 화면을 실시간 라이브 스트리밍으로 모니터링</li><li><strong>보안 권한 승인 팝업 카드:</strong> 로컬 파일 수정이나 민감 명령 실행 전 허용/거부 카드를 통해 인간 승인 통제(Human-in-the-Loop)</li>
+        </ul>
+
+        <h2>4. 벤치마크 및 정량 실측치 비교</h2>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>평가 지표 / 대상</th>
+                        <th>측정 결과 / 성능 수치</th>
+                        <th>경쟁 모델 대비 분석 / 비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>비용 및 대기열</strong></td><td>웨이트리스트 없음 / 100% 무료 오픈소스</td><td>GrokBot의 유료 플랜 및 토큰 조기 소진 문제 해결</td></tr><tr><td><strong>앱 연동 생태계</strong></td><td>Gmail, Slack, Notion 등 500+ 앱 원클릭 연동</td><td>모든 에이전트가 공통 비즈니스 툴셋 공유</td></tr><tr><td><strong>데이터 저장 위치</strong></td><td>사용자 컴퓨터 로컬 폴더에 100% 저장</td><td>클라우드 유출 없는 프라이빗 에이전트 팀 구동</td></tr>
+                </tbody>
+            </table>
+        
+
+        <h2>5. 검증: 시연된 기능 vs 마케팅 주장 (Claim vs Reality)</h2>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>영상 내 주장 (Claim)</th>
+                        <th>실제 시연 및 객관적 한계 (Reality &amp; Constraints)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>인간의 모든 일상 업무를 컴퓨터로 완전 무인 자동화</td><td>컴퓨터 제어 기능이 실현되었으나 브라우저 탭 조작 중 간헐적 지연이 발생할 수 있어 보조적 작업부터 단계적 적용 권장</td></tr><tr><td>GrokBot과 모든 면에서 100% 동일한 기능 제공</td><td>에이전트 간 직접 통신(A2A) 기능은 현재 개발 중이며 개별 에이전트 독립 실행 단계</td></tr>
+                </tbody>
+            </table>
+        
+
+        <h2>6. 실무 적용 및 비즈니스 워크플로우 가이드</h2>
+        
+            <ol>
+                <li><strong>단계 1:</strong> GitHub에서 OpenMausBot 다운로드 및 Applications 폴더 배치</li><li><strong>단계 2:</strong> 기존 Claude Code 또는 Codex 로그인 세션 연동 확인</li><li><strong>단계 3:</strong> 직무별 에이전트 생성 후 최적 모델 배정 및 Slack/Gmail 툴셋 연결</li><li><strong>단계 4:</strong> 권한 승인 카드를 통해 안전한 로컬 파일 관리 및 자동화 실행</li>
+            </ol>
+        
+
+        <h2>7. 엔지니어링 주의사항 및 한계점</h2>
+        
+            <ul>
+                <li>에이전트 간 실시간 상호 대화 기능이 아직 미지원되어 개별 작업 지시 형태로 운용 필요</li><li>컴퓨터 유즈(Computer Use) 실행 속도가 텍스트 API 호출 대비 상대적으로 느림</li><li>현재 macOS 우선 지원으로 윈도우 지원은 순차 배포 진행 중</li>
+            </ul>
+        
+    
+    
+        <p>본 인텔리전스 리포트는 Julian Goldie SEO 영상 대본을 기반으로 자동 추출·검증된 기술 분석서입니다.</p>
+        <p>원본 영상: <a href="https://www.youtube.com/watch?v=9TLsa_6RwdA" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=9TLsa_6RwdA</a> · 스키마: mjjeon-youtube-web/v1</p>
+    
+
+</main></body></html>
