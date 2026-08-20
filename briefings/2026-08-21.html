@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-08-21 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#18212f; --muted:#5a6778; --line:#dbe2ea; --bg:#f4f7fa; --card:#fff; --accent:#0b6e69; --danger:#b42318; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:"Noto Sans KR","Apple SD Gothic Neo",system-ui,sans-serif; line-height:1.65; }
+    main { max-width:880px; margin:0 auto; padding:32px 20px 48px; }
+    header, section { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:24px; box-shadow:0 2px 8px rgba(24,33,47,.04); }
+    header { border-top:5px solid var(--accent); }
+    section { margin-top:16px; }
+    h1 { margin:0 0 4px; font-size:1.65rem; }
+    h2 { margin:0 0 12px; font-size:1.08rem; }
+    p { margin:8px 0; }
+    .meta, .note { color:var(--muted); font-size:.92rem; }
+    .summary { font-size:1.04rem; font-weight:700; }
+    ul { margin:8px 0 0; padding-left:1.2rem; }
+    li { margin:7px 0; }
+    .status { display:grid; gap:8px; }
+    .status p { margin:0; padding:10px 12px; background:#f8fafc; border-left:3px solid var(--accent); overflow-wrap:anywhere; }
+    .status .failure { border-left-color:var(--danger); }
+    code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.88em; }
+    footer { color:var(--muted); font-size:.85rem; margin-top:16px; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="meta">운영 인수인계 · 2026-08-20 06:30 ~ 2026-08-21 06:30 KST</p>
+      <h1>2026-08-21 운영 아침 브리핑</h1>
+      <p class="summary">X 수집 이관과 Hermes 업데이트는 반영됐고, Cron 실패 2건과 Kanban 막힘 3건은 변동 없이 남아 있습니다.</p>
+      <p class="meta">작성 2026-08-21 06:35 KST · 직전 06:30 이후 변경·지시·사고만 반영</p>
+    </header>
+
+    <section>
+      <h2>인수인계</h2>
+      <ul>
+        <li><strong>X 수집:</strong> 기존 측의 X 가져오기는 중지했습니다. 앞으로 Grok 웹 자동화가 08:00–18:00 KST, 2시간 주기로 원글만 처리하며, GitHub에는 X 전용 파일만 반영해야 합니다. 홈피 전체 파일을 덮어쓰지 않는 것이 경계입니다.</li>
+        <li><strong>Hermes:</strong> 설치본이 <code>v0.20.4</code>로 교체됐고, 공식 최신도 <code>v0.20.4</code>입니다. <code>v0.20.4 교체 결과</code> Cron은 정상 기록입니다.</li>
+        <li><strong>Wiki·성장 검토:</strong> 기간 내 Wiki Markdown 변경은 없고, 짝귀 성장 검토 결과는 <code>NO_MATERIAL_GROWTH_CANDIDATE</code>입니다. HANDOFF 변경은 없었으며 default MEMORY에는 X 운영 이관 지시가 반영됐습니다.</li>
+        <li><strong>Kanban:</strong> 기간 내 카드·이벤트 변경은 없었습니다. 현재 막힘 3건은 이전 상태를 유지합니다.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Cron 현재 상태</h2>
+      <div class="status">
+        <p><strong>총 14</strong></p>
+        <p><strong>정상 12:</strong> jjakgwi-wiki-daily-close-kst, jjakgwi-wiki-curation-6h-kst, jjakgwi-conversation-growth-review-6h-kst, MJJEON Hermes official update detector, qms-staging-watch, Default+role Gateway supervisor keeper, Codex 주간 한도 주의·경고, v0.20.2 교체 결과 보고, v0.20.2 재시도 결과 보고, calendar-yesterday-sync, v0.20.4 교체 결과, 고광렬 06:30 KST 아침 브리핑</p>
+        <p><strong>검증 대기 0:</strong> 없음</p>
+        <p class="failure"><strong>실패 2:</strong> MJJEON AI NEWS — Neoguri hourly collector (수집기 종료 코드 1), MJJEON Drive YouTube web ingest (360초 제한 시간 초과)</p>
+      </div>
+      <p class="note">검증 대기는 <code>REMOTE_UNVERIFIED</code> 기록만 별도 분류하며, 이번 상태에는 해당 항목이 없습니다.</p>
+    </section>
+
+    <section>
+      <h2>Kanban 현재 상태</h2>
+      <div class="status">
+        <p><strong>진행 0</strong></p>
+        <p class="failure"><strong>막힘 3:</strong> Backfill MJJEON AI NEWS since 2026-08-09 05:32 KST, GONI-WEB-OPEN independent cross-check, KST conventions hybrid retention and Jjakgwi curation</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>확인 범위</h2>
+      <p class="note">전 profile의 HANDOFF·MEMORY·대화 변경분, Wiki Markdown 변경분, Cron 상태 및 Kanban을 읽기 전용으로 확인했습니다. 민감정보는 기록하지 않았습니다. Hermes 최신판은 NousResearch 공식 Releases 기준으로 확인했습니다.</p>
+    </section>
+
+    <footer>고광렬 · 운영 아침 브리핑</footer>
+  </main>
+</body>
+</html>
