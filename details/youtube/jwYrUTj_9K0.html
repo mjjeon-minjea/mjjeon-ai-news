@@ -1,0 +1,88 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<title>Prime Intellect의 MIT 라이선스 기반 오픈소스 지속형 AI 에이전트 하네스 &#x27;Prime Agent&#x27; 설치 및 영구 무료 운용법 분석</title><style>
+:root{--bg:#090909;--panel:#15120f;--line:#6b3b16;--text:#fff8ed;--muted:#c8b9a7;--accent:#ff8a1f}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Noto Sans KR",sans-serif}main{max-width:980px;margin:auto;padding:32px 20px 64px}header,section,article{margin-bottom:22px}header,.drive-brief,section,article{padding:18px;border:1px solid #4b2d18;background:var(--panel);border-radius:14px}h1{font-size:clamp(30px,6vw,56px);line-height:1.1}h2,h3,strong,a{color:var(--accent)}.meta{color:var(--muted)}.timestamp-links{display:flex;flex-wrap:wrap;gap:10px}table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}th,td{border:1px solid #4b2d18;padding:8px;text-align:left}pre{overflow:auto}a{overflow-wrap:anywhere}@media(max-width:480px){main{padding:18px 14px 48px}}
+</style></head><body><main id="youtube-detail-report" aria-labelledby="report-title">
+<header><p class="meta">MJJEON AI NEWS · VERIFIED DRIVE BUNDLE</p><h1 id="report-title">Prime Intellect의 MIT 라이선스 기반 오픈소스 지속형 AI 에이전트 하네스 &#x27;Prime Agent&#x27; 설치 및 영구 무료 운용법 분석</h1><p>Julian Goldie SEO · jwYrUTj_9K0</p><a href="https://www.youtube.com/watch?v=jwYrUTj_9K0" target="_blank" rel="noopener noreferrer">원본 영상 보기 ↗</a></header>
+<section class="drive-brief"><h2>핵심 요약</h2><ul><li>Prime Intellect의 MIT 라이선스 기반 오픈소스 지속형 AI 에이전트 하네스 &#x27;Prime Agent&#x27; 설치 및 영구 무료 운용법 분석</li><li>세션 종료 후에도 상태를 유지하는 영구 IPython 커널 및 피드백 기반 자가 수정 명령어 &lt;code&gt;/refine&lt;/code&gt; 아키텍처 실증</li><li>비동기 서브 에이전트 생성, 트리 구조 통신 격리 및 자율 스킬 생성기(Skill Creator) 통합</li></ul><p><strong>제작자 주장</strong> · </p><p><strong>광고·홍보</strong> · </p><p><strong>외부 검증 필요</strong> · </p><p><strong>실제 시연</strong> · </p><p><strong>실무 시사점</strong> · </p><nav class="timestamp-links" aria-label="주요 타임스탬프"><a href="https://www.youtube.com/watch?v=jwYrUTj_9K0&amp;t=0s" target="_blank" rel="noopener noreferrer">Prime Agent 개요 및 자가 학습 루프 ↗</a><a href="https://www.youtube.com/watch?v=jwYrUTj_9K0&amp;t=46s" target="_blank" rel="noopener noreferrer">MIT 라이선스 오픈소스 하네스 및 상태 지속형(Stateful) 아키텍처 ↗</a><a href="https://www.youtube.com/watch?v=jwYrUTj_9K0&amp;t=147s" target="_blank" rel="noopener noreferrer">지속형 IPython 커널 백본과 단일 도구 메커니즘 ↗</a><a href="https://www.youtube.com/watch?v=jwYrUTj_9K0&amp;t=240s" target="_blank" rel="noopener noreferrer">1단계 터미널 설치 및 로컬 LLM / Claude 연동법 ↗</a><a href="https://www.youtube.com/watch?v=jwYrUTj_9K0&amp;t=284s" target="_blank" rel="noopener noreferrer">/refine 명령어: 사용자 피드백 기반 자가 수정 및 로그 관리 ↗</a></nav></section>
+
+
+    
+        <span>YouTube Intelligence Report · #102</span>
+        <h1>Run Prime Agent Free Forever - Here&#x27;s How</h1>
+        
+            <strong>채널:</strong> Julian Goldie SEO
+            <strong>영상 ID:</strong> jwYrUTj_9K0
+            <strong>게시일:</strong> 2026-08-20
+            <strong>영상 길이:</strong> PT8M6S
+            <strong>조회수:</strong> 206회
+            <strong>좋아요:</strong> 6개
+        
+    
+    
+        <h2>1. 핵심 총괄 요약 (Executive Summary)</h2>
+        
+            <ul>
+                <li><strong>주요 핵심:</strong> Prime Intellect의 MIT 라이선스 기반 오픈소스 지속형 AI 에이전트 하네스 &#x27;Prime Agent&#x27; 설치 및 영구 무료 운용법 분석</li><li><strong>주요 핵심:</strong> 세션 종료 후에도 상태를 유지하는 영구 IPython 커널 및 피드백 기반 자가 수정 명령어 <code>/refine</code> 아키텍처 실증</li><li><strong>주요 핵심:</strong> 비동기 서브 에이전트 생성, 트리 구조 통신 격리 및 자율 스킬 생성기(Skill Creator) 통합</li>
+            </ul>
+        
+
+        <h2>2. 기술 아키텍처 및 메커니즘 분석</h2>
+        <p>기존 AI 코딩 에이전트가 세션 종료 시 기억이 휘발되는 무상태(Stateless) 구조였다면, Prime Agent는 <strong>&#x27;지속형(Persistent) IPython 커널 백본 + 상태 저장형 시스템 프롬프트/스킬 계층&#x27;</strong>을 제공합니다. 사용자의 반복적인 교정 피드백을 수렴하여 <code>/refine</code> 명령으로 기본 시스템 프롬프트는 보존하면서 보충 프롬프트와 재사용 가능 스킬을 자율적으로 수정·축적(Compounding)합니다.</p>
+
+        <h2>3. 핵심 기능 및 워크플로우 실증</h2>
+        <ul>
+            <li><strong>단일 커맨드 로컬 설치:</strong> 터미널에서 원클릭 셸 스크립트로 Prime Agent 설치 후 기존 Claude 계정 또는 로컬 LLM 연동</li><li><strong>/refine 기반 자가 개선 루프:</strong> 사용자 피드백을 분석하여 보충 프롬프트와 메모리를 자체 수정하고 변경 사유를 타임스탬프와 함께 로깅</li><li><strong>비동기 서브 에이전트 분기:</strong> 함수 호출 즉시 반환되는 비동기 서브 에이전트를 가동하고 부모-자식-형제 간에만 통신을 허용하여 세션 오염 방지</li><li><strong>실행형 스킬 라이브러리:</strong> 단순 프롬프트 텍스트가 아닌 Python 기반 실행 가능 프로그램 스킬을 모델이 스스로 생성 및 호출</li>
+        </ul>
+
+        <h2>4. 벤치마크 및 정량 실측치 비교</h2>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>평가 지표 / 대상</th>
+                        <th>측정 결과 / 성능 수치</th>
+                        <th>경쟁 모델 대비 분석 / 비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>상태 보존 능력</strong></td><td>지속형 IPython 커널로 세션 간 메모리 영구 유지</td><td>기존 무상태(Stateless) 에이전트의 컨텍스트 리셋 극복</td></tr><tr><td><strong>자가 수정 투명성</strong></td><td>/refine 로그에 모든 변경 사유 및 롤백 지원</td><td>사용자가 에이전트의 자가 수정 내역 100% 검증</td></tr><tr><td><strong>소프트웨어 라이선스</strong></td><td>MIT 라이선스 오픈소스 (영구 무료)</td><td>Prime Intellect 구독료 제로 (순수 토큰비만 소비)</td></tr>
+                </tbody>
+            </table>
+        
+
+        <h2>5. 검증: 시연된 기능 vs 마케팅 주장 (Claim vs Reality)</h2>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>영상 내 주장 (Claim)</th>
+                        <th>실제 시연 및 객관적 한계 (Reality &amp; Constraints)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Prime Agent가 새로운 파운데이션 모델을 자체 훈련시켰다.</td><td>Prime Agent는 모델 자체가 아닌 기존 모델(Claude, 로컬 LLM)을 감싸는 오픈소스 스캐폴딩 하네스임.</td></tr><tr><td>자가 수정 중 에이전트가 핵심 안전 규칙까지 임의로 변경한다.</td><td>핵심 시스템 프롬프트는 잠겨 있으며 오직 외부 보충 프롬프트와 스킬 레이어만 수정 가능함.</td></tr>
+                </tbody>
+            </table>
+        
+
+        <h2>6. 실무 적용 및 비즈니스 워크플로우 가이드</h2>
+        
+            <ol>
+                <li><strong>단계 1:</strong> 터미널에서 <code>curl -fsSL https://app.primeintellect.ai/prime-agent/install.sh | sh</code> 실행</li><li><strong>단계 2:</strong> 프로젝트 폴더에서 <code>prime-agent</code> 실행 후 <code>/login</code> 인증</li><li><strong>단계 3:</strong> 태스크 실행 후 피드백을 전달하고 <code>/refine</code>으로 자가 수정 반영</li><li><strong>단계 4:</strong> Agent OS 대시보드와 결합하여 비동기 서브 에이전트 플릿 운용</li>
+            </ol>
+        
+
+        <h2>7. 엔지니어링 주의사항 및 한계점</h2>
+        
+            <ul>
+                <li>무료 오픈소스 하네스이나 연결하는 상용 클라우드 모델(Claude 등)의 API 토큰 비용은 발생 (로컬 LLM 연동 시 완전 무료)</li><li>IPython 커널 환경이므로 시스템 로컬 환경에 파이썬 런타임 및 의존성 구성 필요</li><li>/refine 결과물이 의도와 다를 경우 로그 검토 후 롤백 명령 수행 권장</li>
+            </ul>
+        
+    
+    
+        <p>본 인텔리전스 리포트는 Julian Goldie SEO 영상 대본을 기반으로 자동 추출·검증된 기술 분석서입니다.</p>
+        <p>원본 영상: <a href="https://www.youtube.com/watch?v=jwYrUTj_9K0" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=jwYrUTj_9K0</a> · 스키마: mjjeon-youtube-web/v1</p>
+    
+
+</main></body></html>
