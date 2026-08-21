@@ -1,0 +1,88 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<title>MIT 라이선스 오픈소스 모델군 &#x27;Ornith 1.5&#x27;(9B 모바일, 35B MoE 효율형, 397B 플래그십) 출시 및 기술 아키텍처 분석</title><style>
+:root{--bg:#090909;--panel:#15120f;--line:#6b3b16;--text:#fff8ed;--muted:#c8b9a7;--accent:#ff8a1f}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Noto Sans KR",sans-serif}main{max-width:980px;margin:auto;padding:32px 20px 64px}header,section,article{margin-bottom:22px}header,.drive-brief,section,article{padding:18px;border:1px solid #4b2d18;background:var(--panel);border-radius:14px}h1{font-size:clamp(30px,6vw,56px);line-height:1.1}h2,h3,strong,a{color:var(--accent)}.meta{color:var(--muted)}.timestamp-links{display:flex;flex-wrap:wrap;gap:10px}table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}th,td{border:1px solid #4b2d18;padding:8px;text-align:left}pre{overflow:auto}a{overflow-wrap:anywhere}@media(max-width:480px){main{padding:18px 14px 48px}}
+</style></head><body><main id="youtube-detail-report" aria-labelledby="report-title">
+<header><p class="meta">MJJEON AI NEWS · VERIFIED DRIVE BUNDLE</p><h1 id="report-title">MIT 라이선스 오픈소스 모델군 &#x27;Ornith 1.5&#x27;(9B 모바일, 35B MoE 효율형, 397B 플래그십) 출시 및 기술 아키텍처 분석</h1><p>Julian Goldie SEO · SqjsHr7xE20</p><a href="https://www.youtube.com/watch?v=SqjsHr7xE20" target="_blank" rel="noopener noreferrer">원본 영상 보기 ↗</a></header>
+<section class="drive-brief"><h2>핵심 요약</h2><ul><li>MIT 라이선스 오픈소스 모델군 &#x27;Ornith 1.5&#x27;(9B 모바일, 35B MoE 효율형, 397B 플래그십) 출시 및 기술 아키텍처 분석</li><li>인간 개입 없이 AI가 스스로 과제를 생성하고 도구를 만들어 해결한 뒤 자가 개선하는 &#x27;Self-Training Loop&#x27; 실증</li><li>TerminalBench 2.1(86.1점 vs Opus 85.0점), SWEBench Verified(86.0점 vs Opus 85.8점) 등 Claude Opus 4.8을 능가하는 코딩 벤치마크</li></ul><p><strong>제작자 주장</strong> · </p><p><strong>광고·홍보</strong> · </p><p><strong>외부 검증 필요</strong> · </p><p><strong>실제 시연</strong> · </p><p><strong>실무 시사점</strong> · </p><nav class="timestamp-links" aria-label="주요 타임스탬프"><a href="https://www.youtube.com/watch?v=SqjsHr7xE20&amp;t=0s" target="_blank" rel="noopener noreferrer">Ornith 1.5 출시 개요 및 오픈소스 프론티어 성능 ↗</a><a href="https://www.youtube.com/watch?v=SqjsHr7xE20&amp;t=52s" target="_blank" rel="noopener noreferrer">3대 모델 라인업: 9B(모바일), 35B(MoE 3B 활성), 397B(플래그십) ↗</a><a href="https://www.youtube.com/watch?v=SqjsHr7xE20&amp;t=99s" target="_blank" rel="noopener noreferrer">벤치마크 결과: TerminalBench 86.1점 vs Opus 4.8 85.0점 ↗</a><a href="https://www.youtube.com/watch?v=SqjsHr7xE20&amp;t=140s" target="_blank" rel="noopener noreferrer">자가 학습(Self-Training) 메커니즘: 문제 생성 → 도구 빌드 → 해결 → 채점 ↗</a><a href="https://www.youtube.com/watch?v=SqjsHr7xE20&amp;t=225s" target="_blank" rel="noopener noreferrer">채점 3대 요소: 타당성, 난이도 20% 스위트스팟, 참신성 ↗</a></nav></section>
+
+
+    
+        <span>YouTube Intelligence Report · #107</span>
+        <h1>Ornith 1.5 Just Dropped and It’s Scary Good</h1>
+        
+            <strong>채널:</strong> Julian Goldie SEO
+            <strong>영상 ID:</strong> SqjsHr7xE20
+            <strong>게시일:</strong> 2026-08-21
+            <strong>영상 길이:</strong> PT8M35S
+            <strong>조회수:</strong> 1,700회
+            <strong>좋아요:</strong> 42개
+        
+    
+    
+        <h2>1. 핵심 총괄 요약 (Executive Summary)</h2>
+        
+            <ul>
+                <li><strong>주요 핵심:</strong> MIT 라이선스 오픈소스 모델군 &#x27;Ornith 1.5&#x27;(9B 모바일, 35B MoE 효율형, 397B 플래그십) 출시 및 기술 아키텍처 분석</li><li><strong>주요 핵심:</strong> 인간 개입 없이 AI가 스스로 과제를 생성하고 도구를 만들어 해결한 뒤 자가 개선하는 &#x27;Self-Training Loop&#x27; 실증</li><li><strong>주요 핵심:</strong> TerminalBench 2.1(86.1점 vs Opus 85.0점), SWEBench Verified(86.0점 vs Opus 85.8점) 등 Claude Opus 4.8을 능가하는 코딩 벤치마크</li>
+            </ul>
+        
+
+        <h2>2. 기술 아키텍처 및 메커니즘 분석</h2>
+        <p>Ornith 1.5는 인간이 작성한 데이터셋에 의존하던 전통적 학습 방식을 탈피하여 <strong>&#x27;자가 문제 생성(Task Generation) → 도구 및 스캐폴딩 구축(Tool Building) → 문제 해결(Solve) → 난이도/타당성/참신성 채점(Score) → 강화 자가 개선&#x27;</strong>의 무한 발전 루프를 구현했습니다. 성공률 20% 수준의 가장 도전적인 문제를 스스로 선별하여 학습함으로써 397B 플래그십은 물론 9B 모바일 모델까지 최상위 코딩 에이전트 역량을 달성했습니다.</p>
+
+        <h2>3. 핵심 기능 및 워크플로우 실증</h2>
+        <ul>
+            <li><strong>3단계 자가 학습 루프:</strong> 타당성(Validity) 검증 + 난이도 20% 최적점(Difficulty) 타겟팅 + 참신성(Novelty) 필터링</li><li><strong>멀티 스케일 하드웨어 배포:</strong> 9B(스마트폰 온디바이스), 35B(활성 3B MoE로 로컬 PC 최적화), 397B(엔터프라이즈 프론티어)</li><li><strong>리포지토리 버그 자율 수정:</strong> 코드베이스 투입 시 리드 유실 지점 탐색 → 수정 코드 작성 → 테스트 자동 실행 → 결과 보고</li><li><strong>오픈소스 생태계 결합:</strong> MIT 라이선스로 상용 사용 가능하며 Ollama, Llama.cpp 등 기존 로컬 인프라에 즉시 로드</li>
+        </ul>
+
+        <h2>4. 벤치마크 및 정량 실측치 비교</h2>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>평가 지표 / 대상</th>
+                        <th>측정 결과 / 성능 수치</th>
+                        <th>경쟁 모델 대비 분석 / 비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>TerminalBench 2.1</strong></td><td>Ornith 1.5 (397B): 86.1점</td><td>Claude Opus 4.8: 85.0점</td></tr><tr><td><strong>SWEBench Verified</strong></td><td>Ornith 1.5 (397B): 86.0점</td><td>Claude Opus 4.8: 85.8점</td></tr><tr><td><strong>온디바이스 9B / 35B MoE</strong></td><td>SWEBench: 70.6점 / 79.0점</td><td>스마트폰 및 단일 로컬 GPU에서 프론티어급 코딩 성능</td></tr>
+                </tbody>
+            </table>
+        
+
+        <h2>5. 검증: 시연된 기능 vs 마케팅 주장 (Claim vs Reality)</h2>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>영상 내 주장 (Claim)</th>
+                        <th>실제 시연 및 객관적 한계 (Reality &amp; Constraints)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Ornith 1.5가 실전의 모든 코딩 작업에서 폐쇄형 상용 모델을 100% 압도한다.</td><td>자체 공개 벤치마크 기준 성과이며 실제 프로덕션 환경에서의 프롬프트 엔지니어링 및 툴 체인 결합 테스트가 필요함.</td></tr><tr><td>거대 모델이므로 일반 개인이나 소규모 팀은 로컬에서 구동할 수 없다.</td><td>35B MoE(실제 활성 3B) 및 9B 소형 모델은 일반 PC 및 모바일 기기에서도 매우 가볍게 구동 가능함.</td></tr>
+                </tbody>
+            </table>
+        
+
+        <h2>6. 실무 적용 및 비즈니스 워크플로우 가이드</h2>
+        
+            <ol>
+                <li><strong>단계 1:</strong> Ollama 또는 Llama.cpp 환경에 <code>ornith-1.5-35b</code> 또는 <code>9b</code> 모델 풀링</li><li><strong>단계 2:</strong> 웹사이트 및 리드 캡처 리포지토리에 연결하여 버그 탐색 및 수정 테스트</li><li><strong>단계 3:</strong> 에이전트 하네스(Hermes, Open Code)와 연동하여 완전 로컬 무과금 코딩 파이프라인 구축</li><li><strong>단계 4:</strong> 대규모 코드베이스 감사 및 단위 테스트 자동화에 실무 적용</li>
+            </ol>
+        
+
+        <h2>7. 엔지니어링 주의사항 및 한계점</h2>
+        
+            <ul>
+                <li>벤치마크 수치는 연구팀 자체 측정 결과로 외부 독립 개발자 커뮤니티의 실전 검증 진행 중</li><li>397B 플래그십 구동 시 고용량 VRAM(다중 GPU 클러스터) 인프라 요구</li><li>자율 수정 작업 시 생성된 코드에 대한 보안 감사 및 육안 검토 병행 권장</li>
+            </ul>
+        
+    
+    
+        <p>본 인텔리전스 리포트는 Julian Goldie SEO 영상 대본을 기반으로 자동 추출·검증된 기술 분석서입니다.</p>
+        <p>원본 영상: <a href="https://www.youtube.com/watch?v=SqjsHr7xE20" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=SqjsHr7xE20</a> · 스키마: mjjeon-youtube-web/v1</p>
+    
+
+</main></body></html>
