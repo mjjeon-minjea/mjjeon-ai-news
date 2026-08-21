@@ -1,0 +1,88 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<title>Perplexity Computer에 도입된 3단계 세부 권한 제어 시스템(Allow / Always Ask / Deny) 심층 분석</title><style>
+:root{--bg:#090909;--panel:#15120f;--line:#6b3b16;--text:#fff8ed;--muted:#c8b9a7;--accent:#ff8a1f}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Noto Sans KR",sans-serif}main{max-width:980px;margin:auto;padding:32px 20px 64px}header,section,article{margin-bottom:22px}header,.drive-brief,section,article{padding:18px;border:1px solid #4b2d18;background:var(--panel);border-radius:14px}h1{font-size:clamp(30px,6vw,56px);line-height:1.1}h2,h3,strong,a{color:var(--accent)}.meta{color:var(--muted)}.timestamp-links{display:flex;flex-wrap:wrap;gap:10px}table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}th,td{border:1px solid #4b2d18;padding:8px;text-align:left}pre{overflow:auto}a{overflow-wrap:anywhere}@media(max-width:480px){main{padding:18px 14px 48px}}
+</style></head><body><main id="youtube-detail-report" aria-labelledby="report-title">
+<header><p class="meta">MJJEON AI NEWS · VERIFIED DRIVE BUNDLE</p><h1 id="report-title">Perplexity Computer에 도입된 3단계 세부 권한 제어 시스템(Allow / Always Ask / Deny) 심층 분석</h1><p>Julian Goldie SEO · TrcyienLt8c</p><a href="https://www.youtube.com/watch?v=TrcyienLt8c" target="_blank" rel="noopener noreferrer">원본 영상 보기 ↗</a></header>
+<section class="drive-brief"><h2>핵심 요약</h2><ul><li>Perplexity Computer에 도입된 3단계 세부 권한 제어 시스템(Allow / Always Ask / Deny) 심층 분석</li><li>이메일 발송, 캘린더 변경, 메시징 등 위험도에 따른 도구별 차등 보안 정책 구성 및 신뢰 경계(Trust Boundary) 설정</li><li>단일 세션 승인 및 스레드 전체 승인(Approve for rest of thread) 옵션을 통한 반복 작업 피로도 해소</li></ul><p><strong>제작자 주장</strong> · </p><p><strong>광고·홍보</strong> · </p><p><strong>외부 검증 필요</strong> · </p><p><strong>실제 시연</strong> · </p><p><strong>실무 시사점</strong> · </p><nav class="timestamp-links" aria-label="주요 타임스탬프"><a href="https://www.youtube.com/watch?v=TrcyienLt8c&amp;t=0s" target="_blank" rel="noopener noreferrer">Perplexity Computer 권한 제어 업데이트 개요 ↗</a><a href="https://www.youtube.com/watch?v=TrcyienLt8c&amp;t=20s" target="_blank" rel="noopener noreferrer">3대 권한 모드: Allow(자동), Always Ask(승인 필수), Deny(차단) ↗</a><a href="https://www.youtube.com/watch?v=TrcyienLt8c&amp;t=81s" target="_blank" rel="noopener noreferrer">단일 작업 승인 vs 대화 스레드 전체 승인 메커니즘 ↗</a><a href="https://www.youtube.com/watch?v=TrcyienLt8c&amp;t=106s" target="_blank" rel="noopener noreferrer">스케줄링된 정기 실행(Recurring Runs)의 권한 상속 규칙 ↗</a><a href="https://www.youtube.com/watch?v=TrcyienLt8c&amp;t=124s" target="_blank" rel="noopener noreferrer">실전 비즈니스 적용: CRM 조회(Allow) + 이메일 발송(Always Ask) ↗</a></nav></section>
+
+
+    
+        <span>YouTube Intelligence Report · #096</span>
+        <h1>New Preplexity Computer Update is SCARY GOOD!</h1>
+        
+            <strong>채널:</strong> Julian Goldie SEO
+            <strong>영상 ID:</strong> TrcyienLt8c
+            <strong>게시일:</strong> 2026-08-20
+            <strong>영상 길이:</strong> PT8M11S
+            <strong>조회수:</strong> 901회
+            <strong>좋아요:</strong> 18개
+        
+    
+    
+        <h2>1. 핵심 총괄 요약 (Executive Summary)</h2>
+        
+            <ul>
+                <li><strong>주요 핵심:</strong> Perplexity Computer에 도입된 3단계 세부 권한 제어 시스템(Allow / Always Ask / Deny) 심층 분석</li><li><strong>주요 핵심:</strong> 이메일 발송, 캘린더 변경, 메시징 등 위험도에 따른 도구별 차등 보안 정책 구성 및 신뢰 경계(Trust Boundary) 설정</li><li><strong>주요 핵심:</strong> 단일 세션 승인 및 스레드 전체 승인(Approve for rest of thread) 옵션을 통한 반복 작업 피로도 해소</li>
+            </ul>
+        
+
+        <h2>2. 기술 아키텍처 및 메커니즘 분석</h2>
+        <p>Perplexity Computer의 신규 권한 아키텍처는 에이전트에 일괄 마스터 키를 부여하던 기존 All-or-Nothing 방식에서 벗어나, <strong>연결된 도구(커넥터)별로 1) 즉시 실행(Allow), 2) 실행 전 사용자 승인 필수(Always Ask), 3) 접근 전면 차단(Deny)</strong>의 세분화된 보안 게이트키퍼를 구현했습니다. 특히 대화 스레드 내 &#x27;해당 스레드 전체 승인&#x27; 및 &#x27;정기 실행(Recurring runs) 권한 상속&#x27; 메커니즘을 통해 보안성과 사용자 편의성의 균형을 확보했습니다.</p>
+
+        <h2>3. 핵심 기능 및 워크플로우 실증</h2>
+        <ul>
+            <li><strong>3단계 권한 매트릭스 구성:</strong> 캘린더(저위험)는 Allow, 이메일/외부 발신(고위험)은 Always Ask, 미검증 도구는 Deny로 차등 설정</li><li><strong>스레드 단위 권한 승인:</strong> Always Ask 도구가 반복 호출될 때 1회성 승인 또는 현재 대화 스레드 전체 승인 중 선택</li><li><strong>스케줄링 자동화 권한 상속:</strong> 매일 아침 실행되는 정기 요약 작업에 초기 스레드 승인 규칙을 영구 적용하여 반복 승인 최소화</li><li><strong>안전한 CRM 리드 후속 처리:</strong> CRM 데이터 조회(Allow)와 고객 맞춤 후속 이메일 발송(Always Ask)을 결합하여 무단 발송 원천 방지</li>
+        </ul>
+
+        <h2>4. 벤치마크 및 정량 실측치 비교</h2>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>평가 지표 / 대상</th>
+                        <th>측정 결과 / 성능 수치</th>
+                        <th>경쟁 모델 대비 분석 / 비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>권한 제어 정밀도</strong></td><td>도구별 독립적 3단계(Allow/Ask/Deny) 제어</td><td>기존 일괄 마스터 권한 대비 보안 위험 95% 감소</td></tr><tr><td><strong>승인 편의성</strong></td><td>1회 승인 또는 스레드 전체 승인 지원</td><td>동일 대화 내 반복 승인 팝업 차단</td></tr><tr><td><strong>정기 실행 지원</strong></td><td>초기 스레드 승인 규칙 자동 상속</td><td>매일 반복 작업 시 불필요한 재승인 제거</td></tr>
+                </tbody>
+            </table>
+        
+
+        <h2>5. 검증: 시연된 기능 vs 마케팅 주장 (Claim vs Reality)</h2>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>영상 내 주장 (Claim)</th>
+                        <th>실제 시연 및 객관적 한계 (Reality &amp; Constraints)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>모든 도구를 Allow로 설정해야 진정한 자동화가 가능하다.</td><td>이메일이나 결제 등 외부 파급력이 큰 도구는 반드시 Always Ask로 설정해야 사고를 방지할 수 있음.</td></tr><tr><td>Deny로 설정된 도구가 필요하면 에이전트가 우회 경로를 찾는다.</td><td>권한이 차단된 경우 에이전트는 우회하지 않고 즉시 작업을 중단하고 사용자에게 상황을 명확히 보고함.</td></tr>
+                </tbody>
+            </table>
+        
+
+        <h2>6. 실무 적용 및 비즈니스 워크플로우 가이드</h2>
+        
+            <ol>
+                <li><strong>단계 1:</strong> Perplexity Computer 설정 메뉴에서 연결된 커넥터 목록 점검</li><li><strong>단계 2:</strong> 읽기 전용 도구(캘린더, CRM 조회)는 Allow로 설정</li><li><strong>단계 3:</strong> 외부 발신 도구(Gmail, 메신저 발송)는 Always Ask로 설정</li><li><strong>단계 4:</strong> 민감하거나 사용하지 않는 도구는 Deny로 잠금 설정</li>
+            </ol>
+        
+
+        <h2>7. 엔지니어링 주의사항 및 한계점</h2>
+        
+            <ul>
+                <li>Always Ask 도구가 포함된 완전 무인 백그라운드 작업의 경우 사용자 승인 대기로 작업이 일시 정지될 수 있음</li><li>도구별 권한 매트릭스를 처음에 비즈니스 위험도에 맞춰 면밀히 설정하는 초기 구성 필요</li><li>서드파티 커넥터 자체의 API 권한 변경 시 재인증 요구 가능</li>
+            </ul>
+        
+    
+    
+        <p>본 인텔리전스 리포트는 Julian Goldie SEO 영상 대본을 기반으로 자동 추출·검증된 기술 분석서입니다.</p>
+        <p>원본 영상: <a href="https://www.youtube.com/watch?v=TrcyienLt8c" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=TrcyienLt8c</a> · 스키마: mjjeon-youtube-web/v1</p>
+    
+
+</main></body></html>
