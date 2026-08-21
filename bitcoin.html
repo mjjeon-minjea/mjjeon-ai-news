@@ -1,1 +1,205 @@
-<PLACEHOLDER>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#070708" />
+  <title>MJJEON BTC — 미국발 비트코인 브리핑</title>
+  <meta name="description" content="Grok 자동화가 2시간마다 정리하는 미국발 비트코인 브리핑" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #070708;
+      --surface: #111214;
+      --raised: #18191d;
+      --fg: #f2f2f3;
+      --muted: #8b8d94;
+      --subtle: #5c5e66;
+      --line: rgba(242,242,243,.1);
+      --up: #3dd68c;
+      --down: #f07178;
+      --sans: "Noto Sans KR", ui-sans-serif, system-ui, sans-serif;
+      --display: "Noto Serif KR", ui-serif, Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--sans); }
+    html { -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    button { font: inherit; color: inherit; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px 80px; }
+    header { display: flex; align-items: center; justify-content: space-between; height: 64px; border-bottom: 1px solid var(--line); }
+    .brand { font-family: var(--display); font-weight: 600; letter-spacing: -.03em; text-decoration: none; }
+    .meta { color: var(--muted); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { font-family: var(--display); font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; letter-spacing: -.03em; margin: 12px 0 8px; text-wrap: balance; }
+    .lede { max-width: 42rem; color: var(--muted); line-height: 1.55; }
+    .stats { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; margin: 28px 0 16px; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; }
+    .card .k { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+    .card .v { font-family: var(--display); font-size: 28px; font-weight: 600; margin-top: 4px; font-variant-numeric: tabular-nums; }
+    .slots { display: grid; grid-template-columns: repeat(6, minmax(0,1fr)); gap: 8px; }
+    .slot { min-height: 52px; border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; text-decoration: none; display: flex; flex-direction: column; justify-content: center; }
+    .slot b { font-family: ui-monospace, monospace; font-size: 12px; font-weight: 500; }
+    .slot s { font-size: 11px; text-decoration: none; color: var(--subtle); }
+    .slot.done s { color: var(--up); }
+    .layout { display: grid; grid-template-columns: minmax(0,1.4fr) minmax(16rem,.8fr); gap: 28px; margin-top: 36px; }
+    article.card { padding: 28px 32px; }
+    .time { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+    h2.hl { font-family: var(--display); font-size: clamp(1.4rem, 3vw, 2.1rem); line-height: 1.25; margin: 8px 0 16px; }
+    .prose p { margin: 0 0 12px; line-height: 1.65; overflow-wrap: anywhere; }
+    .prose a { text-underline-offset: 3px; }
+    .prose ul { margin: 0 0 12px; padding-left: 1.1rem; display: grid; gap: 6px; }
+    .prose h3 { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 22px 0 8px; }
+    .hist { list-style: none; margin: 12px 0 0; padding: 0; border-top: 1px solid var(--line); }
+    .hist a { display: flex; justify-content: space-between; gap: 12px; min-height: 56px; padding: 12px 0; border-bottom: 1px solid var(--line); text-decoration: none; }
+    .hist strong { display: block; font-size: 14px; font-weight: 500; }
+    .hist time { display: block; margin-top: 4px; font-family: ui-monospace, monospace; font-size: 11px; color: var(--muted); }
+    .muted { color: var(--muted); }
+    .up { color: var(--up); }
+    .down { color: var(--down); }
+    .empty { text-align: center; padding: 48px 20px; }
+    @media (max-width: 800px) {
+      .stats, .layout, .slots { grid-template-columns: 1fr; }
+      .slots { grid-template-columns: repeat(3, minmax(0,1fr)); }
+      article.card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="./bitcoin.html">MJJEON BTC</a>
+      <span class="meta">자동화 브리핑</span>
+    </header>
+    <p class="meta" style="margin-top:40px">Grok 자동화 · 08:00–18:00 KST · 2시간</p>
+    <h1>미국발 비트코인 브리핑</h1>
+    <p class="lede">백그라운드에서 작업을 실행하고 결과를 이 페이지에 올립니다. 가격, ETF, 규제, 기관 소식만 한국어로 정리합니다.</p>
+    <div class="stats">
+      <div class="card"><div class="k">Bitcoin</div><div class="v" id="price">—</div><div class="muted" id="change" style="font-size:12px;margin-top:4px">시세 불러오는 중</div></div>
+      <div class="card"><div class="k">다음 자동화</div><div class="v" id="next">—</div><div class="muted" style="font-size:12px;margin-top:4px">KST · 매일 6회</div></div>
+      <div class="card"><div class="k">오늘 기록</div><div class="v" id="count">0건</div><div class="muted" style="font-size:12px;margin-top:4px">x/*.md</div></div>
+    </div>
+    <section class="card">
+      <div class="k" style="margin-bottom:12px">내 자동화</div>
+      <div class="slots" id="slots"></div>
+    </section>
+    <div class="layout">
+      <article class="card" id="latest"><p class="muted">브리핑을 불러오는 중…</p></article>
+      <aside>
+        <div class="k">기록</div>
+        <ul class="hist" id="hist"></ul>
+      </aside>
+    </div>
+  </div>
+  <script>
+    const SLOTS = ["08:00","10:00","12:00","14:00","16:00","18:00"];
+    const amp = String.fromCharCode(38);
+    const esc = (s) => s.replace(/[&<>"]/g, (c) => ({"&": amp + "amp;", "<": amp + "lt;", ">": amp + "gt;", "\"": amp + "quot;"}[c]));
+    const inline = (raw) => esc(raw)
+      .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noreferrer">$1</a>')
+      .replace(/(^|[\s>])((https?:\/\/[^\s<]+))/g, '$1<a href="$2" target="_blank" rel="noreferrer">$2</a>')
+      .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+    function blocks(text) {
+      return text.trim().split(/\n{2,}/).map((block) => {
+        const lines = block.split("\n").map((l) => l.trimEnd()).filter(Boolean);
+        if (!lines.length) return "";
+        if (lines.every((l) => l.startsWith("- "))) return "<ul>" + lines.map((l) => "<li>" + inline(l.slice(2)) + "</li>").join("") + "</ul>";
+        return "<p>" + lines.map(inline).join("<br>") + "</p>";
+      }).join("");
+    }
+    function parse(slug, md) {
+      const title = (md.match(/^#\s+(.+)$/m) || [, slug])[1].trim();
+      const kst = (md.match(/시각:\s*([0-9]{4}-[0-9]{2}-[0-9]{2}\s+[0-9]{2}:[0-9]{2})/) || [])[1]
+        || slug.replace(/-(\d{2})(\d{2})$/, " $1:$2");
+      const empty = /새 소식 없음/.test(md) && md.length < 800;
+      const body = md.replace(/^#\s+.+\n+/, "");
+      const parts = body.split(/^##\s+/m);
+      const lead = blocks(parts[0] || "");
+      const sections = parts.slice(1).map((chunk) => {
+        const i = chunk.indexOf("\n");
+        return { h: (i < 0 ? chunk : chunk.slice(0, i)).trim(), html: blocks(i < 0 ? "" : chunk.slice(i + 1)) };
+      });
+      const hl = (md.match(/\*\*\[[^\]]+\]\s*(.+?)\*\*/) || [])[1];
+      return { slug, title, kst, empty, lead, sections, headline: (hl || (empty ? "새 소식 없음" : title)).trim() };
+    }
+    function nextSlot() {
+      const parts = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Seoul", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).formatToParts(new Date());
+      const g = (t) => Number(parts.find((p) => p.type === t).value);
+      const pad = (n) => String(n).padStart(2, "0");
+      let y = g("year"), m = g("month"), d = g("day"), h = g("hour");
+      for (const s of [8,10,12,14,16,18]) if (h < s) return pad(s) + ":00";
+      return "08:00";
+    }
+    async function loadMd(name) {
+      const res = await fetch("./x/" + name, { cache: "no-store" });
+      if (!res.ok) throw new Error(name);
+      return res.text();
+    }
+    async function listFiles() {
+      try {
+        const readme = await loadMd("README.md");
+        const names = [...readme.matchAll(/\((\.\/\d{4}-\d{2}-\d{2}-\d{4}\.md)\)/g)].map((m) => m[1].slice(2));
+        if (names.length) return names;
+      } catch {}
+      const res = await fetch("https://api.github.com/repos/mjjeon-minjea/mjjeon-ai-news/contents/x");
+      const files = await res.json();
+      return files.filter((f) => /^\d{4}-\d{2}-\d{2}-\d{4}\.md$/.test(f.name)).map((f) => f.name).sort().reverse();
+    }
+    function renderArticle(b) {
+      if (b.empty) return `<p class="time">${esc(b.kst)} KST</p><h2 class="hl">${esc(b.headline)}</h2><p class="muted">이 시간대에는 새 소식이 없었습니다.</p>`;
+      return `<p class="time">${esc(b.kst)} KST · X · 웹 검색</p><h2 class="hl">${esc(b.headline)}</h2><div class="prose">${b.lead}${b.sections.map((s) => `<h3>${esc(s.h)}</h3>${s.html}`).join("")}</div>`;
+    }
+    (async () => {
+      document.getElementById("next").textContent = nextSlot();
+      try {
+        const px = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd,krw&include_24hr_change=true").then((r) => r.json());
+        const btc = px.bitcoin;
+        document.getElementById("price").textContent = "$" + Math.round(btc.usd).toLocaleString("en-US");
+        const ch = btc.usd_24h_change;
+        const el = document.getElementById("change");
+        el.textContent = (ch >= 0 ? "+" : "") + ch.toFixed(2) + "% · ₩" + Math.round(btc.krw).toLocaleString("ko-KR");
+        el.className = ch >= 0 ? "up" : "down";
+        el.style.fontSize = "12px";
+        el.style.marginTop = "4px";
+      } catch {
+        document.getElementById("change").textContent = "시세 없음";
+      }
+      const names = await listFiles();
+      const briefings = [];
+      for (const name of names) {
+        try {
+          const slug = name.replace(/\.md$/, "");
+          briefings.push(parse(slug, await loadMd(name)));
+        } catch {}
+      }
+      if (!briefings.length) {
+        document.getElementById("latest").innerHTML = `<div class="empty"><h2 class="hl">아직 브리핑이 없습니다</h2></div>`;
+        return;
+      }
+      const today = briefings[0].kst.slice(0, 10);
+      document.getElementById("count").textContent = briefings.filter((b) => b.kst.startsWith(today)).length + "건";
+      document.getElementById("slots").innerHTML = SLOTS.map((slot) => {
+        const hit = briefings.find((b) => b.kst.endsWith(" " + slot));
+        return hit
+          ? `<a class="slot done" href="#${hit.slug}"><b>${slot}</b><s>완료</s></a>`
+          : `<div class="slot"><b>${slot}</b><s>대기</s></div>`;
+      }).join("");
+      document.getElementById("latest").innerHTML = renderArticle(briefings[0]);
+      document.getElementById("hist").innerHTML = briefings.slice(1).map((b) =>
+        `<li><a href="#${b.slug}"><span><strong>${esc(b.headline)}</strong><time>${esc(b.kst)} KST</time></span><span class="muted">보기</span></a></li>`
+      ).join("") || `<p class="muted">이 자동화 또는 작업의 기록을 찾을 수 없습니다.</p>`;
+      window.addEventListener("hashchange", () => {
+        const id = location.hash.slice(1);
+        const b = briefings.find((x) => x.slug === id) || briefings[0];
+        document.getElementById("latest").innerHTML = renderArticle(b);
+        window.scrollTo({ top: document.getElementById("latest").offsetTop - 24, behavior: "smooth" });
+      });
+      if (location.hash) window.dispatchEvent(new Event("hashchange"));
+    })().catch(() => {
+      document.getElementById("latest").innerHTML = `<p class="muted">브리핑을 불러오지 못했습니다. 잠시 후 다시 열어 주세요.</p>`;
+    });
+  </script>
+</body>
+</html>
