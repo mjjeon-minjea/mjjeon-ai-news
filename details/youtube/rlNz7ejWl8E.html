@@ -1,0 +1,88 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<title>GitHub 출시 이틀 만에 95,000 스타를 돌파한 MIT 라이선스 오픈소스 &#x27;DeepSeek Harness&#x27;와 Claude Code 비교 벤치마크 분석</title><style>
+:root{--bg:#090909;--panel:#15120f;--line:#6b3b16;--text:#fff8ed;--muted:#c8b9a7;--accent:#ff8a1f}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Noto Sans KR",sans-serif}main{max-width:980px;margin:auto;padding:32px 20px 64px}header,section,article{margin-bottom:22px}header,.drive-brief,section,article{padding:18px;border:1px solid #4b2d18;background:var(--panel);border-radius:14px}h1{font-size:clamp(30px,6vw,56px);line-height:1.1}h2,h3,strong,a{color:var(--accent)}.meta{color:var(--muted)}.timestamp-links{display:flex;flex-wrap:wrap;gap:10px}table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}th,td{border:1px solid #4b2d18;padding:8px;text-align:left}pre{overflow:auto}a{overflow-wrap:anywhere}@media(max-width:480px){main{padding:18px 14px 48px}}
+</style></head><body><main id="youtube-detail-report" aria-labelledby="report-title">
+<header><p class="meta">MJJEON AI NEWS · VERIFIED DRIVE BUNDLE</p><h1 id="report-title">GitHub 출시 이틀 만에 95,000 스타를 돌파한 MIT 라이선스 오픈소스 &#x27;DeepSeek Harness&#x27;와 Claude Code 비교 벤치마크 분석</h1><p>Julian Goldie SEO · rlNz7ejWl8E</p><a href="https://www.youtube.com/watch?v=rlNz7ejWl8E" target="_blank" rel="noopener noreferrer">원본 영상 보기 ↗</a></header>
+<section class="drive-brief"><h2>핵심 요약</h2><ul><li>GitHub 출시 이틀 만에 95,000 스타를 돌파한 MIT 라이선스 오픈소스 &#x27;DeepSeek Harness&#x27;와 Claude Code 비교 벤치마크 분석</li><li>동일 프롬프트(3D 테트리스 웹사이트) 기준 DeepSeek Harness 11분 완성 vs Claude Code 30분 이상 소요(속도 대 품질 트레이드오프)</li><li>모듈형 플러그인 아키텍처를 통한 멀티 모델(Claude, OpenAI, Bedrock, Google) 오케스트레이션 및 서브 에이전트 마운팅 실증</li></ul><p><strong>제작자 주장</strong> · </p><p><strong>광고·홍보</strong> · </p><p><strong>외부 검증 필요</strong> · </p><p><strong>실제 시연</strong> · </p><p><strong>실무 시사점</strong> · </p><nav class="timestamp-links" aria-label="주요 타임스탬프"><a href="https://www.youtube.com/watch?v=rlNz7ejWl8E&amp;t=0s" target="_blank" rel="noopener noreferrer">DeepSeek Harness vs Claude Code 1:1 비교 개요 ↗</a><a href="https://www.youtube.com/watch?v=rlNz7ejWl8E&amp;t=38s" target="_blank" rel="noopener noreferrer">하네스(Harness)의 개념: 모델과 런타임의 분리 ↗</a><a href="https://www.youtube.com/watch?v=rlNz7ejWl8E&amp;t=93s" target="_blank" rel="noopener noreferrer">실전 테스트: 3D 테트리스 웹사이트 빌드 속도 및 품질 대조 ↗</a><a href="https://www.youtube.com/watch?v=rlNz7ejWl8E&amp;t=128s" target="_blank" rel="noopener noreferrer">토큰 소비량(48.3만 vs 4.8만) 및 API 가격 분석 ↗</a><a href="https://www.youtube.com/watch?v=rlNz7ejWl8E&amp;t=214s" target="_blank" rel="noopener noreferrer">킬러 기능: Claude Code를 서브 에이전트로 마운트하는 오케스트레이션 ↗</a></nav></section>
+
+
+    
+        <span>YouTube Intelligence Report · #091</span>
+        <h1>NEW DeepSeek Harness Beats Claude Code!? 🤯</h1>
+        
+            <strong>채널:</strong> Julian Goldie SEO
+            <strong>영상 ID:</strong> rlNz7ejWl8E
+            <strong>게시일:</strong> 2026-08-20
+            <strong>영상 길이:</strong> PT7M51S
+            <strong>조회수:</strong> 1,333회
+            <strong>좋아요:</strong> 35개
+        
+    
+    
+        <h2>1. 핵심 총괄 요약 (Executive Summary)</h2>
+        
+            <ul>
+                <li><strong>주요 핵심:</strong> GitHub 출시 이틀 만에 95,000 스타를 돌파한 MIT 라이선스 오픈소스 &#x27;DeepSeek Harness&#x27;와 Claude Code 비교 벤치마크 분석</li><li><strong>주요 핵심:</strong> 동일 프롬프트(3D 테트리스 웹사이트) 기준 DeepSeek Harness 11분 완성 vs Claude Code 30분 이상 소요(속도 대 품질 트레이드오프)</li><li><strong>주요 핵심:</strong> 모듈형 플러그인 아키텍처를 통한 멀티 모델(Claude, OpenAI, Bedrock, Google) 오케스트레이션 및 서브 에이전트 마운팅 실증</li>
+            </ul>
+        
+
+        <h2>2. 기술 아키텍처 및 메커니즘 분석</h2>
+        <p>DeepSeek Harness는 모델과 하네스가 일체형으로 결합된 Claude Code와 달리, <strong>&#x27;하네스(외피 오케스트레이터)와 두뇌 모델(플러그인)&#x27;</strong>을 완전히 분리한 모듈형 구조입니다. 하네스 자체가 오픈소스 독립 제품으로 동작하며, Anthropic, OpenAI, AWS Bedrock, Azure, Google 등의 상용 API뿐만 아니라 로컬 오픈소스 LLM 및 Claude Code/Codex 자체를 서브 에이전트 프로바이더로 마운트하여 자율 위임할 수 있습니다.</p>
+
+        <h2>3. 핵심 기능 및 워크플로우 실증</h2>
+        <ul>
+            <li><strong>3D 인터랙티브 웹사이트 동일 프롬프트 대조:</strong> 동일한 요구사항(3D 애니메이션 + 동작하는 테트리스 게임)에서 DeepSeek Harness는 11분 만에 고속 빌드 완료, Claude Code는 30분 이상 정밀 다듬기 수행</li><li><strong>멀티 벤더 서브 에이전트 오케스트레이션:</strong> DeepSeek Harness를 외부 오케스트레이터로 두고, 복잡한 추론 작업에는 Claude Sonnet/Opus를, 대량 스캐폴딩에는 DeepSeek V4 Pro를 라우팅</li><li><strong>토큰 소비량 및 비용 최적화:</strong> DeepSeek(48.3만 토큰, 다변형 내부 추론) vs Claude(4.8만 토큰) 간 토큰 사용 패턴 차이 분석 및 백엔드 비용 제어</li><li><strong>오픈소스 플러그인 확장 생태계:</strong> 커뮤니티가 개발한 칸반 작업 보드, 모바일 인터페이스, UI 디자인 플러그인을 즉시 결합하여 맞춤형 에이전트 스택 구축</li>
+        </ul>
+
+        <h2>4. 벤치마크 및 정량 실측치 비교</h2>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>평가 지표 / 대상</th>
+                        <th>측정 결과 / 성능 수치</th>
+                        <th>경쟁 모델 대비 분석 / 비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>동일 작업 빌드 속도</strong></td><td>DeepSeek Harness 11분 vs Claude Code 30분 이상</td><td>DeepSeek의 빠른 스캐폴딩 속도 우위</td></tr><tr><td><strong>토큰 소비량</strong></td><td>DeepSeek 483,000 토큰 vs Claude 48,000 토큰</td><td>DeepSeek이 약 10배 많은 내부 자율 추론 토큰 소비</td></tr><tr><td><strong>GitHub 채택 지표</strong></td><td>출시 12시간 5만 스타, 2일차 9.5만 스타 / 9,000 포크</td><td>MIT 라이선스 기반 초고속 오픈소스 생태계 형성</td></tr>
+                </tbody>
+            </table>
+        
+
+        <h2>5. 검증: 시연된 기능 vs 마케팅 주장 (Claim vs Reality)</h2>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>영상 내 주장 (Claim)</th>
+                        <th>실제 시연 및 객관적 한계 (Reality &amp; Constraints)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>DeepSeek Harness가 Claude Code의 완성도와 안정성을 완벽히 능가한다.</td><td>속도는 빠르나 UI 디테일과 마우스 인터랙션 등 시각적 완성도는 Claude Code가 우세하며, DeepSeek은 버전 0.1 프리뷰 단계임.</td></tr><tr><td>하나의 도구만 선택해서 사용해야 한다.</td><td>DeepSeek Harness 내부에 Claude Code를 서브 에이전트로 마운트하여 두 시스템의 장점을 결합하는 하이브리드 운영이 최적임.</td></tr>
+                </tbody>
+            </table>
+        
+
+        <h2>6. 실무 적용 및 비즈니스 워크플로우 가이드</h2>
+        
+            <ol>
+                <li><strong>단계 1:</strong> GitHub에서 DeepSeek Harness 클론 후 로컬 환경에 설치</li><li><strong>단계 2:</strong> Anthropic 및 DeepSeek API 키를 등록하여 멀티 프로바이더 플러그인 활성화</li><li><strong>단계 3:</strong> 빠른 프로토타이핑에는 DeepSeek 플러그인, 정밀 다듬기에는 Claude 서브 에이전트 라우팅 적용</li><li><strong>단계 4:</strong> Agent OS 환경에 통합하여 벤더 종속 없는 자율 비즈니스 파이프라인 가동</li>
+            </ol>
+        
+
+        <h2>7. 엔지니어링 주의사항 및 한계점</h2>
+        
+            <ul>
+                <li>버전 0.1.0 개발자 프리뷰 상태로 향후 호환성을 깨뜨리는(Breaking) 업데이트 가능성 존재</li><li>프로덕션 미션 크리티컬 환경에서는 아직 안정성이 검증된 Claude Code가 더 안전한 선택지</li><li>DeepSeek 모델의 경우 토큰 소비량이 많아 피크 시간대 API 요율 적용 시 비용 관리 주의</li>
+            </ul>
+        
+    
+    
+        <p>본 인텔리전스 리포트는 Julian Goldie SEO 영상 대본을 기반으로 자동 추출·검증된 기술 분석서입니다.</p>
+        <p>원본 영상: <a href="https://www.youtube.com/watch?v=rlNz7ejWl8E" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=rlNz7ejWl8E</a> · 스키마: mjjeon-youtube-web/v1</p>
+    
+
+</main></body></html>
