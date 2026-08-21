@@ -1,0 +1,88 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<title>마우스 커서를 빼앗지 않고 백그라운드에서 직접 앱을 제어하는 오픈소스 &#x27;Hermes Computer Use&#x27; 에이전트 심층 분석</title><style>
+:root{--bg:#090909;--panel:#15120f;--line:#6b3b16;--text:#fff8ed;--muted:#c8b9a7;--accent:#ff8a1f}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Noto Sans KR",sans-serif}main{max-width:980px;margin:auto;padding:32px 20px 64px}header,section,article{margin-bottom:22px}header,.drive-brief,section,article{padding:18px;border:1px solid #4b2d18;background:var(--panel);border-radius:14px}h1{font-size:clamp(30px,6vw,56px);line-height:1.1}h2,h3,strong,a{color:var(--accent)}.meta{color:var(--muted)}.timestamp-links{display:flex;flex-wrap:wrap;gap:10px}table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}th,td{border:1px solid #4b2d18;padding:8px;text-align:left}pre{overflow:auto}a{overflow-wrap:anywhere}@media(max-width:480px){main{padding:18px 14px 48px}}
+</style></head><body><main id="youtube-detail-report" aria-labelledby="report-title">
+<header><p class="meta">MJJEON AI NEWS · VERIFIED DRIVE BUNDLE</p><h1 id="report-title">마우스 커서를 빼앗지 않고 백그라운드에서 직접 앱을 제어하는 오픈소스 &#x27;Hermes Computer Use&#x27; 에이전트 심층 분석</h1><p>Julian Goldie SEO · kjQkZLTXKdU</p><a href="https://www.youtube.com/watch?v=kjQkZLTXKdU" target="_blank" rel="noopener noreferrer">원본 영상 보기 ↗</a></header>
+<section class="drive-brief"><h2>핵심 요약</h2><ul><li>마우스 커서를 빼앗지 않고 백그라운드에서 직접 앱을 제어하는 오픈소스 &#x27;Hermes Computer Use&#x27; 에이전트 심층 분석</li><li>Mac 전용 한계를 탈피하여 Windows, Linux, Mac 3대 OS 전면 지원 및 Claude, GPT, 로컬 비전 모델 자유 플러그인</li><li>Telegram/Slack 모바일 원격 승인 제어, 파괴적 명령(휴지통 비우기, 비밀번호 입력 등) 원천 하드 블록 보안 안전망</li></ul><p><strong>제작자 주장</strong> · </p><p><strong>광고·홍보</strong> · </p><p><strong>외부 검증 필요</strong> · </p><p><strong>실제 시연</strong> · </p><p><strong>실무 시사점</strong> · </p><nav class="timestamp-links" aria-label="주요 타임스탬프"><a href="https://www.youtube.com/watch?v=kjQkZLTXKdU&amp;t=0s" target="_blank" rel="noopener noreferrer">Hermes Computer Use 개요 및 백그라운드 무방해 제어 ↗</a><a href="https://www.youtube.com/watch?v=kjQkZLTXKdU&amp;t=78s" target="_blank" rel="noopener noreferrer">Mac, Windows, Linux 전 플랫폼 지원 및 비전 모델 연동 ↗</a><a href="https://www.youtube.com/watch?v=kjQkZLTXKdU&amp;t=171s" target="_blank" rel="noopener noreferrer">텔레그램/슬랙 모바일 원격 제어 및 음성 명령 레이어 ↗</a><a href="https://www.youtube.com/watch?v=kjQkZLTXKdU&amp;t=210s" target="_blank" rel="noopener noreferrer">내부 작동 루프: 스크린샷 → 비전 판단 → 백그라운드 클릭 → 검증 ↗</a><a href="https://www.youtube.com/watch?v=kjQkZLTXKdU&amp;t=312s" target="_blank" rel="noopener noreferrer">보안 안전망: 파괴적 액션 하드 블록 및 비밀번호 입력 차단 ↗</a></nav></section>
+
+
+    
+        <span>YouTube Intelligence Report · #105</span>
+        <h1>This NEW Hermes Computer Agent Is SCARY Good</h1>
+        
+            <strong>채널:</strong> Julian Goldie SEO
+            <strong>영상 ID:</strong> kjQkZLTXKdU
+            <strong>게시일:</strong> 2026-08-21
+            <strong>영상 길이:</strong> PT7M41S
+            <strong>조회수:</strong> 1,156회
+            <strong>좋아요:</strong> 36개
+        
+    
+    
+        <h2>1. 핵심 총괄 요약 (Executive Summary)</h2>
+        
+            <ul>
+                <li><strong>주요 핵심:</strong> 마우스 커서를 빼앗지 않고 백그라운드에서 직접 앱을 제어하는 오픈소스 &#x27;Hermes Computer Use&#x27; 에이전트 심층 분석</li><li><strong>주요 핵심:</strong> Mac 전용 한계를 탈피하여 Windows, Linux, Mac 3대 OS 전면 지원 및 Claude, GPT, 로컬 비전 모델 자유 플러그인</li><li><strong>주요 핵심:</strong> Telegram/Slack 모바일 원격 승인 제어, 파괴적 명령(휴지통 비우기, 비밀번호 입력 등) 원천 하드 블록 보안 안전망</li>
+            </ul>
+        
+
+        <h2>2. 기술 아키텍처 및 메커니즘 분석</h2>
+        <p>기존 Computer Use 도구들이 화면 전면을 점유하고 마우스 커서를 강제 조작하여 사용자의 동시 작업을 차단했던 것과 달리, Hermes Computer Use는 <strong>&#x27;백그라운드 스크린샷 캡처 → 비전 모델 기반 위치 판독 → 앱 백그라운드 이벤트 전송(Click/Type) → 검증 스크린샷&#x27;</strong> 루프를 구현했습니다. 사용자는 동일 PC에서 다른 작업을 계속하면서 모바일 메신저(Telegram, Slack)로 승인/거부 인터랙션을 수행할 수 있습니다.</p>
+
+        <h2>3. 핵심 기능 및 워크플로우 실증</h2>
+        <ul>
+            <li><strong>비방해 백그라운드 컴퓨터 제어:</strong> 사용자가 다른 창에서 작업하는 동안 에이전트가 백그라운드에서 메모 앱 작성 및 파일 정리 수행</li><li><strong>크로스 플랫폼 &amp; 멀티 모델 바인딩:</strong> Windows, Linux, macOS 환경에서 Claude, GPT-4o, 로컬 오픈 비전 모델을 자유롭게 교체 연동</li><li><strong>모바일 원격 모니터링 &amp; 승인:</strong> 외부 이동 중 텔레그램으로 작업을 지시하고 민감 작업 발생 시 인라인 승인(Approve/Deny) 버튼으로 통제</li><li><strong>하드웨어 레벨 안전 게이트키퍼:</strong> 비밀번호 입력 차단, 시스템 잠금/로그아웃 방지, 파일 영구 삭제 시 인간 승인 의무화</li>
+        </ul>
+
+        <h2>4. 벤치마크 및 정량 실측치 비교</h2>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>평가 지표 / 대상</th>
+                        <th>측정 결과 / 성능 수치</th>
+                        <th>경쟁 모델 대비 분석 / 비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>OS 지원 범위</strong></td><td>Mac, Windows, Linux 3대 OS 100% 지원</td><td>기존 특정 OS 전용 도구 대비 범용성 대폭 향상</td></tr><tr><td><strong>작업 방해 여부</strong></td><td>백그라운드 이벤트 전송으로 사용자 작업 중단 제로</td><td>마우스 커서 강탈 없는 완전한 멀티태스킹</td></tr><tr><td><strong>보안 안전성</strong></td><td>위험 액션 하드 블록 및 모바일 원격 승인</td><td>무단 삭제, 권한 팝업 임의 클릭 원천 차단</td></tr>
+                </tbody>
+            </table>
+        
+
+        <h2>5. 검증: 시연된 기능 vs 마케팅 주장 (Claim vs Reality)</h2>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>영상 내 주장 (Claim)</th>
+                        <th>실제 시연 및 객관적 한계 (Reality &amp; Constraints)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>AI가 컴퓨터를 제어하면 사용자가 PC를 전혀 쓸 수 없다.</td><td>Hermes는 백그라운드 프로세스로 동작하므로 사용자가 동일한 화면에서 마우스를 쓰며 정상 업무 가능함.</td></tr><tr><td>AI가 시스템 설정이나 중요 계정 비밀번호를 탈취하여 변경할 수 있다.</td><td>비밀번호 입력, 시스템 락, 휴지통 비우기 등은 하드코딩된 규칙으로 원천 차단되어 안전함.</td></tr>
+                </tbody>
+            </table>
+        
+
+        <h2>6. 실무 적용 및 비즈니스 워크플로우 가이드</h2>
+        
+            <ol>
+                <li><strong>단계 1:</strong> Hermes 대시보드에서 <code>Computer Use</code> 토글 활성화 및 드라이버 자동 설치</li><li><strong>단계 2:</strong> OS 설정에서 화면 기록(Screen Recording) 및 앱 제어 권한 승인</li><li><strong>단계 3:</strong> 텔레그램 봇을 연결하여 모바일 원격 제어 및 알림 채널 구성</li><li><strong>단계 4:</strong> 초기에는 <code>Always Ask</code> 모드를 활성화하여 에이전트 동작 검증 후 실전 투입</li>
+            </ol>
+        
+
+        <h2>7. 엔지니어링 주의사항 및 한계점</h2>
+        
+            <ul>
+                <li>백그라운드 스크린샷 캡처 및 비전 모델 추론 과정에서 API 토큰 및 시스템 리소스 소모</li><li>직접 마우스 포인터를 움직이는 방식보다 실행 속도가 미세하게 지연될 수 있음</li><li>macOS의 경우 최초 실행 시 화면 기록 및 손쉬운 사용(Accessibility) 시스템 권한 허용 필수</li>
+            </ul>
+        
+    
+    
+        <p>본 인텔리전스 리포트는 Julian Goldie SEO 영상 대본을 기반으로 자동 추출·검증된 기술 분석서입니다.</p>
+        <p>원본 영상: <a href="https://www.youtube.com/watch?v=kjQkZLTXKdU" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=kjQkZLTXKdU</a> · 스키마: mjjeon-youtube-web/v1</p>
+    
+
+</main></body></html>
