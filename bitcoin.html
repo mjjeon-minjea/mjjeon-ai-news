@@ -154,12 +154,18 @@
     (async () => {
       document.getElementById("next").textContent = nextSlot();
       try {
-        const px = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd,krw&include_24hr_change=true").then((r) => r.json());
-        const btc = px.bitcoin;
-        document.getElementById("price").textContent = "$" + Math.round(btc.usd).toLocaleString("en-US");
-        const ch = btc.usd_24h_change;
+        const [usdRes, krwRes, stamp] = await Promise.all([
+          fetch("https://api.coinbase.com/v2/prices/BTC-USD/spot").then((r) => r.json()),
+          fetch("https://api.coinbase.com/v2/prices/BTC-KRW/spot").then((r) => r.json()),
+          fetch("https://www.bitstamp.net/api/v2/ticker/btcusd").then((r) => r.json()).catch(() => null),
+        ]);
+        const usd = Number(usdRes.data.amount);
+        const krw = Number(krwRes.data.amount);
+        document.getElementById("price").textContent = "$" + Math.round(usd).toLocaleString("en-US");
+        let ch = 0;
+        if (stamp && Number(stamp.open)) ch = ((Number(stamp.last) - Number(stamp.open)) / Number(stamp.open)) * 100;
         const el = document.getElementById("change");
-        el.textContent = (ch >= 0 ? "+" : "") + ch.toFixed(2) + "% · ₩" + Math.round(btc.krw).toLocaleString("ko-KR");
+        el.textContent = (ch >= 0 ? "+" : "") + ch.toFixed(2) + "% · ₩" + Math.round(krw).toLocaleString("ko-KR");
         el.className = ch >= 0 ? "up" : "down";
         el.style.fontSize = "12px";
         el.style.marginTop = "4px";
