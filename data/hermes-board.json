@@ -1,6 +1,17 @@
 {
   "items": [
     {
+      "canonical_url": "https://hermes-agent.nousresearch.com/docs/llms.txt",
+      "detail_url": "hermes/items/official-docs-llms.html",
+      "judgment": "공식 문서와 저장소 교차확인 완료 · 다중 프로필 업데이트 안전성 강화 · 자동 업데이트 불필요",
+      "published_at": "2026-08-21T20:01:35Z",
+      "source_grade": "official",
+      "source_kind": "docs",
+      "stable_id": "official-docs:llms",
+      "status": "active",
+      "title_ko": "Hermes 공식 문서, 업데이트 사전 계획과 다중 프로필 보호 강화"
+    },
+    {
       "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v2026.8.19",
       "detail_url": "hermes/items/github-release-374377893.html",
       "judgment": "공식 패치 확인: 핵심 운영 경로 회귀시험 후 단계적 적용",
@@ -10,17 +21,6 @@
       "stable_id": "github-release:374377893",
       "status": "active",
       "title_ko": "Hermes Agent v0.20.5(v2026.8.19) 패치 릴리스"
-    },
-    {
-      "canonical_url": "https://hermes-agent.nousresearch.com/docs/llms.txt",
-      "detail_url": "hermes/items/official-docs-llms.html",
-      "judgment": "공식 Hermes Cloud MCP 운영 가이드 추가 확인 · 자동 업데이트 불필요",
-      "published_at": "2026-08-21T06:17:36Z",
-      "source_grade": "official",
-      "source_kind": "docs",
-      "stable_id": "official-docs:llms",
-      "status": "active",
-      "title_ko": "Hermes 공식 문서, MCP로 Hermes Cloud를 관리하는 운영 가이드 추가"
     },
     {
       "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v2026.8.18",
