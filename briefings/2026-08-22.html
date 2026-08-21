@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-08-22 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#18212f; --muted:#5a6778; --line:#dbe2ea; --bg:#f4f7fa; --card:#fff; --accent:#0b6e69; --warn:#9a6700; --danger:#b42318; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:"Noto Sans KR","Apple SD Gothic Neo",system-ui,sans-serif; line-height:1.65; }
+    main { max-width:880px; margin:0 auto; padding:32px 20px 48px; }
+    header, section { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:24px; box-shadow:0 2px 8px rgba(24,33,47,.04); }
+    header { border-top:5px solid var(--accent); }
+    section { margin-top:16px; }
+    h1 { margin:0 0 4px; font-size:1.65rem; }
+    h2 { margin:0 0 12px; font-size:1.08rem; }
+    p { margin:8px 0; }
+    .meta, .note { color:var(--muted); font-size:.92rem; }
+    .summary { font-size:1.04rem; font-weight:700; }
+    ul { margin:8px 0 0; padding-left:1.2rem; }
+    li { margin:7px 0; }
+    .status { display:grid; gap:8px; }
+    .status p { margin:0; padding:10px 12px; background:#f8fafc; border-left:3px solid var(--accent); overflow-wrap:anywhere; }
+    .status .warning { border-left-color:var(--warn); }
+    .status .failure { border-left-color:var(--danger); }
+    code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.88em; }
+    footer { color:var(--muted); font-size:.85rem; margin-top:16px; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="meta">운영 인수인계 · 2026-08-21 06:30 ~ 2026-08-22 06:30 KST</p>
+      <h1>2026-08-22 운영 아침 브리핑</h1>
+      <p class="summary">YouTube 4편 공개 반영과 Hermes v0.20.5 공식 패치 확인이 완료됐습니다. 설치본은 v0.20.4에 머물러 있으며, Cron 실패 2건과 Kanban 막힘 3건은 계속 상태입니다.</p>
+      <p class="meta">작성 2026-08-22 06:37 KST · 직전 06:30 이후 실제 변경·지시·사고만 반영</p>
+    </header>
+
+    <section>
+      <h2>인수인계</h2>
+      <ul>
+        <li><strong>YouTube 반영:</strong> 조코딩 011·012와 안될공학 016·017, 총 4편을 공개 홈피에 반영했고 각 페이지가 열리는 것까지 확인됐습니다.</li>
+        <li><strong>X 운영:</strong> Grok은 정해진 시각에 <code>x/</code> 원글 파일만 올리고, 예림이 10분 뒤 홈피 X 칸에 붙이는 방식으로 확정됐습니다. 추가 Grok 지시는 하지 않습니다.</li>
+        <li><strong>Hermes:</strong> 공식 Hermes Agent v0.20.5 패치가 공개 원격검증까지 완료됐습니다. 로컬 설치본은 Docker 방식의 v0.20.4이며 자동 업데이트는 수행되지 않았습니다. 운영 경로 회귀시험 뒤 단계 적용이 권고된 상태입니다.</li>
+        <li><strong>성장·Wiki:</strong> 짝귀 6시간 검토 결과는 <code>NO_MATERIAL_GROWTH_CANDIDATE</code>이며, 기간 내 Wiki Markdown 변경은 없습니다.</li>
+        <li><strong>Kanban:</strong> 기간 내 카드·이벤트 변경은 없으며 기존 막힘 상태를 유지합니다.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Cron 현재 상태</h2>
+      <div class="status">
+        <p><strong>총 16</strong></p>
+        <p><strong>정상 13:</strong> qms-staging-watch, Default+role Gateway supervisor keeper, Codex 주간 한도 주의·경고, v0.20.2 교체 결과 보고, v0.20.2 재시도 결과 보고, calendar-yesterday-sync, v0.20.4 교체 결과, MJJEON 유튜브 30분 붙이기, 고광렬 06:30 KST 아침 브리핑, jjakgwi-wiki-daily-close-kst, jjakgwi-wiki-curation-6h-kst, jjakgwi-conversation-growth-review-6h-kst, MJJEON Hermes official update detector</p>
+        <p><strong>검증 대기 0:</strong> 없음</p>
+        <p class="warning"><strong>미기록 1:</strong> MJJEON X — attach Grok originals</p>
+        <p class="failure"><strong>실패 2:</strong> MJJEON AI NEWS — Neoguri hourly collector, MJJEON Drive YouTube web ingest</p>
+      </div>
+      <p class="note">검증 대기는 <code>REMOTE_UNVERIFIED</code> 기록만 별도 분류하며, 실패로 계산하지 않습니다.</p>
+    </section>
+
+    <section>
+      <h2>Kanban 현재 상태</h2>
+      <div class="status">
+        <p><strong>진행 0</strong></p>
+        <p class="failure"><strong>막힘 3:</strong> KST conventions hybrid retention and Jjakgwi curation, GONI-WEB-OPEN independent cross-check, Backfill MJJEON AI NEWS since 2026-08-09 05:32 KST</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Hermes 버전</h2>
+      <div class="status">
+        <p><strong>설치:</strong> v0.20.4 (Docker)</p>
+        <p class="warning"><strong>공식 최신:</strong> v0.20.5 · 설치본보다 한 단계 앞섬</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>확인 범위</h2>
+      <p class="note">전 profile의 HANDOFF·MEMORY·대화 변경분, Wiki Markdown 변경분, Cron 상태 및 Kanban을 읽기 전용으로 확인했습니다. 민감정보 및 지정 마커는 기록하지 않았습니다. Hermes 최신판은 NousResearch 공식 Releases 기준으로 확인했습니다.</p>
+    </section>
+
+    <footer>고광렬 · 운영 아침 브리핑</footer>
+  </main>
+</body>
+</html>
