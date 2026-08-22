@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-08-22 10:00 — BANKED 리셋 도착 · ChatGPT Work·Codex](./2026-08-22-1000.md)
 - [2026-08-22 08:00 — Claude Mythos 5 · GPT-5.6 Sol 가격 인하 · Codex 2천만](./2026-08-22-0800.md)
 - [2026-08-21 20:00 — 새 소식 없음](./2026-08-21-2000.md)
 - [2026-08-21 18:00 — 새 소식 없음](./2026-08-21-1800.md)
