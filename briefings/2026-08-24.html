@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-08-24 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#14212b; --muted:#586775; --line:#dce4e9; --panel:#f7fafb; --accent:#1e6a7a; --warn:#a44e16; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#edf3f5; color:var(--ink); font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { width:min(880px, calc(100% - 32px)); margin:32px auto; background:#fff; border:1px solid var(--line); border-radius:16px; overflow:hidden; box-shadow:0 10px 30px rgba(20,33,43,.06); }
+    header { padding:32px 36px 26px; background:linear-gradient(135deg,#eef8f8,#f8fbfc); border-bottom:1px solid var(--line); }
+    .eyebrow { margin:0 0 8px; color:var(--accent); font-size:.82rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+    h1 { margin:0; font-size:clamp(1.55rem,4vw,2.15rem); letter-spacing:-.04em; }
+    .period { margin:10px 0 0; color:var(--muted); }
+    section { padding:24px 36px; border-bottom:1px solid var(--line); }
+    section:last-child { border-bottom:0; }
+    h2 { margin:0 0 12px; font-size:1.08rem; }
+    p { margin:8px 0; }
+    ul { margin:10px 0 0; padding-left:1.25rem; }
+    li { margin:8px 0; }
+    .conclusion { background:var(--panel); border-left:4px solid var(--accent); }
+    .status { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; }
+    .card { padding:14px; border:1px solid var(--line); border-radius:10px; background:#fff; }
+    .card p { margin:0; }
+    .label { color:var(--muted); font-size:.85rem; font-weight:700; }
+    .alert { color:var(--warn); }
+    .fine { color:var(--muted); font-size:.9rem; }
+    a { color:#075e73; }
+    @media (max-width:560px) { main { width:100%; margin:0; border-radius:0; border-width:0; } header,section { padding:24px 20px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">전민재 차장님 · 운영 인수인계</p>
+      <h1>2026-08-24 아침 브리핑</h1>
+      <p class="period">대상 기간: 2026-08-23 06:30 ~ 2026-08-24 06:30 KST · 작성: 2026-08-24 06:36 KST</p>
+    </header>
+
+    <section class="conclusion">
+      <h2>결론</h2>
+      <p>PC Claude 작업이력 r2 2,335건의 교체·검증이 완료됐고, Cron 12개 중 3개가 실패 상태입니다. Kanban은 진행 0건·막힘 3건이며, Hermes는 설치본보다 공식 최신본이 한 단계 앞섭니다.</p>
+    </section>
+
+    <section>
+      <h2>이번 기간의 실제 변경·인수 사항</h2>
+      <ul>
+        <li><strong>PC Claude 작업이력 r2 교체 완료:</strong> 최종 2,335건을 반영하고 기존 r1 2,558건을 정리했습니다. Calendar API 재검증에서 누락·중복·제목·시각·대상 불일치·r1 잔여는 모두 0건이었습니다. 삭제 과정의 403 1회는 자동 반복 없이 멈춘 뒤 저속 경로로 마무리됐습니다.</li>
+        <li><strong>성장 검토:</strong> Jjakgwi 검토는 후보 2건을 보고했으며, 이전 123건 제안은 승인하지 말고 최종 r2 2,335건 완료표만 승인 검토 대상으로 유지하라고 인계했습니다.</li>
+        <li><strong>기록 변경 없음:</strong> 전체 profile의 HANDOFF·MEMORY와 운영 Wiki 문서에서 대상 기간에 해당하는 변경은 확인되지 않았습니다. 자동 사용량 계측 파일은 인수인계 변경으로 집계하지 않았습니다.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Cron 현황</h2>
+      <div class="status">
+        <div class="card"><p class="label">총</p><p><strong>12개</strong></p></div>
+        <div class="card"><p class="label">정상</p><p><strong>9개</strong></p></div>
+        <div class="card"><p class="label">검증 대기</p><p><strong>0개</strong></p></div>
+        <div class="card"><p class="label">미기록</p><p><strong>0개</strong></p></div>
+      </div>
+      <p class="alert"><strong>실패 3개:</strong> MJJEON AI NEWS — Neoguri hourly collector (LOCK_BUSY, 연속 21회), MJJEON Hermes official update detector (SOURCE_FAILED), MJJEON Drive YouTube web ingest (360초 시간 초과, 연속 29회).</p>
+      <p class="fine">판정 기준: 마지막 실행이 ok이면 정상, REMOTE_UNVERIFIED는 검증 대기, 그 밖의 error만 실패로 분류했습니다.</p>
+    </section>
+
+    <section>
+      <h2>Kanban 현황</h2>
+      <p><strong>진행:</strong> 0건</p>
+      <p><strong>막힘:</strong> 3건</p>
+    </section>
+
+    <section>
+      <h2>Hermes 버전</h2>
+      <p><strong>설치:</strong> Hermes Agent v0.20.4 (2026.8.18)</p>
+      <p><strong>공식 최신:</strong> Hermes Agent v0.20.5 (2026.8.19) · <a href="https://github.com/NousResearch/hermes-agent/releases/tag/v2026.8.19">공식 릴리스</a></p>
+      <p class="fine">업데이트 가능 상태입니다. 이번 브리핑에서는 설치·재시작·배포를 수행하지 않았습니다.</p>
+    </section>
+
+    <section>
+      <h2>확인 범위</h2>
+      <p class="fine">모든 profile의 HANDOFF·MEMORY·대상 기간 대화, 운영 Wiki 변경분, profile별 Cron, 공유 Kanban 및 Hermes 공식 릴리스를 읽기 전용으로 확인했습니다. 비밀값·인증 정보는 읽거나 기록하지 않았습니다.</p>
+    </section>
+  </main>
+</body>
+</html>
