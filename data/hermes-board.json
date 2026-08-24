@@ -3,13 +3,13 @@
     {
       "canonical_url": "https://hermes-agent.nousresearch.com/docs/llms.txt",
       "detail_url": "hermes/items/official-docs-llms.html",
-      "judgment": "공식 문서와 저장소 교차확인 완료 · 다중 프로필 업데이트 안전성 강화 · 자동 업데이트 불필요",
-      "published_at": "2026-08-21T20:01:35Z",
+      "judgment": "공식 문서·Releases·저장소 교차확인 완료 · 운영 변경 유의미 · custom branch 업데이트 동작은 에스컬레이션 후보 · 자동 업데이트 금지",
+      "published_at": "2026-08-24T21:57:24Z",
       "source_grade": "official",
       "source_kind": "docs",
       "stable_id": "official-docs:llms",
-      "status": "active",
-      "title_ko": "Hermes 공식 문서, 업데이트 사전 계획과 다중 프로필 보호 강화"
+      "status": "에스컬레이션 후보",
+      "title_ko": "Hermes 공식 문서, 독립 리뷰와 다중 프로필 운영 안전성 확대"
     },
     {
       "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v2026.8.19",
