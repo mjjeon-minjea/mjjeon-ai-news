@@ -1,0 +1,88 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<title>Hermes Agent에 새롭게 추가된 `delegate_task` 도구 및 비동기 서브 에이전트(Async Subagents) 아키텍처 분석</title><style>
+:root{--bg:#090909;--panel:#15120f;--line:#6b3b16;--text:#fff8ed;--muted:#c8b9a7;--accent:#ff8a1f}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Noto Sans KR",sans-serif}main{max-width:980px;margin:auto;padding:32px 20px 64px}header,section,article{margin-bottom:22px}header,.drive-brief,section,article{padding:18px;border:1px solid #4b2d18;background:var(--panel);border-radius:14px}h1{font-size:clamp(30px,6vw,56px);line-height:1.1}h2,h3,strong,a{color:var(--accent)}.meta{color:var(--muted)}.timestamp-links{display:flex;flex-wrap:wrap;gap:10px}table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}th,td{border:1px solid #4b2d18;padding:8px;text-align:left}pre{overflow:auto}a{overflow-wrap:anywhere}@media(max-width:480px){main{padding:18px 14px 48px}}
+</style></head><body><main id="youtube-detail-report" aria-labelledby="report-title">
+<header><p class="meta">MJJEON AI NEWS · VERIFIED DRIVE BUNDLE</p><h1 id="report-title">Hermes Agent에 새롭게 추가된 `delegate_task` 도구 및 비동기 서브 에이전트(Async Subagents) 아키텍처 분석</h1><p>Julian Goldie SEO · bNv-4vCTifI</p><a href="https://www.youtube.com/watch?v=bNv-4vCTifI" target="_blank" rel="noopener noreferrer">원본 영상 보기 ↗</a></header>
+<section class="drive-brief"><h2>핵심 요약</h2><ul><li>Hermes Agent에 새롭게 추가된 `delegate_task` 도구 및 비동기 서브 에이전트(Async Subagents) 아키텍처 분석</li><li>채팅 화면이 멈추던 단일 스레드 블로킹 방식을 탈피하여, 리드 에이전트가 백그라운드 헬퍼 에이전트들에 작업을 위임하고 즉시 제어권을 반환</li><li>각 서브 에이전트의 독립적 완료 알림 수신, Obsidian 메모리 볼트 공유를 통한 컨텍스트 유지, 인간 승인(HITL) 안전망 구축</li></ul><p><strong>제작자 주장</strong> · </p><p><strong>광고·홍보</strong> · </p><p><strong>외부 검증 필요</strong> · </p><p><strong>실제 시연</strong> · </p><p><strong>실무 시사점</strong> · </p><nav class="timestamp-links" aria-label="주요 타임스탬프"><a href="https://www.youtube.com/watch?v=bNv-4vCTifI&amp;t=0s" target="_blank" rel="noopener noreferrer">비동기 서브 에이전트 개요: 백그라운드 자율 분업 ↗</a><a href="https://www.youtube.com/watch?v=bNv-4vCTifI&amp;t=54s" target="_blank" rel="noopener noreferrer">delegate_task 도구: 블로킹 제거 및 원클릭 업데이트 ↗</a><a href="https://www.youtube.com/watch?v=bNv-4vCTifI&amp;t=96s" target="_blank" rel="noopener noreferrer">팬아웃(Fan-out) 실행 메커니즘: 1개 목표 -&gt; 다중 워커 병렬 구동 ↗</a><a href="https://www.youtube.com/watch?v=bNv-4vCTifI&amp;t=193s" target="_blank" rel="noopener noreferrer">시간 병목 해소: 작업 진행 중에도 자유로운 메인 채팅 유지 ↗</a><a href="https://www.youtube.com/watch?v=bNv-4vCTifI&amp;t=390s" target="_blank" rel="noopener noreferrer">실전 5대 가이드: 명확한 단일 목표, 3개 워커 시작, 메모리 볼트 연동 ↗</a></nav></section>
+
+
+    
+        <span>YouTube Intelligence Report · #152</span>
+        <h1>Hermes Subagents Can Do the Work for You</h1>
+        
+            <strong>채널:</strong> Julian Goldie SEO
+            <strong>영상 ID:</strong> bNv-4vCTifI
+            <strong>게시일:</strong> 2026-08-23
+            <strong>영상 길이:</strong> PT8M23S
+            <strong>조회수:</strong> 464회
+            <strong>좋아요:</strong> 8개
+        
+    
+    
+        <h2>1. 핵심 총괄 요약 (Executive Summary)</h2>
+        
+            <ul>
+                <li><strong>주요 핵심:</strong> Hermes Agent에 새롭게 추가된 `delegate_task` 도구 및 비동기 서브 에이전트(Async Subagents) 아키텍처 분석</li><li><strong>주요 핵심:</strong> 채팅 화면이 멈추던 단일 스레드 블로킹 방식을 탈피하여, 리드 에이전트가 백그라운드 헬퍼 에이전트들에 작업을 위임하고 즉시 제어권을 반환</li><li><strong>주요 핵심:</strong> 각 서브 에이전트의 독립적 완료 알림 수신, Obsidian 메모리 볼트 공유를 통한 컨텍스트 유지, 인간 승인(HITL) 안전망 구축</li>
+            </ul>
+        
+
+        <h2>2. 기술 아키텍처 및 메커니즘 분석</h2>
+        <p>Hermes의 Async Subagents는 메인 세션의 I/O를 차단하지 않고 서브 프로세스를 비동기 포크(Fork)하여 실행한 뒤, 최종 산출물만 메인 채팅 창에 콜백 메시지로 전달하는 비차단(Non-blocking) 분산 태스크 아키텍처입니다.</p>
+
+        <h2>3. 핵심 기능 및 워크플로우 실증</h2>
+        <ul>
+            <li><strong>비동기 태스크 위임:</strong> 리드 에이전트가 1개 주제를 3개 아티클 작성 태스크로 쪼개어 서브 에이전트에 위임 후 즉시 대기 해제</li><li><strong>독립 완료 알림:</strong> 각 워커가 작업을 마치는 대로 메인 창에 개별 완료 메시지와 요약 리포트 전달</li><li><strong>실패 안전망 (Safety Net):</strong> 서브 에이전트 작업 중 정체 발생 시 메인 프로세스에 영향 없이 해당 슬롯만 안전하게 회수</li>
+        </ul>
+
+        <h2>4. 벤치마크 및 정량 실측치 비교</h2>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>평가 지표 / 대상</th>
+                        <th>측정 결과 / 성능 수치</th>
+                        <th>경쟁 모델 대비 분석 / 비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>채팅 대기 시간</strong></td><td>0초 (즉시 제어권 반환)</td><td>기존 3~5분 블로킹 대기 상태 완전 해소</td></tr><tr><td><strong>기본 병렬 워커 수</strong></td><td>3개 동시 구동</td><td>안정적인 리소스 관리 및 순차 처리 대비 3배 가속</td></tr><tr><td><strong>메인 채팅 청결도</strong></td><td>최종 요약본만 반환</td><td>불필요한 중간 디버그 로그로 인한 컨텍스트 오염 방지</td></tr>
+                </tbody>
+            </table>
+        
+
+        <h2>5. 검증: 시연된 기능 vs 마케팅 주장 (Claim vs Reality)</h2>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>영상 내 주장 (Claim)</th>
+                        <th>실제 시연 및 객관적 한계 (Reality &amp; Constraints)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>서브 에이전트가 무한히 스스로 복제되어 모든 작업을 끝낸다</td><td>기본 3개 워커 제한이 있으며 목표 프롬프트를 명확히 주지 않으면 서브 에이전트가 표류할 수 있음</td></tr><tr><td>서브 에이전트는 메인 채팅의 모든 과거 기억을 자동으로 알고 있다</td><td>서브 에이전트는 깨끗한 독립 컨텍스트로 시작하므로 필요한 맥락을 명시적으로 전달하거나 메모리 볼트를 연동해야 함</td></tr>
+                </tbody>
+            </table>
+        
+
+        <h2>6. 실무 적용 및 비즈니스 워크플로우 가이드</h2>
+        
+            <ol>
+                <li><strong>단계 1:</strong> `hermes update` 명령어로 최신 버전을 설치합니다.</li><li><strong>단계 2:</strong> 리드 에이전트에게 명확한 목표와 위임 권한을 부여합니다.</li><li><strong>단계 3:</strong> 결과물이 도착하면 내용을 검수하고 최종 배포를 승인합니다.</li>
+            </ol>
+        
+
+        <h2>7. 엔지니어링 주의사항 및 한계점</h2>
+        
+            <ul>
+                <li>로컬 하드웨어 사양에 따라 병렬 워커 수를 적절히 조절해야 메모리 부족을 방지할 수 있습니다.</li>
+            </ul>
+        
+    
+    
+        <p>본 인텔리전스 리포트는 Julian Goldie SEO 영상 대본을 기반으로 자동 추출·검증된 기술 분석서입니다.</p>
+        <p>원본 영상: <a href="https://www.youtube.com/watch?v=bNv-4vCTifI" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=bNv-4vCTifI</a> · 스키마: mjjeon-youtube-web/v1</p>
+    
+
+</main></body></html>
