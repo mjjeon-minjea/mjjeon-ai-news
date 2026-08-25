@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-08-26 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#14212b; --muted:#586775; --line:#dce4e9; --panel:#f7fafb; --accent:#1e6a7a; --warn:#a44e16; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#edf3f5; color:var(--ink); font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { width:min(900px, calc(100% - 32px)); margin:32px auto; background:#fff; border:1px solid var(--line); border-radius:16px; overflow:hidden; box-shadow:0 10px 30px rgba(20,33,43,.06); }
+    header { padding:32px 36px 26px; background:linear-gradient(135deg,#eef8f8,#f8fbfc); border-bottom:1px solid var(--line); }
+    .eyebrow { margin:0 0 8px; color:var(--accent); font-size:.82rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+    h1 { margin:0; font-size:clamp(1.55rem,4vw,2.15rem); letter-spacing:-.04em; }
+    .period { margin:10px 0 0; color:var(--muted); }
+    section { padding:24px 36px; border-bottom:1px solid var(--line); }
+    section:last-child { border-bottom:0; }
+    h2 { margin:0 0 12px; font-size:1.08rem; }
+    p { margin:8px 0; }
+    ul { margin:10px 0 0; padding-left:1.25rem; }
+    li { margin:8px 0; }
+    .conclusion { background:var(--panel); border-left:4px solid var(--accent); }
+    .status { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; }
+    .card { padding:14px; border:1px solid var(--line); border-radius:10px; background:#fff; }
+    .card p { margin:0; }
+    .label { color:var(--muted); font-size:.85rem; font-weight:700; }
+    .alert { color:var(--warn); }
+    .fine { color:var(--muted); font-size:.9rem; }
+    a { color:#075e73; }
+    @media (max-width:560px) { main { width:100%; margin:0; border-radius:0; border-width:0; } header,section { padding:24px 20px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">전민재 차장님 · 운영 인수인계</p>
+      <h1>2026-08-26 아침 브리핑</h1>
+      <p class="period">대상 기간: 2026-08-25 06:30 ~ 2026-08-26 06:30 KST · 작성: 2026-08-26 06:36 KST</p>
+    </header>
+
+    <section class="conclusion">
+      <h2>결론</h2>
+      <p>QMS NCR 역할기반 승인 변경은 staging 검증까지 통과했고, 다음 단계는 클로드의 testweb 재검증·발행 스모크·무인검증 69항목입니다. 고니 Kanban adapter 보강은 실검증에서 실패해 즉시 원복됐습니다. Cron은 14개 중 10개 정상·4개 실패, Kanban은 진행 0건·막힘 6건입니다.</p>
+    </section>
+
+    <section>
+      <h2>이번 기간의 실제 변경·인수 사항</h2>
+      <ul>
+        <li><strong>QMS NCR 역할기반 승인 변경:</strong> staging에서 역할 기준 승인 규칙을 반영했고, 단위 테스트 23건·빌드·변경 경로 lint·원격 testweb·자체 스모크 6종 및 고니 독립리뷰를 통과했습니다. main 브랜치·운영 DB 변경은 없습니다. 다음 인수는 testweb 역할별 재검증, 타부서 수신자를 포함한 발행 스모크, 이후 무인검증 69항목입니다.</li>
+        <li><strong>고니 Kanban adapter 실검증 실패 후 원복:</strong> 16:54 KST adapter 단독 재시작 뒤 무해 카드로 검증했으나 종결 요청 봉투 형식이 맞지 않아 HTTP 400으로 거부됐습니다. 16:57 KST 원본으로 복원했고 adapter 건강성 및 예림·다른 역할 Gateway 무중단을 확인했습니다. adapter 보강은 적용되지 않은 상태이며, 네이티브 Kanban 종결 canary는 계속 막힘입니다.</li>
+        <li><strong>성장·Wiki 확인:</strong> 짝귀 6시간 conversation growth review는 <em>NO_MATERIAL_GROWTH_CANDIDATE</em>로 종료됐습니다. 대상 기간에 운영 Wiki의 내용 문서 변경은 없었고, 사용량 계측 파일은 인수인계 변경으로 집계하지 않았습니다.</li>
+        <li><strong>운영 사고:</strong> AI NEWS 수집·X 첨부·Hermes 공식 업데이트 탐지·Drive YouTube 붙이기 Cron이 마지막 실행 error 상태입니다. 아래 Cron 실패 목록을 우선 확인해야 합니다.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Cron 현황</h2>
+      <div class="status">
+        <div class="card"><p class="label">총</p><p><strong>14개</strong></p></div>
+        <div class="card"><p class="label">정상</p><p><strong>10개</strong></p></div>
+        <div class="card"><p class="label">검증 대기</p><p><strong>0개</strong></p></div>
+        <div class="card"><p class="label">실패</p><p><strong>4개</strong></p></div>
+      </div>
+      <p><strong>총:</strong> 14개</p>
+      <p><strong>정상 10개:</strong> qms-staging-watch · Default+role Gateway supervisor keeper · Codex 주간 한도 주의·경고 · calendar-yesterday-sync · v0.20.4 교체 결과 · MJJEON 유튜브 30분 붙이기 · jjakgwi-wiki-daily-close-kst · jjakgwi-wiki-curation-6h-kst · jjakgwi-conversation-growth-review-6h-kst · 고광렬 06:30 KST 아침 브리핑</p>
+      <p><strong>검증 대기 0개:</strong> 해당 없음</p>
+      <p class="alert"><strong>실패 4개:</strong> MJJEON AI NEWS — Neoguri hourly collector — PUBLIC_REPO_UNSAFE, 12회 연속 · MJJEON X — attach Grok originals — 2회 연속 실패 · MJJEON Hermes official update detector — SOURCE_FAILED, 3회 연속 · MJJEON Drive YouTube web ingest — 360초 시간 초과, 77회 연속</p>
+      <p class="fine">미기록 0개. 판정 기준: 마지막 실행이 ok이면 정상, last_error에 REMOTE_UNVERIFIED가 있으면 검증 대기, 그 밖의 error만 실패로 분류했습니다. 검증 대기는 실패로 집계하지 않습니다.</p>
+    </section>
+
+    <section>
+      <h2>Kanban 현황</h2>
+      <p><strong>진행:</strong> 0건</p>
+      <p><strong>막힘:</strong> 6건 — GONI-WEB-OPEN 독립 교차검토 · KST conventions hybrid retention 및 Jjakgwi curation · 2026-08-09 05:32 KST 이후 MJJEON AI NEWS backfill · NCR 역할 판정 최종 델타 독립 리뷰 · NCR 역할 판정 최종 리뷰 재시도 · 고니 adapter native Kanban 종결 canary</p>
+    </section>
+
+    <section>
+      <h2>Hermes 버전</h2>
+      <p><strong>설치:</strong> Hermes Agent v0.20.4 (2026.8.18, Docker 설치)</p>
+      <p><strong>공식 최신:</strong> Hermes Agent v0.20.5 (v2026.8.19) · <a href="https://github.com/NousResearch/hermes-agent/releases/tag/v2026.8.19">공식 릴리스</a></p>
+      <p class="fine">공식 최신본보다 한 릴리스 뒤입니다. 이번 브리핑에서는 설치·재시작·배포를 수행하지 않았습니다.</p>
+    </section>
+
+    <section>
+      <h2>확인 범위</h2>
+      <p class="fine">모든 profile의 HANDOFF·MEMORY·대상 기간 대화, 운영 Wiki 변경분, profile별 Cron, 공유 Kanban 및 Hermes 공식 릴리스를 읽기 전용으로 확인했습니다. 비밀값·인증 정보는 읽거나 기록하지 않았습니다.</p>
+    </section>
+  </main>
+</body>
+</html>
