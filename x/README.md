@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-08-26 10:00 — 새 소식 없음](./2026-08-26-1000.md)
 - [2026-08-26 08:00 — Claude 통합 메모리 · OpenAI Jalapeño·Business Premium · Gemini macOS 음성](./2026-08-26-0800.md)
 - [2026-08-25 20:00 — 새 소식 없음](./2026-08-25-2000.md)
 - [2026-08-25 18:00 — 새 소식 없음](./2026-08-25-1800.md)
