@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-08-27 12:00 — 새 소식 없음](./2026-08-27-1200.md)
 - [2026-08-27 10:00 — Claude Cowork 내장 브라우저 · OpenAI 근무 밀도 감회](./2026-08-27-1000.md)
 - [2026-08-27 08:00 — OpenAI Hugging Face 사고 조사 보고 · Gemini Live 생산성 기능](./2026-08-27-0800.md)
 - [2026-08-26 20:00 — 새 소식 없음](./2026-08-26-2000.md)
