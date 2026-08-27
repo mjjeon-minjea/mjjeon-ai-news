@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-08-28 08:00 — Claude 과학자 Team 플랜 · OpenAI 사이버 방어 협력 · Gemini Live·Omni 확장 · thsottiaux ChatGPT 기능](./2026-08-28-0800.md)
 - [2026-08-27 20:00 — 새 소식 없음](./2026-08-27-2000.md)
 - [2026-08-27 18:00 — 새 소식 없음](./2026-08-27-1800.md)
 - [2026-08-27 16:00 — 리셋 버튼을 다시 찾아볼까](./2026-08-27-1600.md)
