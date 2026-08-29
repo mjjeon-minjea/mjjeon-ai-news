@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-08-29 14:00 — 새 소식 없음](./2026-08-29-1400.md)
 - [2026-08-29 12:00 — OpenAI Cursor 파트너십 종료 · thsottiaux 설명](./2026-08-29-1200.md)
 - [2026-08-29 10:00 — 새 소식 없음](./2026-08-29-1000.md)
 - [2026-08-29 08:00 — Gemini Drops · thsottiaux ChatGPT Work 야심찬 과제 · 다중 계정 연결](./2026-08-29-0800.md)
