@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-09-02 운영 아침 브리핑</title>
+  <style>
+    :root { --bg:#0b1220; --panel:#111b2e; --text:#e7edf8; --muted:#aab7cc; --line:#263653; --ok:#35c58a; --warn:#f6c453; --bad:#fb6b6b; --blue:#78a9ff; }
+    * { box-sizing:border-box; } body { margin:0; background:linear-gradient(160deg,#0b1220,#101a2c); color:var(--text); font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif; line-height:1.6; }
+    main { max-width:980px; margin:0 auto; padding:36px 20px 56px; }
+    header { border-bottom:1px solid var(--line); padding-bottom:20px; margin-bottom:24px; }
+    h1 { font-size:clamp(1.65rem,4vw,2.35rem); margin:0 0 8px; letter-spacing:-.04em; } h2 { font-size:1.1rem; margin:0 0 12px; }
+    .sub,.note { color:var(--muted); font-size:.93rem; } .lead { background:#12223b; border-left:4px solid var(--blue); padding:15px 17px; border-radius:0 10px 10px 0; margin:0 0 18px; }
+    section { background:rgba(17,27,46,.92); border:1px solid var(--line); border-radius:14px; padding:20px; margin:14px 0; }
+    ul { margin:0; padding-left:1.2rem; } li+li { margin-top:7px; }
+    .line { margin:0; padding:11px 0; border-top:1px solid var(--line); } .line:first-of-type { border-top:0; padding-top:0; }
+    .badge { display:inline-block; border-radius:999px; padding:2px 9px; font-size:.82rem; font-weight:700; margin-right:6px; } .ok { color:#051a12; background:var(--ok); } .wait { color:#241700; background:var(--warn); } .bad { color:#290606; background:var(--bad); } .info { color:#07182e; background:var(--blue); }
+    code { color:#d5e4ff; background:#0b1527; padding:1px 5px; border-radius:4px; font-size:.9em; } footer { color:var(--muted); font-size:.84rem; margin-top:22px; }
+  </style>
+</head>
+<body><main>
+  <header>
+    <h1>운영 아침 브리핑</h1>
+    <div class="sub">2026-09-02 06:30 KST · 대상 기간: 2026-09-01 06:30 ~ 2026-09-02 06:30 KST</div>
+  </header>
+  <p class="lead"><strong>결론:</strong> Hermes Agent는 공식 최신판 v0.21.0으로 전환돼 현재 설치판과 일치합니다. 현재 조치 우선순위는 Cron 실패 4건과 Kanban 막힘 6건이며, 검증 대기 작업은 없습니다.</p>
+
+  <section>
+    <h2>인수인계 변경</h2>
+    <ul>
+      <li><strong>Hermes 전환:</strong> 대화 기록상 차장님 승인 후 Docker 기반 Hermes Agent가 v0.20.5에서 v0.21.0으로 전환되고 전체 점검이 완료된 것으로 기록됐습니다. 이 브리핑의 읽기 전용 버전 확인에서도 설치판은 v0.21.0으로 확인됐습니다.</li>
+      <li><strong>전환 후 상태:</strong> 기록상 전환으로 새로 발생한 장애는 없었습니다. 다만 기존 예약 작업 경고는 유지됐고, Hermes 공식 업데이트 감지 작업은 새 버전 출력 형식 해석 문제로 라이브 버전 확인에 실패 중입니다.</li>
+      <li><strong>기록 범위:</strong> 기간 중 확인 가능한 HANDOFF·MEMORY 및 Wiki 정본·작업결과 문서의 운영 인수인계 변경은 없었습니다. 사용량 계측 이벤트는 인수인계 변경으로 집계하지 않았습니다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Cron 상태</h2>
+    <p class="line"><span class="badge info">총 14</span><span class="badge ok">정상 10</span>jjakgwi/jjakgwi-wiki-daily-close-kst, jjakgwi/jjakgwi-wiki-curation-6h-kst, jjakgwi/jjakgwi-conversation-growth-review-6h-kst, default/qms-staging-watch, default/Default+role Gateway supervisor keeper, default/Codex 주간 한도 주의·경고, default/MJJEON X — attach Grok originals, default/all-profile-conversation-close, default/Hermes v0.21.0 cutover result relay, gwangryeol/고광렬 06:30 KST 아침 브리핑</p>
+    <p class="line"><span class="badge wait">검증 대기 0</span>해당 작업 없음 · <span class="badge info">미기록 0</span>해당 작업 없음</p>
+    <p class="line"><span class="badge bad">실패 4</span>neoguri/MJJEON Hermes official update detector, neoguri/MJJEON Drive YouTube web ingest, default/MJJEON AI NEWS — Neoguri hourly collector, default/calendar-yesterday-sync</p>
+  </section>
+
+  <section>
+    <h2>Kanban 상태</h2>
+    <p class="line"><span class="badge info">진행 0</span><span class="badge bad">막힘 6</span>막힘 배정은 goni 4건, jjakgwi 1건, neoguri 1건입니다. 완료 45건·보관 22건은 진행/막힘 수에 포함하지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>Hermes Agent 버전</h2>
+    <p class="line"><span class="badge info">설치</span><code>v0.21.0 (2026.8.31)</code> · <span class="badge ok">공식 최신</span><code>v0.21.0 (v2026.8.31)</code> · 일치. 공식 GitHub 최신 릴리스와 로컬 Docker 설치 버전을 교차 확인했습니다.</p>
+  </section>
+
+  <footer>확인 범위: 7개 profile의 HANDOFF·MEMORY·conversation 및 Wiki 기간 변경분, Cron, Kanban. 이 작업은 읽기 및 브리핑 산출물 기록만 수행했습니다.</footer>
+</main></body></html>
