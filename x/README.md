@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-09-02 08:00 — Claude Fable·Mythos 5.1 · OpenAI Astra · thsottiaux 머치 라인 질문](./2026-09-02-0800.md)
 - [2026-09-01 20:00 — 새 소식 없음](./2026-09-01-2000.md)
 - [2026-09-01 18:00 — 새 소식 없음](./2026-09-01-1800.md)
 - [2026-09-01 16:00 — 새 소식 없음](./2026-09-01-1600.md)
