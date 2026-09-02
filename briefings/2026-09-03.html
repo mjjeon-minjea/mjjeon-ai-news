@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-09-03 운영 아침 브리핑</title>
+  <style>
+    :root { --bg:#0b1220; --panel:#111b2e; --text:#e7edf8; --muted:#aab7cc; --line:#263653; --ok:#35c58a; --warn:#f6c453; --bad:#fb6b6b; --blue:#78a9ff; }
+    * { box-sizing:border-box; } body { margin:0; background:linear-gradient(160deg,#0b1220,#101a2c); color:var(--text); font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif; line-height:1.6; }
+    main { max-width:980px; margin:0 auto; padding:36px 20px 56px; }
+    header { border-bottom:1px solid var(--line); padding-bottom:20px; margin-bottom:24px; }
+    h1 { font-size:clamp(1.65rem,4vw,2.35rem); margin:0 0 8px; letter-spacing:-.04em; } h2 { font-size:1.1rem; margin:0 0 12px; }
+    .sub,.note { color:var(--muted); font-size:.93rem; } .lead { background:#12223b; border-left:4px solid var(--blue); padding:15px 17px; border-radius:0 10px 10px 0; margin:0 0 18px; }
+    section { background:rgba(17,27,46,.92); border:1px solid var(--line); border-radius:14px; padding:20px; margin:14px 0; }
+    ul { margin:0; padding-left:1.2rem; } li+li { margin-top:7px; }
+    .line { margin:0; padding:11px 0; border-top:1px solid var(--line); } .line:first-of-type { border-top:0; padding-top:0; }
+    .badge { display:inline-block; border-radius:999px; padding:2px 9px; font-size:.82rem; font-weight:700; margin-right:6px; } .ok { color:#051a12; background:var(--ok); } .wait { color:#241700; background:var(--warn); } .bad { color:#290606; background:var(--bad); } .info { color:#07182e; background:var(--blue); }
+    code { color:#d5e4ff; background:#0b1527; padding:1px 5px; border-radius:4px; font-size:.9em; } footer { color:var(--muted); font-size:.84rem; margin-top:22px; }
+  </style>
+</head>
+<body><main>
+  <header>
+    <h1>운영 아침 브리핑</h1>
+    <div class="sub">2026-09-03 06:30 KST · 대상 기간: 2026-09-02 06:30 ~ 2026-09-03 06:30 KST</div>
+  </header>
+  <p class="lead"><strong>결론:</strong> QMS 056은 Staging에서 화면시험까지 완료되어 <strong>E2E 완료 · Main 이식 가능</strong>으로 기록됐지만 Main·운영 반영은 수행되지 않았습니다. 현재 운영 우선 확인 대상은 Cron 실패 4건과 Kanban 막힘 6건입니다.</p>
+
+  <section>
+    <h2>인수인계 변경</h2>
+    <ul>
+      <li><strong>QMS 056 — Staging 완료:</strong> 933-16 특채 요청서 첨부 가드(category 5)와 qms-files 20MiB 제한이 Staging에 반영됐습니다. 기록상 V-1~V-14 화면시험은 14/14 PASS였고, 테스트 문서·첨부행·이력·Storage 잔여물은 정리됐습니다. Main·운영·표 RLS·버킷 정책 변경은 0건입니다.</li>
+      <li><strong>Staging 시험계정:</strong> 더미 계정 3개를 Active·is_admin=false로 유지하고, 더미 계정에만 초기 비밀번호 변경 예외를 적용한 뒤 로그인·원격반영을 확인한 것으로 대화 기록에 남아 있습니다. 기존 실명 19명과 Main은 변경하지 않은 것으로 기록됐습니다.</li>
+      <li><strong>다음 QMS 인계:</strong> 057 Staging NCR 회귀는 아직 실행하지 않았습니다. 임시계정 9개 추가, 동시 브라우저·실패 주입·fixture DML·Storage 정리·allow_deputy 시험 승인, 기계 회귀 전용 반나절 일자에 대한 차장님 결정을 대기합니다.</li>
+      <li><strong>Hermes 설정 기록:</strong> default 대화 기록상 기본 모델을 <code>gpt-5.6-sol-900k</code>(실해석 900,000)로 설정했고, 메시지 강제 압축 기준은 400에서 5,000으로 조정했습니다. 두 변경 모두 Gateway 재시작 없이 읽기 검증 완료로 기록됐습니다.</li>
+      <li><strong>기록 범위:</strong> 기간 중 HANDOFF 변경과 인수인계 대상 Wiki 정본 변경은 확인되지 않았습니다. 7개 profile의 일자별 convention 수신 기록은 내용 추가 없이 생성됐습니다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Cron 상태</h2>
+    <p class="line"><span class="badge info">총 14</span><span class="badge ok">정상 10</span>default/qms-staging-watch, default/Default+role Gateway supervisor keeper, default/Codex 주간 한도 주의·경고, default/calendar-yesterday-sync, default/all-profile-conversation-close, default/Hermes v0.21.0 cutover result relay, jjakgwi/jjakgwi-wiki-daily-close-kst, jjakgwi/jjakgwi-wiki-curation-6h-kst, jjakgwi/jjakgwi-conversation-growth-review-6h-kst, gwangryeol/고광렬 06:30 KST 아침 브리핑</p>
+    <p class="line"><span class="badge wait">검증 대기 0</span>해당 작업 없음 · <span class="badge info">미기록 0</span>해당 작업 없음</p>
+    <p class="line"><span class="badge bad">실패 4</span>default/MJJEON AI NEWS — Neoguri hourly collector, default/MJJEON X — attach Grok originals, neoguri/MJJEON Hermes official update detector, neoguri/MJJEON Drive YouTube web ingest</p>
+  </section>
+
+  <section>
+    <h2>Kanban 상태</h2>
+    <p class="line"><span class="badge info">진행 0</span><span class="badge bad">막힘 6</span>완료 45건·보관 22건은 진행/막힘 수에 포함하지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>Hermes Agent 버전</h2>
+    <p class="line"><span class="badge info">설치</span><code>v0.21.0 (2026.8.31)</code> · <span class="badge ok">공식 최신</span><code>v0.21.0 (v2026.8.31)</code> · 일치. 로컬 Docker 설치의 upstream <code>29112bef</code>와 공식 최신 릴리스 태그를 확인했습니다.</p>
+  </section>
+
+  <footer>확인 범위: 7개 profile의 HANDOFF·MEMORY·conversation 및 Wiki 기간 변경분, Cron, Kanban, Hermes 공식 릴리스. 이 작업은 브리핑 산출물 기록만 수행했습니다.</footer>
+</main></body></html>
