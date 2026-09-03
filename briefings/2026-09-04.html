@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-09-04 운영 아침 브리핑</title>
+  <style>
+    :root { --bg:#0b1220; --panel:#111b2e; --text:#e7edf8; --muted:#aab7cc; --line:#263653; --ok:#35c58a; --warn:#f6c453; --bad:#fb6b6b; --blue:#78a9ff; }
+    * { box-sizing:border-box; } body { margin:0; background:linear-gradient(160deg,#0b1220,#101a2c); color:var(--text); font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif; line-height:1.6; }
+    main { max-width:980px; margin:0 auto; padding:36px 20px 56px; } header { border-bottom:1px solid var(--line); padding-bottom:20px; margin-bottom:24px; }
+    h1 { font-size:clamp(1.65rem,4vw,2.35rem); margin:0 0 8px; letter-spacing:-.04em; } h2 { font-size:1.1rem; margin:0 0 12px; }
+    .sub,.note { color:var(--muted); font-size:.93rem; } .lead { background:#12223b; border-left:4px solid var(--blue); padding:15px 17px; border-radius:0 10px 10px 0; margin:0 0 18px; }
+    section { background:rgba(17,27,46,.92); border:1px solid var(--line); border-radius:14px; padding:20px; margin:14px 0; }
+    ul { margin:0; padding-left:1.2rem; } li+li { margin-top:8px; } .line { margin:0; padding:11px 0; border-top:1px solid var(--line); }
+    .line:first-of-type { border-top:0; padding-top:0; } .badge { display:inline-block; border-radius:999px; padding:2px 9px; font-size:.82rem; font-weight:700; margin-right:6px; }
+    .ok { color:#051a12; background:var(--ok); } .wait { color:#241700; background:var(--warn); } .bad { color:#290606; background:var(--bad); } .info { color:#07182e; background:var(--blue); }
+    code { color:#d5e4ff; background:#0b1527; padding:1px 5px; border-radius:4px; font-size:.9em; } footer { color:var(--muted); font-size:.84rem; margin-top:22px; }
+  </style>
+</head>
+<body><main>
+  <header>
+    <h1>운영 아침 브리핑</h1>
+    <div class="sub">2026-09-04 06:35 KST · 대상 기간: 2026-09-03 06:30 ~ 2026-09-04 06:30 KST</div>
+  </header>
+
+  <p class="lead"><strong>결론:</strong> QMS 057은 정리까지 완료됐으나 기계 회귀 6건의 제품 FAIL로 직원 실업무 시험은 058 반영·지정 재시험 통과 전까지 보류입니다. 현재 Cron은 실패 3건, Kanban은 진행 0건·막힘 6건입니다.</p>
+
+  <section>
+    <h2>직전 06:30 이후 인수인계</h2>
+    <ul>
+      <li><strong>QMS 057 종료:</strong> Staging NCR 기계 회귀 28/28을 실행해 PASS 22·FAIL 6으로 종료했습니다. FAIL은 E-10·B-10 중복 회신 이력, B-01·B-08·B-09 reviews lost update, B-12 과거 요청 표시 누락입니다. R-3 정리는 PASS했고 임시 profile/Auth 9개와 시험 데이터 잔여는 0으로 복귀했으며, Main·운영·제품 코드 변경은 0건으로 기록됐습니다.</li>
+      <li><strong>다음 QMS 경계:</strong> 058은 E-10·B-10 잠금과 B-01·B-08·B-09 부서 칸 단위 병합 저장 및 DB 함수 마이그레이션으로 이어집니다. B-12는 별건이며, 직원 실업무 시험 보류는 유지됩니다.</li>
+      <li><strong>Hostinger 편집기 사고:</strong> 대화 기록상 서비스는 동작하지만 컨테이너 메타데이터의 임시 경로 때문에 YAML·환경 편집기가 빈 화면으로 보이는 상태입니다. 원본 경로를 사용한 컨테이너 재생성이 수리안으로 제시됐고, 이후 진행 지시는 있었으나 실행이 중단되어 수리 완료는 확인되지 않았습니다.</li>
+      <li><strong>Wiki/대화:</strong> 23:30 KST 전 대화 아카이브와 이후 7개 profile의 메시지 메타데이터를 확인했습니다. 이후 사용자·assistant 대화 변경은 없었고, 너구리의 도구 메시지 1쌍만 기록됐습니다. Wiki 일일 마감은 <code>repaired</code> 상태로 event 0·원문 변경 0을 남겼으며, 06:17 KST 큐레이션 체크포인트는 성공·실패 event 0으로 갱신됐습니다. 기간 중 정본 Wiki 문서 추가·수정은 확인되지 않았습니다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Cron 상태</h2>
+    <p class="line"><span class="badge info">총 14</span><span class="badge ok">정상 11</span>default/qms-staging-watch, default/Default+role Gateway supervisor keeper, default/Codex 주간 한도 주의·경고, default/calendar-yesterday-sync, default/MJJEON X — attach Grok originals, default/all-profile-conversation-close, default/Hermes v0.21.0 cutover result relay, jjakgwi/jjakgwi-wiki-daily-close-kst, jjakgwi/jjakgwi-wiki-curation-6h-kst, jjakgwi/jjakgwi-conversation-growth-review-6h-kst, gwangryeol/고광렬 06:30 KST 아침 브리핑</p>
+    <p class="line"><span class="badge wait">검증 대기 0</span>해당 작업 없음 · <span class="badge info">미기록 0</span>해당 작업 없음</p>
+    <p class="line"><span class="badge bad">실패 3</span>default/MJJEON AI NEWS — Neoguri hourly collector, neoguri/MJJEON Hermes official update detector, neoguri/MJJEON Drive YouTube web ingest</p>
+    <p class="note">실패 원인 기록: 각각 PUBLIC_REPO_UNSAFE, LIVE_VERSION_FAILED, 360초 시간 초과입니다. 검증 대기 작업은 실패로 집계하지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>Kanban 상태</h2>
+    <p class="line"><span class="badge info">진행 0</span><span class="badge bad">막힘 6</span>완료 45건·보관 22건은 진행/막힘 수에 포함하지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>Hermes Agent 버전</h2>
+    <p class="line"><span class="badge info">설치</span><code>v0.21.0 (2026.8.31)</code> · <span class="badge ok">공식 최신</span><code>v0.21.0 (v2026.8.31)</code> · 일치. Docker 설치의 upstream <code>29112bef</code>와 NousResearch 공식 latest release를 대조했습니다.</p>
+  </section>
+
+  <footer>확인 범위: 7개 profile의 기간 내 HANDOFF·MEMORY·conversation·Wiki 변경분, Cron, Kanban, Hermes 공식 릴리스. 이 작업은 브리핑 HTML과 index.json만 기록했으며 배포·메시지 전송은 수행하지 않았습니다.</footer>
+</main></body></html>
