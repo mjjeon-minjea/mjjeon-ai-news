@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-09-03 12:00 — 새 소식 없음](./2026-09-03-1200.md)
 - [2026-09-03 10:00 — thsottiaux ChatGPT 데스크톱 앱 생산성](./2026-09-03-1000.md)
 - [2026-09-03 08:00 — Claude 백그라운드 컴퓨터 사용 · Campus Ambassadors · Gemini 3.8 Flash](./2026-09-03-0800.md)
 - [2026-09-02 20:00 — 새 소식 없음](./2026-09-02-2000.md)
