@@ -1,0 +1,101 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<title>Archify 시스템 아키텍처 다이어그램 에이전트 스킬 분석: 자가 검증 루프, 코드 소스 링크 및 구조적 델타 비교</title><style>
+:root{--bg:#090909;--panel:#15120f;--line:#6b3b16;--text:#fff8ed;--muted:#c8b9a7;--accent:#ff8a1f}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Noto Sans KR",sans-serif}main{max-width:980px;margin:auto;padding:32px 20px 64px}header,section,article{margin-bottom:22px}header,.drive-brief,section,article{padding:18px;border:1px solid #4b2d18;background:var(--panel);border-radius:14px}h1{font-size:clamp(30px,6vw,56px);line-height:1.1}h2,h3,strong,a{color:var(--accent)}.meta{color:var(--muted)}.timestamp-links{display:flex;flex-wrap:wrap;gap:10px}table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}th,td{border:1px solid #4b2d18;padding:8px;text-align:left}pre{overflow:auto}a{overflow-wrap:anywhere}@media(max-width:480px){main{padding:18px 14px 48px}}
+</style></head><body><main id="youtube-detail-report" aria-labelledby="report-title">
+<header><p class="meta">MJJEON AI NEWS · VERIFIED DRIVE BUNDLE</p><h1 id="report-title">Archify 시스템 아키텍처 다이어그램 에이전트 스킬 분석: 자가 검증 루프, 코드 소스 링크 및 구조적 델타 비교</h1><p>Julian Goldie SEO · dAMuzOcmSsc</p><a href="https://www.youtube.com/watch?v=dAMuzOcmSsc" target="_blank" rel="noopener noreferrer">원본 영상 보기 ↗</a></header>
+<section class="drive-brief"><h2>핵심 요약</h2><ul><li>깃허브 32,000+ 스타 오픈소스 Archify: 코딩 도구(Cursor, Claude Code, Codex CLI)에 설치하는 에이전트 스킬 분석</li><li>자체 유효성 검사(스키마, SVG/HTML 레이아웃, 라벨 겹침 등) 통과 전까지 출력을 거부하는 &#x27;자가 검증(Self-Checking)&#x27; 아키텍처</li><li>깃 커밋 소스 코드 라인 직접 링크(src 태그), 5대 다이어그램 타입 및 PR 전후 구조 변경을 사실 기반으로 추적하는 아키텍처 델타(Delta)</li></ul><p><strong>제작자 주장</strong> · Archify는 단순히 그럴듯한 그림을 그리는 기존 AI 다이어그램 툴과 달리, 실제 코드 라인에 앵커링되고 자체 검증을 거친 단일 HTML 결과물을 생성한다.</p><p><strong>광고·홍보</strong> · AI Brand Visibility 세션(AI 오버뷰/챗GPT 추천 분석) 및 AI Profit Boardroom 안내 포함.</p><p><strong>외부 검증 필요</strong> · Archify 공식 깃허브 저장소(32,000+ 스타)의 `npx skills` 글로벌 설치 커맨드 및 Delta Compare 출력 스키마 확인.</p><p><strong>실제 시연</strong> · mco.org 공개 저장소(커밋 9F1A1CF) 분석, 에이전트 툴 콜 4-레인 워크플로우 다이어그램, 프로덕션 배포 소유권 다이어그램 시연.</p><p><strong>실무 시사점</strong> · 코드 변경 시마다 오래되어 방치되는 시스템 문서를 Archify 에이전트 스킬로 코드와 동기화하고 PR 리뷰에 델타 뷰를 활용할 것.</p><nav class="timestamp-links" aria-label="주요 타임스탬프"><a href="https://www.youtube.com/watch?v=dAMuzOcmSsc&amp;t=0s" target="_blank" rel="noopener noreferrer">도입: 항상 낡고 틀려있는 시스템 다이어그램의 문제점 ↗</a><a href="https://www.youtube.com/watch?v=dAMuzOcmSsc&amp;t=32s" target="_blank" rel="noopener noreferrer">Archify 개요: 캔버스가 아닌 코딩 도구용 에이전트 스킬 ↗</a><a href="https://www.youtube.com/watch?v=dAMuzOcmSsc&amp;t=96s" target="_blank" rel="noopener noreferrer">실제 깃 커밋 라인 링크(src 태그)와 소스 에비던스 ↗</a><a href="https://www.youtube.com/watch?v=dAMuzOcmSsc&amp;t=136s" target="_blank" rel="noopener noreferrer">5대 다이어그램 타입(아키텍처, 워크플로우, 시퀀스, 데이터플로우, 라이프사이클) ↗</a><a href="https://www.youtube.com/watch?v=dAMuzOcmSsc&amp;t=184s" target="_blank" rel="noopener noreferrer">Proof Lab 11개 검증 시나리오(에이전트 툴 콜 4-레인 등) ↗</a></nav></section>
+
+
+
+
+  <span>Technical Intelligence Report [291]</span>
+  <h1>I Found the Best AI Tool for Architecture Diagrams</h1>
+  <p>Archify 시스템 아키텍처 다이어그램 에이전트 스킬 분석: 자가 검증 루프, 코드 소스 링크 및 구조적 델타 비교</p>
+  <span>Archify</span> <span>Architecture Diagrams</span> <span>Agent Skill</span> <span>Cursor</span> <span>Claude Code</span> <span>Code Analysis</span> <span>System Design</span>
+  
+    <strong>채널:</strong> Julian Goldie SEO (@JulianGoldieSEO)
+    <strong>게시 일시:</strong> 2026-09-02T17:00:00+09:00
+    <strong>영상 길이:</strong> PT10M22S (622초)
+    <strong>Video ID:</strong> <code>dAMuzOcmSsc</code>
+    <strong>YouTube 링크:</strong> <a href="https://www.youtube.com/watch?v=dAMuzOcmSsc" target="_blank" rel="noopener noreferrer">원본 영상 바로가기</a>
+    <strong>카테고리:</strong> Developer Tools &amp; Software Architecture
+  
+
+
+
+  <h2>1. Executive Brief (핵심 요약)</h2>
+  <ul>
+    <li>깃허브 32,000+ 스타 오픈소스 Archify: 코딩 도구(Cursor, Claude Code, Codex CLI)에 설치하는 에이전트 스킬 분석</li>
+<li>자체 유효성 검사(스키마, SVG/HTML 레이아웃, 라벨 겹침 등) 통과 전까지 출력을 거부하는 &#x27;자가 검증(Self-Checking)&#x27; 아키텍처</li>
+<li>깃 커밋 소스 코드 라인 직접 링크(src 태그), 5대 다이어그램 타입 및 PR 전후 구조 변경을 사실 기반으로 추적하는 아키텍처 델타(Delta)</li>
+  </ul>
+
+
+
+  <h2>2. The Big Idea (핵심 패러다임)</h2>
+  
+    <strong>패러다임 전환:</strong> 단순히 지시를 전달받고 답변을 출력하는 수동형 챗봇에서 벗어나, 사람이 명시한 명확한 구조적 브리프와 승인 게이트를 통제하고 에이전트는 작업 도구 내부에서 자율적으로 끝단을 완결하는 운영 인프라 체제로 전이하고 있습니다.
+  
+  <p>Archify는 단순히 그럴듯한 그림을 그리는 기존 AI 다이어그램 툴과 달리, 실제 코드 라인에 앵커링되고 자체 검증을 거친 단일 HTML 결과물을 생성한다.</p>
+
+
+
+  <h2>3. Key Concepts &amp; Architecture (핵심 기술 개념)</h2>
+  <table>
+    <tr><th>항목</th><th>상세 내용</th></tr>
+    <tr><td><strong>카테고리</strong></td><td>Developer Tools &amp; Software Architecture</td></tr>
+    <tr><td><strong>에이전트 역할</strong></td><td>단일 요청 기반 파이프라인 자율 조율 및 툴 내부 실행</td></tr>
+    <tr><td><strong>메모리/컨텍스트 레이어</strong></td><td>로컬 마크다운 및 워크스페이스 세션 연동</td></tr>
+    <tr><td><strong>승인 및 보안</strong></td><td>인간 개입 게이트(Human Gate) 및 프라이버시 통제</td></tr>
+  </table>
+
+
+
+  <h2>4. Demonstrated Content vs. Creator Claims (실증 시연 vs 주장 검증)</h2>
+  
+    <h3>화면 실증 내용 (Demonstrated)</h3>
+    <p>mco.org 공개 저장소(커밋 9F1A1CF) 분석, 에이전트 툴 콜 4-레인 워크플로우 다이어그램, 프로덕션 배포 소유권 다이어그램 시연.</p>
+  
+  
+    <h3>크리에이터 핵심 주장 (Claimed)</h3>
+    <p>Archify는 단순히 그럴듯한 그림을 그리는 기존 AI 다이어그램 툴과 달리, 실제 코드 라인에 앵커링되고 자체 검증을 거친 단일 HTML 결과물을 생성한다.</p>
+  
+
+
+
+  <h2>5. Important Chapters &amp; Timeline (상세 타임라인)</h2>
+  <table>
+    <tr><th>타임스탬프</th><th>내용</th></tr>
+    <tr><td><code>0s</code></td><td>도입: 항상 낡고 틀려있는 시스템 다이어그램의 문제점</td></tr>
+<tr><td><code>32s</code></td><td>Archify 개요: 캔버스가 아닌 코딩 도구용 에이전트 스킬</td></tr>
+<tr><td><code>96s</code></td><td>실제 깃 커밋 라인 링크(src 태그)와 소스 에비던스</td></tr>
+<tr><td><code>136s</code></td><td>5대 다이어그램 타입(아키텍처, 워크플로우, 시퀀스, 데이터플로우, 라이프사이클)</td></tr>
+<tr><td><code>184s</code></td><td>Proof Lab 11개 검증 시나리오(에이전트 툴 콜 4-레인 등)</td></tr>
+<tr><td><code>246s</code></td><td>핵심: 렌더링 전 자가 검증(Self-Checking) 및 수리 영수증(Repair Receipt)</td></tr>
+<tr><td><code>302s</code></td><td>인터랙티브 기능(단축키 탐색, 라우트 프로브, 렌즈 모드, 스토리 재생)</td></tr>
+<tr><td><code>433s</code></td><td>Architecture Delta: PR 전후 구조적 변경점 자동 비교</td></tr>
+<tr><td><code>491s</code></td><td>Archify가 아닌 것(도형 그리기 도구/머메이드 테마 아님)</td></tr>
+<tr><td><code>520s</code></td><td>시작 가이드 및 권장 프롬프트 패턴</td></tr>
+  </table>
+
+
+
+  <h2>6. Practical Takeaways &amp; Implication (실무 적용 시사점)</h2>
+  <p>코드 변경 시마다 오래되어 방치되는 시스템 문서를 Archify 에이전트 스킬로 코드와 동기화하고 PR 리뷰에 델타 뷰를 활용할 것.</p>
+  
+    <strong>외부 검증 필요 사항:</strong> Archify 공식 깃허브 저장소(32,000+ 스타)의 `npx skills` 글로벌 설치 커맨드 및 Delta Compare 출력 스키마 확인.
+  
+
+
+
+  <h2>7. Commercial &amp; Promotion Disclosure (광고 및 프로모션 안내)</h2>
+  <p>AI Brand Visibility 세션(AI 오버뷰/챗GPT 추천 분석) 및 AI Profit Boardroom 안내 포함.</p>
+
+
+
+  <p>Autonomous AI Agent Technical Intelligence Archive • Schema mjjeon-youtube-web/v1 • Julian Goldie SEO</p>
+
+
+
+</main></body></html>
