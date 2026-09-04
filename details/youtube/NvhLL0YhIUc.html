@@ -1,0 +1,74 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<title>Qwen 3.8 Max 0902 대규모 업데이트 분석: 2.4T MoE 아키텍처, 10일 자율 프로젝트 수행 및 Apache 2.0 오픈소스 공개</title><style>
+:root{--bg:#090909;--panel:#15120f;--line:#6b3b16;--text:#fff8ed;--muted:#c8b9a7;--accent:#ff8a1f}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Noto Sans KR",sans-serif}main{max-width:980px;margin:auto;padding:32px 20px 64px}header,section,article{margin-bottom:22px}header,.drive-brief,section,article{padding:18px;border:1px solid #4b2d18;background:var(--panel);border-radius:14px}h1{font-size:clamp(30px,6vw,56px);line-height:1.1}h2,h3,strong,a{color:var(--accent)}.meta{color:var(--muted)}.timestamp-links{display:flex;flex-wrap:wrap;gap:10px}table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}th,td{border:1px solid #4b2d18;padding:8px;text-align:left}pre{overflow:auto}a{overflow-wrap:anywhere}@media(max-width:480px){main{padding:18px 14px 48px}}
+</style></head><body><main id="youtube-detail-report" aria-labelledby="report-title">
+<header><p class="meta">MJJEON AI NEWS · VERIFIED DRIVE BUNDLE</p><h1 id="report-title">Qwen 3.8 Max 0902 대규모 업데이트 분석: 2.4T MoE 아키텍처, 10일 자율 프로젝트 수행 및 Apache 2.0 오픈소스 공개</h1><p>Julian Goldie SEO · NvhLL0YhIUc</p><a href="https://www.youtube.com/watch?v=NvhLL0YhIUc" target="_blank" rel="noopener noreferrer">원본 영상 보기 ↗</a></header>
+<section class="drive-brief"><h2>핵심 요약</h2><ul><li>알리바바가 공개한 2.4조 파라미터(활성 95B) 프론티어 오픈소스 모델 Qwen 3.8 Max 0902의 코딩 및 코워크(Co-work) 강화 분석</li><li>인간 개입 없이 10일간 스스로 작업 큐를 관리하고 테스트·머지를 거쳐 &#x27;Oh My CLI&#x27; 도구를 개발하는 장기 지평(Long-Horizon) 자율 에이전트 능력 실증</li><li>ML 연구 논문 재구축 5일 실험에서 1,100회 작업 및 33회 재학습을 통해 원 논문 대비 2.71점 초과 달성, 27B 모델과 함께 Apache 2.0 가중치 공개</li></ul><p><strong>제작자 주장</strong> · Qwen 3.8 Max는 단기 문답용 챗봇이 아닌 수일~수주일간 단독으로 소프트웨어를 개발하고 비즈니스 전략을 수립하는 장기 자율 에이전트의 완성형이다.</p><p><strong>광고·홍보</strong> · AI Profit Boardroom(Qwen 에이전트 30일 로드맵 제공) 및 Goldie Agency 무료 SEO 전략 상담 안내 포함.</p><p><strong>외부 검증 필요</strong> · Alibaba Hugging Face 가중치 다운로드 및 SWE-bench Pro, DeepSWE, Humanity&#x27;s Last Exam 벤치마크 순위 대조.</p><p><strong>실제 시연</strong> · 10일 자율 코딩 프로젝트 및 5일 머신러닝 논문 자체 재현 실험 과정 기술 분석.</p><p><strong>실무 시사점</strong> · 100만 컨텍스트와 MoE 아키텍처를 활용하여 연간 고객 지원 데이터나 1년 치 커뮤니티 전수 분석 등 대규모 장기 프로젝트를 로컬/프라이빗 환경에 위임할 것.</p><nav class="timestamp-links" aria-label="주요 타임스탬프"><a href="https://www.youtube.com/watch?v=NvhLL0YhIUc&amp;t=0s" target="_blank" rel="noopener noreferrer">Qwen 3.8 Max 0902 업데이트 개요 및 ML 대회 성과 ↗</a><a href="https://www.youtube.com/watch?v=NvhLL0YhIUc&amp;t=50s" target="_blank" rel="noopener noreferrer">포스트 트레이닝 초점: 코딩과 코워크(Co-work)의 결합 ↗</a><a href="https://www.youtube.com/watch?v=NvhLL0YhIUc&amp;t=76s" target="_blank" rel="noopener noreferrer">2.4T MoE 파라미터(활성 95B)와 100만 토큰 컨텍스트 의미 ↗</a><a href="https://www.youtube.com/watch?v=NvhLL0YhIUc&amp;t=134s" target="_blank" rel="noopener noreferrer">자율 에이전트 실증 1: 10일간 스스로 일감 관리하며 CLI 툴 제작 ↗</a><a href="https://www.youtube.com/watch?v=NvhLL0YhIUc&amp;t=176s" target="_blank" rel="noopener noreferrer">자율 에이전트 실증 2: 5일간 논문 실험 재구축 및 2.71점 개선 ↗</a></nav></section>
+
+
+
+
+  <span>Technical Intelligence Report [287]</span>
+  <h1>New Qwen 3.8 Max Update Is SCARY GOOD!</h1>
+  <p>Qwen 3.8 Max 0902 대규모 업데이트 분석: 2.4T MoE 아키텍처, 10일 자율 프로젝트 수행 및 Apache 2.0 오픈소스 공개</p>
+  
+    <strong>채널:</strong> Julian Goldie SEO (@JulianGoldieSEO)
+    <strong>게시일:</strong> 2026-09-02T13:00:00+09:00
+    <strong>영상 길이:</strong> PT8M40S (520초)
+    <strong>카테고리:</strong> Frontier Open-Weights &amp; Long-Horizon Agents
+    <strong>Video ID:</strong> <code>NvhLL0YhIUc</code>
+    <strong>원문 영상:</strong> <a href="https://www.youtube.com/watch?v=NvhLL0YhIUc" target="_blank" rel="noopener noreferrer">YouTube 시청</a>
+  
+
+
+
+  <h2>1. 개요 및 핵심 요약 (Executive Brief)</h2>
+  
+    <strong>핵심 논점:</strong>
+    <ul>
+      <li>알리바바가 공개한 2.4조 파라미터(활성 95B) 프론티어 오픈소스 모델 Qwen 3.8 Max 0902의 코딩 및 코워크(Co-work) 강화 분석</li><li>인간 개입 없이 10일간 스스로 작업 큐를 관리하고 테스트·머지를 거쳐 &#x27;Oh My CLI&#x27; 도구를 개발하는 장기 지평(Long-Horizon) 자율 에이전트 능력 실증</li><li>ML 연구 논문 재구축 5일 실험에서 1,100회 작업 및 33회 재학습을 통해 원 논문 대비 2.71점 초과 달성, 27B 모델과 함께 Apache 2.0 가중치 공개</li>
+    </ul>
+  
+
+
+
+  <h2>2. 주요 개념 및 기술 아키텍처 (Key Concepts &amp; Architecture)</h2>
+  <p>Qwen 3.8 Max는 단기 문답용 챗봇이 아닌 수일~수주일간 단독으로 소프트웨어를 개발하고 비즈니스 전략을 수립하는 장기 자율 에이전트의 완성형이다.</p>
+  
+    <strong>실무적 의미 (Practical Implication):</strong> 100만 컨텍스트와 MoE 아키텍처를 활용하여 연간 고객 지원 데이터나 1년 치 커뮤니티 전수 분석 등 대규모 장기 프로젝트를 로컬/프라이빗 환경에 위임할 것.
+  
+
+
+
+  <h2>3. 실전 타임라인 및 챕터별 분석 (Detailed Timeline)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>타임스탬프</th>
+        <th>내용 및 주요 기술 포인트</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><code>00:00</code></td><td>Qwen 3.8 Max 0902 업데이트 개요 및 ML 대회 성과</td></tr><tr><td><code>00:50</code></td><td>포스트 트레이닝 초점: 코딩과 코워크(Co-work)의 결합</td></tr><tr><td><code>01:16</code></td><td>2.4T MoE 파라미터(활성 95B)와 100만 토큰 컨텍스트 의미</td></tr><tr><td><code>02:14</code></td><td>자율 에이전트 실증 1: 10일간 스스로 일감 관리하며 CLI 툴 제작</td></tr><tr><td><code>02:56</code></td><td>자율 에이전트 실증 2: 5일간 논문 실험 재구축 및 2.71점 개선</td></tr><tr><td><code>05:04</code></td><td>코워크(Co-work)의 실무적 정의: 365일 이커머스 전략 기획</td></tr><tr><td><code>05:53</code></td><td>벤치마크 한계 분석 (SWE-bench Pro 67.6, Last Exam 43.6)</td></tr><tr><td><code>06:44</code></td><td>Apache 2.0 완전 오픈소스 공개의 전략적 파급력</td></tr>
+    </tbody>
+  </table>
+
+
+
+  <h2>4. 실전 시연 vs 주장 검증 (Demonstrated vs. Claimed)</h2>
+  <p><strong>화면 시연 내용:</strong> 10일 자율 코딩 프로젝트 및 5일 머신러닝 논문 자체 재현 실험 과정 기술 분석.</p>
+  <p><strong>검증 필요 항목:</strong> Alibaba Hugging Face 가중치 다운로드 및 SWE-bench Pro, DeepSWE, Humanity&#x27;s Last Exam 벤치마크 순위 대조.</p>
+
+
+
+  <h2>5. 비즈니스 및 상업적 요소 (Commercial Disclosures)</h2>
+  <p>AI Profit Boardroom(Qwen 에이전트 30일 로드맵 제공) 및 Goldie Agency 무료 SEO 전략 상담 안내 포함.</p>
+
+
+
+  <p>Julian Goldie SEO YouTube Intelligence Archive © 2026 | Schema: mjjeon-youtube-web/v1 | Verified Raw Archive</p>
+
+
+
+</main></body></html>
