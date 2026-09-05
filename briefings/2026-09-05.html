@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-09-05 운영 아침 브리핑</title>
+  <style>
+    :root{--bg:#0b1220;--panel:#111b2e;--text:#e7edf8;--muted:#aab7cc;--line:#263653;--ok:#35c58a;--wait:#f6c453;--bad:#fb6b6b;--info:#78a9ff}
+    *{box-sizing:border-box} body{margin:0;background:linear-gradient(160deg,#0b1220,#101a2c);color:var(--text);font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;line-height:1.62}
+    main{max-width:980px;margin:0 auto;padding:36px 20px 56px} header{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:24px} h1{font-size:clamp(1.65rem,4vw,2.35rem);margin:0 0 8px;letter-spacing:-.04em} h2{font-size:1.1rem;margin:0 0 12px}
+    .sub,.note,.evidence{color:var(--muted);font-size:.92rem}.lead{background:#12223b;border-left:4px solid var(--info);padding:15px 17px;border-radius:0 10px 10px 0;margin:0 0 18px} section{background:rgba(17,27,46,.92);border:1px solid var(--line);border-radius:14px;padding:20px;margin:14px 0}
+    ul{margin:0;padding-left:1.2rem}li+li{margin-top:13px}.line{margin:0;padding:11px 0;border-top:1px solid var(--line)}.line:first-of-type{border-top:0;padding-top:0}.badge{display:inline-block;border-radius:999px;padding:2px 9px;font-size:.82rem;font-weight:700;margin:0 5px 4px 0}.ok{color:#051a12;background:var(--ok)}.wait{color:#241700;background:var(--wait)}.bad{color:#290606;background:var(--bad)}.info{color:#07182e;background:var(--info)} code{color:#d5e4ff;background:#0b1527;padding:1px 5px;border-radius:4px;font-size:.9em} footer{color:var(--muted);font-size:.84rem;margin-top:22px}
+  </style>
+</head>
+<body><main>
+  <header>
+    <h1>운영 아침 브리핑</h1>
+    <div class="sub">2026-09-05 06:35 KST · 대상 기간: 2026-09-04 06:30 ~ 2026-09-05 06:35 KST</div>
+  </header>
+
+  <p class="lead"><strong>결론:</strong> 작업환경 공정개선은 STEP 1~6까지 진행되어 STEP 5A의 대표 지식 유입 복구와 STEP 6 효과 검증을 남겼습니다. QMS 변경·실물 정리·Gateway 재기동은 하지 않았고 HOLD를 유지했습니다. 새 운영사고는 대화 아카이브 작업의 읽기 재확인 실패이며, 현재 Cron은 정상 10건·검증 대기 0건·실패 4건입니다.</p>
+
+  <section>
+    <h2>직전 06:30 이후 인수인계</h2>
+    <ul>
+      <li><strong>작업환경 공정개선 종결:</strong> 승인된 STEP 1~6 흐름에서 Before/After 기준선·분류·가시화·원인분석·효과 검증을 완료했습니다. STEP 5A에서는 기본 Wiki 규약 경로를 정본 경로로 바로잡고 대표 receipt 1건의 수집→KST 뷰→정본화→색인 반영을 검증해 root Wiki index가 609건에서 610건으로 늘었습니다. QMS 코드·DB·Wiki, Gateway 재기동은 0건이며, 안전조건을 충족한 물리 이동·통합·삭제도 0건입니다.<br><span class="evidence">증거: <code>conv-default-2026-09-04-1933~2026-09-05-0340</code> · direct_user / source_readback · 2026-09-04 19:33 ~ 2026-09-05 03:36 KST</span></li>
+      <li><strong>STEP 6 실제 변경 범위:</strong> 중앙 Wiki 메타데이터 색인을 추가했고, 무시 대상 pytest cache 2개만 동일 파일시스템 rename으로 이동해 rollback manifest를 남겼습니다. 독립 receipt 감사는 raw receipt 2,332건·고유 event 2,330건 중 498건이 명시 안전·정본화 상태임을 기록했으며, 새 본문 정본화는 하지 않았습니다.<br><span class="evidence">증거: <code>conv-default-2026-09-05-0334</code> · source_readback · 2026-09-05 03:34~03:36 KST</span></li>
+      <li><strong>위임 타임아웃 설정:</strong> 사용자 승인으로 <code>delegation.child_timeout_seconds</code>를 600초에서 0(벽시계 제한 해제)으로 변경했고, 설정 readback과 공식 config 검사는 유효로 확인됐습니다. Gateway 재기동은 하지 않았습니다.<br><span class="evidence">증거: <code>conv-default-2026-09-05-0157</code> · direct_user / source_readback · 2026-09-05 01:57 KST</span></li>
+      <li><strong>대화 아카이브 사고:</strong> <code>all-profile-conversation-close</code>가 23:30 KST 실행 뒤 읽기 재확인 불일치로 error 상태가 됐습니다. 오류 기록은 기본 프로필의 2026-09-04 대화 기록을 가리키며, 원인 및 복구 완료는 이번 확인 범위에서 확정하지 않았습니다.<br><span class="evidence">증거: <code>cron-default-9b9d3a1ea098</code> · system_event / source_readback · 2026-09-04 23:30 KST</span></li>
+      <li><strong>Wiki 정본화 확인:</strong> 06:17 KST 큐레이션은 STEP 5 최종 승인 receipt 1건을 event ID 단위로 정본화했습니다. 이 record는 원본 receipt identity와 출력 checksum만 검증했으며, 기저 산출물은 별도 열람하지 않은 receipt-reported 범위입니다.<br><span class="evidence">증거: <code>b206a7e335c03e39312a81a5a4573c1a</code> · source_readback · 2026-09-05 06:17 KST</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Cron 상태</h2>
+    <p class="line"><span class="badge info">총 14</span><span class="badge ok">정상 10</span>default/qms-staging-watch, default/Default+role Gateway supervisor keeper, default/Codex 주간 한도 주의·경고, default/calendar-yesterday-sync, default/MJJEON X — attach Grok originals, default/Hermes v0.21.0 cutover result relay, jjakgwi/jjakgwi-wiki-daily-close-kst, jjakgwi/jjakgwi-wiki-curation-6h-kst, jjakgwi/jjakgwi-conversation-growth-review-6h-kst, gwangryeol/고광렬 06:30 KST 아침 브리핑</p>
+    <p class="line"><span class="badge wait">검증 대기 0</span>해당 작업 없음 · <span class="badge info">미기록 0</span>해당 작업 없음</p>
+    <p class="line"><span class="badge bad">실패 4</span>default/MJJEON AI NEWS — Neoguri hourly collector, default/all-profile-conversation-close, neoguri/MJJEON Hermes official update detector, neoguri/MJJEON Drive YouTube web ingest</p>
+    <p class="note">집계 규칙: <code>last_status=ok</code>만 정상, <code>REMOTE_UNVERIFIED</code> 포함 오류는 검증 대기, 그 밖의 error만 실패로 분류했습니다. 검증 대기를 실패로 집계하지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>Kanban 상태</h2>
+    <p class="line"><span class="badge info">진행 0</span><span class="badge bad">막힘 6</span>완료 45건. 진행은 triage·todo·scheduled·ready·running의 합계이며 모두 0건입니다. 막힘 6건은 현재 보드 수치일 뿐, 기간 내 새 인수인계 항목으로 승격하지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>Hermes Agent 버전</h2>
+    <p class="line"><span class="badge info">설치</span><code>v0.21.0 (2026.8.31)</code> · upstream <code>29112bef</code> · <span class="badge ok">공식 최신</span><code>v0.21.0 (v2026.8.31)</code> · 일치, 업데이트 불필요.</p>
+  </section>
+
+  <footer>확인 범위: 전 profile HANDOFF·MEMORY·conversation의 기간 내 변경분, Wiki 변경분, Cron, Kanban, Hermes 공식 릴리스. relevance-gate fixture 8건 PASS. 이 작업은 브리핑 HTML과 index.json만 기록하며 배포·메시지 전송은 수행하지 않았습니다.</footer>
+</main></body></html>
