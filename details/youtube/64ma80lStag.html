@@ -1,0 +1,44 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<title>ChatGPT 이벤트 기반 예약 작업 기능 분석 — Slack·Gmail·GitHub 연동 및 구글 드라이브 PPT 자동 수정 워크플로우</title><style>
+:root{--bg:#090909;--panel:#15120f;--line:#6b3b16;--text:#fff8ed;--muted:#c8b9a7;--accent:#ff8a1f}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Noto Sans KR",sans-serif}main{max-width:980px;margin:auto;padding:32px 20px 64px}header,section,article{margin-bottom:22px}header,.drive-brief,section,article{padding:18px;border:1px solid #4b2d18;background:var(--panel);border-radius:14px}h1{font-size:clamp(30px,6vw,56px);line-height:1.1}h2,h3,strong,a{color:var(--accent)}.meta{color:var(--muted)}.timestamp-links{display:flex;flex-wrap:wrap;gap:10px}table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}th,td{border:1px solid #4b2d18;padding:8px;text-align:left}pre{overflow:auto}a{overflow-wrap:anywhere}@media(max-width:480px){main{padding:18px 14px 48px}}
+</style></head><body><main id="youtube-detail-report" aria-labelledby="report-title">
+<header><p class="meta">MJJEON AI NEWS · VERIFIED DRIVE BUNDLE</p><h1 id="report-title">ChatGPT 이벤트 기반 예약 작업 기능 분석 — Slack·Gmail·GitHub 연동 및 구글 드라이브 PPT 자동 수정 워크플로우</h1><p>JoCoding(조코딩) · 64ma80lStag</p><a href="https://www.youtube.com/watch?v=64ma80lStag" target="_blank" rel="noopener noreferrer">원본 영상 보기 ↗</a></header>
+<section class="drive-brief"><h2>핵심 요약</h2><ul><li>ChatGPT 스케줄링 작업에서 Slack, Gmail, GitHub 연동을 통한 이벤트 기반 자동 실행 기능 분석</li><li>시간대별 단순 예약을 넘어 외부 서비스 상태 변경을 감지해 반응하는 이벤트 드리븐 트리거 지원</li><li>슬랙 데이터 수신 시 구글 드라이브 내 프레젠테이션 자동 업데이트 등 복합 워크플로우 구현</li></ul><p><strong>제작자 주장</strong> · ChatGPT가 시간대별 예약뿐 아니라 슬랙이나 지메일 등에서 이벤트 발생 시 즉시 감지하여 구글 드라이브 문서를 수정하는 등 디테일한 예약 작업이 가능해졌다고 소개함.</p><p><strong>광고·홍보</strong> · 없음 (단신 테크 뉴스)</p><p><strong>외부 검증 필요</strong> · OpenAI ChatGPT Plus/Pro 예약 작업(Scheduled Tasks) 릴리스 노트</p><p><strong>실제 시연</strong> · ChatGPT Work 탭 예약 작업 설정 화면, Slack/Gmail/Github 연동 프롬프트, 구글 드라이브 PPT 수정 요청 예시</p><p><strong>실무 시사점</strong> · 협업 툴과 결합하여 인간 개입 없이 데이터 도착 즉시 산출물을 자동 갱신하는 상시 대기형 에이전트 파이프라인 구축 가능.</p><nav class="timestamp-links" aria-label="주요 타임스탬프"><a href="https://www.youtube.com/watch?v=64ma80lStag&amp;t=0s" target="_blank" rel="noopener noreferrer">ChatGPT 스케줄링과 Slack/Gmail/GitHub 연동 ↗</a><a href="https://www.youtube.com/watch?v=64ma80lStag&amp;t=10s" target="_blank" rel="noopener noreferrer">이벤트 트리거 기반 작업 실행 메커니즘 ↗</a><a href="https://www.youtube.com/watch?v=64ma80lStag&amp;t=18s" target="_blank" rel="noopener noreferrer">슬랙 수신 데이터 기반 구글 드라이브 PPT 자동 갱신 ↗</a></nav></section>
+
+
+  
+    <span>조코딩 AI 기술 인텔리전스 · #031</span>
+    <h1>디테일한 예약까지 가능해진 챗GPT ㄷㄷ</h1>
+    
+      <strong>채널:</strong> 조코딩 JoCoding (@jocoding)
+      <strong>영상 ID:</strong> 64ma80lStag
+      <strong>공개일시:</strong> 2026-09-02 (KST)
+      <strong>길이:</strong> 20초
+      <strong>품질 점수:</strong> 96 / 100
+    
+  
+
+  
+    <h2>1. 핵심 총괄 요약 (Executive Summary)</h2>
+    
+      <ul>
+        <li><strong>ChatGPT 이벤트 기반 스케줄링(Event-driven Scheduling) 기능 추가:</strong> 단순 시간 단위(시간대별) 반복 실행을 넘어 Slack, Gmail, GitHub 등 외부 업무 도구의 데이터 변경 이벤트를 실시간 감지하여 자동 실행 [00:00:00].</li>
+        <li><strong>크로스 플랫폼 업무 자동화 파이프라인:</strong> 슬랙으로 동료가 요청 데이터를 공유하면 이를 감지하여 구글 드라이브 프레젠테이션(PPT)을 자동 수정하고 업데이트하는 워크플로우 지원 [00:00:10].</li>
+        <li><strong>지능형 비즈니스 오토메이션 진화:</strong> 기존 cron 기반 단방향 스케줄러에서 벗어나 이벤트 드리븐 에이전트 아키텍처로 확장되어 업무 생산성 대폭 향상 [00:00:18].</li>
+      </ul>
+    
+
+    <h2>2. 주요 타임스탬프</h2>
+    <ul>
+      <li><code>00:00:00</code> - ChatGPT 스케줄링 작업의 Slack, Gmail, GitHub 연동 기능 소개</li>
+      <li><code>00:00:10</code> - 단순 시간 기반에서 이벤트 트리거 방식으로의 진화</li>
+      <li><code>00:00:18</code> - 슬랙 데이터 수신 후 구글 드라이브 PPT 자동 수정 실전 유스케이스</li>
+    </ul>
+  
+
+  
+    <p>© 2026 조코딩 AI 지식 아카이브 · mjjeon-youtube-web/v1 규격</p>
+  
+
+</main></body></html>
