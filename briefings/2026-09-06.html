@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-09-06 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#64748b; --line:#dce3ef; --bg:#f5f7fb; --card:#fff; --accent:#1459c4; --warn:#b45309; --bad:#b42318; --ok:#087443; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main { max-width:980px; margin:32px auto; padding:0 20px 36px; }
+    header, section { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:24px; margin-bottom:16px; }
+    h1,h2 { margin:0 0 10px; line-height:1.3; }
+    h1 { font-size:28px; } h2 { font-size:19px; }
+    .meta,.evidence { color:var(--muted); font-size:13px; }
+    .lead { margin:14px 0 0; padding:13px 15px; border-left:4px solid var(--accent); background:#eef5ff; }
+    ul { margin:10px 0 0; padding-left:22px; } li { margin:10px 0; }
+    .source { display:block; margin-top:3px; color:var(--muted); font-size:12px; }
+    .line { margin:8px 0; padding:9px 11px; border-radius:8px; background:#f8fafc; }
+    .ok { color:var(--ok); } .wait { color:var(--warn); } .bad { color:var(--bad); }
+    a { color:var(--accent); } code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.92em; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>2026-09-06 운영 아침 브리핑</h1>
+    <p class="meta">대상 기간: 2026-09-05 06:30 KST ~ 2026-09-06 06:36 KST · 작성: 2026-09-06 06:36:50 KST</p>
+    <p class="lead"><strong>결론:</strong> 최신 운영 인수인계에는 QMS 060의 G2 대기와 STEP 5의 Gate B/C 보류가 남아 있습니다. Cron은 등록 15개 중 5개가 실패 상태이며, Kanban은 진행 0·막힘 6입니다. Hermes 설치본은 공식 최신과 일치합니다.</p>
+  </header>
+
+  <section>
+    <h2>새 인수인계</h2>
+    <ul>
+      <li><strong>QMS 060:</strong> G2 검토 회신 전까지 스테이징 쓰기·마이그레이션·정책 변경은 계속 금지입니다. 058·059의 스테이징 반영과 재시험은 완료 기록이 있으나, 현재 후속 단계는 G2 대기입니다.<span class="source">근거: direct_user · default 대화 기록의 13:10:01 KST 지시 및 source_readback</span></li>
+      <li><strong>공정개선 STEP 5:</strong> Gate B(QMS Wiki 링크)와 Gate C(Hermes source/config) 실제 변경은 보류입니다. 최신 지시는 Gate B의 현재 운영 원문 선정 근거와 Gate C의 재현 가능한 근거를 보완한 <code>PROCESS_IMPROVEMENT_RECORD_r1.md</code> 제출 요청입니다.<span class="source">근거: direct_user · default 대화 기록의 23:56:54 KST 지시</span></li>
+      <li><strong>STEP 9 범위:</strong> A3 검색 전환은 PASS로 기록됐고 파일럿 범위는 종료됐습니다. 다만 ‘STEP 1~9 전체 완료’ 주장은 과장으로 정정됐으며, 확정 범위는 309개 중 21개 업무 source를 8개 지식 페이지로 정리한 파일럿입니다.<span class="source">근거: source_readback · Wiki work-result 2026-09-05 23:26:40~2026-09-06 00:04:50 KST; 원 하위 산출물은 별도 미검증</span></li>
+      <li><strong>작업환경 정리:</strong> 승인 범위의 생성 잔여물 46개 경로는 삭제 없이 quarantine으로 이동됐고, 복구 가능 상태가 확인됐습니다. 디스크 회수는 0으로 기록됐습니다.<span class="source">근거: source_readback · Wiki log 2026-09-05 17:33:43 KST 및 default HANDOFF 18:16:36 KST</span></li>
+      <li><strong>Wiki curation:</strong> 기간 내 3개 배치에서 97개 receipt가 일대일 정리됐고, 각 배치의 receipt checksum 검증은 통과로 기록됐습니다.<span class="source">근거: source_readback · Wiki log 2026-09-05 12:18:18 / 18:18:40 / 2026-09-06 06:18:55 KST</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Cron 현황</h2>
+    <p class="line"><strong>Cron 총:</strong> 15개 (공유 registry의 같은 ID는 1회만 계산)</p>
+    <p class="line ok"><strong>Cron 정상:</strong> 10개 — qms-staging-watch; Default+role Gateway supervisor keeper; Codex 주간 한도 주의·경고; calendar-yesterday-sync; Hermes v0.21.0 cutover result relay; STEP8 live cutover readiness notice; 고광렬 06:30 KST 아침 브리핑; jjakgwi-wiki-daily-close-kst; jjakgwi-wiki-curation-6h-kst; jjakgwi-conversation-growth-review-6h-kst</p>
+    <p class="line wait"><strong>Cron 검증 대기:</strong> 0개 — 없음</p>
+    <p class="line bad"><strong>Cron 실패:</strong> 5개 — MJJEON AI NEWS — Neoguri hourly collector; MJJEON X — attach Grok originals; all-profile-conversation-close; MJJEON Hermes official update detector; MJJEON Drive YouTube web ingest</p>
+    <p class="line"><strong>Cron 미기록:</strong> 0개 — 없음</p>
+    <p class="evidence">분류 기준: <code>ok</code>=정상, 상태 미기록=미기록, 원격 검증 대기 표식=검증 대기, 그 외 <code>error</code>만 실패. 검증 대기를 실패로 합산하지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>Kanban · Hermes</h2>
+    <p class="line"><strong>Kanban 진행:</strong> 0개</p>
+    <p class="line"><strong>Kanban 막힘:</strong> 6개</p>
+    <p class="line"><strong>Hermes 설치:</strong> v0.21.0 (2026.8.31) · <strong>공식 최신:</strong> v0.21.0 (v2026.8.31) · 업데이트 필요 없음</p>
+    <p class="evidence">설치본은 로컬 Hermes CLI, 공식 최신은 <a href="https://api.github.com/repos/NousResearch/hermes-agent/releases/latest">NousResearch/hermes-agent releases/latest</a>의 2026-09-06 06:31 KST 확인값입니다.</p>
+  </section>
+
+  <section>
+    <h2>필터·검증 기록</h2>
+    <p class="evidence">전 profile의 HANDOFF·MEMORY·conversation 및 Wiki에서 기간 내 변경된 항목만 검토했습니다. 직접 지시와 source readback만 채택했고, 외부 뉴스와 변경 없는 과거 backlog는 제외했습니다. relevance-gate fixture 8건은 PASS했습니다. 저장 본문은 민감 문자열 표식 검사를 통과했습니다.</p>
+  </section>
+</main>
+</body>
+</html>
