@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-09-05 12:00 — 새 소식 없음](./2026-09-05-1200.md)
 - [2026-09-05 10:00 — thsottiaux Astra full banked reset for Plus·Pro·Business](./2026-09-05-1000.md)
 - [2026-09-05 08:00 — OpenAI GPT-6 Astra 전체 롤아웃 · Gemini Daily Brief·Lyria 3.5 · thsottiaux 업데이트](./2026-09-05-0800.md)
 - [2026-09-04 20:00 — 새 소식 없음](./2026-09-04-2000.md)
