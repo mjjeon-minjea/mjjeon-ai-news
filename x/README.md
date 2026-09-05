@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-09-06 08:00 — 새 소식 없음](./2026-09-06-0800.md)
 - [2026-09-05 20:00 — 새 소식 없음](./2026-09-05-2000.md)
 - [2026-09-05 18:00 — OpenAI wiki incident 오정렬 공개 기준 논의](./2026-09-05-1800.md)
 - [2026-09-05 16:00 — thsottiaux Astra 생산성 향상으로 DevDay 출시 앞당김](./2026-09-05-1600.md)
