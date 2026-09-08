@@ -1,0 +1,107 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<title>AI 자동매매를 돌려봤더니? — NH투자증권 나무 플러그 기반 실시간 수익률 대시보드 및 모의매매 결과 분석</title><style>
+:root{--bg:#090909;--panel:#15120f;--line:#6b3b16;--text:#fff8ed;--muted:#c8b9a7;--accent:#ff8a1f}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Noto Sans KR",sans-serif}main{max-width:980px;margin:auto;padding:32px 20px 64px}header,section,article{margin-bottom:22px}header,.drive-brief,section,article{padding:18px;border:1px solid #4b2d18;background:var(--panel);border-radius:14px}h1{font-size:clamp(30px,6vw,56px);line-height:1.1}h2,h3,strong,a{color:var(--accent)}.meta{color:var(--muted)}.timestamp-links{display:flex;flex-wrap:wrap;gap:10px}table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}th,td{border:1px solid #4b2d18;padding:8px;text-align:left}pre{overflow:auto}a{overflow-wrap:anywhere}@media(max-width:480px){main{padding:18px 14px 48px}}
+</style></head><body><main id="youtube-detail-report" aria-labelledby="report-title">
+<header><p class="meta">MJJEON AI NEWS · VERIFIED DRIVE BUNDLE</p><h1 id="report-title">AI 자동매매를 돌려봤더니? — NH투자증권 나무 플러그 기반 실시간 수익률 대시보드 및 모의매매 결과 분석</h1><p>JoCoding(조코딩) · wc0iGhU3a_Y</p><a href="https://www.youtube.com/watch?v=wc0iGhU3a_Y" target="_blank" rel="noopener noreferrer">원본 영상 보기 ↗</a></header>
+<section class="drive-brief"><h2>핵심 요약</h2><ul><li>NH투자증권 나무 플러그(Namuh PLUG) API와 Codex 기반 AI 자동매매 대시보드 연동 및 60초 주기 실시간 현황 모니터링</li><li>투자 원칙 및 실시간 뉴스 조회를 결합한 자동 매매 로직과 알파벳(GOOGL) 3주 매도 체결 로그 확인</li><li>AMD(+0.29%), NVDA(+0.89%), TSMC(+1.50%) 등 주요 빅테크 종목 포트폴리오의 모의매매 플러스 수익률 실증</li></ul><p><strong>제작자 주장</strong> · 투자 원칙과 뉴스 조회를 통해 AI가 자동으로 매매를 수행하며 모의매매 계좌 전반에서 플러스 손익을 기록 중이라고 설명함.</p><p><strong>광고·홍보</strong> · 상단 자막 표시: NH투자증권 협찬광고</p><p><strong>외부 검증 필요</strong> · NH투자증권 나무 플러그 API 주문 체결 지연시간 및 슬리피지 방지 정책</p><p><strong>실제 시연</strong> · 127.0.0.1 로컬 웹 대시보드, 4개 보유 종목 손익률(+0.29% ~ +1.50%), 5억 원 모의계좌 주문가능금액, 알파벳 매도 예약 실행 로그</p><p><strong>실무 시사점</strong> · 증권사 API와 LLM 에이전트를 결합하여 노코드/바이브 코딩으로 실시간 트레이딩 봇 및 모니터링 시스템을 구축할 수 있음을 검증함.</p><nav class="timestamp-links" aria-label="주요 타임스탬프"><a href="https://www.youtube.com/watch?v=wc0iGhU3a_Y&amp;t=0s" target="_blank" rel="noopener noreferrer">AI 자동매매 현황 대시보드 및 보유 종목 손익률 공개 ↗</a><a href="https://www.youtube.com/watch?v=wc0iGhU3a_Y&amp;t=3s" target="_blank" rel="noopener noreferrer">뉴스 조회 연계 매도 예약 실행 및 60초 주기 자동 갱신 ↗</a><a href="https://www.youtube.com/watch?v=wc0iGhU3a_Y&amp;t=6s" target="_blank" rel="noopener noreferrer">포트폴리오 플러스 손익 확인 및 모의매매 결과 소회 ↗</a></nav></section>
+
+
+  
+    <span>조코딩 AI 기술 인텔리전스 · #038</span>
+    <h1>AI 자동매매를 돌려봤더니?</h1>
+    
+      <strong>채널:</strong> 조코딩 JoCoding (@jocoding)
+      <strong>영상 ID:</strong> wc0iGhU3a_Y
+      <strong>공개일시:</strong> 2026-09-01 (KST)
+      <strong>길이:</strong> 11초 (PT11S)
+      <strong>품질 점수:</strong> 96 / 100
+    
+  
+
+  
+    <h2>1. 핵심 총괄 요약 (Executive Summary)</h2>
+    
+      <ul>
+        <li><strong>AI 기반 자동매매 현황 모니터링 대시보드 실증:</strong> NH투자증권 나무 플러그(Namuh PLUG) API와 연동된 로컬 웹 대시보드(127.0.0.1:8788)를 통해 60초 주기 자동 리프레시 및 실시간 계좌 보유 종목 손익 모니터링 [00:00:00].</li>
+        <li><strong>실시간 뉴스 감성 분석과 자동 주문 집행:</strong> 투자 원칙과 1시간 단위 실시간 경제 뉴스 조회를 결합하여 알파벳(GOOGL 3주 @ $343.95) 자동 매도 등 전략적 리밸런싱 주문 체결 내역 확인 [00:00:00].</li>
+        <li><strong>모의투자 포트폴리오 수익률 검증:</strong> 주문가능금액 5억 원 모의계좌 환경에서 AMD(+0.29%), 엔비디아 NVDA(+0.89%), TSMC TSM(+1.50%) 등 주요 빅테크·반도체 포트폴리오의 전반적인 플러스 수익률 달성 [00:00:06].</li>
+      </ul>
+    
+
+    <h2>2. 핵심 아키텍처 및 시스템 분석</h2>
+    <h3>2.1 에이전틱 자동매매 파이프라인</h3>
+    <p>본 쇼츠 영상은 OpenAI Codex와 NH투자증권 나무 플러그 API를 활용해 구축한 투자 에이전트의 실제 운영 대시보드를 시연합니다. 127.0.0.1 로컬 환경에서 구동되는 웹 인터페이스를 통해 모의투자/국내실전/미국실전 탭 간 즉각적 전환과 10분 주기 토큰 재인증 및 60초 주기 대시보드 렌더링이 이루어집니다.</p>
+
+    <h3>2.2 종목별 실시간 포지션 현황</h3>
+    
+      <table>
+        <thead>
+          <tr>
+            <th>종목명 (티커)</th>
+            <th>보유 수량</th>
+            <th>평균매입가</th>
+            <th>현재가</th>
+            <th>평가금액</th>
+            <th>손익률</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AMD</td>
+            <td>2주</td>
+            <td>$510.51</td>
+            <td>$512.00</td>
+            <td>$1,024.00</td>
+            <td>+0.29%</td>
+          </tr>
+          <tr>
+            <td>마이크로소프트 (MSFT)</td>
+            <td>2주</td>
+            <td>$484.55</td>
+            <td>$484.22</td>
+            <td>$968.44</td>
+            <td>-0.07%</td>
+          </tr>
+          <tr>
+            <td>엔비디아 (NVDA)</td>
+            <td>5주</td>
+            <td>$225.60</td>
+            <td>$227.61</td>
+            <td>$1,138.05</td>
+            <td>+0.89%</td>
+          </tr>
+          <tr>
+            <td>TSMC (TSM)</td>
+            <td>3주</td>
+            <td>$428.00</td>
+            <td>$434.42</td>
+            <td>$1,303.26</td>
+            <td>+1.50%</td>
+          </tr>
+        </tbody>
+      </table>
+    
+
+    <h2>3. 시연 내용 vs 주장 구분 (Demonstrated vs Claimed)</h2>
+    <ul>
+      <li><strong>실제 화면 시연:</strong> 브라우저 대시보드 상의 실시간 손익 현황, 4/5 포지션 보유 상태, 5억 원 모의계좌 주문가능금액, 알파벳 주식 매도 예약 실행 로그 [00:00:00~00:00:05].</li>
+      <li><strong>발화자 의견 및 감상:</strong> &quot;전반적으로 플러스 수익률인데 모의매매라서 아쉽다&quot;는 단기 성과에 대한 소회 피력 [00:00:06].</li>
+    </ul>
+
+    <h2>4. 실무 시사점 (Practical Implications)</h2>
+    <p>증권사 오픈 API(나무 플러그)와 LLM 에이전트를 결합할 경우, 개인이 별도의 전문 퀀트 소프트웨어 없이도 웹소켓 및 REST API를 조율하는 개인화 트레이딩 봇을 단시간에 구축할 수 있음을 보여줍니다. 단, 실전 매매 도입 시에는 API 호출 실패 대응, 슬리피지 방지, 텔레그램 승인 가드레일 등의 안전장치 구성이 필수적입니다.</p>
+
+    <h2>5. 주요 타임스탬프</h2>
+    <ul>
+      <li><code>00:00:00</code> - 자동매매 현황 대시보드 화면 및 종목별 손익률 공개</li>
+      <li><code>00:00:03</code> - 60초 주기 대시보드 자동 갱신 및 계좌 잔고 재동기화 메커니즘</li>
+      <li><code>00:00:06</code> - 포트폴리오 전반 플러스 수익률 확인 및 모의매매 결과 소회</li>
+    </ul>
+  
+
+  
+    <p>© 2026 조코딩 AI 지식 아카이브 · mjjeon-youtube-web/v1 규격</p>
+  
+
+</main></body></html>
