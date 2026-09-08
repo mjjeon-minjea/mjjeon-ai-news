@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-09-09 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#162033; --muted:#64748b; --line:#dbe4ee; --bg:#f6f8fb; --card:#fff; --ok:#166534; --warn:#9a6700; --fail:#b42318; }
+    * { box-sizing:border-box; } body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.65 system-ui,-apple-system,"Noto Sans KR",sans-serif; }
+    main { max-width:960px; margin:0 auto; padding:36px 22px 56px; } h1 { margin:0 0 4px; font-size:28px; } h2 { font-size:18px; margin:30px 0 10px; } .meta { color:var(--muted); margin:0; } .lead { margin:22px 0; padding:16px 18px; border-left:4px solid #3559e0; background:#eef3ff; border-radius:6px; } .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px; } .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:15px; } .label { color:var(--muted); font-size:12px; } .value { font-size:23px; font-weight:750; margin-top:2px; } .ok { color:var(--ok); } .warn { color:var(--warn); } .fail { color:var(--fail); } table { width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--line); border-radius:10px; overflow:hidden; } th,td { text-align:left; padding:11px 12px; border-bottom:1px solid var(--line); vertical-align:top; } th { background:#f1f5f9; font-size:13px; } tr:last-child td { border-bottom:0; } ul { padding-left:20px; } .small { color:var(--muted); font-size:13px; } code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.92em; } a { color:#2648c4; } @media(max-width:640px){ main{padding:24px 14px;} table{font-size:13px;} th,td{padding:9px 8px;} }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>운영 아침 브리핑 · 2026-09-09</h1>
+    <p class="meta">대상 기간: 2026-09-08 06:30 KST 이후 · 기준 시각: 2026-09-09 06:36:20 KST</p>
+  </header>
+
+  <p class="lead"><strong>결론:</strong> Hermes는 설치본과 공식 최신 릴리스가 모두 <strong>v0.21.1 (2026.9.7)</strong>로 일치합니다. Cron은 총 16건 중 정상 12건, 검증 대기 1건, 실패 3건이며, Kanban은 진행 0건·막힘 6건입니다.</p>
+
+  <section aria-labelledby="snapshot">
+    <h2 id="snapshot">현재 스냅샷</h2>
+    <div class="grid">
+      <article class="card"><div class="label">Cron</div><div class="value">16건</div><div class="small"><span class="ok">정상 12</span> · <span class="warn">검증 대기 1</span> · <span class="fail">실패 3</span> · 미기록 0</div></article>
+      <article class="card"><div class="label">Kanban</div><div class="value">진행 0건</div><div class="small">막힘 6건</div></article>
+      <article class="card"><div class="label">Hermes</div><div class="value ok">v0.21.1</div><div class="small">설치본 = 공식 최신</div></article>
+    </div>
+  </section>
+
+  <section aria-labelledby="handoff">
+    <h2 id="handoff">기간 내 운영 인수인계</h2>
+    <table>
+      <thead><tr><th>근거 시각</th><th>출처·provenance</th><th>확인된 변경</th></tr></thead>
+      <tbody>
+        <tr><td>2026-09-08 20:45:48 KST</td><td><code>default/HANDOFF.md</code><br><span class="small">source_readback</span></td><td>Hermes Docker 업데이트 결과가 <strong>CORE_VERIFIED</strong>로 기록됐고, 실제 컨테이너 정보와 CLI v0.21.1의 일치를 재확인했습니다. 추가 교체·복구 재실행은 하지 않았습니다.</td></tr>
+        <tr><td>2026-09-09 06:30 KST</td><td><code>default/HANDOFF.md</code><br><span class="small">source_readback</span></td><td>Cron 수리 r1은 <strong>PARTIAL / NATURAL_BC_ACCEPTANCE_FAILED</strong> 상태입니다. 자연 실행에서 YouTube는 6회 완료·무변경, 공식 업데이트 감지기는 3회 완료와 3회 검증 대기가 기록됐고, AI NEWS hourly는 공개 저장소 안전 검사 실패가 5회 기록됐습니다. 원인 조사 범위는 읽기 전용·후보 작업으로 제한돼 있습니다.</td></tr>
+        <tr><td>2026-09-09 06:29:59 KST</td><td><code>wiki/log.md</code><br><span class="small">source_readback</span></td><td>Wiki curation 배치가 38개 영수증을 일대일 정합으로 처리했습니다. 라이브 Wiki 쓰기와 런타임 활성화는 0건이며, 분리된 후보 준비만 통과했고 승인 대기 상태입니다.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section aria-labelledby="cron">
+    <h2 id="cron">Cron</h2>
+    <p><strong>총 16 · 정상 12 · 검증 대기 1 · 실패 3 · 미기록 0</strong></p>
+    <ul>
+      <li><span class="warn"><strong>검증 대기:</strong></span> MJJEON Hermes official update detector</li>
+      <li><span class="fail"><strong>실패:</strong></span> MJJEON AI NEWS — Neoguri hourly collector</li>
+      <li><span class="fail"><strong>실패:</strong></span> MJJEON X — attach Grok originals</li>
+      <li><span class="fail"><strong>실패:</strong></span> all-profile-conversation-close</li>
+    </ul>
+    <p class="small">검증 대기는 실패 수치에 포함하지 않았습니다. 상태 분류는 각 job의 마지막 상태와 오류 표식을 기준으로 읽었습니다.</p>
+  </section>
+
+  <section aria-labelledby="versions">
+    <h2 id="versions">Hermes 버전</h2>
+    <p><strong>설치:</strong> Hermes Agent v0.21.1 (2026.9.7) · <strong>공식 최신:</strong> Hermes Agent v0.21.1 (v2026.9.7, 2026-09-07 릴리스) · <strong>업데이트 필요:</strong> 없음</p>
+    <p class="small">공식 최신 근거: <a href="https://github.com/NousResearch/hermes-agent/releases/latest">NousResearch/hermes-agent Releases</a>.</p>
+  </section>
+
+  <section aria-labelledby="audit">
+    <h2 id="audit">필터·검증</h2>
+    <ul>
+      <li>직전 06:30 KST 이후의 source_readback 변경만 운영 범위로 반영했습니다.</li>
+      <li>과거 완료·보류 백로그를 새 의사결정이나 새 장애로 승격하지 않았습니다.</li>
+      <li>Kanban 막힘 항목은 요청된 숫자 스냅샷으로만 표시했고, 개별 카드의 상태 변경이나 의사결정 요청으로 해석하지 않았습니다.</li>
+      <li>daily-briefing-relevance-gate fixtures: 8건, 실패 0건으로 통과했습니다.</li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>
