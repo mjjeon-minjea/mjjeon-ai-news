@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-09-10 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#61708a; --line:#dfe6ef; --panel:#f7f9fc; --accent:#1458c0; --ok:#137333; --warn:#9a6700; --bad:#b42318; }
+    * { box-sizing:border-box; } body { margin:0; background:#eef3f8; color:var(--ink); font:15px/1.65 system-ui,-apple-system,"Noto Sans KR",sans-serif; }
+    main { max-width:1040px; margin:32px auto; padding:0 20px 32px; } header,section,footer { background:#fff; border:1px solid var(--line); border-radius:14px; padding:24px; margin-bottom:16px; box-shadow:0 1px 2px rgba(20,40,70,.03); }
+    h1 { font-size:28px; margin:0 0 6px; } h2 { font-size:18px; margin:0 0 14px; } .meta,.evidence,footer { color:var(--muted); font-size:13px; }
+    .status { display:inline-block; padding:3px 9px; border-radius:999px; background:#e8f2ff; color:var(--accent); font-weight:700; font-size:13px; }
+    .grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; } .metric { border:1px solid var(--line); background:var(--panel); border-radius:10px; padding:13px; } .metric b { display:block; font-size:24px; line-height:1.1; margin-bottom:3px; }
+    .ok b { color:var(--ok); } .pending b { color:var(--warn); } .bad b { color:var(--bad); }
+    ul { margin:8px 0 0; padding-left:20px; } li { margin:8px 0; } .names { font-size:13px; color:#34445f; overflow-wrap:anywhere; }
+    table { width:100%; border-collapse:collapse; font-size:14px; } th,td { text-align:left; vertical-align:top; border-top:1px solid var(--line); padding:10px 8px; } th { color:var(--muted); font-weight:600; width:22%; }
+    .no-decision { background:#f4f7fb; border-left:4px solid #87a3c9; padding:12px 14px; border-radius:6px; }
+    @media (max-width:720px) { main { margin:16px auto; padding:0 12px 20px; } .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } header,section,footer { padding:18px; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <span class="status">운영 인수인계</span>
+    <h1>2026-09-10 운영 아침 브리핑</h1>
+    <div class="meta">대상 구간: 2026-09-09 06:30 KST ~ 2026-09-10 06:31 KST · 생성: 2026-09-10T06:31:33+09:00</div>
+  </header>
+
+  <section>
+    <h2>결론</h2>
+    <ul>
+      <li><strong>CRON 수리 r1은 종결</strong>됐습니다. 대화 보관·공식 업데이트·YouTube 검증을 구분해 마감했고, 마지막 운영 회귀는 117건과 하위 11건이 통과했습니다. <span class="evidence">근거: 2026-09-09 14:09:38 KST · source_readback</span></li>
+      <li><strong>QMS P8c</strong>는 staging 배포와 SQL 1행 정정 검증까지 완료됐고, 화면 V8 항목 UAT는 아직 수행되지 않았습니다. 자동 재실행은 하지 않았습니다. <span class="evidence">근거: 2026-09-09 16:20:14 KST · source_readback</span></li>
+      <li><strong>캐시 효율 A09 재시험 1쌍</strong>은 동일 조건으로 마쳤으나, B의 묶음·선별 방식은 근거 누락과 입력 증가가 있어 채택하지 않습니다. 설정·서비스 변경 없이 중지했습니다. <span class="evidence">근거: 2026-09-10 01:34:10 KST · source_readback</span></li>
+      <li><strong>기록 원칙</strong>: HANDOFF에는 세션 종료 시 남은 다음 작업만 기록하며, 진행 중 대화의 목적은 옮기지 않습니다. 모델·서브 설정 검토는 후속 과제로 유지됩니다. <span class="evidence">근거: 2026-09-09 20:06:21 KST · direct_user</span></li>
+      <li><strong>Wiki 정리</strong>: 최신 curation은 9개 영수증을 대조했고 9/9 검증을 통과했습니다. 라이브 지식 게시·런타임 활성화는 하지 않았습니다. <span class="evidence">근거: 2026-09-10 06:23:34 KST · source_readback</span></li>
+    </ul>
+    <p class="no-decision"><strong>신규 결정 요청:</strong> 없음. 신선한 직접 사용자 결정 요청이 확인되지 않아 상태만 인계합니다.</p>
+  </section>
+
+  <section>
+    <h2>Cron 현황</h2>
+    <div class="grid">
+      <div class="metric"><b>16</b>총 작업</div>
+      <div class="metric ok"><b>14</b>정상</div>
+      <div class="metric pending"><b>0</b>검증 대기</div>
+      <div class="metric bad"><b>2</b>실패</div>
+    </div>
+    <p class="names"><strong>정상(14):</strong> default/qms-staging-watch · default/MJJEON AI NEWS — Neoguri hourly collector · default/Default+role Gateway supervisor keeper · default/Codex 주간 한도 주의·경고 · default/MJJEON X — attach Grok originals · default/all-profile-conversation-close · default/Hermes v0.21.0 cutover result relay · default/STEP8 live cutover readiness notice · default/4단계 운영 반영 결과 확인·단일 보고 · gwangryeol/고광렬 06:30 KST 아침 브리핑 · jjakgwi/jjakgwi-wiki-daily-close-kst · jjakgwi/jjakgwi-wiki-curation-6h-kst · jjakgwi/jjakgwi-conversation-growth-review-6h-kst · neoguri/MJJEON Hermes official update detector</p>
+    <p class="names"><strong>검증 대기(0):</strong> 없음</p>
+    <p class="names"><strong>실패(2):</strong> default/calendar-yesterday-sync · neoguri/MJJEON Drive YouTube web ingest</p>
+    <p class="names"><strong>미기록(0):</strong> 없음</p>
+    <ul>
+      <li><code>calendar-yesterday-sync</code>: 인증 갱신 오류로 실패했습니다. <span class="evidence">최종 오류: 2026-09-10 00:30 KST · system_event</span></li>
+      <li><code>MJJEON Drive YouTube web ingest</code>: RefreshError로 실패했습니다(연속 실패 16회 표기). <span class="evidence">최종 오류: 2026-09-10 06:15 KST · system_event</span></li>
+    </ul>
+    <p class="evidence">집계 기준: last_status=ok는 정상, last_status 미존재는 미기록, last_error에 REMOTE_UNVERIFIED가 있으면 검증 대기, 그 밖의 error만 실패. 수집: 2026-09-10 06:34 KST · system_event.</p>
+  </section>
+
+  <section>
+    <h2>Kanban 현황</h2>
+    <p><strong>진행 0건 · 막힘 6건</strong></p>
+    <p class="evidence">현재 보드 상태 스냅샷이며, 오래된 막힘 카드는 신규 의사결정으로 해석하지 않았습니다. 수집: 2026-09-10 06:34 KST · system_event.</p>
+  </section>
+
+  <section>
+    <h2>Hermes 버전</h2>
+    <table>
+      <tr><th>설치 버전</th><td>Hermes Agent v0.21.1 (2026.9.7) · upstream 2237be35 <span class="evidence">· system_event</span></td></tr>
+      <tr><th>공식 최신</th><td>Hermes Agent v0.21.1 (v2026.9.7), 2026-09-07 릴리스 <span class="evidence">· source_readback</span></td></tr>
+      <tr><th>판정</th><td><strong>업데이트 불필요</strong></td></tr>
+    </table>
+  </section>
+
+  <footer>
+    범위 필터 검증: daily-briefing-relevance-gate fixture 8건 PASS. 외부 뉴스는 운영 인수인계 범위에서 제외했습니다. Discord 전송·사이트 배포는 수행하지 않았습니다.
+  </footer>
+</main>
+</body>
+</html>
