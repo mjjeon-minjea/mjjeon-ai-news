@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-09-10 12:00 — 새 소식 없음](./2026-09-10-1200.md)
 - [2026-09-10 08:00 — Claude Marketplace 신규 · OpenAI Defense Factory · Paul Christiano · Gemini Lyria 3.5 · thsottiaux 리셋·opt-out](./2026-09-10-0800.md)
 - [2026-09-09 20:00 — Kimi Work Remote Control](./2026-09-09-2000.md)
 - [2026-09-09 18:00 — 새 소식 없음](./2026-09-09-1800.md)
