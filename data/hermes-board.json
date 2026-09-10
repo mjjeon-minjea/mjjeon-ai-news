@@ -1,6 +1,17 @@
 {
   "items": [
     {
+      "canonical_url": "https://hermes-agent.nousresearch.com/docs/llms.txt",
+      "detail_url": "hermes/items/official-docs-llms.html",
+      "judgment": "공식 Docs·repository 교차확인 완료 · 커넥터 검색·호출 운영 변경 유의미 · 최신 공식 릴리스 v0.21.1 유지 · 자동 업데이트 금지 · 보안·비용 교차신호 에스컬레이션 후보 · 명시적 breaking 근거 없음",
+      "published_at": "2026-09-09T21:03:58Z",
+      "source_grade": "official",
+      "source_kind": "docs",
+      "stable_id": "official-docs:llms",
+      "status": "에스컬레이션 후보",
+      "title_ko": "Hermes Tool Search, Nous 앱 커넥터를 원격 도구로 통합"
+    },
+    {
       "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v2026.9.7",
       "detail_url": "hermes/items/github-release-384339710.html",
       "judgment": "에스컬레이션 후보: MCP 인증·광범위 운영 호환성 검증 후 단계적 적용 · 공식 릴리스·Docs·저장소 태그 교차확인 · 명시적 breaking 근거 없음 · 별도 교차신호 없음",
@@ -10,17 +21,6 @@
       "stable_id": "github-release:384339710",
       "status": "active",
       "title_ko": "Hermes Agent v0.21.1(v2026.9.7) 패치 릴리스"
-    },
-    {
-      "canonical_url": "https://hermes-agent.nousresearch.com/docs/llms.txt",
-      "detail_url": "hermes/items/official-docs-llms.html",
-      "judgment": "공식 문서 원문 hash·URL 확인 · 공식 release와 기능 범위 교차확인 · 운영·보안 경로 확장으로 유의미 · 자동 업데이트 금지 · 적용 전 별도 회귀검증",
-      "published_at": "2026-09-07T21:35:35Z",
-      "source_grade": "official",
-      "source_kind": "docs",
-      "stable_id": "official-docs:llms",
-      "status": "에스컬레이션 후보",
-      "title_ko": "Hermes 공식 문서, 운영·보안·확장 경로 대폭 정리"
     },
     {
       "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v2026.8.31",
