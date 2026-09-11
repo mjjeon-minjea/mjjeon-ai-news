@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-09-11 10:00 — 새 소식 없음](./2026-09-11-1000.md)
 - [2026-09-11 08:00 — Claude Fable 5.1 Build Days · OpenAI ChatGPT for Financial Services · Gemini Windows · thsottiaux Pro 구독 일시 중단 · Data agent · GPT-Live](./2026-09-11-0800.md)
 - [2026-09-10 20:00 — 새 소식 없음](./2026-09-10-2000.md)
 - [2026-09-10 18:00 — 새 소식 없음](./2026-09-10-1800.md)
