@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-09-11 18:00 — 새 소식 없음](./2026-09-11-1800.md)
 - [2026-09-11 16:00 — thsottiaux GPT-5.3-Codex-Spark 은퇴 예고](./2026-09-11-1600.md)
 - [2026-09-11 14:00 — 새 소식 없음](./2026-09-11-1400.md)
 - [2026-09-11 12:00 — thsottiaux Agents API · Scaled agents on demand](./2026-09-11-1200.md)
