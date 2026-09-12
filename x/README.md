@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-09-12 18:00 — thsottiaux Astra 리셋 전파 완료](./2026-09-12-1800.md)
 - [2026-09-12 16:00 — thsottiaux Astra powered ships this week · DevDay 앞두고 출시](./2026-09-12-1600.md)
 - [2026-09-12 14:00 — thsottiaux Astra 품질 이슈 수정 · 리셋 안내](./2026-09-12-1400.md)
 - [2026-09-12 12:00 — 새 소식 없음](./2026-09-12-1200.md)
