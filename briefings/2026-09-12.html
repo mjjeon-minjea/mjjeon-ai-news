@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-09-12 운영 아침 브리핑</title>
+<style>
+:root{--ink:#182230;--muted:#637084;--line:#dfe5ec;--paper:#fff;--bg:#f3f6f9;--blue:#145da0;--amber:#a55700;--red:#b42318;--green:#16794a}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;line-height:1.65}.wrap{max-width:980px;margin:32px auto;padding:0 18px}.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:26px 28px;margin:16px 0;box-shadow:0 3px 12px #1d29390a}h1{font-size:28px;margin:0 0 4px}h2{font-size:18px;margin:0 0 12px}.sub,.meta{color:var(--muted);font-size:14px}.lead{font-size:17px;margin:18px 0 0}.metric{padding:12px 14px;border-left:4px solid var(--blue);background:#f6faff;margin:9px 0;border-radius:5px}.metric.fail{border-left-color:var(--red);background:#fff7f6}.metric.warn{border-left-color:var(--amber);background:#fffaf3}.metric.ok{border-left-color:var(--green);background:#f5fcf7}table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:11px 10px;border-top:1px solid var(--line);vertical-align:top;text-align:left}th{color:var(--muted);font-weight:650;width:180px}ul{margin:0;padding-left:20px}.tag{display:inline-block;font-size:12px;font-weight:700;border-radius:99px;padding:2px 8px;background:#eaf2fc;color:#145da0}.tag.user{background:#f1eafb;color:#6d3f96}.tag.incident{background:#fff0ef;color:#b42318}.note{font-size:13px;color:var(--muted)}code{font-family:ui-monospace,monospace;font-size:.92em}@media(max-width:640px){.card{padding:20px 17px}.wrap{margin:16px auto}th{width:120px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<section class="card">
+  <h1>2026-09-12 운영 아침 브리핑</h1>
+  <div class="sub">대상 기간: 2026-09-11 06:30–2026-09-12 06:38 KST · 운영 인수인계만 반영</div>
+  <p class="lead"><strong>결론:</strong> 고니를 제외한 6개 프로필에 Context Mode·context-compression 기본 적용과 대표 검증이 완료됐고, 서비스 재시작은 없었습니다. 현재 Cron 실패는 5건이며, 설치 Hermes는 공식 최신 v0.21.2보다 한 버전 낮습니다.</p>
+</section>
+
+<section class="card">
+  <h2>운영 지표</h2>
+  <div class="metric fail"><strong>Cron:</strong> 총 13 · 정상 8 — default/qms-staging-watch, default/Default+role Gateway supervisor keeper, default/Codex 주간 한도 주의·경고, default/all-profile-conversation-close, gwangryeol/고광렬 06:30 KST 아침 브리핑, jjakgwi/jjakgwi-wiki-daily-close-kst, jjakgwi/jjakgwi-wiki-curation-6h-kst, jjakgwi/jjakgwi-conversation-growth-review-6h-kst · 검증 대기 0 — 없음 · 실패 5 — default/MJJEON AI NEWS — Neoguri hourly collector, default/calendar-yesterday-sync, default/MJJEON X — attach Grok originals, neoguri/MJJEON Hermes official update detector, neoguri/MJJEON Drive YouTube web ingest · 미기록 0 — 없음</div>
+  <div class="metric warn"><strong>Kanban:</strong> 진행 0 · 막힘 6</div>
+  <div class="metric fail"><strong>Hermes:</strong> 설치 <strong>v0.21.1 (2026.9.7)</strong> · 공식 최신 <strong>v0.21.2 (v2026.9.11)</strong>, 2026-09-12 04:20 KST 공개 · 업데이트 필요</div>
+  <p class="note">Cron은 마지막 상태가 ok인 job만 정상으로 집계했습니다. REMOTE_UNVERIFIED 검증 대기는 실패에 합산하지 않았습니다. Kanban의 막힘 6건은 미변경 backlog라 운영 이슈로 재서술하지 않았습니다.</p>
+</section>
+
+<section class="card">
+  <h2>기간 내 확인된 변경·지시·사고</h2>
+  <table>
+    <thead><tr><th>시각 · 근거</th><th>인수인계</th></tr></thead>
+    <tbody>
+      <tr><th>09-11 23:53 KST<br><span class="tag user">direct_user</span><br>09-12 00:46 KST<br><span class="tag">source_readback</span></th><td>차장님 승인에 따라 <strong>고니 제외 6개 프로필</strong>에 Context Mode와 context-compression 기본 설정·지침을 적용했습니다. 실제 MCP 호출·원문 회수와 대표 요약 검증은 완료했고, 기존 자동 압축 엔진·모델·권한은 유지했습니다. Gateway·Docker 재시작과 기존 대화 전수 UAT는 수행하지 않았습니다.</td></tr>
+      <tr><th>09-12 02:01 KST<br><span class="tag user">direct_user</span><br>09-12 02:00 KST<br><span class="tag">source_readback</span></th><td>사용자 요청으로 대화를 저장·종료했습니다. HANDOFF는 <strong>NO_ACTIVE_WORK</strong>로 기록됐으며, 이전 보류 항목을 자동 재개하거나 새 작업을 시작하지 않았습니다.</td></tr>
+      <tr><th>09-11 12:26·18:27 KST<br>09-12 00:24·06:22 KST<br><span class="tag">source_readback</span></th><td>Wiki 증분 정리 4개 batch가 모두 PASS했습니다. 선언 event 125건의 receipt 검증 125/125, 색인 참조 500/500을 확인했으며 live Wiki 발행·runtime 활성화는 수행하지 않았습니다.</td></tr>
+      <tr><th>09-12 04:20 KST<br><span class="tag">source_readback</span></th><td>공식 GitHub Release 기준 Hermes Agent <strong>v0.21.2 (v2026.9.11)</strong>이 공개됐습니다. 현재 설치본은 v0.21.1입니다.</td></tr>
+      <tr><th>09-12 06:38 KST<br><span class="tag incident">system_event</span></th><td>활성 Cron 13개 중 5개가 마지막 실행 error 상태입니다. 실패 job 이름은 상단 Cron 지표에만 기록했으며, 검증 대기 항목은 없습니다.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="card">
+  <h2>범위·판정</h2>
+  <ul>
+    <li>전 profile의 HANDOFF·MEMORY·conversation 및 Wiki에서 대상 기간의 변경분만 읽었습니다.</li>
+    <li>외부 뉴스는 제외했습니다. Hermes 최신 버전은 이번 브리핑에서 명시 요청된 설치·공식 최신 비교 항목으로만 반영했습니다.</li>
+    <li>이번 기간에 새 직접 사용자 의사결정 요청은 확인되지 않았습니다.</li>
+  </ul>
+</section>
+
+<section class="card note">
+  생성: 2026-09-12 06:38:46 KST · relevance gate fixtures: 8 cases PASS · 읽기 전용 수집, 배포·메시지 전송·index.html 변경 없음
+</section>
+</main>
+</body>
+</html>
