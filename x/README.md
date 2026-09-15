@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-09-15 10:00 — 새 소식 없음](./2026-09-15-1000.md)
 - [2026-09-15 08:00 — Gemini Discord 데모·Q&A (Gemini Live 생산성 업그레이드)](./2026-09-15-0800.md)
 - [2026-09-14 20:00 — 새 소식 없음](./2026-09-14-2000.md)
 - [2026-09-14 18:00 — thsottiaux Codex 불필요 기능 제거 제안](./2026-09-14-1800.md)
