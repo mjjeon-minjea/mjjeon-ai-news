@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026-09-17 운영 아침 브리핑</title>
+<style>
+body{max-width:960px;margin:32px auto;padding:0 18px;background:#f4f7fa;color:#182230;font:15px/1.65 system-ui,sans-serif}section{background:#fff;border:1px solid #dfe5ec;border-radius:12px;padding:22px;margin:14px 0}h1{margin:0}h2{font-size:18px}.sub,.note{color:#637084;font-size:13px}.metric{padding:12px;border-left:4px solid #145da0;background:#f6faff;margin:9px 0}.warn{border-color:#a55700;background:#fffaf3}.fail{border-color:#b42318;background:#fff7f6}table{width:100%;border-collapse:collapse}th,td{padding:10px;border-top:1px solid #dfe5ec;text-align:left;vertical-align:top}th{width:210px;color:#637084}.tag{font-size:12px;font-weight:700;color:#145da0}.user{color:#6d3f96}.incident{color:#b42318}code{font-family:ui-monospace,monospace}
+</style>
+</head>
+<body>
+<section>
+<h1>2026-09-17 운영 아침 브리핑</h1>
+<div class="sub">대상 기간: 2026-09-16 06:30–2026-09-17 06:32 KST · 운영 인수인계만 반영</div>
+<p><strong>결론:</strong> Hermes 실행본은 공식 최신과 일치합니다. 다만 공식 업데이트 감시 Cron 1건이 이번 실행에서 실패 상태이며, HM-100 운영 매뉴얼 Word 출력의 페이지 밀림 보정과 재확인 기록이 남았습니다.</p>
+</section>
+
+<section>
+<h2>운영 지표</h2>
+<div class="metric"><strong>Cron 총:</strong> 14</div>
+<div class="metric"><strong>Cron 정상 13:</strong> default/qms-staging-watch, default/MJJEON AI NEWS — Neoguri hourly collector, default/Default+role Gateway supervisor keeper, default/Codex 주간 한도 주의·경고, default/calendar-yesterday-sync, default/MJJEON X — attach Grok originals, default/all-profile-conversation-close, default/Hermes v0.21.0 cutover result relay(비활성·완료), gwangryeol/고광렬 06:30 KST 아침 브리핑, neoguri/MJJEON Drive YouTube web ingest, jjakgwi/jjakgwi-wiki-daily-close-kst, jjakgwi/jjakgwi-wiki-curation-6h-kst, jjakgwi/jjakgwi-conversation-growth-review-6h-kst</div>
+<div class="metric warn"><strong>Cron 검증 대기 0:</strong> 없음</div>
+<div class="metric fail"><strong>Cron 실패 1:</strong> neoguri/MJJEON Hermes official update detector</div>
+<div class="metric"><strong>Cron 미기록 0:</strong> 없음</div>
+<div class="metric warn"><strong>Kanban:</strong> 진행 0 · 막힘 6</div>
+<div class="metric"><strong>Hermes:</strong> 설치 <strong>v0.21.3 (2026.9.14)</strong> · 공식 최신 <strong>v0.21.3 (v2026.9.14)</strong> · 일치</div>
+<p class="note">Cron은 현재 등록 job 전체 readback 기준입니다. 실패 감시 job의 마지막 오류는 <code>REMOTE_VERIFY_FAILED</code>이므로, 지정된 분류 규칙에 따라 검증 대기가 아니라 실패로 집계했습니다. Kanban 막힘 6건은 이번 기간 변경 근거가 없어 개별 의사결정이나 신규 작업으로 전환하지 않았습니다.</p>
+</section>
+
+<section>
+<h2>기간 내 확인된 변경·지시·사고</h2>
+<table>
+<thead><tr><th>시각 · 근거</th><th>인수인계</th></tr></thead>
+<tbody>
+<tr><th>09-17 04:28 KST<br><span class="tag user">direct_user</span> <span class="tag">source_readback</span></th><td><strong>HM-100 운영 매뉴얼 출력 재검수 기록</strong><br>사용자 재검수 지시 뒤 대화 readback에 따라 Word 쪽수 밀림의 원인을 문서 격자와 이미지 문단 줄간격으로 특정해 보정했습니다. PDF는 36쪽을 유지했고, 수정한 Word/PDF 산출물을 다시 전달한 것으로 기록되었습니다. 이 브리핑은 대화 원본만 읽었으며 문서·운영환경의 추가 변경은 수행하지 않았습니다.</td></tr>
+<tr><th>09-17 06:20 KST<br><span class="tag incident">system_event</span> <span class="tag">source_readback</span></th><td><strong>공식 업데이트 감시 Cron 실패</strong><br><code>MJJEON Hermes official update detector</code>의 최근 실행이 오류로 끝났고 실패 연속값은 11입니다. 자동 재실행·수리·재시작은 하지 않았습니다. 별도 읽기 전용 확인에서는 설치 Hermes v0.21.3과 공식 최신 릴리스 v0.21.3이 일치했습니다.</td></tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<h2>범위·판정</h2>
+<ul>
+<li>전 profile HANDOFF·MEMORY의 수정시각, conversation의 기간 내 기록, Wiki의 기간 내 로그를 읽기 전용으로 확인했습니다. HANDOFF·MEMORY에는 이 기간의 새 운영 항목이 없었습니다.</li>
+<li>06:21 KST Wiki curation의 19건 정리는 기록상 material reusable delta가 없어, 운영 인수인계 항목으로 올리지 않았습니다.</li>
+<li>변경되지 않은 Kanban 막힘·완료 backlog와 외부 뉴스는 제외했습니다. 새 직접 사용자 의사결정 요청은 확인되지 않았습니다.</li>
+</ul>
+</section>
+
+<section class="note">생성: 2026-09-17T06:32:33+09:00 · relevance gate fixtures: 8 cases PASS · 읽기 전용 수집, 배포·메시지 전송·index.html 변경 없음</section>
+</body>
+</html>
