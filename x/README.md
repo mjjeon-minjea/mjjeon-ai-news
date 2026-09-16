@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-09-16 18:00 — thsottiaux Astra, as seen by Imagegen · 11pm big startup energy](./2026-09-16-1800.md)
 - [2026-09-16 16:00 — 새 소식 없음](./2026-09-16-1600.md)
 - [2026-09-16 14:00 — 새 소식 없음](./2026-09-16-1400.md)
 - [2026-09-16 12:00 — 새 소식 없음](./2026-09-16-1200.md)
