@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-09-19 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#5f6b7a; --line:#dfe5ec; --bg:#f5f7fa; --card:#fff; --warn:#9a5b00; --bad:#b42318; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { max-width:960px; margin:32px auto; padding:0 20px; }
+    header, section { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:22px; margin:14px 0; }
+    h1 { margin:0 0 6px; font-size:26px; }
+    h2 { margin:0 0 12px; font-size:18px; }
+    p { margin:7px 0; }
+    .meta, .note { color:var(--muted); font-size:13px; }
+    .status { font-weight:700; }
+    .bad { color:var(--bad); }
+    .warn { color:var(--warn); }
+    ul { margin:8px 0; padding-left:20px; }
+    li { margin:7px 0; }
+    .evidence { border-left:3px solid #8294ad; padding-left:11px; }
+    code { font:0.92em ui-monospace,SFMono-Regular,Consolas,monospace; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>2026-09-19 운영 아침 브리핑</h1>
+    <p class="meta">대상 기간: 2026-09-18 06:30:00 ~ 2026-09-19 06:37:04 KST · 운영 인수인계만 반영</p>
+    <p class="status">결론: Docker Hermes는 공식 최신 태그와 일치해 변경하지 않았습니다. Cron 실패 3건은 확인됐고, Kanban의 기존 막힘 6건은 새 인수 이슈로 확대하지 않았습니다.</p>
+  </header>
+
+  <section>
+    <h2>직전 06:30 이후 실제 변경·지시</h2>
+    <ul>
+      <li class="evidence"><strong>별도 로컬 흐름도 제작기 1차 완료</strong> — 2026-09-18 17:00 KST, <code>direct_user</code> 및 <code>source_readback</code>: 차장님 지시로 QMS와 분리한 단일 HTML 제작기를 만들었고, Playwright 검사(샘플 6상자·6선, 요소 추가, JSON 저장, 페이지 오류 0)가 통과했습니다. QMS 변경·배포는 없었습니다.</li>
+      <li class="evidence"><strong>Docker Hermes 유지 결정</strong> — 2026-09-18 21:07 KST, <code>direct_user</code> 및 <code>source_readback</code>: PC Desktop과 Docker 모두 v0.21.3임을 대조했고, 미릴리스 main 커밋을 Docker에 적용하지 않았습니다. Gateway·컨테이너 재생성·이미지 pull은 하지 않았습니다.</li>
+    </ul>
+    <p class="note">이번 기간에 변경된 HANDOFF·MEMORY 근거와 새 운영사고는 확인되지 않았습니다. 새 직접 의사결정 요청도 없습니다.</p>
+  </section>
+
+  <section>
+    <h2>Cron 현황</h2>
+    <p><strong>총 14건</strong></p>
+    <p><strong>정상 11건:</strong> default/qms-staging-watch, default/Default+role Gateway supervisor keeper, default/Codex 주간 한도 주의·경고, default/calendar-yesterday-sync, default/all-profile-conversation-close, default/Hermes v0.21.0 cutover result relay, neoguri/MJJEON Drive YouTube web ingest, jjakgwi/jjakgwi-wiki-daily-close-kst, jjakgwi/jjakgwi-wiki-curation-6h-kst, jjakgwi/jjakgwi-conversation-growth-review-6h-kst, gwangryeol/고광렬 06:30 KST 아침 브리핑</p>
+    <p><strong>미기록 0건:</strong> 없음</p>
+    <p><strong class="warn">검증 대기 0건:</strong> 없음</p>
+    <p><strong class="bad">실패 3건:</strong> default/MJJEON AI NEWS — Neoguri hourly collector, default/MJJEON X — attach Grok originals, neoguri/MJJEON Hermes official update detector</p>
+    <p class="note">2026-09-19 06:37 KST 읽기 전용 집계. 분류 기준은 last_status=ok만 정상, 상태 없음은 미기록, REMOTE_UNVERIFIED 포함 오류는 검증 대기, 그 외 error만 실패입니다.</p>
+  </section>
+
+  <section>
+    <h2>Kanban 현황</h2>
+    <p><strong>진행 0건</strong></p>
+    <p><strong>막힘 6건</strong></p>
+    <p class="note">Kanban DB 최종 변경시각은 2026-09-08 19:56 KST입니다. 기간 내 새 task event가 아니므로 기존 막힘 상태를 새 인수·결정 항목으로 쓰지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>Hermes 버전</h2>
+    <p><strong>설치:</strong> Hermes Agent v0.21.3 — 2026-09-18 21:07 KST Docker 런타임 <code>source_readback</code></p>
+    <p><strong>공식 최신:</strong> v0.21.3 (<code>v2026.9.14</code>, NousResearch GitHub Latest release, 2026-09-19 06:31 KST 확인)</p>
+    <p><strong>판정:</strong> 일치 — 업데이트 불필요</p>
+  </section>
+
+  <section>
+    <h2>검증</h2>
+    <p>Relevance gate fixture 8건 PASS. Cron·Kanban은 읽기 전용으로 대조했으며, 기간 밖의 완료·막힘 백로그와 외부 뉴스는 제외했습니다. Discord 전송, 배포, index.html 변경은 하지 않았습니다.</p>
+  </section>
+</main>
+</body>
+</html>
