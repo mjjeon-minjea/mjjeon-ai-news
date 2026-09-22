@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-09-22 16:00 — 새 소식 없음](./2026-09-22-1600.md)
 - [2026-09-22 14:00 — Kimi K3 Amazon Bedrock · thsottiaux Tuesday 리셋 예고](./2026-09-22-1400.md)
 - [2026-09-22 12:00 — 새 소식 없음](./2026-09-22-1200.md)
 - [2026-09-22 10:00 — 새 소식 없음](./2026-09-22-1000.md)
@@ -91,7 +92,7 @@
 - [2026-09-09 20:00 — Kimi Work Remote Control](./2026-09-09-2000.md)
 - [2026-09-09 18:00 — 새 소식 없음](./2026-09-09-1800.md)
 - [2026-09-09 14:00 — OpenAI 소상공인 플러그인 16종](./2026-09-09-1400.md)
-- [2026-09-09 12:00 — thsottiaux Astra party](./2026-09-09-1200.md)
+- [2026-09-09 1200.md)
 - [2026-09-09 10:00 — thsottiaux prompt injection · Look! A fish!](./2026-09-09-1000.md)
 - [2026-09-09 08:00 — OpenAI Navier-Stokes Millennium Prize · ChatGPT Images 2.5 · Astra 전체 롤아웃 · Gemini 3.5 Transcribe](./2026-09-09-0800.md)
 - [2026-09-08 20:00 — 새 소식 없음](./2026-09-08-2000.md)
