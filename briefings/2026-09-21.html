@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-09-21 운영 아침 브리핑</title>
+  <style>
+    body{max-width:860px;margin:40px auto;padding:0 20px;font-family:system-ui,sans-serif;color:#172033;line-height:1.6}h1{margin-bottom:0}.meta{color:#667085}.note{background:#f5f7fa;border-left:4px solid #475467;padding:14px 16px}.row{padding:9px 0;border-bottom:1px solid #eaecf0}.label{display:inline-block;min-width:120px;font-weight:700}.ok{color:#067647}.fail{color:#b42318}.pending{color:#b54708}a{color:#175cd3}
+  </style>
+</head>
+<body>
+  <h1>2026-09-21 운영 아침 브리핑</h1>
+  <p class="meta">범위: 2026-09-20 06:30:00–2026-09-21 06:37:26 KST · 생성: 2026-09-21 06:37:26 KST</p>
+
+  <h2>결론</h2>
+  <div class="note"><strong>QMS NCR 보류 4건의 스테이징 완료 보고가 인수인계됐고, 사용자 지시에 따라 세션은 NO_ACTIVE_WORK로 마감됐습니다.</strong> MAIN·users·RLS·정책·스키마 변경은 없다고 source readback에 기록됐습니다. 새 의사결정 요청은 없습니다.</div>
+
+  <h2>직전 06:30 이후 인수인계</h2>
+  <div class="row"><strong>QMS 스테이징 완료</strong> — 2026-09-20 09:55 KST · <code>bc989836b2b1c89282db520a74b54f64</code> · source_readback. 57/57 시험, build, 변경파일 lint, 독립 리뷰 및 공개 스테이징 E2E PASS로 보고됐으며, 첫 E2E 보류는 로딩 완료 대기 보강 뒤 제품 추가 변경 없이 PASS로 정리됐습니다. 큐레이션은 원본 수신증의 무결성만 확인했으며, 참조 산출물 자체는 이번 브리핑에서 재검증하지 않았습니다.</div>
+  <div class="row"><strong>사용자 마감 지시</strong> — 2026-09-20 22:52 KST · default conversation/HANDOFF · direct_user. 완료 건을 자동 재시험·재배포하지 않고, 다음 사용자 또는 클로드 메시지에서만 범위를 정하도록 기록됐습니다.</div>
+
+  <h2>Cron 현재 스냅샷</h2>
+  <div class="row"><span class="label">총</span>14</div>
+  <div class="row"><span class="label ok">정상</span>11</div>
+  <div class="row"><span class="label">미기록</span>0</div>
+  <div class="row"><span class="label pending">검증 대기</span>0 (REMOTE_UNVERIFIED 없음)</div>
+  <div class="row"><span class="label fail">실패</span>3 — default/MJJEON AI NEWS — Neoguri hourly collector; default/MJJEON X — attach Grok originals; neoguri/MJJEON Hermes official update detector</div>
+  <p class="meta">판정 기준: last_status=ok는 정상, last_status 없음은 미기록, REMOTE_UNVERIFIED는 검증 대기, 그 외 error만 실패입니다. 검증 대기를 실패로 합산하지 않았습니다.</p>
+
+  <h2>Kanban 현재 스냅샷</h2>
+  <div class="row"><span class="label">진행</span>0</div>
+  <div class="row"><span class="label">막힘</span>6</div>
+  <p class="meta">상태 필터 readback 기준입니다. 기간 내 새 카드 수준의 변경 근거는 확인되지 않아, 기존 blocked 항목을 새 의사결정으로 올리지 않았습니다.</p>
+
+  <h2>Hermes 버전</h2>
+  <div class="row"><span class="label">설치</span>v0.21.3 (2026.9.14, upstream 345cd2b0)</div>
+  <div class="row"><span class="label">공식 최신</span><a href="https://github.com/NousResearch/hermes-agent/releases/tag/v2026.9.14">v2026.9.14</a></div>
+  <div class="row"><span class="label">판정</span>업데이트 불필요</div>
+
+  <p class="meta">검증: daily-briefing-relevance-gate fixture 8건 통과.</p>
+</body>
+</html>
