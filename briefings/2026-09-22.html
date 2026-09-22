@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-09-22 운영 아침 브리핑</title>
+  <style>
+    body{max-width:900px;margin:40px auto;padding:0 20px;font-family:system-ui,sans-serif;color:#172033;line-height:1.6}h1{margin-bottom:0}.meta{color:#667085}.note{background:#f5f7fa;border-left:4px solid #475467;padding:14px 16px}.row{padding:9px 0;border-bottom:1px solid #eaecf0;overflow-wrap:anywhere}.label{display:inline-block;min-width:120px;font-weight:700}.ok{color:#067647}.fail{color:#b42318}.pending{color:#b54708}a{color:#175cd3}
+  </style>
+</head>
+<body>
+  <h1>2026-09-22 운영 아침 브리핑</h1>
+  <p class="meta">범위: 2026-09-21 06:30:00–2026-09-22 06:38:27 KST · 생성: 2026-09-22 06:38:27 KST</p>
+
+  <h2>결론</h2>
+  <div class="note"><strong>절차서 작성 재개점 확인 지시 1건과 AI NEWS 공개 실패 사고 1건이 확인됐습니다.</strong> AI NEWS는 review 적용 뒤 공개 게시·원격 검증이 끝나지 않은 상태로 중단됐습니다. 새 의사결정 요청은 없습니다.</div>
+
+  <h2>직전 06:30 이후 인수인계</h2>
+  <div class="row"><strong>절차서 작성 현황과 재개점 조회 지시</strong> — 2026-09-21T11:59:23+09:00 · <code>default/20260921_025923_5e31ee:user:2026-09-21T11:59:23+09:00</code> · direct_user. 새 의사결정 요청은 없음.</div>
+  <div class="row"><strong>HM-100 승인본 및 흐름도 제작기 1차 완료 확인</strong> — 2026-09-21T12:02:42+09:00 · <code>683976b48f39ebf3b82e12c3b22f8f35</code> · source_readback. 다음 재개점은 첫 절차서 본문·업무흐름도 작성이며, HP-110~HP-190 본문은 미작성.</div>
+  <div class="row"><strong>AI NEWS review 적용 뒤 PUBLISH_FAILED 발생</strong> — 2026-09-21T17:21:26+09:00 · <code>daf45ca2385d382566e97a382b86a30e</code> · source_readback. 공개 게시와 원격 검증이 미완료인 상태로 재시도·수리 없이 중단.</div>
+
+  <h2>Cron 현재 스냅샷</h2>
+  <div class="row"><span class="label">총</span>14</div>
+  <div class="row"><span class="label ok">정상</span>9 — default/qms-staging-watch; default/Default+role Gateway supervisor keeper; default/Codex 주간 한도 주의·경고; default/all-profile-conversation-close; default/Hermes v0.21.0 cutover result relay; gwangryeol/고광렬 06:30 KST 아침 브리핑; jjakgwi/jjakgwi-wiki-daily-close-kst; jjakgwi/jjakgwi-wiki-curation-6h-kst; jjakgwi/jjakgwi-conversation-growth-review-6h-kst</div>
+  <div class="row"><span class="label">미기록</span>0 — 없음</div>
+  <div class="row"><span class="label pending">검증 대기</span>0 — 없음 (REMOTE_UNVERIFIED 없음)</div>
+  <div class="row"><span class="label fail">실패</span>5 — default/MJJEON AI NEWS — Neoguri hourly collector; default/calendar-yesterday-sync; default/MJJEON X — attach Grok originals; neoguri/MJJEON Hermes official update detector; neoguri/MJJEON Drive YouTube web ingest</div>
+  <p class="meta">판정 기준: last_status=ok는 정상, last_status 없음은 미기록, REMOTE_UNVERIFIED는 검증 대기, 그 외 error만 실패입니다. 검증 대기를 실패로 합산하지 않았습니다.</p>
+
+  <h2>Kanban 현재 스냅샷</h2>
+  <div class="row"><span class="label">진행</span>0</div>
+  <div class="row"><span class="label">막힘</span>6</div>
+  <p class="meta">상태 readback 기준입니다. 기간 내 새 Kanban 변경 근거는 없으므로 기존 막힘 카드를 새 의사결정으로 올리지 않았습니다.</p>
+
+  <h2>Hermes 버전</h2>
+  <div class="row"><span class="label">설치</span>v0.21.3 (2026.9.14, upstream 345cd2b0; Docker)</div>
+  <div class="row"><span class="label">공식 최신</span><a href="https://github.com/NousResearch/hermes-agent/releases/tag/v2026.9.21">v0.21.4 (v2026.9.21)</a></div>
+  <div class="row"><span class="label">판정</span>업데이트 필요</div>
+
+  <p class="meta">검증: daily-briefing-relevance-gate fixture 8건 통과 · secret marker 검사 통과.</p>
+</body>
+</html>
