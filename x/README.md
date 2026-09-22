@@ -92,7 +92,7 @@
 - [2026-09-09 20:00 — Kimi Work Remote Control](./2026-09-09-2000.md)
 - [2026-09-09 18:00 — 새 소식 없음](./2026-09-09-1800.md)
 - [2026-09-09 14:00 — OpenAI 소상공인 플러그인 16종](./2026-09-09-1400.md)
-- [2026-09-09 1200.md)
+- [2026-09-09 12:00 — thsottiaux Astra party](./2026-09-09-1200.md)
 - [2026-09-09 10:00 — thsottiaux prompt injection · Look! A fish!](./2026-09-09-1000.md)
 - [2026-09-09 08:00 — OpenAI Navier-Stokes Millennium Prize · ChatGPT Images 2.5 · Astra 전체 롤아웃 · Gemini 3.5 Transcribe](./2026-09-09-0800.md)
 - [2026-09-08 20:00 — 새 소식 없음](./2026-09-08-2000.md)
