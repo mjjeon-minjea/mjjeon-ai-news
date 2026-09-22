@@ -1,17 +1,6 @@
 {
   "items": [
     {
-      "canonical_url": "https://hermes-agent.nousresearch.com/docs/llms.txt",
-      "detail_url": "hermes/items/official-docs-llms.html",
-      "judgment": "공식 문서 색인 판본 갱신 확인 · 설치·릴리스 변경 아님 · 자동 업데이트 불필요 · 에스컬레이션 없음",
-      "published_at": "2026-09-22T16:56:08Z",
-      "source_grade": "official",
-      "source_kind": "docs",
-      "stable_id": "official-docs:llms",
-      "status": "active",
-      "title_ko": "Hermes 공식 llms.txt 문서 색인 최신 판본 갱신"
-    },
-    {
       "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v2026.9.21",
       "detail_url": "hermes/items/github-release-393186039.html",
       "judgment": "공식 패치 확인 · Releases·Docs·repository 교차확인 · Gateway·권한·보안 경계 변경은 에스컬레이션 후보 · 명시적 breaking 근거 없음",
@@ -21,6 +10,17 @@
       "stable_id": "github-release:393186039",
       "status": "에스컬레이션 후보",
       "title_ko": "Hermes Agent v0.21.4(v2026.9.21) 패치 릴리스"
+    },
+    {
+      "canonical_url": "https://hermes-agent.nousresearch.com/docs/llms.txt",
+      "detail_url": "hermes/items/official-docs-llms.html",
+      "judgment": "공식 문서 색인 판본 갱신 확인 · 설치·릴리스 변경 아님 · 자동 업데이트 불필요 · 에스컬레이션 없음",
+      "published_at": "2026-09-21T07:47:18Z",
+      "source_grade": "official",
+      "source_kind": "docs",
+      "stable_id": "official-docs:llms",
+      "status": "active",
+      "title_ko": "Hermes 공식 llms.txt 문서 색인 최신 판본 갱신"
     },
     {
       "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v2026.9.14",
