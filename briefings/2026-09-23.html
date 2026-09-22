@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-09-23 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#16202a; --muted:#637080; --line:#d9e0e7; --panel:#f7f9fb; --good:#176b43; --warn:#a45a00; --bad:#b42318; --blue:#175ea8; }
+    * { box-sizing:border-box; } body { margin:0; background:#edf2f6; color:var(--ink); font:15px/1.6 system-ui,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif; }
+    main { max-width:1020px; margin:28px auto; padding:0 20px 32px; } header, section { background:#fff; border:1px solid var(--line); border-radius:12px; padding:22px; margin:14px 0; box-shadow:0 1px 2px #0b1b2a0a; }
+    h1 { margin:0 0 4px; font-size:26px; } h2 { margin:0 0 12px; font-size:18px; } p { margin:7px 0; } .meta { color:var(--muted); font-size:13px; } .lead { font-size:16px; font-weight:650; } .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:10px; } .metric { background:var(--panel); border-radius:9px; padding:12px; } .metric b { display:block; font-size:23px; line-height:1.2; } .good { color:var(--good); } .warn { color:var(--warn); } .bad { color:var(--bad); } .note { border-left:4px solid var(--blue); background:#f3f8ff; padding:10px 12px; } table { width:100%; border-collapse:collapse; font-size:14px; } th,td { border-top:1px solid var(--line); padding:9px 7px; text-align:left; vertical-align:top; } th { color:var(--muted); font-weight:650; } ul { margin:8px 0; padding-left:20px; } code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.92em; } footer { color:var(--muted); font-size:12px; text-align:right; padding-top:3px; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>2026-09-23 운영 아침 브리핑</h1>
+    <p class="meta">대상 기간: 2026-09-22 06:30:00–2026-09-23 06:38:41 KST · 운영 인수인계만 수록</p>
+    <p class="lead">결론: Hermes는 공식 최신 v0.21.4로 확인됐고 활성 Cron 13건 중 12건이 정상입니다. 공식 업데이트 감시 Cron 1건은 실패이며, KST 전환은 마지막 성공 영수증이 없고, 다운로드 묶음은 준비됐지만 삭제는 수행되지 않았습니다.</p>
+  </header>
+
+  <section>
+    <h2>직전 06:30 이후 변경·사고·지시</h2>
+    <table>
+      <thead><tr><th>항목</th><th>확인 내용</th><th>근거 시각</th><th>Provenance</th></tr></thead>
+      <tbody>
+        <tr><td>Hermes 운영 갱신</td><td>v0.21.4 런타임과 재발 방지 기준이 기록됐습니다. 이번 실행에서도 설치 버전이 공식 최신과 일치합니다.</td><td>2026-09-22 16:59:03 KST / 현재 조회</td><td>source_readback · system_event</td></tr>
+        <tr><td>고니 공식 DirectSDK</td><td>고니 Gateway 재시작 뒤 Claude 구독 DirectSDK 모델 호출·도구 왕복 검증 통과가 기록됐습니다. Claude Code CLI는 공식 플러그인의 필수 실행부로 유지됩니다.</td><td>2026-09-23 00:15:22 KST</td><td>source_readback</td></tr>
+        <tr><td>KST 전환</td><td>2차 전환은 짝귀 기동 대기 조건에서 안전 롤백됐고, 3차 재시작 지연 허용 재시도가 시작됐습니다. 허용된 기간 기록에는 7개 프로필 최종 성공 영수증이 없습니다.</td><td>2026-09-22 22:59:46 KST</td><td>source_readback</td></tr>
+        <tr><td>다운로드용 정리 묶음</td><td>격리 경로에 10.48 GiB·133,429개 파일 묶음과 원본 비교 불일치 0건이 기록됐습니다. 원본 삭제는 없었고, 다운로드 확인 및 별도 승인 전에는 공간이 회수되지 않습니다.</td><td>2026-09-23 01:34:38 KST</td><td>source_readback</td></tr>
+        <tr><td>AI NEWS 원격 검증 사고</td><td>공개 후 원격 검증 실패가 기록되어 재시도·수리 없이 중단됐습니다. 이후 수집 Cron의 마지막 상태는 정상이나, 이 브리핑 범위에는 해당 공개 건의 재검증 완료 근거가 없습니다.</td><td>2026-09-23 02:24:38 KST</td><td>source_readback</td></tr>
+        <tr><td>공식 업데이트 감시 Cron</td><td>마지막 실행이 <code>REMOTE_VERIFY_FAILED</code> 오류로 종료됐습니다. 지정 분류상 <code>REMOTE_UNVERIFIED</code>가 아니므로 검증 대기가 아니라 실패입니다.</td><td>2026-09-23 06:21:22 KST</td><td>system_event</td></tr>
+      </tbody>
+    </table>
+    <p class="note">새로운 직접 의사결정 요청은 확인되지 않았습니다. 기존 정리 절차의 다음 단계는 다운로드 확인과 별도 삭제 승인으로만 열립니다.</p>
+  </section>
+
+  <section>
+    <h2>Cron 현황</h2>
+    <div class="grid">
+      <div class="metric"><span>총 활성 작업</span><b>13</b></div>
+      <div class="metric"><span>정상</span><b class="good">12</b></div>
+      <div class="metric"><span>미기록</span><b>0</b></div>
+      <div class="metric"><span>검증 대기</span><b class="warn">0</b></div>
+      <div class="metric"><span>실패</span><b class="bad">1</b></div>
+    </div>
+    <p><b>총 13:</b> 활성 작업 기준입니다.</p>
+    <p><b class="good">정상 12:</b> default/qms-staging-watch · default/MJJEON AI NEWS — Neoguri hourly collector · default/Default+role Gateway supervisor keeper · default/Codex 주간 한도 주의·경고 · default/calendar-yesterday-sync · default/MJJEON X — attach Grok originals · default/all-profile-conversation-close · gwangryeol/고광렬 06:30 KST 아침 브리핑 · jjakgwi/jjakgwi-wiki-daily-close-kst · jjakgwi/jjakgwi-wiki-curation-6h-kst · jjakgwi/jjakgwi-conversation-growth-review-6h-kst · neoguri/MJJEON Drive YouTube web ingest</p>
+    <p><b class="warn">검증 대기 0:</b> 없음.</p>
+    <p><b class="bad">실패 1:</b> neoguri/MJJEON Hermes official update detector — 마지막 실행 오류 <code>REMOTE_VERIFY_FAILED</code>.</p>
+  </section>
+
+  <section>
+    <h2>Kanban 현황</h2>
+    <p><b>진행 0:</b> 현재 <code>running</code> 카드 없음.</p>
+    <p><b>막힘 6:</b> 현재 <code>blocked</code> 카드 수입니다.</p>
+    <p class="meta">시간 범위 필터가 지원되지 않아 카드별 변경 내역은 실패 폐쇄로 제외했습니다. 오래된 막힘·완료 카드는 인수인계 항목으로 수록하지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>Hermes 버전</h2>
+    <p><b>설치:</b> Hermes Agent v0.21.4 (2026.9.21, upstream d337b736, Docker).</p>
+    <p><b>공식 최신:</b> v0.21.4 (tag v2026.9.21, NousResearch 공식 GitHub release). <b class="good">업데이트 필요 없음.</b></p>
+  </section>
+
+  <section>
+    <h2>검증</h2>
+    <ul>
+      <li>일일 브리핑 relevance gate: 8 fixtures PASS.</li>
+      <li>모든 수록 항목에 근거 시각과 provenance를 표시했습니다.</li>
+      <li>비밀 마커 검사: PASS.</li>
+    </ul>
+  </section>
+  <footer>생성 시각: 2026-09-23 06:38:41 KST</footer>
+</main>
+</body>
+</html>
