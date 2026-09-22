@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-09-18 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#5f6b7a; --line:#dfe5ec; --bg:#f5f7fa; --card:#fff; --warn:#9a5b00; --bad:#b42318; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { max-width:960px; margin:32px auto; padding:0 20px; }
+    header, section { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:22px; margin:14px 0; }
+    h1 { margin:0 0 6px; font-size:26px; }
+    h2 { margin:0 0 12px; font-size:18px; }
+    p { margin:7px 0; }
+    .meta, .note { color:var(--muted); font-size:13px; }
+    .status { font-weight:700; }
+    .bad { color:var(--bad); }
+    .warn { color:var(--warn); }
+    ul { margin:8px 0; padding-left:20px; }
+    li { margin:7px 0; }
+    .evidence { border-left:3px solid #8294ad; padding-left:11px; }
+    code { font:0.92em ui-monospace,SFMono-Regular,Consolas,monospace; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>2026-09-18 운영 아침 브리핑</h1>
+    <p class="meta">대상 기간: 2026-09-17 06:30:00 ~ 2026-09-18 06:36:09 KST · 운영 인수인계만 반영</p>
+    <p class="status">결론: 예림 홀딩은 유지됐고, 너구리의 공개 GitHub Pages 원격 검증 미확인이 새 운영 이슈입니다. Hermes는 최신 버전과 일치합니다.</p>
+  </header>
+
+  <section>
+    <h2>직전 06:30 이후 변경·지시·사고</h2>
+    <ul>
+      <li class="evidence"><strong>예림 운영 상태</strong> — 2026-09-17 11:00 KST, <code>direct_user</code>: 예림만 Grok 임시 사용, 다른 역할은 GPT 유지. 종료 표기 <code>4/19</code>의 연·월은 미확정이며 프로필 설정 변경은 하지 않았습니다.</li>
+      <li class="evidence"><strong>홀딩 확인</strong> — 2026-09-17 13:59 KST, <code>source_readback</code>: 이어가기 요약을 저장했고 인쇄 UAT 대기·제품 수정·배포 재개 없이 홀딩을 유지했습니다.</li>
+      <li class="evidence"><strong>중복 한도 경고 보정</strong> — 2026-09-17 14:10 KST, <code>source_readback</code>: 초기화 시각의 초 단위 흔들림으로 재발송되던 Codex 주간 한도 경고를 같은 주기에는 유지하도록 보정했고, 단위검사 7건이 통과했습니다.</li>
+      <li class="evidence"><strong>Wiki 증분</strong> — 2026-09-17 12:22 KST, <code>system_event</code>: 5개 신규 페이지와 2개 중복 이벤트 병합, 색인 참조 28/28 검증이 완료됐습니다. live 지식 발행·과거 backlog 처리는 하지 않았습니다.</li>
+      <li class="evidence"><strong class="bad">원격 검증 미완료</strong> — 2026-09-18 04:21 KST, <code>system_event</code>: 너구리의 apply-review 뒤 공개 GitHub Pages <code>remote_verified</code> 확인이 되지 않아 게시 완료로 처리하지 않았습니다.</li>
+    </ul>
+    <p class="note">새 직접 의사결정 요청은 확인되지 않았습니다. 과거 Kanban 막힘·완료 백로그와 창작 프로젝트 기록은 이번 운영 인수 범위에서 제외했습니다.</p>
+  </section>
+
+  <section>
+    <h2>Cron 현황</h2>
+    <p><strong>총 14건</strong></p>
+    <p><strong>정상 12건:</strong> jjakgwi/jjakgwi-wiki-daily-close-kst, jjakgwi/jjakgwi-wiki-curation-6h-kst, jjakgwi/jjakgwi-conversation-growth-review-6h-kst, default/qms-staging-watch, default/MJJEON AI NEWS — Neoguri hourly collector, default/Default+role Gateway supervisor keeper, default/Codex 주간 한도 주의·경고, default/calendar-yesterday-sync, default/MJJEON X — attach Grok originals, default/all-profile-conversation-close, default/Hermes v0.21.0 cutover result relay, gwangryeol/고광렬 06:30 KST 아침 브리핑</p>
+    <p><strong>미기록 0건:</strong> 없음</p>
+    <p><strong class="warn">검증 대기 0건:</strong> 없음</p>
+    <p><strong class="bad">실패 2건:</strong> neoguri/MJJEON Hermes official update detector, neoguri/MJJEON Drive YouTube web ingest</p>
+    <p class="note">분류 기준: <code>last_status=ok</code>만 정상, 상태 없음은 미기록, <code>REMOTE_UNVERIFIED</code> 포함 오류만 검증 대기, 그 외 <code>error</code>만 실패로 집계했습니다.</p>
+  </section>
+
+  <section>
+    <h2>Kanban 현황</h2>
+    <p><strong>진행 0건</strong></p>
+    <p><strong>막힘 6건</strong></p>
+    <p class="note">기간 필터를 적용한 task event는 0건이었습니다. 현재 막힘 수는 현황 수치이며 새 인수 이슈로 확대하지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>Hermes 버전</h2>
+    <p><strong>설치:</strong> Hermes Agent v0.21.3 (2026.9.14, Docker CLI, upstream <code>345cd2b0</code>)</p>
+    <p><strong>공식 최신:</strong> v0.21.3 (<code>v2026.9.14</code>, NousResearch GitHub Latest release)</p>
+    <p><strong>판정:</strong> 일치 — 업데이트 불필요</p>
+  </section>
+
+  <section>
+    <h2>검증</h2>
+    <p>Relevance gate fixture 8건 PASS. Cron·Kanban은 읽기 전용 집계, Hermes 설치본은 실행 중 Docker 컨테이너 CLI, 공식 최신은 GitHub Latest release로 대조했습니다. Discord 전송·배포·<code>index.html</code> 변경은 하지 않았습니다.</p>
+  </section>
+</main>
+</body>
+</html>
