@@ -1,0 +1,77 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<title>강남언니 22만 명 개인정보 유출 사고 분석 — BOLA(Broken Object Level Authorization) API 권한 검증 취약점과 엔지니어링 대응 방안</title><style>
+:root{--bg:#090909;--panel:#15120f;--line:#6b3b16;--text:#fff8ed;--muted:#c8b9a7;--accent:#ff8a1f}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Noto Sans KR",sans-serif}main{max-width:980px;margin:auto;padding:32px 20px 64px}header,section,article{margin-bottom:22px}header,.drive-brief,section,article{padding:18px;border:1px solid #4b2d18;background:var(--panel);border-radius:14px}h1{font-size:clamp(30px,6vw,56px);line-height:1.1}h2,h3,strong,a{color:var(--accent)}.meta{color:var(--muted)}.timestamp-links{display:flex;flex-wrap:wrap;gap:10px}table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}th,td{border:1px solid #4b2d18;padding:8px;text-align:left}pre{overflow:auto}a{overflow-wrap:anywhere}@media(max-width:480px){main{padding:18px 14px 48px}}
+</style></head><body><main id="youtube-detail-report" aria-labelledby="report-title">
+<header><p class="meta">MJJEON AI NEWS · VERIFIED DRIVE BUNDLE</p><h1 id="report-title">강남언니 22만 명 개인정보 유출 사고 분석 — BOLA(Broken Object Level Authorization) API 권한 검증 취약점과 엔지니어링 대응 방안</h1><p>JoCoding(조코딩) · obmT608yBOg</p><a href="https://www.youtube.com/watch?v=obmT608yBOg" target="_blank" rel="noopener noreferrer">원본 영상 보기 ↗</a></header>
+<section class="drive-brief"><h2>핵심 요약</h2><ul><li>미용의료 플랫폼 &#x27;강남언니&#x27;에서 22만 명 규모의 민감 개인정보(상담 사진, 시술 내역, 결제 정보 등) 대규모 유출 사고 발생</li><li>내역 조회 API의 허술한 권한 검증(BOLA/IDOR) 취약점이 주요 유출 경로로 지목됨</li><li>API 개발 시 객체 수준 인가(Object-Level Authorization) 검증 및 엔드포인트 보안 수칙 준수 필요성 강조</li></ul><p><strong>제작자 주장</strong> · 단순 조회 API의 권한 검증이 허술하여 성형 상담 사진 등 민감한 개인정보까지 유출되었으며, API 개발 시 보안을 더욱 철저히 신경 써야 한다고 강조함.</p><p><strong>광고·홍보</strong> · 없음 (단신 숏폼 테크 뉴스 브리핑)</p><p><strong>외부 검증 필요</strong> · 개인정보보호위원회 및 KISA 공식 침해사고 조사 결과 발표 및 강남언니 공식 사과문 공지 내역 확인</p><p><strong>실제 시연</strong> · 강남언니 서비스 로고, 22만 명 개인정보 유출 기사 헤드라인, 유출 항목 텍스트(상담 사진, 의사명, 시술내역 등), 조회 API 권한 누수 인포그래픽 다이어그램</p><p><strong>실무 시사점</strong> · API 엔드포인트 구현 시 세션 사용자 ID와 조회 대상 객체 소유권 강제 바인딩 및 예측 가능한 식별자(Auto-increment ID) 노출 지양.</p><nav class="timestamp-links" aria-label="주요 타임스탬프"><a href="https://www.youtube.com/watch?v=obmT608yBOg&amp;t=0s" target="_blank" rel="noopener noreferrer">강남언니 22만 명 개인정보 및 민감 상담 사진·시술 내역 유출 사고 발생 ↗</a><a href="https://www.youtube.com/watch?v=obmT608yBOg&amp;t=7s" target="_blank" rel="noopener noreferrer">내역 조회 API 권한 검증(BOLA) 취약점 추정 ↗</a><a href="https://www.youtube.com/watch?v=obmT608yBOg&amp;t=12s" target="_blank" rel="noopener noreferrer">API 보안 설계 및 엔지니어링 주의 당부 ↗</a></nav></section>
+
+
+  
+    <span>조코딩 AI 기술 인텔리전스 · #060</span>
+    <h1>API 개발할 때 조심해야 하는 이유 (강남언니 개인정보 유출 사고 및 API 권한 검증 취약점 분석)</h1>
+    
+      <strong>채널:</strong> 조코딩 JoCoding (@jocoding)
+      <strong>영상 ID:</strong> obmT608yBOg
+      <strong>공개일시:</strong> 2026-09-17 (KST)
+      <strong>길이:</strong> 15초 (PT15S)
+      <strong>품질 점수:</strong> 96 / 100
+    
+  
+
+  
+    <h2>1. 핵심 총괄 요약 (Executive Brief)</h2>
+    
+      <ul>
+        <li><strong>미용의료 플랫폼 &#x27;강남언니&#x27; 22만 명 규모 민감 개인정보 유출 사고 발생:</strong> 고객의 기본 인적사항(이름, 연락처)뿐 아니라 극히 민감한 성형·시술 상담 사진, 병원명, 담당 의사명, 실제 시술 내역, 결제 정보까지 대규모 유출 [00:00:00].</li>
+        <li><strong>단순 조회 API의 허술한 권한 검증(BOLA)이 핵심 유출 경로로 지목:</strong> 아직 공식 조사 결과 발표 전이나, 백엔드 내역 조회 API 엔드포인트에서 요청자의 소유권 및 접근 권한 검증(Broken Object Level Authorization) 부재로 인해 파라미터 변조(IDOR) 공격을 통한 무단 탈취가 가능했던 것으로 추정 [00:00:07 ~ 00:00:08].</li>
+        <li><strong>백엔드 엔지니어링 및 API 설계 시 철저한 인가(Authorization) 체계 구축 필수:</strong> 인증(Authentication)을 거쳤더라도 특정 데이터 객체(Object)에 대한 조회 권한을 엄격히 격리·검증하지 않을 경우 초래되는 막대한 보안 위협 경고 [00:00:10 ~ 00:00:14].</li>
+      </ul>
+    
+
+    <h2>2. 핵심 아키텍처 및 시스템 취약점 분석</h2>
+    
+      <h3>A. BOLA(Broken Object Level Authorization) 취약점 메커니즘</h3>
+      <p>OWASP API Security Top 10의 1위 취약점인 BOLA는 사용자가 로그인된 상태에서 <code>/api/user/history?userId=123</code>과 같은 요청 시, <code>userId</code>를 다른 사용자의 ID로 변경했을 때 서버가 해당 객체에 대한 실제 소유권(Ownership)을 검증하지 않고 데이터를 그대로 반환하는 결함입니다. 영상에 노출된 다이어그램에서도 잠금 해제된 조회 API 아이콘을 통해 다수 사용자의 프로필 카드로 연결되는 구조를 직관적으로 짚었습니다.</p>
+    
+
+    <h2>3. 시연 내용 vs 제작자 주장 교차 검증</h2>
+    
+      <table>
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>영상 내 시연 및 확인된 사실 (Demonstrated)</th>
+            <th>제작자 주장 및 평가 (Claimed)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>유출 피해 규모 및 항목</td>
+            <td>강남언니 로고 및 &#x27;약 22만 명 개인정보 유출&#x27; 언론 보도 화면, 이름/연락처/상담사진/의사명/시술내역/결제정보 포함 공지 텍스트 노출</td>
+            <td>단순한 개인정보를 넘어 민감한 성형 상담 사진과 시술 기록까지 통째로 유출된 매우 심각한 보안 사고라고 지적</td>
+          </tr>
+          <tr>
+            <td>원인 및 보안 권고</td>
+            <td>&#x27;권한 검증 취약점이 원인으로 추정됨&#x27; 안내 자막 및 API 권한 누수 인포그래픽 화면 제시</td>
+            <td>단순 조회 API를 허술하게 구현한 것이 화근이었으며, 개발자들은 API 개발 시 보안 검증을 각별히 신경 써야 한다고 강조</td>
+          </tr>
+        </tbody>
+      </table>
+    
+
+    <h2>4. 실무 적용 및 엔지니어링 시사점</h2>
+    
+      <ul>
+        <li><strong>객체 수준 인가(Object-Level Authorization) 미들웨어 적용:</strong> 모든 데이터 조회 쿼리 시 세션 또는 JWT 토큰에서 추출한 사용자 ID(<code>current_user.id</code>)를 WHERE 조건에 강제 바인딩하여 타인 데이터 접근 원천 차단.</li>
+        <li><strong>순차적 정수 ID(Auto-increment ID) 노출 지양 및 UUID/해시 ID 도입:</strong> 외부 API 엔드포인트 URL에 예측 가능한 시퀀스 ID 대신 무작위 UUID v4 또는 암호화된 토큰 식별자를 사용하여 열거 공격(Enumeration Attack) 방어.</li>
+        <li><strong>정기적인 API 침투 테스트 및 DAST/SAST 보안 점검 의무화:</strong> 배포 파이프라인에서 권한 누락 엔드포인트를 자동 탐지하는 보안 스캐너 연동.</li>
+      </ul>
+    
+  
+
+  
+    조코딩 AI 기술 인텔리전스 아카이브 · mjjeon-youtube-web/v1 규격 준수
+  
+
+</main></body></html>
