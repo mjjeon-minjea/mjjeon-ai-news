@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-09-24 운영 아침 브리핑</title>
+  <style>
+    :root{--ink:#16202a;--muted:#637080;--line:#d9e0e7;--panel:#f7f9fb;--good:#176b43;--warn:#a45a00;--bad:#b42318;--blue:#175ea8}*{box-sizing:border-box}body{margin:0;background:#edf2f6;color:var(--ink);font:15px/1.6 system-ui,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}main{max-width:1020px;margin:28px auto;padding:0 20px 32px}header,section{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;margin:14px 0}h1{margin:0 0 4px;font-size:26px}h2{margin:0 0 12px;font-size:18px}p{margin:7px 0}.meta,footer{color:var(--muted);font-size:13px}.lead{font-size:16px;font-weight:650}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}.metric{background:var(--panel);border-radius:9px;padding:12px}.metric b{display:block;font-size:23px;line-height:1.2}.good{color:var(--good)}.warn{color:var(--warn)}.bad{color:var(--bad)}.note{border-left:4px solid var(--blue);background:#f3f8ff;padding:10px 12px}table{width:100%;border-collapse:collapse;font-size:14px}th,td{border-top:1px solid var(--line);padding:9px 7px;text-align:left;vertical-align:top}th{color:var(--muted);font-weight:650}ul{margin:8px 0;padding-left:20px}footer{text-align:right;padding-top:3px}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>2026-09-24 운영 아침 브리핑</h1>
+    <p class="meta">대상 기간: 2026-09-23 06:30:00–2026-09-24 06:35:27 KST · 운영 인수인계만 수록</p>
+    <p class="lead">결론: 데이터 루트 정리는 118개 최상위 항목 확인점에서 멈췄고, QMS Staging 변경은 검증 기록이 있습니다. 활성 Cron 13건 중 11건 정상·2건 실패이며, Hermes는 설치본과 공식 최신본이 모두 v0.21.4입니다.</p>
+  </header>
+
+  <section>
+    <h2>직전 06:30 이후 변경·사고·지시</h2>
+    <table>
+      <thead><tr><th>항목</th><th>확인 내용</th><th>근거 시각</th><th>Provenance</th></tr></thead>
+      <tbody>
+        <tr><td>데이터 루트 정리</td><td>최신 확인점은 최상위 118개(디렉터리 32·파일/소켓 27·호환 심볼릭 링크 59)입니다. 경로 재배선·Gateway 재시작이 필요한 추가 축소는 수행하지 않았습니다.</td><td>2026-09-24T03:11:54+09:00</td><td>source_readback</td></tr>
+        <tr><td>QMS Staging</td><td>부적합 표시 정리와 모바일 작은 수정 3건의 배포·검증 기록이 있습니다. MAIN·DB·users 변경은 기록상 없고, 무효 상신 서버측 재검사 미확인은 HOLD로 남았습니다.</td><td>2026-09-23T14:39:33+09:00</td><td>source_readback</td></tr>
+        <tr><td>AI NEWS 수집 Cron</td><td>MJJEON AI NEWS — Neoguri hourly collector가 PUBLIC_REPO_UNSAFE 오류로 종료했습니다.</td><td>2026-09-24T06:17:06+09:00</td><td>system_event</td></tr>
+        <tr><td>공식 업데이트 감시 Cron</td><td>MJJEON Hermes official update detector가 PUBLISH_FAILED 오류로 종료했습니다.</td><td>2026-09-24T06:21:57+09:00</td><td>system_event</td></tr>
+      </tbody>
+    </table>
+    <p class="note">새로운 직접 의사결정 요청은 확인되지 않았습니다. QMS HOLD는 기록된 확인 공백이며, 의사결정 요청으로 분류하지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>Cron 현황</h2>
+    <div class="grid">
+      <div class="metric"><span>총 활성 작업</span><b>13</b></div><div class="metric"><span>정상</span><b class="good">11</b></div><div class="metric"><span>미기록</span><b>0</b></div><div class="metric"><span>검증 대기</span><b class="warn">0</b></div><div class="metric"><span>실패</span><b class="bad">2</b></div>
+    </div>
+    <p><b>총 13:</b> 활성 작업 기준입니다.</p>
+    <p><b class="good">정상 11:</b> gwangryeol/고광렬 06:30 KST 아침 브리핑 · default/qms-staging-watch · default/Default+role Gateway supervisor keeper · default/Codex 주간 한도 주의·경고 · default/calendar-yesterday-sync · default/MJJEON X — attach Grok originals · default/all-profile-conversation-close · jjakgwi/jjakgwi-wiki-daily-close-kst · jjakgwi/jjakgwi-wiki-curation-6h-kst · jjakgwi/jjakgwi-conversation-growth-review-6h-kst · neoguri/MJJEON Drive YouTube web ingest</p>
+    <p><b>미기록 0:</b> 없음.</p>
+    <p><b class="warn">검증 대기 0:</b> 없음.</p>
+    <p><b class="bad">실패 2:</b> default/MJJEON AI NEWS — Neoguri hourly collector · neoguri/MJJEON Hermes official update detector. 각각 마지막 오류는 PUBLIC_REPO_UNSAFE, PUBLISH_FAILED입니다.</p>
+  </section>
+
+  <section>
+    <h2>Kanban 현황</h2>
+    <p><b>진행 0:</b> 현재 running 카드 없음.</p>
+    <p><b>막힘 6:</b> 현재 blocked 카드 수입니다.</p>
+    <p class="meta">카드별 기간 변경 내역은 지원되지 않아 실패 폐쇄로 제외했습니다. 오래된 막힘·완료 카드는 인수인계 항목으로 수록하지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>Hermes 버전</h2>
+    <p><b>설치:</b> Hermes Agent v0.21.4 (2026.9.21, upstream d337b736, Docker) — 현재 컨테이너 CLI 조회.</p>
+    <p><b>공식 최신:</b> v0.21.4 (tag v2026.9.21, NousResearch 공식 GitHub release). <b class="good">업데이트 필요 없음.</b></p>
+  </section>
+
+  <section>
+    <h2>검증</h2>
+    <ul><li>일일 브리핑 relevance gate: 8 fixtures PASS.</li><li>수록한 인수인계 항목에 근거 시각과 provenance를 표시했습니다.</li><li>비밀 마커 검사: PASS.</li></ul>
+  </section>
+  <footer>생성 시각: 2026-09-24 06:35:27 KST</footer>
+</main>
+</body>
+</html>
