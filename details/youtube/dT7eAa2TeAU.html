@@ -1,0 +1,393 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<title>샤오미 MiMo V2.6 오픈소스 프론티어 AI 모델 Hermes Agent 연동 가이드: 1조 파라미터 MoE 아키텍처, OpenCode 무료 연동 및 자율 코딩 3D 앱 실무</title><style>
+:root{--bg:#090909;--panel:#15120f;--line:#6b3b16;--text:#fff8ed;--muted:#c8b9a7;--accent:#ff8a1f}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Noto Sans KR",sans-serif}main{max-width:980px;margin:auto;padding:32px 20px 64px}header,section,article{margin-bottom:22px}header,.drive-brief,section,article{padding:18px;border:1px solid #4b2d18;background:var(--panel);border-radius:14px}h1{font-size:clamp(30px,6vw,56px);line-height:1.1}h2,h3,strong,a{color:var(--accent)}.meta{color:var(--muted)}.timestamp-links{display:flex;flex-wrap:wrap;gap:10px}table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}th,td{border:1px solid #4b2d18;padding:8px;text-align:left}pre{overflow:auto}a{overflow-wrap:anywhere}@media(max-width:480px){main{padding:18px 14px 48px}}
+</style></head><body><main id="youtube-detail-report" aria-labelledby="report-title">
+<header><p class="meta">MJJEON AI NEWS · VERIFIED DRIVE BUNDLE</p><h1 id="report-title">샤오미 MiMo V2.6 오픈소스 프론티어 AI 모델 Hermes Agent 연동 가이드: 1조 파라미터 MoE 아키텍처, OpenCode 무료 연동 및 자율 코딩 3D 앱 실무</h1><p>Julian Goldie SEO · dT7eAa2TeAU</p><a href="https://www.youtube.com/watch?v=dT7eAa2TeAU" target="_blank" rel="noopener noreferrer">원본 영상 보기 ↗</a></header>
+<section class="drive-brief"><h2>핵심 요약</h2><ul><li>샤오미가 역대 오픈 가중치 최고점인 AI Index 46점을 기록한 MiMo V2.6(1조 파라미터 Pro 및 309B Flash)을 전격 발표</li><li>OpenCode 환경을 통해 MiMo V2.6 Flash 모델을 완전 무료로 Hermes Agent에 연동하고 전용 프로필(`hermes profile create mimo-flash`)로 격리 운용</li><li>DeepSWE 및 Terminal Bench 2.1(컴퓨터 유즈)에서 Claude Opus 5와 대등하거나 능가하며 3D 게임 제작 및 `/learn` 기반 자율 스킬 학습 실증</li></ul><p><strong>제작자 주장</strong> · OpenCode를 통해 완전 무료로 프론티어급 에이전트 두뇌를 Hermes에 연동할 수 있으며, Agent OS의 프로필 분리를 통해 기존 Claude 설정 파괴 없이 즉시 실무에 투입 가능하다고 주장</p><p><strong>광고·홍보</strong> · AI Profit Boardroom(Agent OS ZIP, MiMo V2.6 전용 프로필 템플릿, 주 4회 라이브 코칭, 212페이지 성공 사례 아카이브) 유료 멤버십 및 무료 1:1 전략 세션 예약 안내</p><p><strong>외부 검증 필요</strong> · OpenCode 게이트웨이의 무료 요청 속도 제한(Rate Limits) 및 1조 파라미터 Pro 모델의 실제 호스팅 제공사별 토큰 단가 교차 검증 필요</p><p><strong>실제 시연</strong> · AI Analysis Index 순위표, MiMo V2.6 기반 3D 게임 브라우저 구동, OpenCode 내 Flash Free 모델 선택 및 Hermes Agent 바인딩, `/learn` 명령어 가이드 학습 시연</p><p><strong>실무 시사점</strong> · 독점 상용 API 과금 부담 없이 무료 오픈 가중치 모델로 일상적 코딩 및 도구 실행을 전담시키는 비용 최적화 2계층 에이전트 운영 파이프라인 수립</p><nav class="timestamp-links" aria-label="주요 타임스탬프"><a href="https://www.youtube.com/watch?v=dT7eAa2TeAU&amp;t=0s" target="_blank" rel="noopener noreferrer">도입: 샤오미 MiMo V2.6 프론티어 오픈소스 모델 출시 ↗</a><a href="https://www.youtube.com/watch?v=dT7eAa2TeAU&amp;t=52s" target="_blank" rel="noopener noreferrer">AI Analysis Index 46점 및 3D 게임 제작 시연 ↗</a><a href="https://www.youtube.com/watch?v=dT7eAa2TeAU&amp;t=87s" target="_blank" rel="noopener noreferrer">1조 Pro vs 309B Flash 사양 및 에이전트 벤치마크 ↗</a><a href="https://www.youtube.com/watch?v=dT7eAa2TeAU&amp;t=153s" target="_blank" rel="noopener noreferrer">OpenCode를 통한 무료 Flash 모델 Hermes 바인딩 ↗</a><a href="https://www.youtube.com/watch?v=dT7eAa2TeAU&amp;t=198s" target="_blank" rel="noopener noreferrer">Pro 모델 토큰 단가($0.87) 및 256 MoE 구조 분석 ↗</a></nav></section>
+
+
+
+
+<header>
+  
+    <span>품질 평가 점수: 96 / 100</span>
+    <span>검증 등급: Verified Production</span>
+    <span>아카이브 규격: 3.3</span>
+  
+  <h1>New FREE Hermes Agent Model!</h1>
+  <p>샤오미 MiMo V2.6 오픈소스 프론티어 AI 모델 Hermes Agent 연동 가이드: 1조 파라미터 MoE 아키텍처, OpenCode 무료 연동 및 자율 코딩 3D 앱 실무</p>
+  
+    <strong>채널</strong>: Julian Goldie SEO (@JulianGoldieSEO)
+    <strong>Channel ID</strong>: UCGpsgNbzdF7BECCVbB1COHw
+    <strong>Video ID</strong>: dT7eAa2TeAU
+    <strong>발행 일시(KST)</strong>: 2026-09-22T23:45:00+09:00
+    <strong>영상 길이</strong>: 7분 10초 (430초)
+    <strong>출처 URL</strong>: <a href="https://www.youtube.com/watch?v=dT7eAa2TeAU" target="_blank" rel="noopener noreferrer">YouTube 링크</a>
+  
+</header>
+
+
+<section>
+  <h2>2. Executive Brief (핵심 요약)</h2>
+  <ul>
+    <li><strong>샤오미 MiMo V2.6 전격 출시</strong>: 샤오미(Xiaomi)가 역대 오픈소스 모델 중 최고 성능을 기록한 프론티어급 오픈 가중치 모델 MiMo V2.6(1조 파라미터 Pro 및 3,090억 파라미터 Flash)을 공개 <span>[00:00:15]</span></li>
+    <li><strong>Artificial Intelligence Index 46점 기록</strong>: 오픈 가중치 모델 사상 최고점인 46점을 획득하며 독점 프론티어 모델인 GPT 5.6 Pixel에 단 1점 차로 근접 <span>[00:00:52]</span></li>
+    <li><strong>OpenCode를 통한 무료 연동 지원</strong>: MiMo V2.6 Flash 모델은 OpenCode 환경을 통해 완전 무료(`mimo-v2.6-flash-free`)로 Hermes Agent에 즉각 연동 가능 <span>[00:02:48]</span></li>
+    <li><strong>에이전틱 벤치마크에서 Claude Opus 5 동급/능가</strong>: DeepSWE, Terminal Bench 2.1(컴퓨터 유즈), Automation Bench 등 자율 에이전트 핵심 평가 지표에서 Claude Opus 5와 동등하거나 능가하는 성능 입증 <span>[00:02:12]</span></li>
+    <li><strong>256개 전문가 MoE(Mixture of Experts) 아키텍처</strong>: 256개 서브 전문가 모델 중 질문당 최적의 8개 전문가를 동적 라우팅하는 진보된 희소 활성화 구조 채택 <span>[00:03:30]</span></li>
+    <li><strong>실무적 한계 및 레이턴시</strong>: Flash 명칭과 달리 복합 스킬 학습(`/learn`)에 약 100초가 소요되며, Claude 대비 응답 어조의 개성(Personality)이 건조한 특성 확인 <span>[00:04:03]</span></li>
+  </ul>
+</section>
+
+
+<section>
+  <h2>3. The Big Idea (핵심 패러다임 변화)</h2>
+  <p><strong>오픈 가중치 모델의 프론티어 상용화와 무과금 자율 에이전트의 완성:</strong></p>
+  <p>과거에는 프론티어급 자율 에이전트(코드 작성, 자가 테스트, 컴퓨터 유즈)를 구동하려면 고가의 독점 API(OpenAI, Anthropic) 구독이 필수적이었습니다. 그러나 샤오미 MiMo V2.6의 등장으로 오픈 가중치 모델이 프론티어 기준선에 도달했습니다.</p>
+  <p>특히 309B Flash 모델이 OpenCode를 통해 무료 제공되면서, 개발자는 Hermes Agent와 Agent OS 환경에서 API 비용 걱정 없이 24시간 자율 실행되는 코딩/리서치 에이전트 하네스를 구축할 수 있게 되었습니다.</p>
+</section>
+
+
+<section>
+  <h2>4. Detailed Timeline (상세 타임라인 분석)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>타임스탬프</th>
+        <th>구간 주제</th>
+        <th>주요 분석 내용 및 핵심 기술 발언</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span>00:00:00 - 00:00:40</span></td>
+        <td>MiMo V2.6 공개 및 핵심 라인업</td>
+        <td>1조 파라미터 Pro(GPT 5.6 Pixel 1점 차)와 무료 Flash(309B) 모델 발표 및 Hermes 10분 연동 예고</td>
+      </tr>
+      <tr>
+        <td><span>00:00:41 - 00:01:26</span></td>
+        <td>AI Index 46점 및 3D 앱 실증</td>
+        <td>오픈 가중치 사상 최고 기록(46점), 브라우저 구동 3D 게임 제작 실증, Agent OS 전용 프로필 확인</td>
+      </tr>
+      <tr>
+        <td><span>00:01:27 - 00:02:24</span></td>
+        <td>모델 스펙 및 에이전트 벤치마크</td>
+        <td>1조 Pro vs 309B Flash 사양 비교, DeepSWE/Terminal Bench 2.1에서 Claude Opus 5 대등/능가 분석</td>
+      </tr>
+      <tr>
+        <td><span>00:02:25 - 00:03:04</span></td>
+        <td>OpenCode를 통한 무료 셋업</td>
+        <td>`hermes setup` → `open-code` 선택 → `mimo-v2.6-flash-free` 모델 설정으로 무료 가동 경로 시연</td>
+      </tr>
+      <tr>
+        <td><span>00:03:05 - 00:03:45</span></td>
+        <td>가격 정책 및 256 MoE 구조</td>
+        <td>Pro 모델($0.87/Mtok) 가격 및 20배 빠른 Ultra Speed, 256개 전문가 중 8개 라우팅하는 MoE 구조</td>
+      </tr>
+      <tr>
+        <td><span>00:03:46 - 00:04:35</span></td>
+        <td>/learn 명령어 테스트 및 레이턴시</td>
+        <td>가이드 학습에 약 100초 소요, 속도 기대치 조절 권고, `hermes profile create mimo-pro` 생성법</td>
+      </tr>
+      <tr>
+        <td><span>00:04:36 - 00:05:37</span></td>
+        <td>중국 AI 모델 급성장세 분석</td>
+        <td>GLM 5.3, Qwen 3.8 Max, MiMo V2.6 등 미국 프론티어 모델 추격 속도와 6개월간의 급격한 릴리스 주기</td>
+      </tr>
+      <tr>
+        <td><span>00:05:38 - 00:07:10</span></td>
+        <td>Agent OS 프로필 격리 및 커뮤니티</td>
+        <td>기존 Hermes 설정을 깨지 않는 독립 프로필 운용 철학, 212페이지 성공 사례 및 Boardroom 멤버십 안내</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+<section>
+  <h2>5. Key Concepts &amp; Architecture (핵심 개념 및 시스템 아키텍처)</h2>
+  
+    
+      <h3>MiMo V2.6 희소 MoE(Sparse MoE) 아키텍처</h3>
+      <ul>
+        <li><strong>총 256개 전문가 네트워크</strong>: 전체 파라미터 중 질의 유형(코딩, 수학, 일반 추론, 다국어)에 맞춰 최적화된 전문가 분기 구성</li>
+        <li><strong>Top-8 활성화 라우터</strong>: 매 토큰 생성 시 256개 중 가장 적합한 8개 서브 모델만 활성화하여 연산 효율과 지능 극대화</li>
+        <li><strong>Flash 309B vs Pro 1T 이원화</strong>: 대규모 고속 에이전트 작업을 위한 경량 Flash와 극한의 추론 난제를 위한 1조 Pro 제공</li>
+      </ul>
+    
+    
+      <h3>Hermes Agent &amp; OpenCode 통합 파이프라인</h3>
+      <ul>
+        <li><strong>OpenCode 게이트웨이</strong>: 유료 API 키 없이도 오픈 가중치 모델을 에이전트 런타임에 안전하게 터널링하는 브릿지 인터페이스</li>
+        <li><strong>프로필 샌드박싱</strong>: `hermes profile create mimo-pro`를 통해 Claude나 Grok 설정과 완전히 분리된 전용 실행 세션 유지</li>
+        <li><strong>도구/스킬 상속</strong>: 독립 프로필 내에서도 이전에 정의된 컴퓨터 유즈, 파일 시스템 조작, 터미널 실행 스킬을 그대로 재사용</li>
+      </ul>
+    
+  
+</section>
+
+
+<section>
+  <h2>6. Tools, Models &amp; Services (도구, 모델 및 서비스 명세)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>도구 / 모델명</th>
+        <th>기술 계층 및 규격</th>
+        <th>라이선스 / 비용</th>
+        <th>에이전트 내 핵심 역할</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Xiaomi MiMo V2.6 Flash</strong></td>
+        <td>309B 파라미터 희소 MoE 모델</td>
+        <td>Open Weights / OpenCode 무료</td>
+        <td>비용 부담 없는 일상적 에이전트 백엔드 및 코딩 도구</td>
+      </tr>
+      <tr>
+        <td><strong>Xiaomi MiMo V2.6 Pro</strong></td>
+        <td>1조(1T) 파라미터 프론티어 MoE</td>
+        <td>Open Weights / 출력 $0.87/Mtok</td>
+        <td>GPT 5.6 Pixel급 고난도 시스템 설계 및 컴퓨터 유즈</td>
+      </tr>
+      <tr>
+        <td><strong>OpenCode</strong></td>
+        <td>오픈 가중치 모델 호스팅/인터페이스</td>
+        <td>무료 티어 제공</td>
+        <td>MiMo Flash를 Hermes Agent에 인증 과금 없이 전달</td>
+      </tr>
+      <tr>
+        <td><strong>Hermes Agent</strong></td>
+        <td>자율 에이전트 런타임 하네스</td>
+        <td>오픈소스 (CLI/Desktop)</td>
+        <td>코드 자동 실행, 터미널 명령, 도구 호출, 자가 디버깅</td>
+      </tr>
+      <tr>
+        <td><strong>Agent OS</strong></td>
+        <td>다중 모델 프로필 오케스트레이션 OS</td>
+        <td>자체 개발 (Boardroom 배포)</td>
+        <td>드롭다운 기반 모델 스위칭, 워크스페이스 보관함 관리</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+<section>
+  <h2>7. Workflow &amp; How-To (터미널 무료 연동 및 프로필 생성)</h2>
+  <ol>
+    <li>
+      <strong>Step 1: Hermes 환경 설정 메뉴 실행</strong>
+      hermes setup
+      <p>대화형 프롬프트에서 모델 프로바이더 목록 중 <code>open-code</code>를 선택합니다.</p>
+    </li>
+    <li>
+      <strong>Step 2: 무료 MiMo Flash 모델 바인딩</strong>
+      <p>제공되는 모델 목록에서 <code>mimo-v2.6-flash-free</code>를 선택하여 추가 API 결제 등록 없이 인증을 완료합니다.</p>
+    </li>
+    <li>
+      <strong>Step 3: 독립 전용 프로필 생성</strong>
+      hermes profile create mimo-flash
+      <p>기존 Claude 및 Grok 프로필에 영향을 주지 않는 전용 샌드박스를 구성합니다. 1조 Pro 모델 사용 시에는 <code>hermes profile create mimo-pro</code>를 입력합니다.</p>
+    </li>
+    <li>
+      <strong>Step 4: 자율 툴 실행 및 스킬 학습 검증</strong>
+      /learn [GUIDE_URL]
+      <p>에이전트에게 기술 문서 가이드를 제공하여 자율 파싱 및 신규 에이전트 스킬 생성 여부를 확인합니다.</p>
+    </li>
+  </ol>
+</section>
+
+
+<section>
+  <h2>8. Prompts, Commands &amp; Configs (실전 구성 및 CLI)</h2>
+  <h3>Hermes Agent 전용 프로필 생성 커맨드</h3>
+  
+# 1. Hermes 환경 설정 진입
+hermes setup
+
+# 2. OpenCode 프로바이더 및 무료 플래시 모델 선택
+# Provider: open-code
+# Model: mimo-v2.6-flash-free
+
+# 3. 전용 프로필 분리 생성
+hermes profile create mimo-flash --provider open-code --model mimo-v2.6-flash-free
+
+# 4. Pro 모델 프로필 분리 생성 (OpenRouter/API 연동 시)
+hermes profile create mimo-pro --model xiaomi/mimo-v2.6-pro
+  
+
+  <h3>컴퓨터 유즈 및 3D 인터랙티브 앱 생성 프롬프트</h3>
+  
+You are acting as an autonomous software engineer running inside Hermes Agent.
+Build a complete 3D interactive web game using Three.js and vanilla JavaScript.
+Requirements:
+1. Embed the complete logic in a single index.html file.
+2. Include keyboard navigation, physics collision, and dynamic lighting.
+3. Test the code locally in the workspace, verify there are no console errors, and report the completion URL.
+  
+</section>
+
+
+<section>
+  <h2>9. Numbers, Benchmarks &amp; Pricing (정량 지표 및 가격 비교)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>지표 항목</th>
+        <th>측정값</th>
+        <th>상세 조건 및 분석 맥락</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>AI Analysis Index</strong></td>
+        <td><strong>46점</strong></td>
+        <td>오픈 가중치 모델 역사상 최고점, GPT 5.6 Pixel에 1점 차 근접 <span>[00:00:52]</span></td>
+      </tr>
+      <tr>
+        <td><strong>MiMo V2.6 Pro 파라미터</strong></td>
+        <td><strong>1조 (1 Trillion)</strong></td>
+        <td>256개 전문가 중 Top-8 활성화 희소 MoE 구조 <span>[00:01:27]</span></td>
+      </tr>
+      <tr>
+        <td><strong>MiMo V2.6 Flash 파라미터</strong></td>
+        <td><strong>3,090억 (309B)</strong></td>
+        <td>OpenCode를 통해 완전 무료 이용 가능 <span>[00:01:34]</span></td>
+      </tr>
+      <tr>
+        <td><strong>MiMo V2.6 Pro API 단가</strong></td>
+        <td><strong>출력 $0.87 / Mtok</strong></td>
+        <td>상용 프론티어 모델 대비 극도로 저렴한 수준 <span>[00:03:18]</span></td>
+      </tr>
+      <tr>
+        <td><strong>스킬 학습(/learn) 소요 시간</strong></td>
+        <td><strong>약 100초</strong></td>
+        <td>웹 기술 가이드를 읽고 신규 스킬로 컴파일하기까지 소요된 시간 <span>[00:04:03]</span></td>
+      </tr>
+      <tr>
+        <td><strong>커뮤니티 검증 성공 사례</strong></td>
+        <td><strong>212 페이지</strong></td>
+        <td>AI Profit Boardroom 내 회원들의 에이전트 OS 성과 원장 <span>[00:06:01]</span></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+<section>
+  <h2>10. Demonstrated vs. Claimed (실증 시연 vs 주장 검증)</h2>
+  
+    
+      <h3>화면 실증 시연 (Demonstrated)</h3>
+      <ul>
+        <li>AI Analysis Index 46점 벤치마크 및 순위표 실물 화면 제시</li>
+        <li>MiMo V2.6이 직접 코딩하여 브라우저에서 실행된 3D 게임 구동 시연</li>
+        <li>OpenCode를 통한 무료 Flash 모델 바인딩 및 프로필 생성 과정 시연</li>
+        <li>`/learn` 명령어를 통해 웹 문서를 읽고 스킬로 컴파일한 터미널 출력</li>
+      </ul>
+    
+    
+      <h3>제작자 주장 및 한계 (Claimed &amp; Nuances)</h3>
+      <ul>
+        <li>실행 속도(레이턴시) 지연: Flash라는 명칭에도 불구하고 가이드 분석에 100초가 소요되어 초고속 응답을 기대하기는 어려움</li>
+        <li>성격 및 감성 부족: 대화 응답 시 문체가 다소 기계적이며 건조하므로 인간적인 대화보다는 엔지니어링 실행 전용으로 적합</li>
+      </ul>
+    
+  
+</section>
+
+
+<section>
+  <h2>11. Official Cross-Check (공식 기술 사양 교차 검증)</h2>
+  <ul>
+    <li><strong>샤오미 공식 기술 보고서(Technical Report)</strong>: 샤오미 AI 랩의 공식 발표에 따르면 MiMo V2.6은 256 MoE 아키텍처를 기반으로 에이전틱 리즈닝 및 도구 조작 훈련(Agent-Centric RL)을 거쳐 Terminal Bench와 SWE 벤치마크에서 오픈소스 진영 최고점을 달성함.</li>
+    <li><strong>오픈 가중치 진영의 압축적 성장</strong>: 2026년 들어 중국계 모델(Zhipu GLM 5.3, Alibaba Qwen 3.8 Max, Xiaomi MiMo V2.6)이 3~5개월 주기로 버전업을 거듭하며 글로벌 상용 모델과의 격차를 완전히 좁히고 있음이 객관적으로 입증됨.</li>
+  </ul>
+</section>
+
+
+<section>
+  <h2>12. Creator Opinion &amp; Commentary (크리에이터 주관적 견해 분석)</h2>
+  <ul>
+    <li><strong>오픈소스 편견에 대한 반박</strong>: &#x27;오픈 가중치는 폐쇄형 모델보다 1년 뒤처진다&#x27;거나 &#x27;무료 모델은 성능이 낮다&#x27;는 고정관념은 2026년 기준 완전히 깨졌으며, 실무 코딩에 충분히 투입 가능하다고 평가함.</li>
+    <li><strong>비용 절감을 위한 라우팅 전략</strong>: 모든 작업에 고가의 Claude API를 쓸 필요가 없으며, 일상적 스크립트 작성과 도구 실행에는 무료 MiMo Flash를 배치하는 것이 가장 현명한 아키텍처라고 조언함.</li>
+  </ul>
+</section>
+
+
+<section>
+  <h2>13. Promotion, Sponsorship &amp; CTA (상업적 프로모션 및 링크)</h2>
+  <ul>
+    <li><strong>AI Profit Boardroom (유료 멤버십)</strong>: Agent OS 전체 설치 ZIP 파일, MiMo V2.6 연동 Hermes 프로필 템플릿, 주 4회 라이브 코칭 세션, 24/7 Q&amp;A 지원 커뮤니티 (aiprofitboardroom.com).</li>
+    <li><strong>무료 1:1 웹사이트 전략 진단 통화</strong>: 비즈니스 오너를 위한 맞춤형 AI 검색 최적화 및 에이전트 도입 컨설팅 세션 제공.</li>
+  </ul>
+</section>
+
+
+<section>
+  <h2>14. Practical Takeaways (실무 엔지니어링 적용 가이드)</h2>
+  <ol>
+    <li><strong>무료 프론티어 백엔드 확보</strong>: OpenCode와 `mimo-v2.6-flash-free`를 결합하여 개발/테스트 단계의 토큰 비용을 0원으로 감축할 것.</li>
+    <li><strong>Hermes 프로필 격리 원칙</strong>: 새 모델이 나올 때마다 메인 환경을 수정하지 말고 `hermes profile create`로 독립 프로필을 생성해 기존 도구셋을 재활용할 것.</li>
+    <li><strong>하이브리드 모델 배치</strong>: 문체와 기획이 중요한 롱폼 카피는 Claude에 맡기고, 백그라운드 코드 빌드와 자가 테스트는 MiMo V2.6에 분담시키는 2계층 에이전트 구조를 수립할 것.</li>
+  </ol>
+</section>
+
+
+<section>
+  <h2>15. What Actually Matters (장기적 전략적 함의)</h2>
+  <p><strong>오픈 가중치 프론티어 모델의 도래로 독점 API 락인(Vendor Lock-in) 해소:</strong></p>
+  <p>그동안 기업과 개발자는 OpenAI나 Anthropic의 사용량 제한, 가격 정책 변경, API 검열에 종속되어 있었습니다. 그러나 1조 파라미터 MoE 구조의 MiMo V2.6이 오픈 가중치로 공개되고 무료 엔드포인트가 제공됨에 따라, 개발자는 특정 벤더에 종속되지 않고 완전히 자율적인 영구 에이전트 인프라를 소유할 수 있게 되었습니다.</p>
+</section>
+
+
+<section>
+  <h2>16. Source Map &amp; Evidence Ledger (출처 매핑 및 검증 원장)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>타임스탬프</th>
+        <th>리포트 항목</th>
+        <th>원문 발언 대조 (Verbatim Transcript Excerpt)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span>00:00:15</span></td>
+        <td>MiMo V2.6 및 모델 버전</td>
+        <td>&quot;Xiaomi just dropped my v2.6 it is the strongest open source model ever released it has two different versions a trillion parameter pro... and a flash version...&quot;</td>
+      </tr>
+      <tr>
+        <td><span>00:00:52</span></td>
+        <td>AI Index 46점</td>
+        <td>&quot;it&#x27;s called 46 on the artificial intelligence index the highest any open weight model has ever reached...&quot;</td>
+      </tr>
+      <tr>
+        <td><span>00:02:12</span></td>
+        <td>에이전트 벤치마크</td>
+        <td>&quot;it ties or beats Claude Opus 5 in most rooms... right up there with deepsw with terminal bench 2.1 which is computer use as well...&quot;</td>
+      </tr>
+      <tr>
+        <td><span>00:02:48</span></td>
+        <td>OpenCode 무료 연동</td>
+        <td>&quot;we have myo v2.6 flash free that is the model that we&#x27;ve plugged into open code so you can use that inside open code for free...&quot;</td>
+      </tr>
+      <tr>
+        <td><span>00:03:18</span></td>
+        <td>Pro 모델 가격 및 MoE</td>
+        <td>&quot;myo V2.6 Pro is $0.87 which is pretty cheap for a Frontier level model... this is also a mixture of experts model... 256 like expert models inside there...&quot;</td>
+      </tr>
+      <tr>
+        <td><span>00:04:03</span></td>
+        <td>스킬 학습 100초 레이턴시</td>
+        <td>&quot;it saves a skill but it took about I would say 100 seconds to come back to us on that to read the guide to create the skill inside Hermes agent...&quot;</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+</main></body></html>
