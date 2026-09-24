@@ -1,6 +1,17 @@
 {
   "items": [
     {
+      "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v2026.9.24",
+      "detail_url": "hermes/items/github-release-395553114.html",
+      "judgment": "공식 패치 확인 · Releases·Docs·repository 교차확인 · 플러그인·Connectors·Gateway 권한 및 호환성은 에스컬레이션 후보 · 명시적 breaking 근거 없음",
+      "published_at": "2026-09-24T10:09:38Z",
+      "source_grade": "official",
+      "source_kind": "release",
+      "stable_id": "github-release:395553114",
+      "status": "에스컬레이션 후보",
+      "title_ko": "Hermes Agent v0.21.5(v2026.9.24) 패치 릴리스"
+    },
+    {
       "canonical_url": "https://hermes-agent.nousresearch.com/docs/llms.txt",
       "detail_url": "hermes/items/official-docs-llms.html",
       "judgment": "공식 문서 색인 판본 갱신 확인 · 설치·릴리스 변경 아님 · 자동 업데이트 불필요 · 에스컬레이션 없음",
