@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-09-26 운영 아침 브리핑</title>
+  <style>
+    :root{--ink:#16202a;--muted:#637080;--line:#d9e0e7;--panel:#f7f9fb;--good:#176b43;--warn:#a45a00;--bad:#b42318;--blue:#175ea8}*{box-sizing:border-box}body{margin:0;background:#edf2f6;color:var(--ink);font:15px/1.6 system-ui,-apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}main{max-width:1020px;margin:28px auto;padding:0 20px 32px}header,section{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;margin:14px 0}h1{margin:0 0 4px;font-size:26px}h2{margin:0 0 12px;font-size:18px}p{margin:7px 0}.meta,footer{color:var(--muted);font-size:13px}.lead{font-size:16px;font-weight:650}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}.metric{background:var(--panel);border-radius:9px;padding:12px}.metric b{display:block;font-size:23px;line-height:1.2}.good{color:var(--good)}.warn{color:var(--warn)}.bad{color:var(--bad)}.note{border-left:4px solid var(--blue);background:#f3f8ff;padding:10px 12px}table{width:100%;border-collapse:collapse;font-size:14px}th,td{border-top:1px solid var(--line);padding:9px 7px;text-align:left;vertical-align:top}th{color:var(--muted);font-weight:650}ul{margin:8px 0;padding-left:20px}footer{text-align:right;padding-top:3px}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>2026-09-26 운영 아침 브리핑</h1>
+    <p class="meta">대상 기간: 2026-09-25 06:30:00–2026-09-26 06:37:22 KST · 운영 인수인계만 수록</p>
+    <p class="lead">결론: QMS 072 스테이징 시험기록 삭제는 지시 후 검증돼 완료됐고, QMS 073은 스테이징 배포까지 통과했습니다. AI NEWS는 YouTube Drive 재전수조회로 인한 반복 시간초과의 근본 원인이 기록됐으며, Cron 활성 13건은 모두 정상입니다.</p>
+  </header>
+
+  <section>
+    <h2>직전 06:30 이후 변경·지시·사고</h2>
+    <table>
+      <thead><tr><th>항목</th><th>확인 내용</th><th>근거 시각</th><th>Provenance</th></tr></thead>
+      <tbody>
+        <tr><td>QMS 072 삭제 지시</td><td>스테이징 시험기록 072 삭제 실행이 직접 지시됐습니다. 새 의사결정 요청으로 분류하지 않았습니다.</td><td>2026-09-25T11:29:07+09:00</td><td>direct_user</td></tr>
+        <tr><td>QMS 072 삭제 완료</td><td>시험 문서 27건·관련 결재 114건·첨부 DB 행 18건을 삭제해 전체 NCR은 40→13건으로 기록됐습니다. 보호 13건은 불변, 고아 0/0, MAIN 변경·재시도는 없었고 물리 파일 18개는 보존됐습니다.</td><td>2026-09-25T11:36:14+09:00</td><td>source_readback</td></tr>
+        <tr><td>QMS 073 스테이징</td><td>60개 시험·build·READY 배포·두 경로 헤더 대조가 통과로 기록됐습니다. MAIN·DB·브라우저 변경은 없고 화면시험 시작 신호가 남았습니다.</td><td>2026-09-25T16:49:24+09:00</td><td>source_readback</td></tr>
+        <tr><td>AI NEWS 게시 재개</td><td>리뷰 적용 뒤 재개 단계가 렌더 실패로 멈췄고, 해당 실행에서는 공개 게시와 원격 검증이 미완료로 기록됐습니다.</td><td>2026-09-25T19:47:07+09:00</td><td>source_readback</td></tr>
+        <tr><td>AI NEWS YouTube Drive 시간초과</td><td>시간초과의 근본 원인은 과거 813건과 변동 없는 미완성 HOLD 492건을 매시간 재조회해 360초 한도를 넘는 구조로 기록됐습니다. 단발 성공만으로 종결했던 판단은 철회됐으며, 지속 자연 예약 실행의 회복 증거는 이 인수인계에서 확인되지 않았습니다.</td><td>2026-09-25T22:35:41+09:00</td><td>source_readback</td></tr>
+      </tbody>
+    </table>
+    <p class="note">새로운 직접 의사결정 요청은 확인되지 않았습니다. 직접 실행 지시와 상태·사고 기록은 의사결정 요청으로 바꾸지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>Cron 현황</h2>
+    <div class="grid">
+      <div class="metric"><span>총 활성 작업</span><b>13</b></div><div class="metric"><span>정상</span><b class="good">13</b></div><div class="metric"><span>미기록</span><b>0</b></div><div class="metric"><span>검증 대기</span><b class="warn">0</b></div><div class="metric"><span>실패</span><b class="bad">0</b></div>
+    </div>
+    <p><b>총 13:</b> 활성 작업 기준입니다.</p>
+    <p><b class="good">정상 13:</b> default/qms-staging-watch · default/MJJEON AI NEWS — Neoguri hourly collector · default/Default+role Gateway supervisor keeper · default/Codex 주간 한도 주의·경고 · default/calendar-yesterday-sync · default/MJJEON X — attach Grok originals · default/all-profile-conversation-close · gwangryeol/고광렬 06:30 KST 아침 브리핑 · jjakgwi/jjakgwi-wiki-daily-close-kst · jjakgwi/jjakgwi-wiki-curation-6h-kst · jjakgwi/jjakgwi-conversation-growth-review-6h-kst · neoguri/MJJEON Hermes official update detector · neoguri/MJJEON Drive YouTube web ingest</p>
+    <p><b>미기록 0:</b> 없음.</p>
+    <p><b class="warn">검증 대기 0:</b> 없음.</p>
+    <p><b class="bad">실패 0:</b> 없음.</p>
+  </section>
+
+  <section>
+    <h2>Kanban 현황</h2>
+    <p><b>진행 0:</b> 현재 running 카드 없음.</p>
+    <p><b>막힘 6:</b> 현재 blocked 카드 수입니다.</p>
+    <p class="meta">그 외 현재 상태: done 45, 나머지 상태 0.</p>
+  </section>
+
+  <section>
+    <h2>Hermes 버전</h2>
+    <p><b>설치 확인:</b> Hermes Agent v0.21.4 (2026.9.21, Docker, upstream d337b736).</p>
+    <p><b>공식 최신:</b> v0.21.5 (tag v2026.9.24, NousResearch 공식 GitHub release, 2026-09-24). <b class="warn">업데이트 필요.</b></p>
+  </section>
+
+  <section>
+    <h2>검증</h2>
+    <ul><li>일일 브리핑 relevance gate: 8 fixtures PASS.</li><li>수록 항목마다 근거 시각과 provenance를 표시했습니다.</li><li>민감 패턴 검사: PASS.</li></ul>
+  </section>
+  <footer>생성 시각: 2026-09-26 06:37:22 KST</footer>
+</main>
+</body>
+</html>
