@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-09-26 08:00 — Claude Opus 5.5 활용례 · OpenAI 에이전트 데이터 유출 검토 · Codex 장애](./2026-09-26-0800.md)
 - [2026-09-25 20:00 — 새 소식 없음](./2026-09-25-2000.md)
 - [2026-09-25 18:00 — 새 소식 없음](./2026-09-25-1800.md)
 - [2026-09-25 16:00 — thsottiaux DevDay 잠금](./2026-09-25-1600.md)
