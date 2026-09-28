@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-09-29 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#637087; --line:#d9e0ea; --panel:#f7f9fc; --warn:#a24600; --warn-bg:#fff3e8; }
+    * { box-sizing:border-box; } body { margin:0; background:#eef2f7; color:var(--ink); font:15px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { max-width:900px; margin:32px auto; background:#fff; padding:42px; box-shadow:0 10px 30px #18243a14; }
+    h1 { margin:.2rem 0 .4rem; font-size:28px; } h2 { margin:30px 0 10px; font-size:18px; border-bottom:1px solid var(--line); padding-bottom:7px; }
+    p { margin:7px 0; } .eyebrow,.meta,.note { color:var(--muted); font-size:13px; } .summary { padding:14px 16px; border-left:4px solid #d76b00; background:var(--warn-bg); }
+    ul { padding-left:20px; } li { margin:8px 0; } .metric { padding:8px 11px; background:var(--panel); border-radius:6px; } code { font:12px ui-monospace,SFMono-Regular,Consolas,monospace; }
+    a { color:#245fb2; } footer { border-top:1px solid var(--line); margin-top:28px; padding-top:12px; color:var(--muted); font-size:12px; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="eyebrow">전민재 차장님 · 운영 인수인계 · 2026-09-28 06:30:00–2026-09-29 06:32:49 KST</p>
+    <h1>2026-09-29 운영 아침 브리핑</h1>
+    <p class="summary"><strong>결론:</strong> 범위 내 새 운영 인수인계·직접 의사결정 요청·현재 사고는 확인되지 않았습니다. Cron 마지막 결과는 14개 모두 정상이며, 실행 중 Docker 이미지의 Hermes는 v0.21.4이고 공식 최신 v0.21.5보다 한 버전 이전입니다.</p>
+  </header>
+
+  <section>
+    <h2>직전 06:30 이후 인수인계</h2>
+    <p><strong>포함 항목:</strong> 없음.</p>
+    <p class="note">전 profile의 HANDOFF·MEMORY·conversation과 Wiki 변경분을 기간·출처·운영 범위로 확인했습니다. 기간 내 변경 파일이나 감사 가능한 새 직접 지시·운영 사고는 확인되지 않았습니다. Kanban의 기존 막힘·완료 카드는 신규 인수인계나 의사결정으로 전환하지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>Cron 현황</h2>
+    <p class="metric"><strong>Cron 총계:</strong> 14개 등록 (활성 13개, 비활성·완료 1개)</p>
+    <p class="metric"><strong>Cron 정상 (14):</strong> default/qms-staging-watch · default/MJJEON AI NEWS — Neoguri hourly collector · default/Default+role Gateway supervisor keeper · default/Codex 주간 한도 주의·경고 · default/calendar-yesterday-sync · default/MJJEON X — attach Grok originals · default/all-profile-conversation-close · default/Hermes v0.21.0 cutover result relay · gwangryeol/고광렬 06:30 KST 아침 브리핑 · jjakgwi/jjakgwi-wiki-daily-close-kst · jjakgwi/jjakgwi-wiki-curation-6h-kst · jjakgwi/jjakgwi-conversation-growth-review-6h-kst · neoguri/MJJEON Hermes official update detector · neoguri/MJJEON Drive YouTube web ingest</p>
+    <p class="metric"><strong>Cron 미기록 (0):</strong> 없음</p>
+    <p class="metric"><strong>Cron 검증 대기 (0):</strong> 없음</p>
+    <p class="metric"><strong>Cron 실패 (0):</strong> 없음</p>
+    <p class="note">분류 규칙: <code>last_status=ok</code>는 정상, 값 없음은 미기록, <code>last_error</code>에 <code>REMOTE_UNVERIFIED</code>가 있으면 검증 대기, 그 밖의 <code>error</code>만 실패입니다. 검증 대기는 실패로 집계하지 않습니다.</p>
+  </section>
+
+  <section>
+    <h2>Kanban 현황</h2>
+    <p class="metric"><strong>Kanban 진행:</strong> 0건</p>
+    <p class="metric"><strong>Kanban 막힘:</strong> 6건</p>
+    <p class="note">카드별 기간 필터를 지원하는 읽기 경로가 없어 신규 카드 항목은 fail-closed로 제외했습니다. 위 수치는 현재 상태 집계이며 기존 막힘 카드를 새 인수인계·의사결정으로 올리지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>Hermes 버전</h2>
+    <p><strong>설치:</strong> Hermes Agent v0.21.4 (Docker 이미지, upstream <code>d337b736</code>, 2026.9.21)</p>
+    <p><strong>공식 최신:</strong> <a href="https://github.com/NousResearch/hermes-agent/releases/tag/v2026.9.24">v0.21.5 (v2026.9.24)</a> · 업데이트 필요</p>
+  </section>
+
+  <footer>검증: relevance gate 8 fixtures PASS · Cron 분류 집계 확인 · HTML 및 index JSON 구조 확인 PASS · 민감 마커 검사 PASS. 외부 발송·배포·index.html 갱신은 수행하지 않았습니다.</footer>
+</main>
+</body>
+</html>
