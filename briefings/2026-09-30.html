@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-09-30 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#637087; --line:#d9e0ea; --panel:#f7f9fc; --warn:#a24600; --warn-bg:#fff3e8; }
+    * { box-sizing:border-box; } body { margin:0; background:#eef2f7; color:var(--ink); font:15px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { max-width:900px; margin:32px auto; background:#fff; padding:42px; box-shadow:0 10px 30px #18243a14; }
+    h1 { margin:.2rem 0 .4rem; font-size:28px; } h2 { margin:30px 0 10px; font-size:18px; border-bottom:1px solid var(--line); padding-bottom:7px; }
+    p { margin:7px 0; } .eyebrow,.meta,.note { color:var(--muted); font-size:13px; } .summary { padding:14px 16px; border-left:4px solid #d76b00; background:var(--warn-bg); }
+    ul { padding-left:20px; } li { margin:8px 0; } .metric { padding:8px 11px; background:var(--panel); border-radius:6px; } code { font:12px ui-monospace,SFMono-Regular,Consolas,monospace; }
+    a { color:#245fb2; } footer { border-top:1px solid var(--line); margin-top:28px; padding-top:12px; color:var(--muted); font-size:12px; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="eyebrow">전민재 차장님 · 운영 인수인계 · 2026-09-29 06:30:00–2026-09-30 06:36:07 KST</p>
+    <h1>2026-09-30 운영 아침 브리핑</h1>
+    <p class="summary"><strong>결론:</strong> Hermes는 v0.21.5로 교체됐고, 고니를 제외한 6개 프로필의 기본 모델 설정이 고정됐습니다. 기록상 Google OAuth 앱은 External/프로덕션 전환까지 완료됐고 Wiki 안전 영수증 36건도 정리됐습니다. 반면 AI NEWS 시간당 수집은 06:00 KST에 <code>PUBLIC_REPO_UNSAFE</code>로 4회 연속 실패 상태입니다.</p>
+  </header>
+
+  <section>
+    <h2>직전 06:30 이후 인수인계</h2>
+    <ul>
+      <li><strong>01:22 KST · source_readback · conversation/default/2026-09-30:</strong> Hermes Agent v0.21.5 교체, Dashboard·기본 Discord Gateway 정상 및 <code>gpt-6-sol-900k</code> 실제 호출 성공이 기록됐습니다.</li>
+      <li><strong>01:31 KST · direct_user · default/20260929_162536_fee19f:</strong> 차장님 지시로 고니를 제외한 6개 프로필의 본체를 <code>gpt-6-sol-900k</code>, 일반 서브를 <code>gpt-5.6-terra-900k</code>로 고정했고 6/6 설정 재조회가 기록됐습니다. 이 브리핑 Cron의 개별 Terra 핀은 미변경입니다.</li>
+      <li><strong>02:45 KST · source_readback · default/HANDOFF.md:</strong> QMS 정보·개인정보 페이지 2개 공개와 Google Branding/Audience의 External·프로덕션 상태 readback이 기록됐습니다.</li>
+      <li><strong>04:49 KST · source_readback · default conversation:</strong> 신규 두 프로필 제안 R1이 사용자 지적으로 재조사 R2로 교체됐습니다. R2는 제안 단계이며 신규 프로필·모델·Cron·서비스 변경은 기록되지 않았습니다.</li>
+      <li><strong>06:21 KST · source_readback · jjakgwi Wiki curation batch 506034ff062d7926b885:</strong> 안전 영수증 36건을 work-result 36건과 4개 색인으로 일대일 정리했습니다. 지식 판정은 <code>RETAIN_ONLY</code>이며 live 지식 발행·런타임 활성화·과거 backlog 처리는 하지 않았습니다.</li>
+      <li><strong>06:00 KST · system_event · Cron d69129d272c1:</strong> <em>MJJEON AI NEWS — Neoguri hourly collector</em>가 코드 1과 <code>PUBLIC_REPO_UNSAFE</code>로 종료됐습니다(4회 연속). 현재 운영 사고로 포함했습니다.</li>
+    </ul>
+    <p class="note">새 직접 의사결정 요청은 확인되지 않았습니다. 상태만 오래된 Kanban 막힘·완료 카드는 인수인계나 의사결정으로 올리지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>Cron 현황</h2>
+    <p class="metric"><strong>Cron 총계:</strong> 15개 등록 (활성 13개, 완료 2개)</p>
+    <p class="metric"><strong>Cron 정상 (14):</strong> default/qms-staging-watch · default/Default+role Gateway supervisor keeper · default/Codex 주간 한도 주의·경고 · default/calendar-yesterday-sync · default/MJJEON X — attach Grok originals · default/all-profile-conversation-close · default/Hermes v0.21.0 cutover result relay · default/Google OAuth — 03:15 Drive Cron 결과 1회 확인 · gwangryeol/고광렬 06:30 KST 아침 브리핑 · jjakgwi/jjakgwi-wiki-daily-close-kst · jjakgwi/jjakgwi-wiki-curation-6h-kst · jjakgwi/jjakgwi-conversation-growth-review-6h-kst · neoguri/MJJEON Hermes official update detector · neoguri/MJJEON Drive YouTube web ingest</p>
+    <p class="metric"><strong>Cron 미기록 (0):</strong> 없음</p>
+    <p class="metric"><strong>Cron 검증 대기 (0):</strong> 없음</p>
+    <p class="metric"><strong>Cron 실패 (1):</strong> default/MJJEON AI NEWS — Neoguri hourly collector</p>
+    <p class="note">분류 규칙: <code>last_status=ok</code>는 정상, 값 없음은 미기록, <code>last_error</code>에 <code>REMOTE_UNVERIFIED</code>가 있으면 검증 대기, 그 밖의 <code>error</code>만 실패입니다. 검증 대기는 실패로 집계하지 않습니다.</p>
+  </section>
+
+  <section>
+    <h2>Kanban 현황</h2>
+    <p class="metric"><strong>Kanban 진행:</strong> 0건</p>
+    <p class="metric"><strong>Kanban 막힘:</strong> 6건</p>
+    <p class="note">카드별 기간 필터를 지원하는 읽기 경로가 없어 신규 카드 항목은 fail-closed로 제외했습니다. 위 수치는 06:36 KST 현재 집계이며 기존 막힘 카드를 새 인수인계·의사결정으로 올리지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>Hermes 버전</h2>
+    <p><strong>설치:</strong> Hermes Agent v0.21.5 (2026.9.24, Docker, upstream <code>f97608f1</code>)</p>
+    <p><strong>공식 최신:</strong> <a href="https://github.com/NousResearch/hermes-agent/releases/tag/v2026.9.24">v0.21.5 (v2026.9.24)</a> · 최신 상태</p>
+  </section>
+
+  <footer>검증: relevance gate 8 fixtures PASS · Cron 분류·Kanban 집계 확인 · HTML 및 index JSON 구조 확인 PASS · 민감 마커 검사 PASS. 외부 발송·배포·index.html 갱신은 수행하지 않았습니다.</footer>
+</main>
+</body>
+</html>
