@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-09-30 12:00 — thsottiaux dots 수백만·DevDay·사용량 정정](./2026-09-30-1200.md)
 - [2026-09-30 10:00 — 새 소식 없음](./2026-09-30-1000.md)
 - [2026-09-30 08:00 — OpenAI DevDay dots·GPT-6.1 Sol·Ultrafast · thsottiaux 발표 정리](./2026-09-30-0800.md)
 - [2026-09-29 20:00 — 새 소식 없음](./2026-09-29-2000.md)
