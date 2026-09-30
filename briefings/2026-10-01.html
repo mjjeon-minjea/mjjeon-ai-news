@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-10-01 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#5e6b82; --line:#dfe5ee; --blue:#155eef; --red:#b42318; --amber:#9a6700; --bg:#f6f8fb; }
+    * { box-sizing:border-box; } body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { max-width:920px; margin:32px auto; padding:0 20px 36px; } header,section { background:#fff; border:1px solid var(--line); border-radius:14px; padding:24px; margin-bottom:16px; }
+    h1 { font-size:26px; margin:0 0 6px; } h2 { font-size:17px; margin:0 0 12px; } p { margin:6px 0; } ul { margin:0; padding-left:20px; } li { margin:10px 0; }
+    .meta,.note { color:var(--muted); font-size:13px; }.tag { display:inline-block; font-size:12px; font-weight:700; padding:1px 8px; border-radius:999px; margin-right:6px; background:#eaf1ff; color:var(--blue); }.incident { color:var(--red); font-weight:700; }.metric { padding:12px 14px; border-left:4px solid var(--blue); background:#f7faff; }.warn { border-left-color:var(--amber); }.source { color:var(--muted); font-size:13px; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>운영 아침 브리핑 · 2026-10-01</h1>
+    <p class="meta">범위: 2026-09-30 06:30–2026-10-01 06:35 KST · 뉴스 제외 · 인수인계만</p>
+    <p><strong>결론:</strong> 허미나·함대길 Bot Mode의 전용 방 E2E는 완료·사용자 시험 완료로 기록됐다. Cron은 15개 중 1개 실패이며, 관련 공동 원인조사는 지시 후 읽기 전용으로 시작됐다.</p>
+  </header>
+
+  <section>
+    <h2>직전 06:30 이후 인수인계</h2>
+    <ul>
+      <li><span class="tag">source_readback</span><time>03:05 KST</time> 허미나·함대길의 전용 Discord 방에서 사람 메시지 → 모델 → 봇 답장 E2E가 각각 확인됐다. 기존 운영 Gateway 재시작은 없었다.</li>
+      <li><span class="tag">source_readback</span><time>03:36 KST</time> 차장님의 Bot Mode 시험 완료가 기록됐다. 다만 허미나 실대화의 낮은 캐시 재사용 원인은 미확정이며, 추가 모델 호출·설정 변경·재시작은 하지 않았다.</li>
+      <li><span class="tag">direct_user</span><time>03:39 KST</time> 차장님이 예림 주관으로 허미나·함대길과 반복 Cron 장애의 근거 기반 공동조사와 최소 개선안 마련을 지시했다. 이 시점까지 운영 파일·Cron·Gateway 변경은 없다.</li>
+      <li><span class="tag">system_event</span><time>00:05 KST</time> <span class="incident">짝귀 Wiki 일일 마감 Cron이 PermissionError로 실패</span>했다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>현황 수치</h2>
+    <p class="metric"><strong>Cron</strong> — 총 15 · 정상 14 · 미기록 0 · 검증 대기 0 · 실패 1</p>
+    <p class="note">정상: default/qms-staging-watch, default/MJJEON AI NEWS — Neoguri hourly collector, default/Default+role Gateway supervisor keeper, default/Codex 주간 한도 주의·경고, default/calendar-yesterday-sync, default/MJJEON X — attach Grok originals, default/all-profile-conversation-close, default/Hermes v0.21.0 cutover result relay, default/Google OAuth — 03:15 Drive Cron 결과 1회 확인, gwangryeol/고광렬 06:30 KST 아침 브리핑, jjakgwi/jjakgwi-wiki-curation-6h-kst, jjakgwi/jjakgwi-conversation-growth-review-6h-kst, neoguri/MJJEON Hermes official update detector, neoguri/MJJEON Drive YouTube web ingest</p>
+    <p class="note">검증 대기: 없음 · 실패: jjakgwi/jjakgwi-wiki-daily-close-kst (PermissionError)</p>
+    <p class="metric warn"><strong>Kanban</strong> — 진행 0 · 막힘 0 <span class="note">(기간 내 생성·시작·완료 이벤트 0건; 과거 막힘·완료 카드는 제외)</span></p>
+  </section>
+
+  <section>
+    <h2>Hermes 버전</h2>
+    <p>설치: <strong>v0.21.5 (2026.9.24, Docker)</strong> · 공식 최신: <strong>v0.21.5 (v2026.9.24)</strong> · 업데이트 필요 없음</p>
+    <p class="source">공식 근거: <a href="https://github.com/NousResearch/hermes-agent/releases/tag/v2026.9.24">NousResearch/hermes-agent v2026.9.24 release</a></p>
+  </section>
+
+  <section>
+    <h2>검증</h2>
+    <p>relevance gate 8개 fixture PASS. 기간 밖의 과거 Kanban blocked/done 및 Wiki의 단순 이력 정리는 본문에서 제외했다. 새 의사결정 요청은 없다.</p>
+  </section>
+</main>
+</body>
+</html>
