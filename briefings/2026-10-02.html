@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-10-02 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#5e6b82; --line:#dfe5ee; --blue:#155eef; --red:#b42318; --amber:#9a6700; --bg:#f6f8fb; }
+    * { box-sizing:border-box; } body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { max-width:920px; margin:32px auto; padding:0 20px 36px; } header,section { background:#fff; border:1px solid var(--line); border-radius:14px; padding:24px; margin-bottom:16px; }
+    h1 { font-size:26px; margin:0 0 6px; } h2 { font-size:17px; margin:0 0 12px; } p { margin:6px 0; } ul { margin:0; padding-left:20px; } li { margin:10px 0; }
+    .meta,.note,.source { color:var(--muted); font-size:13px; }.tag { display:inline-block; font-size:12px; font-weight:700; padding:1px 8px; border-radius:999px; margin-right:6px; background:#eaf1ff; color:var(--blue); }.metric { padding:12px 14px; border-left:4px solid var(--blue); background:#f7faff; }.warn { border-left-color:var(--amber); }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>운영 아침 브리핑 · 2026-10-02</h1>
+    <p class="meta">범위: 2026-10-01 06:30–2026-10-02 06:34 KST · 뉴스 제외 · 인수인계만</p>
+    <p><strong>결론:</strong> Cron 특별조사반의 원인분석·격리시험·교차검토는 완료됐고, 운영 복구는 명시 승인 대기다. 현재 Cron 상태는 15개 모두 정상 기록이다.</p>
+  </header>
+
+  <section>
+    <h2>직전 06:30 이후 인수인계</h2>
+    <ul>
+      <li><span class="tag">direct_user</span><time>2026-10-01 08:44 KST</time> 차장님이 현재 Cron 문제를 허미나·함대길과 대화해 근거 기반으로 결과 보고하도록 지시했다.</li>
+      <li><span class="tag">source_readback</span><time>2026-10-01 10:52 KST</time> 특별조사반은 짝귀 일일 마감의 원인·최소 대안·비운영 격리시험·교차검토를 마쳤다. 후보는 독립 재시험 6/6 PASS였고, 운영 권한·소스·재실행은 변경하지 않았다. 운영 복구 R1–R3은 명시 승인 전 대기 상태다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>현황 수치</h2>
+    <p class="metric"><strong>Cron</strong> — 총 15 · 정상 15 · 미기록 0 · 검증 대기 0 · 실패 0</p>
+    <p class="note">정상: default/qms-staging-watch, default/MJJEON AI NEWS — Neoguri hourly collector, default/Default+role Gateway supervisor keeper, default/Codex 주간 한도 주의·경고, default/calendar-yesterday-sync, default/MJJEON X — attach Grok originals, default/all-profile-conversation-close, default/Hermes v0.21.0 cutover result relay, default/Google OAuth — 03:15 Drive Cron 결과 1회 확인, gwangryeol/고광렬 06:30 KST 아침 브리핑, jjakgwi/jjakgwi-wiki-daily-close-kst, jjakgwi/jjakgwi-wiki-curation-6h-kst, jjakgwi/jjakgwi-conversation-growth-review-6h-kst, neoguri/MJJEON Hermes official update detector, neoguri/MJJEON Drive YouTube web ingest</p>
+    <p class="note">검증 대기: 없음 · 실패: 없음</p>
+    <p class="metric warn"><strong>Kanban</strong> — 진행 0 · 막힘 6 <span class="note">(기간 내 카드 이벤트 0건; 과거 막힘·완료 카드는 인수인계 본문에서 제외)</span></p>
+  </section>
+
+  <section>
+    <h2>Hermes 버전</h2>
+    <p>설치: <strong>v0.21.5 (Docker image v2026.9.24, revision f97608f)</strong> · 공식 최신: <strong>v0.21.5 (v2026.9.24)</strong> · 업데이트 필요 없음</p>
+    <p class="source">공식 근거: <a href="https://github.com/NousResearch/hermes-agent/releases/tag/v2026.9.24">NousResearch/hermes-agent v2026.9.24 release</a></p>
+  </section>
+
+  <section>
+    <h2>검증</h2>
+    <p>relevance gate 8개 fixture PASS. 06:21 KST Wiki 변경 3건은 단순 이력 정착이어서 독립 운영 인수인계에서 제외했다. 기간 내 Kanban 이벤트는 없으며, 새 의사결정 요청은 확인되지 않았다.</p>
+  </section>
+</main>
+</body>
+</html>
