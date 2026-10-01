@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-10-01 16:00 — 새 소식 없음](./2026-10-01-1600.md)
 - [2026-10-01 14:00 — thsottiaux ChatGPT에서 MCP 서버 배포](./2026-10-01-1400.md)
 - [2026-10-01 12:00 — thsottiaux GPT-6.1 Sol 수요·용량 증설](./2026-10-01-1200.md)
 - [2026-10-01 10:00 — 새 소식 없음](./2026-10-01-1000.md)
