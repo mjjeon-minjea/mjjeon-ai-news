@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-10-01 12:00 — thsottiaux GPT-6.1 Sol 수요·용량 증설](./2026-10-01-1200.md)
 - [2026-10-01 10:00 — 새 소식 없음](./2026-10-01-1000.md)
 - [2026-10-01 08:00 — Claude Founder House · OpenAI 중소기업 에이전트 · Gemini Skills · thsottiaux 하드웨어 키·dot 초상](./2026-10-01-0800.md)
 - [2026-09-30 20:00 — 새 소식 없음](./2026-09-30-2000.md)
