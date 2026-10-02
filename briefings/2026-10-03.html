@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-10-03 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#5e6b82; --line:#dfe5ee; --blue:#155eef; --red:#b42318; --amber:#9a6700; --bg:#f6f8fb; }
+    * { box-sizing:border-box; } body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { max-width:920px; margin:32px auto; padding:0 20px 36px; } header,section { background:#fff; border:1px solid var(--line); border-radius:14px; padding:24px; margin-bottom:16px; }
+    h1 { font-size:26px; margin:0 0 6px; } h2 { font-size:17px; margin:0 0 12px; } p { margin:6px 0; } ul { margin:0; padding-left:20px; } li { margin:10px 0; }
+    .meta,.note,.source { color:var(--muted); font-size:13px; }.tag { display:inline-block; font-size:12px; font-weight:700; padding:1px 8px; border-radius:999px; margin-right:6px; background:#eaf1ff; color:var(--blue); }.metric { padding:12px 14px; border-left:4px solid var(--blue); background:#f7faff; }.warn { border-left-color:var(--amber); }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>운영 아침 브리핑 · 2026-10-03</h1>
+    <p class="meta">범위: 2026-10-02 06:30–2026-10-03 06:35 KST · 뉴스 제외 · 인수인계만</p>
+    <p><strong>결론:</strong> 짝귀 Wiki 일일 마감은 패치 후 첫 자연 실행이 정상으로 기록됐고, QMS 076 스테이징 반영은 완료됐다. HM/HP 재제작 묶음은 미승인 후보이며 사용자 수락과 최종 판정이 남아 있다.</p>
+  </header>
+
+  <section>
+    <h2>직전 06:30 이후 인수인계</h2>
+    <ul>
+      <li><span class="tag">direct_user</span><time>2026-10-03 05:17 KST</time> 차장님이 허미나와 운영 방식을 정리하고 남은 HM/HP 자료를 다시 정리해 압축본으로 전달하도록 지시했다.</li>
+      <li><span class="tag">source_readback</span><time>2026-10-03 05:24 KST</time> 미승인 HM/HP 후보 묶음은 Word·Markdown 각 10건, 도식 11쌍, A4 64쪽, ZIP 83항목의 바이트 readback을 통과했다. 사용자 출력 수락·문서 승인/시행·허미나 디자인 최종판정은 미완료다.</li>
+      <li><span class="tag">source_readback</span><time>2026-10-02 08:03 KST</time> Kanban <code>t_869755f8</code>에서 짝귀가 복구된 Wiki 일일 마감의 코드·뷰·백업을 읽기 전용 대조해 인수 완료했다. 당시 코드·뷰·Cron 설정 변경은 없었다.</li>
+      <li><span class="tag">system_event</span><time>2026-10-03 00:05 KST</time> 짝귀 Wiki 일일 마감의 패치 후 첫 자연 실행은 <code>last_status=ok</code>로 기록됐다.</li>
+      <li><span class="tag">source_readback</span><time>2026-10-03 06:31 KST</time> QMS 076 스테이징 자료실 리뉴얼은 지정 6경로 커밋, testweb READY, 78/78 시험·빌드·ESLint 통과로 종결됐다. 메인 변경은 없고 관리자 V-A/V-G 화면 시험은 후속이다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>현황 수치</h2>
+    <p class="metric"><strong>Cron</strong> — 총 15 · 정상 15 · 미기록 0 · 검증 대기 0 · 실패 0</p>
+    <p class="note">정상: default/qms-staging-watch, default/MJJEON AI NEWS — Neoguri hourly collector, default/Default+role Gateway supervisor keeper, default/Codex 주간 한도 주의·경고, default/calendar-yesterday-sync, default/MJJEON X — attach Grok originals, default/all-profile-conversation-close, default/Hermes v0.21.0 cutover result relay(완료), default/Google OAuth — 03:15 Drive Cron 결과 1회 확인(완료), gwangryeol/고광렬 06:30 KST 아침 브리핑, jjakgwi/jjakgwi-wiki-daily-close-kst, jjakgwi/jjakgwi-wiki-curation-6h-kst, jjakgwi/jjakgwi-conversation-growth-review-6h-kst, neoguri/MJJEON Hermes official update detector, neoguri/MJJEON Drive YouTube web ingest</p>
+    <p class="note">미기록: 없음 · 검증 대기: 없음 · 실패: 없음</p>
+    <p class="metric warn"><strong>Kanban</strong> — 진행 0 · 막힘 6 <span class="note">(기간 내 이벤트 6건은 t_869755f8의 생성→완료이며, 변경 없는 과거 막힘·완료 카드는 인수인계 본문에서 제외)</span></p>
+  </section>
+
+  <section>
+    <h2>Hermes 버전</h2>
+    <p>설치: <strong>v0.21.5 (2026.9.24, Docker, revision f97608f1)</strong> · 공식 최신: <strong>v0.21.5 (v2026.9.24)</strong> · 업데이트 필요 없음</p>
+    <p class="source">공식 근거: <a href="https://github.com/NousResearch/hermes-agent/releases/tag/v2026.9.24">NousResearch/hermes-agent v2026.9.24 release</a></p>
+  </section>
+
+  <section>
+    <h2>검증</h2>
+    <p>relevance gate 8개 fixture PASS. 06:21–06:22 KST Wiki curation은 REVIEWED_NO_PUBLICATION / HISTORY_ONLY여서 운영 인수인계에서 제외했다. 새 의사결정 요청은 확인되지 않았다. 민감 마커 검사와 HTML·JSON 검증도 통과했다.</p>
+  </section>
+</main>
+</body>
+</html>
