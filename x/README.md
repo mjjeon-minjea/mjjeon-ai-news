@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-10-02 18:00 — 새 소식 없음](./2026-10-02-1800.md)
 - [2026-10-02 16:00 — thsottiaux 미읽은 메일 6110·dot 인박스 제로 도전](./2026-10-02-1600.md)
 - [2026-10-02 14:00 — thsottiaux dot에 펫 만들어 아바타로 설정](./2026-10-02-1400.md)
 - [2026-10-02 12:00 — thsottiaux 유료 ChatGPT 전역 리셋·GPT-6.1 Sol 속도 회복](./2026-10-02-1200.md)
