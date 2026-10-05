@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-10-06 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#5e6b82; --line:#dfe5ee; --blue:#155eef; --amber:#9a6700; --bg:#f6f8fb; }
+    * { box-sizing:border-box; } body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { max-width:920px; margin:32px auto; padding:0 20px 36px; } header,section { background:#fff; border:1px solid var(--line); border-radius:14px; padding:24px; margin-bottom:16px; }
+    h1 { font-size:26px; margin:0 0 6px; } h2 { font-size:17px; margin:0 0 12px; } p { margin:6px 0; } ul { margin:0; padding-left:20px; } li { margin:10px 0; }
+    .meta,.note,.source { color:var(--muted); font-size:13px; }.tag { display:inline-block; font-size:12px; font-weight:700; padding:1px 8px; border-radius:999px; margin-right:6px; background:#eaf1ff; color:var(--blue); }.metric { padding:12px 14px; border-left:4px solid var(--blue); background:#f7faff; }.warn { border-left-color:var(--amber); }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>운영 아침 브리핑 · 2026-10-06</h1>
+    <p class="meta">범위: 2026-10-05 06:30–2026-10-06 06:36 KST · 뉴스 제외 · 인수인계만</p>
+    <p><strong>결론:</strong> 직전 브리핑의 생성·검사 기록 1건 외 새 사용자 지시·현재 운영사고·Kanban 카드 변경은 확인되지 않았다. Cron 15건은 모두 정상이며, Kanban은 진행 0·막힘 6이다.</p>
+  </header>
+
+  <section>
+    <h2>직전 06:30 이후 인수인계</h2>
+    <ul>
+      <li><span class="tag">source_readback</span><time>2026-10-05 06:38 KST</time> 직전 운영 아침 브리핑의 HTML·JSON 생성과 8개 relevance fixture, HTML·JSON 구문 및 민감 문자열 검사가 통과한 것으로 기록됐다. 이 항목은 생성 기록만 인계하며, 당시 보고에 포함된 과거 QMS·Kanban 내용은 현재 변경으로 재기재하지 않는다. <span class="note">근거: wiki/work-results/gwangryeol/2026/10/94ee7e4496edbbc6f1564115a6c88a59.md · 기록 시각 2026-10-05 06:38:02 KST</span></li>
+    </ul>
+    <p class="note">새 의사결정 요청은 확인되지 않았다. 전 profile의 기간 내 HANDOFF·MEMORY·conversation 후보는 없었고, Wiki의 no-op·과거 이력·외부 뉴스 후보는 운영 인수인계에서 제외했다.</p>
+  </section>
+
+  <section>
+    <h2>현황 수치</h2>
+    <p class="metric"><strong>Cron 총:</strong> 15건</p>
+    <p class="note"><strong>정상 15:</strong> default/qms-staging-watch, default/MJJEON AI NEWS — Neoguri hourly collector, default/Default+role Gateway supervisor keeper, default/Codex 주간 한도 주의·경고, default/calendar-yesterday-sync, default/MJJEON X — attach Grok originals, default/all-profile-conversation-close, default/Hermes v0.21.0 cutover result relay, default/Google OAuth — 03:15 Drive Cron 결과 1회 확인, gwangryeol/고광렬 06:30 KST 아침 브리핑, jjakgwi/jjakgwi-wiki-daily-close-kst, jjakgwi/jjakgwi-wiki-curation-6h-kst, jjakgwi/jjakgwi-conversation-growth-review-6h-kst, neoguri/MJJEON Hermes official update detector, neoguri/MJJEON Drive YouTube web ingest</p>
+    <p class="note"><strong>미기록 0:</strong> 없음</p>
+    <p class="note"><strong>검증 대기 0:</strong> 없음</p>
+    <p class="note"><strong>실패 0:</strong> 없음</p>
+    <p class="metric warn"><strong>Kanban 진행:</strong> 0</p>
+    <p class="metric warn"><strong>Kanban 막힘:</strong> 6 <span class="note">현재 보드 수치이며 기간 내 카드 이벤트는 0건이다. 변경 근거 없는 과거 막힘·완료 카드는 인수인계 항목에서 제외했다.</span></p>
+  </section>
+
+  <section>
+    <h2>Hermes 버전</h2>
+    <p>설치: <strong>v0.21.5 (Docker image v2026.9.24, upstream f97608f1)</strong> · 공식 최신: <strong>v0.21.5 (v2026.9.24)</strong> · 업데이트 필요 없음</p>
+    <p class="source">공식 근거: <a href="https://github.com/NousResearch/hermes-agent/releases/tag/v2026.9.24">NousResearch/hermes-agent v2026.9.24 release</a></p>
+  </section>
+
+  <section>
+    <h2>검증</h2>
+    <p>relevance gate 8개 fixture PASS. Canonical Kanban DB의 기간 필터 조회는 이벤트 0건을 반환했다. Cron은 동일 inode의 default 중복 파일을 ID로 중복 제거해 15건으로 집계했다. 이 HTML과 index.json은 저장 후 HTML 파서·JSON·스냅샷·민감 마커 검사를 통과했다. `tests/test_briefing_board.py`는 기존 `update_needed` 누락 처리와 테스트 기대 불일치로 22개 중 1개가 실패했으며, 이번 산출물 검증은 통과했다.</p>
+  </section>
+</main>
+</body>
+</html>
