@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-10-07 운영 아침 브리핑</title>
+  <style>
+    :root{--ink:#172033;--muted:#5e6b82;--line:#dfe5ee;--blue:#155eef;--amber:#9a6700;--bg:#f6f8fb}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}main{max-width:920px;margin:32px auto;padding:0 20px 36px}header,section{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;margin-bottom:16px}h1{font-size:26px;margin:0 0 6px}h2{font-size:17px;margin:0 0 12px}p{margin:6px 0}ul{margin:0;padding-left:20px}li{margin:10px 0}.meta,.note,.source{color:var(--muted);font-size:13px}.tag{display:inline-block;font-size:12px;font-weight:700;padding:1px 8px;border-radius:999px;margin-right:6px;background:#eaf1ff;color:var(--blue)}.metric{padding:12px 14px;border-left:4px solid var(--blue);background:#f7faff}.warn{border-left-color:var(--amber)}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>운영 아침 브리핑 · 2026-10-07</h1>
+    <p class="meta">범위: 2026-10-06 06:30–2026-10-07 06:36 KST · 뉴스 제외 · 인수인계만</p>
+    <p><strong>결론:</strong> QMS 선택 MAIN 승격은 후보·로컬 검증과 라이브 사전검증까지 완료됐지만, 실제 MAIN 반영은 아직 없다. 차장님은 06:26 KST에 앞으로 원본 데이터를 MAIN에 직접 연결해 운영하고, STAGING은 MAIN 기준 개선·시험용으로 쓰도록 정정했다.</p>
+  </header>
+
+  <section>
+    <h2>직전 06:30 이후 인수인계</h2>
+    <ul>
+      <li><span class="tag">direct_user</span><time>2026-10-06 20:34 KST</time> 차장님이 QMS 선별 MAIN 승격의 코드·SQL 작성, 로컬 시험, 최종 MAIN 승격 및 최종 검증을 승인했다. 이후 후보 구현·문서 검증·라이브 사전검증 카드 12건은 모두 종료됐으며, 실제 MAIN 변경은 실행되지 않았다. <span class="note">근거: default/conversation/2026-10-06.md · Kanban 기간 필터</span></li>
+      <li><span class="tag">source_readback</span><time>2026-10-06 22:48 KST</time> 사전검증은 MAIN 기존 기록·기존 계정 보존과 문서 39건의 범위를 확인했으나, 실제 적용 성공이나 원본 전환을 증명하지는 않는다. <span class="note">근거: default/HANDOFF.md 및 해당 대화 기록</span></li>
+      <li><span class="tag">direct_user</span><time>2026-10-07 06:26 KST</time> 인수검사는 원본 데이터→MAIN으로 운영하며, STAGING은 필요 시 MAIN을 기준으로 개선·시험하는 용도라고 정정했다. 신규 부서장에게 타 부서 주간보고 결재권이 열리지 않도록 계정 권한 조건을 보완해야 하며, 주간보고 개편·조회범위 변경 지시는 아니다. <span class="note">근거: default/conversation/2026-10-07.md</span></li>
+    </ul>
+    <p class="note">새 의사결정 요청은 확인되지 않았다. 기간 필터에서 다른 profile의 HANDOFF·MEMORY·conversation 후보는 없었고, Wiki의 무작업·수명주기 기록과 외부 뉴스는 운영 인수인계에서 제외했다.</p>
+  </section>
+
+  <section>
+    <h2>현황 수치</h2>
+    <p class="metric"><strong>Cron 총:</strong> 14건</p>
+    <p class="note"><strong>정상 14:</strong> jjakgwi/jjakgwi-wiki-daily-close-kst, jjakgwi/jjakgwi-wiki-curation-6h-kst, jjakgwi/jjakgwi-conversation-growth-review-6h-kst, neoguri/MJJEON Hermes official update detector, neoguri/MJJEON Drive YouTube web ingest, default/qms-staging-watch, default/MJJEON AI NEWS — Neoguri hourly collector, default/Default+role Gateway supervisor keeper, default/Codex 주간 한도 주의·경고, default/calendar-yesterday-sync, default/MJJEON X — attach Grok originals, default/all-profile-conversation-close, default/Hermes v0.21.0 cutover result relay, gwangryeol/고광렬 06:30 KST 아침 브리핑</p>
+    <p class="note"><strong>미기록 0:</strong> 없음</p>
+    <p class="note"><strong>검증 대기 0:</strong> 없음</p>
+    <p class="note"><strong>실패 0:</strong> 없음</p>
+    <p class="metric warn"><strong>Kanban 진행:</strong> 0</p>
+    <p class="metric warn"><strong>Kanban 막힘:</strong> 6 <span class="note">기간 내 변경 없는 과거 막힘 카드는 인수인계 항목에서 제외했다.</span></p>
+  </section>
+
+  <section>
+    <h2>Hermes 버전</h2>
+    <p>설치: <strong>v0.21.5 (Docker image v2026.9.24, revision f97608f1)</strong> · 공식 최신: <strong>v0.21.5 (v2026.9.24)</strong> · 업데이트 필요 없음</p>
+    <p class="source">공식 근거: <a href="https://github.com/NousResearch/hermes-agent/releases/tag/v2026.9.24">NousResearch/hermes-agent v2026.9.24 release</a></p>
+  </section>
+
+  <section>
+    <h2>검증</h2>
+    <p>relevance gate 8개 fixture PASS. 기간 필터 Kanban 이벤트는 종료 카드 12건만 반환했고 진행 카드 0건이다. Cron은 profile별 job ID로 중복 제거해 14건을 집계했다. 이 HTML과 index.json은 저장 후 HTML·JSON·스냅샷·민감 문자열 검사를 수행한다.</p>
+  </section>
+</main>
+</body>
+</html>
