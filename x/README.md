@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-10-06 14:00 — thsottiaux OpenAI에서 가장 좋은 하루](./2026-10-06-1400.md)
 - [2026-10-06 12:00 — thsottiaux “진짜 이야기는 이쪽” (API 비용 비교 인용)](./2026-10-06-1200.md)
 - [2026-10-06 10:00 — 새 소식 없음](./2026-10-06-1000.md)
 - [2026-10-06 08:00 — OpenAI EU 텍스트 워터마크 · thsottiaux Astra·Sol 약 50% 가속 · ChatGPT Space](./2026-10-06-0800.md)
