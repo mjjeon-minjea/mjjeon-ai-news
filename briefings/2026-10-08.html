@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-10-08 운영 아침 브리핑</title>
+  <style>
+    :root{--ink:#172033;--muted:#5e6b82;--line:#dfe5ee;--blue:#155eef;--amber:#9a6700;--bg:#f6f8fb}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}main{max-width:920px;margin:32px auto;padding:0 20px 36px}header,section{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;margin-bottom:16px}h1{font-size:26px;margin:0 0 6px}h2{font-size:17px;margin:0 0 12px}p{margin:6px 0}ul{margin:0;padding-left:20px}li{margin:10px 0}.meta,.note,.source{color:var(--muted);font-size:13px}.tag{display:inline-block;font-size:12px;font-weight:700;padding:1px 8px;border-radius:999px;margin-right:6px;background:#eaf1ff;color:var(--blue)}.metric{padding:12px 14px;border-left:4px solid var(--blue);background:#f7faff}.warn{border-left-color:var(--amber)}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>운영 아침 브리핑 · 2026-10-08</h1>
+    <p class="meta">범위: 2026-10-07 06:30–2026-10-08 06:40 KST · 뉴스 제외 · 인수인계만</p>
+    <p><strong>결론:</strong> QMS MAIN 정상운영 전환은 10월 7일 22:35 KST 최종 수락됐고 자동 재개 대상이 아닙니다. 10월 8일 06:35 KST에는 공지·V2.3.3 개발자 노트·자료실 등록자 표기 후속 반영과 화면 확인까지 완료됐습니다.</p>
+  </header>
+
+  <section>
+    <h2>직전 06:30 이후 인수인계</h2>
+    <ul>
+      <li><span class="tag">direct_user</span><time>2026-10-07 21:38 KST</time> 차장님이 기존 승인 범위에서 QMS MAIN 정상운영 마무리의 판단을 위임했습니다. <span class="note">근거: default conversation</span></li>
+      <li><span class="tag">source_readback</span><time>2026-10-07 22:35 KST</time> QMS MAIN 전환을 최종 수락했습니다. 실제 로그인·배포 READY·원본 동기화 2회·독립 조회가 확인됐고, 완료 건은 자동 재개하지 않습니다. <span class="note">근거: default HANDOFF 및 default·aghi·goni conversation</span></li>
+      <li><span class="tag">source_readback</span><time>2026-10-07 20:35 KST</time> 스테이징 NCR 26-000은 V1~V6 및 8쪽 인쇄 확인을 마쳤습니다. 아침 시연을 위해 현 상태를 유지합니다. <span class="note">근거: default conversation</span></li>
+      <li><span class="tag">source_readback</span><time>2026-10-08 06:35 KST</time> MAIN 공지 1건·개발자 노트 V2.3.3 게시과 자료실 등록자 표기 38건 정정을 마쳤고, 전체 readback과 화면 확인이 기록됐습니다. <span class="note">근거: default conversation</span></li>
+    </ul>
+    <p class="note">새 의사결정 요청은 없습니다. timestamp 없는 MEMORY와 Wiki의 이력 색인·수명주기 기록, 외부 뉴스는 제외했습니다.</p>
+  </section>
+
+  <section>
+    <h2>현황 수치</h2>
+    <p class="metric"><strong>Cron 총:</strong> 13건</p>
+    <p class="note"><strong>정상 13:</strong> default/qms-staging-watch, default/MJJEON AI NEWS — Neoguri hourly collector, default/Default+role Gateway supervisor keeper, default/Codex 주간 한도 주의·경고, default/calendar-yesterday-sync, default/MJJEON X — attach Grok originals, default/all-profile-conversation-close, jjakgwi/jjakgwi-wiki-daily-close-kst, jjakgwi/jjakgwi-wiki-curation-6h-kst, jjakgwi/jjakgwi-conversation-growth-review-6h-kst, neoguri/MJJEON Hermes official update detector, neoguri/MJJEON Drive YouTube web ingest, gwangryeol/고광렬 06:30 KST 아침 브리핑</p>
+    <p class="note"><strong>미기록 0:</strong> 없음</p>
+    <p class="note"><strong>검증 대기 0:</strong> 없음</p>
+    <p class="note"><strong>실패 0:</strong> 없음</p>
+    <p class="metric warn"><strong>Kanban 진행:</strong> 0</p>
+    <p class="metric warn"><strong>Kanban 막힘:</strong> 6 <span class="note">현재 집계입니다. 기간 필터를 적용한 카드 변경 질의가 지원되지 않아 인수인계 근거에서는 fail-closed 처리했습니다.</span></p>
+  </section>
+
+  <section>
+    <h2>Hermes 버전</h2>
+    <p>설치: <strong>v0.21.5 (Docker, upstream f97608f1)</strong> · 공식 최신: <strong>v0.21.5 (v2026.9.24)</strong> · 업데이트 필요 없음</p>
+    <p class="source">공식 근거: <a href="https://github.com/NousResearch/hermes-agent/releases/tag/v2026.9.24">NousResearch/hermes-agent v2026.9.24 release</a></p>
+  </section>
+
+  <section>
+    <h2>검증</h2>
+    <p>relevance gate 8개 fixture PASS. Cron은 전 profile의 enabled job을 status 규칙으로 집계했습니다. Kanban 변경 질의는 기간 필터를 지원하는 읽기 경로가 확인되지 않아 fail-closed 처리하고 현재 집계만 표시했습니다.</p>
+  </section>
+</main>
+</body>
+</html>
