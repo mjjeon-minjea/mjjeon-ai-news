@@ -3,13 +3,13 @@
     {
       "canonical_url": "https://hermes-agent.nousresearch.com/docs/llms.txt",
       "detail_url": "hermes/items/official-docs-llms.html",
-      "judgment": "공식 문서 색인의 운영 관련 항목 변화를 정보성 업데이트로 게시합니다. 보안·파괴적 변경이나 릴리스 확정 신호로 해석하지 않으며 그런 조건은 별도 escalation 후보로만 다룹니다. published_at은 개별 안내 페이지 게시일이 아니라 후보에 기록된 llms.txt HTTP Last-Modified 시각입니다.",
-      "published_at": "2026-10-02T07:07:33Z",
+      "judgment": "게시: 공식 문서와 공식 저장소를 직접 대조해 Hermes 운영에 관련된 안내를 확인했습니다. 두 출처의 최종 URL은 각각 공식 도메인과 NousResearch 저장소를 유지하며 HTTP 200입니다. 의미는 운영 문서 안내에 한정하고 이전 색인 대비 특정 항목의 신규 추가나 기능 출시를 단정하지 않습니다. published_at은 수집된 공식 문서 Last-Modified 기준입니다. 이번 검토 범위에서 보안·breaking 또는 별도 교차신호에 따른 escalation 근거는 확인하지 못했습니다.",
+      "published_at": "2026-10-08T04:17:33Z",
       "source_grade": "official",
       "source_kind": "docs",
       "stable_id": "official-docs:llms",
       "status": "active",
-      "title_ko": "Hermes 공식 문서 색인에 설치·보안·다중 게이트웨이 운영 안내 반영"
+      "title_ko": "Hermes 공식 문서에서 패키지 관리·안정 릴리스·업데이트 완료 지침 확인"
     },
     {
       "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v2026.9.24",
