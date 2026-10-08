@@ -1,6 +1,17 @@
 {
   "items": [
     {
+      "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.21.6",
+      "detail_url": "hermes/items/github-release-406714323.html",
+      "judgment": "지정 ID와 content_hash가 일치하는 공식 GitHub Releases 후보이며 원문 제목·태그·발행시각을 확인했다. 공식 릴리스 본문을 직접 조회하고 최종 URL의 HTTP 200 응답을 검증했다. 안정 태그·Docker 이미지 공개와 배포 채널별 적용 차이는 Hermes 운영에 의미 있는 변경이므로 공식 업데이트로 게시하고 대표 항목 후보로 허용한다.",
+      "published_at": "2026-10-08T11:51:57Z",
+      "source_grade": "official",
+      "source_kind": "release",
+      "stable_id": "github-release:406714323",
+      "status": "공식 안정 릴리스 공개 · 업데이트 검토",
+      "title_ko": "Hermes Agent v0.21.6 공개: Docker·Cloud 안정 릴리스와 새 배포 파이프라인"
+    },
+    {
       "canonical_url": "https://hermes-agent.nousresearch.com/docs/llms.txt",
       "detail_url": "hermes/items/official-docs-llms.html",
       "judgment": "게시: 공식 문서와 공식 저장소를 직접 대조해 Hermes 운영에 관련된 안내를 확인했습니다. 두 출처의 최종 URL은 각각 공식 도메인과 NousResearch 저장소를 유지하며 HTTP 200입니다. 의미는 운영 문서 안내에 한정하고 이전 색인 대비 특정 항목의 신규 추가나 기능 출시를 단정하지 않습니다. published_at은 수집된 공식 문서 Last-Modified 기준입니다. 이번 검토 범위에서 보안·breaking 또는 별도 교차신호에 따른 escalation 근거는 확인하지 못했습니다.",
