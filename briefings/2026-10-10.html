@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-10-10 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#1f2937; --muted:#64748b; --line:#dbe3ee; --paper:#fff; --bg:#f5f7fb; --accent:#0f766e; --warn:#9a6700; }
+    * { box-sizing:border-box; } body { margin:0; background:var(--bg); color:var(--ink); font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif; line-height:1.65; }
+    main { max-width:900px; margin:32px auto; padding:36px; background:var(--paper); border:1px solid var(--line); border-radius:18px; box-shadow:0 10px 30px rgba(15,23,42,.06); }
+    h1,h2 { line-height:1.25; } h1 { margin:.2rem 0 .4rem; font-size:2rem; } h2 { margin:2rem 0 .7rem; font-size:1.12rem; border-bottom:1px solid var(--line); padding-bottom:.45rem; }
+    p { margin:.55rem 0; } .eyebrow,.meta { color:var(--muted); font-size:.9rem; } .summary { margin:1rem 0; padding:14px 16px; background:#ecfdf5; border-left:4px solid var(--accent); border-radius:8px; font-weight:700; }
+    ul { margin:.3rem 0; padding-left:1.25rem; } li { margin:.65rem 0; } time,.tag { font-size:.82rem; color:var(--muted); } .tag { display:inline-block; margin-left:.35rem; padding:.08rem .42rem; background:#eef2ff; border-radius:999px; }
+    .metric { padding:.7rem .8rem; border:1px solid var(--line); border-radius:10px; margin:.55rem 0; } footer { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--line); color:var(--muted); font-size:.82rem; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="eyebrow">전민재 차장님 · 운영 인수인계</p>
+    <h1>2026-10-10 아침 브리핑</h1>
+    <p class="meta">확인 구간: 2026-10-09 06:30 ~ 2026-10-10 06:41 KST</p>
+    <p class="summary">결론: 직전 06:30 이후 포함할 새 운영 지시·사고·실행 인수인계는 확인되지 않았습니다. 변경되지 않은 과거 backlog와 외부 뉴스는 제외했습니다.</p>
+  </header>
+
+  <section>
+    <h2>직전 06:30 이후 인수인계</h2>
+    <p>포함 증거 0건 · 의사결정 요청 없음.</p>
+    <ul>
+      <li><time>2026-10-09 06:30 ~ 2026-10-10 06:41 KST</time><span class="tag">source_readback</span> 전 profile의 기간 내 HANDOFF·MEMORY 변경분과 대화 목록에서 새 직접 지시·운영 변경·사고를 확인하지 못했습니다.</li>
+      <li><time>2026-10-10 00:05 KST</time><span class="tag">system_event</span> Wiki 일일 마감은 파생 뷰 수리 상태로 기록됐으나 원본 변경과 상태 DB 접근은 없었습니다. 독립 운영 변경 근거가 아니므로 인수인계 항목으로 넣지 않았습니다.</li>
+      <li><time>2026-10-09 12:20·18:23 / 2026-10-10 00:19·06:19 KST</time><span class="tag">source_readback</span> Wiki 6시간 curation 결과는 silent marker 또는 no-op으로 정리돼 독립 작업 결과가 없었습니다. 기간 내 외부 배포 신호는 운영 인수인계 범위 밖으로 제외했습니다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>현재 운영 수치</h2>
+    <p class="metric"><strong>Cron</strong> — 총 13 · 정상 13 · 미기록 0 · 검증 대기 0 · 실패 0</p>
+    <p class="metric">검증 대기 이름: 없음 · 실패 이름: 없음</p>
+    <p class="metric"><strong>Kanban</strong> — 진행 0 · 막힘 6</p>
+  </section>
+
+  <section>
+    <h2>Hermes Agent</h2>
+    <p class="metric"><strong>설치:</strong> v0.21.5 (Docker, upstream f97608f1) · <strong>공식 최신:</strong> v0.21.6 · 업데이트 가능</p>
+    <p class="meta">공식 GitHub Releases의 v0.21.6을 최신으로 확인했습니다. 이번 브리핑에서 업데이트·재시작은 수행하지 않았습니다.</p>
+  </section>
+
+  <footer>
+    relevance gate fixture 8건을 통과했습니다. 외부 뉴스와 변경되지 않은 과거 Kanban backlog는 제외했고, 포함·제외 판단은 시각과 근거 유형으로 추적했습니다.
+  </footer>
+</main>
+</body>
+</html>
