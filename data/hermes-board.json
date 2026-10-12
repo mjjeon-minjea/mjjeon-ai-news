@@ -1,6 +1,17 @@
 {
   "items": [
     {
+      "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.21.7",
+      "detail_url": "hermes/items/github-release-410112828.html",
+      "judgment": "지정 ID와 content_hash가 일치하는 후보만 검토했다. NousResearch 공식 GitHub 릴리스 원문을 직접 읽고, 리다이렉트 후 최종 URL이 동일한 공식 릴리스 주소이며 HTTP 200임을 확인했다. 실제 업데이트 정책 및 세션 재개 수정이 있으므로 meaningful change인 공식 대표 기사로 게시한다. 보안 취약점이나 breaking change는 확인된 사실로 단정하지 않으며, 보안·breaking·교차신호 조건은 추가 근거가 있을 때 escalation 후보로만 취급한다.",
+      "published_at": "2026-10-12T05:53:41Z",
+      "source_grade": "official",
+      "source_kind": "release",
+      "stable_id": "github-release:410112828",
+      "status": "available",
+      "title_ko": "Hermes Agent v0.21.7: 공식 소스 설치 업데이트가 안정 릴리스 기준으로 전환"
+    },
+    {
       "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.21.6",
       "detail_url": "hermes/items/github-release-406714323.html",
       "judgment": "지정 stable_id와 content_hash가 정확히 일치하는 후보 raw를 검토했다. 공식 GitHub 릴리스 원문을 직접 조회했으며 최종 URL이 지정 v0.21.6 릴리스 URL과 일치하고 HTTP 200임을 확인했다. 원문 제목과 발행시각을 보존한다. 안정 릴리스 파이프라인, 채널별 배포 범위 및 공식 본문의 운영 변경 안내는 의미 있는 변경으로 판단해 official/release로 게시하고 대표 항목 후보로 허용한다. 보안 관련 승인 변경은 escalation 후보로만 취급하며 설치 버전 확정·자동 업데이트·breaking change 확정은 하지 않는다.",
