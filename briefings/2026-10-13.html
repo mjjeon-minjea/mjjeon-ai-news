@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-10-13 운영 아침 브리핑</title>
+  <style>:root{color-scheme:light;--ink:#1f2937;--muted:#64748b;--line:#dbe3ee;--paper:#fff;--bg:#f5f7fb;--accent:#0f766e;--warn:#9a3412}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;line-height:1.65}main{max-width:900px;margin:32px auto;padding:36px;background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 30px rgba(15,23,42,.06)}h1,h2{line-height:1.25}h1{margin:.2rem 0 .4rem;font-size:2rem}h2{margin:2rem 0 .7rem;font-size:1.12rem;border-bottom:1px solid var(--line);padding-bottom:.45rem}p{margin:.55rem 0}.eyebrow,.meta{color:var(--muted);font-size:.9rem}.summary{margin:1rem 0;padding:14px 16px;background:#ecfdf5;border-left:4px solid var(--accent);border-radius:8px;font-weight:700}.metric{padding:.7rem .8rem;border:1px solid var(--line);border-radius:10px;margin:.55rem 0}.warning{border-left:4px solid var(--warn);padding-left:.8rem}ol{padding-left:1.35rem}li{margin:.65rem 0}.evidence{color:var(--muted);font-size:.86rem}code{font-size:.9em}footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}</style>
+</head>
+<body><main>
+<header>
+  <p class="eyebrow">전민재 차장님 · 운영 인수인계</p>
+  <h1>2026-10-13 아침 브리핑</h1>
+  <p class="meta">확인 구간: 2026-10-12 06:30 ~ 2026-10-13 06:36:25 KST</p>
+  <p class="summary">결론: Hermes v0.21.6 반영·YouTube 요청형 전환·Grok 유지·캘린더 누락 복구가 기록됐습니다. 다만 <code>stream_drop</code>의 원인 확정·장기 무재발과 모델 분업 불일치는 미해결이며, 캘린더 Cron의 마지막 상태는 실패입니다.</p>
+</header>
+
+<section><h2>직전 06:30 이후 인수인계</h2>
+<ol>
+  <li><strong>QMS 주간업무보고 권한:</strong> 주간보고 UI·승인 guard 범위에 한정한 적용 및 사용 성공이 보고됐습니다. 부적합 승인권·공통 관리자 판단·업무 역할은 확대하지 않았습니다.<br><span class="evidence">2026-10-12 09:27 KST · source_readback · Wiki work-result <code>119de184…</code></span></li>
+  <li><strong>Hermes 업데이트:</strong> v0.21.6 코어 반영 후 9프로필·10플랫폼·인증 Dashboard/WS·설치 receipt readback이 통과한 것으로 기록됐습니다. 관련 두 stream 수정의 RED→GREEN과 실제 반복 <code>stream_drop</code>의 원인·장기 무재발은 별개로 미입증입니다.<br><span class="evidence">2026-10-12 15:31:52 KST · source_readback · Wiki verified-results</span></li>
+  <li><strong>YouTube 운영:</strong> 요청 분석 중심으로 전환했고, 기존 344건은 보존·자동 붙이기는 일시중지 상태입니다. 전체 284/284 검사와 PC·390px QA 통과가 보고됐습니다.<br><span class="evidence">2026-10-13 00:46:52 KST · source_readback · Wiki verified-results</span></li>
+  <li><strong>X 수집:</strong> 홈페이지 수집은 현행 Grok 파일 붙이기를 유지합니다. 내장 <code>x_search</code>와 별도 유료 X API 도구는 이번 교체·보완 대상으로 채택하지 않았습니다.<br><span class="evidence">2026-10-13 01:11 KST · source_readback · Wiki verified-results</span></li>
+  <li><strong>캘린더 사고·복구:</strong> <code>calendar-yesterday-sync</code>는 잘못된 Python 환경으로 실패했습니다. 이후 10월 12일 누락 33건을 등록·원격 readback했고 누락·중복·내용 불일치 0건으로 보고됐습니다. 다음 자연 실행 성공은 아직 미확인입니다.<br><span class="evidence">사고 2026-10-13 00:39:13 KST · system_event / 복구 00:40:54 KST · source_readback</span></li>
+  <li><strong>자원·Drive 정리:</strong> 87개 metadata를 KEEP 13·ARCHIVE 5·HOLD 69로 재분류했고 즉시 정리 가능으로 입증된 후보는 0건입니다. Wiki 7개와 최종보고·사용량 2개를 Drive에 전달하고 이름·크기·해시·원격 바이트를 대조한 것으로 보고됐으며, 원자료 이동·삭제는 없었습니다.<br><span class="evidence">2026-10-13 02:34:21 KST · source_readback · Wiki work-result <code>fda56b7c…</code></span></li>
+  <li class="warning"><strong>보류 경계:</strong> 실제 모델 경로가 기억된 분업 기준과 다르고, 반복 <code>stream_drop</code>의 단일 원인·장기 무재발은 아직 확인되지 않았습니다. 새 승인 없이 설정 변경·재실행·Gateway 조작을 자동으로 하지 않습니다.<br><span class="evidence">2026-10-13 02:28:11 KST · source_readback · default HANDOFF</span></li>
+</ol>
+<p class="meta">의사결정 요청: 없음. Wiki의 curation 색인 갱신·growth 제안과 외부 뉴스는 독립 운영 변경 또는 이번 인수인계 범위가 아니어서 제외했습니다.</p>
+</section>
+
+<section><h2>현재 운영 수치</h2>
+  <p class="metric"><strong>Cron</strong> — 총 15 · 정상 14 · 미기록 0 · 검증 대기 0 · 실패 1</p>
+  <p class="metric"><strong>정상 이름 (14):</strong> default/qms-staging-watch; default/MJJEON AI NEWS — Neoguri hourly collector; default/Default+role Gateway supervisor keeper; default/Codex 주간 한도 주의·경고; default/MJJEON X — attach Grok originals; default/all-profile-conversation-close; default/Hermes v0.21.0 cutover result relay; default/QMS MAIN 진행상황 — 15분 보고; gwangryeol/고광렬 06:30 KST 아침 브리핑; jjakgwi/jjakgwi-wiki-daily-close-kst; jjakgwi/jjakgwi-wiki-curation-6h-kst; jjakgwi/jjakgwi-conversation-growth-review-6h-kst; neoguri/MJJEON Hermes official update detector; neoguri/MJJEON Drive YouTube web ingest</p>
+  <p class="metric">미기록 이름: 없음</p>
+  <p class="metric">검증 대기 이름: 없음</p>
+  <p class="metric warning">실패 이름 (1): default/calendar-yesterday-sync — last_status 오류. 위 수동 복구 기록은 자연 예약의 성공을 대체하지 않습니다.</p>
+  <p class="metric"><strong>Kanban 진행:</strong> 0건. 기간 내 변경 카드 5건·이벤트 83건은 모두 완료입니다.</p>
+  <p class="metric"><strong>Kanban 막힘:</strong> 6건. 현황 지표이며, 직전 브리핑 이후 막힘 변경은 0건이라 과거 backlog를 새 인수인계로 올리지 않았습니다.</p>
+</section>
+
+<section><h2>Hermes Agent</h2>
+  <p class="metric"><strong>설치:</strong> v0.21.6 (Docker, upstream 818c13be) · <strong>공식 최신:</strong> v0.21.7 · 업데이트 가능</p>
+  <p class="meta">설치 버전은 실행 컨테이너 CLI, 최신 버전은 공식 GitHub Releases API로 확인했습니다. 이번 브리핑에서 업데이트·재시작·배포는 수행하지 않았습니다.</p>
+</section>
+
+<footer>relevance gate fixture 8건을 통과했습니다. 포함 항목은 기간 내 시각·근거 유형을 남겼고, unchanged blocked/done Kanban backlog와 외부 뉴스는 제외했습니다.</footer>
+</main></body></html>
