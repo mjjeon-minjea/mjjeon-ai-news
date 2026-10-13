@@ -2,6 +2,8 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-10-13 16:00 — thsottiaux 리셋 완료 및 사용량 확대 계획](./2026-10-13-1600.md)
+
 - [2026-10-13 14:00 — 새 소식 없음](./2026-10-13-1400.md)
 
 - [2026-10-13 12:00 — thsottiaux Day 8 Reset](./2026-10-13-1200.md)
