@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-10-14 운영 아침 브리핑</title>
+  <style>:root{color-scheme:light;--ink:#1f2937;--muted:#64748b;--line:#dbe3ee;--paper:#fff;--bg:#f5f7fb;--accent:#0f766e;--warn:#9a3412}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;line-height:1.65}main{max-width:900px;margin:32px auto;padding:36px;background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 30px rgba(15,23,42,.06)}h1,h2{line-height:1.25}h1{margin:.2rem 0 .4rem;font-size:2rem}h2{margin:2rem 0 .7rem;font-size:1.12rem;border-bottom:1px solid var(--line);padding-bottom:.45rem}p{margin:.55rem 0}.eyebrow,.meta{color:var(--muted);font-size:.9rem}.summary{margin:1rem 0;padding:14px 16px;background:#ecfdf5;border-left:4px solid var(--accent);border-radius:8px;font-weight:700}.metric{padding:.7rem .8rem;border:1px solid var(--line);border-radius:10px;margin:.55rem 0}.warning{border-left:4px solid var(--warn);padding-left:.8rem}ol{padding-left:1.35rem}li{margin:.65rem 0}.evidence{color:var(--muted);font-size:.86rem}code{font-size:.9em}footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}</style>
+</head>
+<body><main>
+<header>
+  <p class="eyebrow">전민재 차장님 · 운영 인수인계</p>
+  <h1>2026-10-14 아침 브리핑</h1>
+  <p class="meta">확인 구간: 2026-10-13 06:30 ~ 2026-10-14 06:40:12 KST</p>
+  <p class="summary">결론: AI NEWS의 12시 GitHub 충돌은 한 번의 보호된 복구 뒤 공개·원격본 일치로 회복했습니다. QMS 회사 발신은 도메인 인증 전 차단 상태이며, PC 응답 오류는 일부 원인만 확인돼 설정 변경 없이 입력 대기입니다.</p>
+</header>
+
+<section><h2>직전 06:30 이후 인수인계</h2>
+<ol>
+  <li><strong>AI NEWS 게시 충돌·복구:</strong> 12:00 KST 정기 게시가 GitHub HTTP 409으로 실패했습니다. 이후 최신 원격 SHA 기준으로 홈만 1회 복구했고, 공개 홈·게시 목록·GitHub 저장본이 로컬과 일치했습니다. 최초 409의 정확한 원인은 응답 기록 부재로 미확정입니다.<br><span class="evidence">사고 2026-10-13 12:00:24 KST · system_event / 복구 12:08:25 KST · source_readback · Wiki work-results <code>96aded28…</code>, <code>a4a0f9da…</code></span></li>
+  <li><strong>QMS 메일 발송 경로:</strong> 제한된 시험 1통은 Gmail 수신함 도착까지 확인했습니다. 반면 회사 주소 발신 시험은 도메인 미인증으로 HTTP 403에서 발송 전 차단됐습니다. QMS·DNS·회사 메일 설정은 변경하지 않았습니다.<br><span class="evidence">성공 2026-10-13 11:59:16 KST · source_readback · <code>b2865294…</code> / 차단 12:10:57 KST · system_event · <code>9052db26…</code></span></li>
+  <li class="warning"><strong>회사 발신의 현재 조건:</strong> 차장님의 완료 지시 후에도 도메인/DNS 관리 권한 또는 전산실의 발송전용 주소 허용이 없어 인증·회사 주소 재시험은 진행하지 않았습니다. 공용메일 부여 곤란 회신은 외부 발송 인증의 허용·금지를 확정하지 않습니다.<br><span class="evidence">사용자 지시 2026-10-13 16:21:52 KST · direct_user / 상태 확인 16:56:18 KST · source_readback · default conversation·Wiki <code>15c6f41d…</code>, <code>ecde58fa…</code></span></li>
+  <li><strong>모델 분업·PC 오류 진단:</strong> 모델 설정은 원문 지시와 대조해 현재값이 맞는 것으로 정리됐고 변경은 없었습니다. PC의 일부 404는 최초 저장 전 조회였으며 첫 응답은 정상 종료했습니다. 별도로 Codex 구간 오류와 upstream 503은 확인됐지만 모든 재발의 단일 원인·카드와의 연결은 미입증입니다. 코드·PC·설정·재시작은 하지 않았습니다.<br><span class="evidence">2026-10-13 16:56:18 KST · source_readback · default HANDOFF / Wiki <code>c0fcb4cb…</code>, <code>e5851726…</code></span></li>
+</ol>
+<p class="meta">의사결정 요청: 없음. 기간 내 외부 뉴스, 대화 압축 사용법 문의, 짝귀의 silent/no-material curation·growth 결과, 과거 완료·막힘 Kanban backlog는 운영 인수인계 항목에서 제외했습니다.</p>
+</section>
+
+<section><h2>현재 운영 수치</h2>
+  <p class="metric"><strong>Cron</strong> — 총 12 · 정상 12 · 미기록 0 · 검증 대기 0 · 실패 0</p>
+  <p class="metric"><strong>정상 이름 (12):</strong> default/qms-staging-watch; default/MJJEON AI NEWS — Neoguri hourly collector; default/Default+role Gateway supervisor keeper; default/Codex 주간 한도 주의·경고; default/calendar-yesterday-sync; default/MJJEON X — attach Grok originals; default/all-profile-conversation-close; gwangryeol/고광렬 06:30 KST 아침 브리핑; jjakgwi/jjakgwi-wiki-daily-close-kst; jjakgwi/jjakgwi-wiki-curation-6h-kst; jjakgwi/jjakgwi-conversation-growth-review-6h-kst; neoguri/MJJEON Hermes official update detector</p>
+  <p class="metric">미기록 이름: 없음</p>
+  <p class="metric">검증 대기 이름: 없음</p>
+  <p class="metric">실패 이름: 없음</p>
+  <p class="metric"><strong>Kanban 진행:</strong> 0건. 기간 내 변경 카드 2건·이벤트 26건은 모두 완료입니다.</p>
+  <p class="metric"><strong>Kanban 막힘:</strong> 6건. 현황 지표이며, 기간 내 변경된 막힘 카드는 0건이라 과거 backlog를 새 인수인계로 올리지 않았습니다.</p>
+</section>
+
+<section><h2>Hermes Agent</h2>
+  <p class="metric"><strong>설치:</strong> v0.21.6 (Docker, upstream 818c13be) · <strong>공식 최신:</strong> v0.21.7 · 업데이트 가능</p>
+  <p class="meta">설치 버전은 실행 컨테이너 CLI, 최신 버전은 공식 GitHub Releases API로 확인했습니다. 이번 브리핑에서 업데이트·재시작·배포는 수행하지 않았습니다.</p>
+</section>
+
+<footer>relevance gate fixture 8건을 통과했습니다. 포함 항목은 기간 내 시각·근거 유형을 남겼고, unchanged blocked/done Kanban backlog와 외부 뉴스는 제외했습니다. 이 HTML에는 비밀 마커가 없습니다.</footer>
+</main></body></html>
