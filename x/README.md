@@ -2,6 +2,8 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-10-14 10:00 — thsottiaux Day 9 ChatGPT·Codex 디스크 상태 저장 60% 절감](./2026-10-14-1000.md)
+
 - [2026-10-14 08:00 — Gemini 4 Argon 출시·비디오 신시사이저](./2026-10-14-0800.md)
 
 - [2026-10-13 20:00 — 새 소식 없음](./2026-10-13-2000.md)
