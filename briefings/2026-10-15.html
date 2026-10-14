@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-10-15 운영 아침 브리핑</title>
+  <style>
+    :root { --ink:#182033; --muted:#65708a; --line:#dde3ee; --paper:#f6f8fc; --blue:#2367d1; --amber:#9a5a00; --red:#b42318; --green:#137333; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:15px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main, header { max-width:960px; margin:auto; }
+    header { padding:44px 28px 24px; }
+    main { padding:0 28px 44px; }
+    .eyebrow { margin:0; color:var(--blue); font-weight:700; letter-spacing:.04em; font-size:.82rem; }
+    h1 { margin:.25rem 0 .45rem; font-size:clamp(1.75rem,4vw,2.5rem); line-height:1.25; }
+    h2 { font-size:1.1rem; margin:0 0 14px; }
+    .meta, .note { color:var(--muted); margin:.2rem 0; }
+    .card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:22px; margin:16px 0; }
+    .lead { border-left:5px solid var(--blue); }
+    .lead strong { display:block; margin-bottom:4px; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .metric { border:1px solid var(--line); border-radius:10px; padding:14px; background:#fff; }
+    .metric b { display:block; font-size:1.4rem; }
+    .good { color:var(--green); } .warn { color:var(--amber); } .bad { color:var(--red); }
+    ol { margin:0; padding-left:1.25rem; }
+    li + li { margin-top:16px; }
+    h3 { font-size:1rem; margin:0 0 4px; }
+    p { margin:.35rem 0; }
+    .evidence { color:var(--muted); font-size:.86rem; }
+    .status-line { margin:.5rem 0; padding:.5rem .65rem; border-radius:8px; background:#f8fafc; }
+    code { font-size:.86em; overflow-wrap:anywhere; }
+    a { color:var(--blue); }
+    footer { color:var(--muted); font-size:.85rem; padding-top:6px; }
+    @media (max-width:650px) { .grid { grid-template-columns:1fr; } header,main { padding-left:16px; padding-right:16px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">운영 아침 브리핑 · 직전 06:30 이후 인수인계</p>
+    <h1>2026-10-15 운영 아침 브리핑</h1>
+    <p class="meta">대상 기간: 2026-10-14 06:30:00 ~ 2026-10-15 06:39:48 KST</p>
+    <p class="meta">범위: 전체 프로필의 기간 내 HANDOFF·MEMORY·대화와 Wiki 변경분, Cron·Kanban 현재 읽기값</p>
+  </header>
+
+  <main>
+    <section class="card lead" aria-labelledby="conclusion">
+      <h2 id="conclusion">결론</h2>
+      <strong>AI NEWS의 수집·게시 검증 이슈가 남아 있습니다.</strong>
+      <p>20:04 KST 수집 원본 응답 지연/HTTP 502, 00:00 KST GitHub API 게시 실패가 기록됐습니다. 00:13 KST에는 966개 보존 상태의 카탈로그·색인 복구와 공개 200 응답이 보고됐으나, 별도 원격 검증 두 건은 완료로 확인되지 않았습니다. Cron 현재 상태는 모두 정상이며, Kanban의 진행 작업은 없습니다.</p>
+    </section>
+
+    <section class="grid" aria-label="핵심 지표">
+      <div class="metric"><span>현재 Cron 정상</span><b class="good">15 / 15</b></div>
+      <div class="metric"><span>Kanban 진행</span><b>0</b></div>
+      <div class="metric"><span>Kanban 막힘</span><b class="warn">6</b></div>
+    </section>
+
+    <section class="card" aria-labelledby="handoff">
+      <h2 id="handoff">기간 내 변경·사고</h2>
+      <ol>
+        <li>
+          <h3>QMS 메일: 회사 웹메일 발신·수신 시험은 성공, 자동 발송은 미완료</h3>
+          <p>12:35 KST 회사 웹메일 시험 1통의 수신과 발신 주소 유지가 보고됐습니다. 17:00 KST에는 기존 Nodemailer 기반 모듈의 문법·자체검사·형식검사가 통과했지만, 앱 자격증명이 연결되지 않아 실제 SMTP 인증 전 중단됐습니다. 이번 코드 시험에서 실제 메일 발송·수신시험·운영 반영은 없었습니다.</p>
+          <p class="evidence">근거: <code>e72bf057eab961894f86b799fefe6aaa</code>, <code>afa79d4f6c1be9a3c0b57c13c4eb5755</code> · source_readback · 2026-10-14 12:35:49 / 17:00:31 KST</p>
+        </li>
+        <li>
+          <h3>AI NEWS: Hermes v0.22.0 안내 게시은 원격 확인까지 보고</h3>
+          <p>12:48 KST 공식 Hermes Agent v0.22.0 업데이트 글의 게시, 지정 ID·해시 일치 및 세 공식 URL의 HTTP 200이 보고됐습니다. 설치·자동 업데이트는 실행하지 않았습니다.</p>
+          <p class="evidence">근거: <code>fd05fd08ac8fbf5c407f3a97c74341e4</code> · source_readback · 2026-10-14 12:48:43 KST</p>
+        </li>
+        <li>
+          <h3>AI NEWS 수집 원본: 20:00 KST 실행에서 시간초과·HTTP 502</h3>
+          <p>20:04 KST 기록은 직전 19:00 KST 실행 성공과 달리 수집 원본이 시간초과·HTTP 502를 반환했다고 합니다. 당시 공개 홈·게시 목록은 로컬 내용과 일치했으며, 강제 재실행·설정 변경은 하지 않았습니다. 원본 회복은 이 기록만으로 확인되지 않았습니다.</p>
+          <p class="evidence">근거: <code>8802aa384f25ac72b59cace9a62fc440</code> · source_readback · incident_at 2026-10-14 20:04:17 KST</p>
+        </li>
+        <li>
+          <h3>자정 게시 실패 후 복구 보고, 원인은 미확정</h3>
+          <p>00:06 KST GitHub API 게시 실패와 공개본 불일치가 기록됐고, 00:13 KST에는 기존 966개를 보존한 카탈로그·색인 1회 복구 및 공개 홈·카탈로그·Hermes 데이터의 HTTP 200 일치가 보고됐습니다. 최초 실패의 상세 원인은 보존되지 않아 미확정이며, 01:00 KST 자연 실행 성공도 근거에서 확인되지 않았습니다.</p>
+          <p class="evidence">근거: <code>99b9632aab05c20e1ccb569ad34fe54c</code>, <code>6b2fa601bb61fe39f5bde0916ebef4a0</code> · source_readback · incident_at 2026-10-15 00:06:55 / changed_at 00:13:47 KST</p>
+        </li>
+        <li>
+          <h3>원격 검증 미완료 보고 2건은 복구 완료와 분리</h3>
+          <p>14:48 KST 및 00:48 KST의 별도 AI NEWS 재개/검증 기록은 모두 <code>REMOTE_VERIFY_FAILED</code>로 끝나 원격 완료를 확인하지 못했습니다. 재시도·진단·수리는 수행하지 않았습니다. 이 기록은 위 00:13 KST 복구 보고가 거짓이었다거나 01:00 KST 자연 실행 실패를 증명하지는 않습니다.</p>
+          <p class="evidence">근거: <code>12a8237b27b5f42c4265bc157d16ca55</code>, <code>efea1e3f5a92e3f64e66904202af8b1c</code> · source_readback · incident_at 2026-10-14 14:48:25 / 2026-10-15 00:48:49 KST</p>
+        </li>
+      </ol>
+      <p class="note">모델 표시와 실제 호출 경로의 비교 제안은 승인 대기 제안일 뿐, 설정·모델 변경이나 새 절차 적용으로 포함하지 않았습니다. 기간 내 새 직접 의사결정 요청은 확인되지 않았습니다.</p>
+    </section>
+
+    <section class="card" aria-labelledby="operations">
+      <h2 id="operations">운영 현황</h2>
+      <p class="status-line"><b>Cron 총:</b> 15건</p>
+      <p class="status-line"><b>Cron 정상:</b> 15건 — default/qms-staging-watch; default/MJJEON AI NEWS — Neoguri hourly collector; default/Default+role Gateway supervisor keeper; default/Codex 주간 한도 주의·경고; default/calendar-yesterday-sync; default/MJJEON X — attach Grok originals; default/all-profile-conversation-close; default/Hermes v0.21.0 cutover result relay; default/QMS MAIN 진행상황 — 15분 보고; gwangryeol/고광렬 06:30 KST 아침 브리핑; jjakgwi/jjakgwi-wiki-daily-close-kst; jjakgwi/jjakgwi-wiki-curation-6h-kst; jjakgwi/jjakgwi-conversation-growth-review-6h-kst; neoguri/MJJEON Hermes official update detector; neoguri/MJJEON Drive YouTube web ingest</p>
+      <p class="status-line"><b>Cron 미기록:</b> 0건 — 없음</p>
+      <p class="status-line"><b>Cron 검증 대기:</b> 0건 — 없음</p>
+      <p class="status-line"><b>Cron 실패:</b> 0건 — 없음</p>
+      <p class="status-line"><b>Kanban 진행:</b> 0건</p>
+      <p class="status-line"><b>Kanban 막힘:</b> 6건</p>
+      <p class="note">Kanban 기간 필터 결과: 새 카드 0건, 새 카드 이벤트 0건. 현재 막힘 6건은 변경 없는 과거 backlog이므로 인수인계 항목으로 재기재하지 않았습니다.</p>
+    </section>
+
+    <section class="card" aria-labelledby="hermes">
+      <h2 id="hermes">Hermes Agent 버전</h2>
+      <p><b>설치:</b> Hermes Agent v0.21.6 (2026.9.24, Docker, upstream <code>818c13be</code>)</p>
+      <p><b>공식 최신:</b> <a href="https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.0">v0.22.0</a> (공식 GitHub release)</p>
+      <p class="note">최신판이 더 높습니다. 이번 브리핑에서는 설치·업데이트를 수행하지 않았습니다.</p>
+    </section>
+
+    <section class="card" aria-labelledby="verification">
+      <h2 id="verification">검증·제외</h2>
+      <p>Relevance Gate fixture 8건: PASS. 기간 내 변경 없는 HANDOFF·MEMORY, silent/no-op Wiki 수집, 과거 완료·막힘 Kanban backlog, 일반 외부 뉴스는 인수인계 근거에서 제외했습니다.</p>
+      <p>이번 산출물은 HTML과 브리핑 색인만 갱신했으며, 배포·공개 전송·메시지 전송은 수행하지 않았습니다.</p>
+    </section>
+
+    <footer>생성 기준: 2026-10-15 06:39:48 KST · 운영 인수인계 전용</footer>
+  </main>
+</body>
+</html>
