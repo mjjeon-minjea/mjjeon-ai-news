@@ -3,13 +3,13 @@
     {
       "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.0",
       "detail_url": "hermes/items/github-release-412226006.html",
-      "judgment": "게시 승인: 지정 후보의 ID와 content_hash가 일치하고 draft 및 prerelease가 아닌 공식 릴리스다. 원문 제목과 공개 시각을 보존했으며, 공식 릴리스·Docs·repository의 최종 URL과 HTTP 200을 확인했다. 운영상 의미 있는 변경이 있어 공식 대표 후보로 적합하다. 게이트웨이 통합, 세션 정책과 플러그인 호환성 변경은 breaking 관련 escalation 후보로만 표시한다.",
+      "judgment": "게시 승인: 지정 candidate ID와 content_hash가 정확히 일치하고 raw의 draft와 prerelease가 모두 false인 공식 릴리스다. 원문 제목과 공개 시각을 보존했다. 공식 릴리스·Docs·repository를 web_extract로 직접 조회했으며, 지정 read-only GET으로 세 URL의 리다이렉트 후 최종 공식 URL과 HTTP 200을 확인했다. 설치·업데이트 정책과 프로필 운영에 의미 있는 변경이 있어 공식 대표 후보로 적합하다. raw 공개 시각과 본문의 Release Date 표기가 달라 날짜는 published_at을 기준으로 한다. 설치·릴리스 버전은 공식 릴리스 근거로만 판단하며 자동 업데이트는 하지 않는다.",
       "published_at": "2026-10-14T03:21:46Z",
       "source_grade": "official",
       "source_kind": "release",
       "stable_id": "github-release:412226006",
-      "status": "active",
-      "title_ko": "Hermes Agent v0.22.0 정식 공개: 안정 릴리스 채널·패키지 관리·프로필 게이트웨이 통합"
+      "status": "approved",
+      "title_ko": "Hermes Agent v0.22.0 정식 공개: 안정 릴리스 기본값과 설치·프로필 운영 변화"
     },
     {
       "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.21.7",
