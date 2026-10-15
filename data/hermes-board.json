@@ -1,6 +1,17 @@
 {
   "items": [
     {
+      "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.1",
+      "detail_url": "hermes/items/github-release-413231148.html",
+      "judgment": "지정 후보의 ID와 content_hash가 일치하며 draft=false, prerelease=false인 공식 GitHub 릴리스다. 원문 제목과 공개 시각을 보존했고 공식 릴리스 본문을 직접 조회했으며 최종 URL의 HTTP 200을 확인했다. 운영 동작 수정이 있어 게시 및 공식 대표 후보로 적합하다. 보안 긴급도·breaking 여부·다른 신호와의 연관성은 확정하지 않으며 관련 항목은 escalation 후보로만 취급한다.",
+      "published_at": "2026-10-14T23:59:24Z",
+      "source_grade": "official",
+      "source_kind": "release",
+      "stable_id": "github-release:413231148",
+      "status": "active",
+      "title_ko": "Hermes Agent v0.22.1 공개: 압축 후 스킬 유지·MCP 제한시간 수정과 한국어 언어팩 추가"
+    },
+    {
       "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.0",
       "detail_url": "hermes/items/github-release-412226006.html",
       "judgment": "지정 ID와 content_hash가 일치하는 GitHub 공식 릴리스 후보를 직접 검토했다. 원문 제목과 게시 시각을 보존했으며, 공식 릴리스 본문을 조회하고 리디렉션 후 최종 공식 URL의 HTTP 200을 확인했다. 업데이트 채널·게이트웨이·세션 정책에 의미 있는 운영 변경이 있어 official/release로 게시하고 대표 기사 자격을 부여한다. 런타임·게이트웨이·세션·플러그인 호환성 변화는 breaking escalation 후보로만 표시하며, 설치 버전 확인이나 자동 업데이트는 수행하지 않는다.",
