@@ -2,6 +2,8 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-10-15 20:00 — Kimi Work 워크플로 자동화 튜토리얼 #3](./2026-10-15-2000.md)
+
 - [2026-10-15 18:00 — 새 소식 없음](./2026-10-15-1800.md)
 
 - [2026-10-15 16:00 — thsottiaux Done and dusted (2시간 내 랜딩 완료)](./2026-10-15-1600.md)
