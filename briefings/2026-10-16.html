@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-10-16 운영 아침 브리핑</title>
+  <style>
+    :root { --ink:#182033; --muted:#65708a; --line:#dde3ee; --paper:#f6f8fc; --blue:#2367d1; --amber:#9a5a00; --red:#b42318; --green:#137333; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:15px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main, header { max-width:960px; margin:auto; }
+    header { padding:44px 28px 24px; }
+    main { padding:0 28px 44px; }
+    .eyebrow { margin:0; color:var(--blue); font-weight:700; letter-spacing:.04em; font-size:.82rem; }
+    h1 { margin:.25rem 0 .45rem; font-size:clamp(1.75rem,4vw,2.5rem); line-height:1.25; }
+    h2 { font-size:1.1rem; margin:0 0 14px; }
+    .meta, .note { color:var(--muted); margin:.2rem 0; }
+    .card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:22px; margin:16px 0; }
+    .lead { border-left:5px solid var(--blue); }
+    .lead strong { display:block; margin-bottom:4px; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .metric { border:1px solid var(--line); border-radius:10px; padding:14px; background:#fff; }
+    .metric b { display:block; font-size:1.4rem; }
+    .good { color:var(--green); } .warn { color:var(--amber); } .bad { color:var(--red); }
+    ol { margin:0; padding-left:1.25rem; }
+    li + li { margin-top:16px; }
+    h3 { font-size:1rem; margin:0 0 4px; }
+    p { margin:.35rem 0; }
+    .evidence { color:var(--muted); font-size:.86rem; }
+    .status-line { margin:.5rem 0; padding:.5rem .65rem; border-radius:8px; background:#f8fafc; }
+    code { font-size:.86em; overflow-wrap:anywhere; }
+    a { color:var(--blue); }
+    footer { color:var(--muted); font-size:.85rem; padding-top:6px; }
+    @media (max-width:650px) { .grid { grid-template-columns:1fr; } header,main { padding-left:16px; padding-right:16px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">운영 아침 브리핑 · 직전 06:30 이후 인수인계</p>
+    <h1>2026-10-16 운영 아침 브리핑</h1>
+    <p class="meta">대상 기간: 2026-10-15 06:30:00 ~ 2026-10-16 06:35:33 KST</p>
+    <p class="meta">범위: 기간 내 전체 프로필 HANDOFF·MEMORY·대화·Wiki 변경분과 Cron·Kanban 현재 읽기값</p>
+  </header>
+
+  <main>
+    <section class="card lead" aria-labelledby="conclusion">
+      <h2 id="conclusion">결론</h2>
+      <strong>QMS NCR 알림 시험은 실제 부장님 받은편지함 확인 대기이며, AI NEWS 공개 원격 검증 실패 2건은 원인·복구가 미확정입니다.</strong>
+      <p>QMS SMTP의 1회 실발송·수신은 보고됐고, NCR 테스트웹은 수신자 복원 후 READY로 읽혔습니다. 다만 각 결과는 별도 범위이며, 수신 확인이나 운영 반영 완료로 확대하지 않았습니다.</p>
+    </section>
+
+    <section class="grid" aria-label="핵심 지표">
+      <div class="metric"><span>현재 Cron 정상</span><b class="good">15 / 15</b></div>
+      <div class="metric"><span>Kanban 진행</span><b>0</b></div>
+      <div class="metric"><span>Kanban 막힘</span><b class="warn">6</b></div>
+    </section>
+
+    <section class="card" aria-labelledby="handoff">
+      <h2 id="handoff">기간 내 변경·사고</h2>
+      <ol>
+        <li>
+          <h3>QMS SMTP: 기존 회사 SMTP로 1회 발송·수신 보고</h3>
+          <p>08:05 KST 기존 회사 SMTP를 통한 프로그램 발송과 수신 원본 대조가 보고됐습니다. 이 결과는 발송 모듈과 1회 실메일 시험에 한정되며, QMS 홈페이지 연결·배포·다른 환경으로의 인증 이전은 확인되지 않았습니다.</p>
+          <p class="evidence">근거: <code>7582e8dfad6aa808f2a385b9b131728e</code> · source_readback · changed_at 2026-10-15 08:10:24 KST</p>
+        </li>
+        <li>
+          <h3>QMS NCR 알림: 테스트 발송·결재함 이동은 보고, 부장님 수신은 대기</h3>
+          <p>15:42 KST 테스트 알림의 HTTP 200·SMTP 250과 로그아웃 후 시험 결재함 진입·시험 행 표시가 보고됐습니다. 실제 부장님 받은편지함 수신은 아직 확인되지 않았고, 승인·반려는 수행하지 않았습니다.</p>
+          <p class="evidence">근거: <code>3fb855526956ec40f431a37f27ab2f7d</code> · source_readback · changed_at 2026-10-15 15:47:23 KST</p>
+        </li>
+        <li>
+          <h3>QMS NCR 알림: 수신자 복원 및 테스트웹 재배포 READY</h3>
+          <p>최신 명시 지시에 따라 시험 수신자를 차장님으로 복원하고 테스트웹 재배포 READY가 보고됐습니다. 코드 변경·추가 발송·추가 수신 증거는 없으며, 다음 단계는 부장님 실제 수신 확인을 읽어 종결 기록하는 일입니다.</p>
+          <p class="evidence">근거: <code>f0019453fe6f13a7dd7eda986a29365a</code> · direct_user + source_readback · changed_at 2026-10-15 16:05:02 KST</p>
+        </li>
+        <li>
+          <h3>AI NEWS 공개 원격 검증 실패 2건</h3>
+          <p>17:47 KST와 04:48 KST에 공개 GitHub Pages 원격 검증이 <code>REMOTE_VERIFY_FAILED</code>로 끝났다는 원천 출력이 보존됐습니다. 두 기록 모두 재시도·진단·수리 없이 중단됐고, 대상 게시물·근본 원인·복구는 확인되지 않았습니다. 두 실패를 서로 또는 과거 게시와 인과로 연결하지 않았습니다.</p>
+          <p class="evidence">근거: <code>ed272a235605aae7e9c7c2cfde5e7b73</code>, <code>09fea111fc4cea91d76212f6bcb5aba4</code> · source_readback · incident_at 2026-10-15 17:47:45 / 2026-10-16 04:48:08 KST</p>
+        </li>
+      </ol>
+      <p class="note">기간 내 새 직접 의사결정 요청은 확인되지 않았습니다. Wiki의 silent/no-op 기록과 미적용 제안은 인수인계 항목에서 제외했습니다.</p>
+    </section>
+
+    <section class="card" aria-labelledby="operations">
+      <h2 id="operations">운영 현황</h2>
+      <p class="status-line"><b>Cron 총:</b> 15건</p>
+      <p class="status-line"><b>Cron 정상:</b> 15건 — default/qms-staging-watch; default/MJJEON AI NEWS — Neoguri hourly collector; default/Default+role Gateway supervisor keeper; default/Codex 주간 한도 주의·경고; default/calendar-yesterday-sync; default/MJJEON X — attach Grok originals; default/all-profile-conversation-close; default/Hermes v0.21.0 cutover result relay; default/QMS MAIN 진행상황 — 15분 보고; gwangryeol/고광렬 06:30 KST 아침 브리핑; jjakgwi/jjakgwi-wiki-daily-close-kst; jjakgwi/jjakgwi-wiki-curation-6h-kst; jjakgwi/jjakgwi-conversation-growth-review-6h-kst; neoguri/MJJEON Hermes official update detector; neoguri/MJJEON Drive YouTube web ingest</p>
+      <p class="status-line"><b>Cron 미기록:</b> 0건 — 없음</p>
+      <p class="status-line"><b>Cron 검증 대기:</b> 0건 — 없음</p>
+      <p class="status-line"><b>Cron 실패:</b> 0건 — 없음</p>
+      <p class="status-line"><b>Kanban 진행:</b> 0건</p>
+      <p class="status-line"><b>Kanban 막힘:</b> 6건</p>
+      <p class="note">기간 내 새 Kanban 카드는 0건입니다. 현재 막힘 6건은 변경 없는 과거 backlog이므로 인수인계 항목으로 재기재하지 않았습니다.</p>
+    </section>
+
+    <section class="card" aria-labelledby="hermes">
+      <h2 id="hermes">Hermes Agent 버전</h2>
+      <p><b>설치:</b> Hermes Agent v0.21.6 (2026.9.24, Docker, upstream <code>818c13be</code>)</p>
+      <p><b>공식 최신:</b> <a href="https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.2">v0.22.2</a> (공식 GitHub release, 2026-10-15 공개)</p>
+      <p class="note">최신판이 더 높습니다. 이번 브리핑에서 설치·업데이트는 수행하지 않았습니다.</p>
+    </section>
+
+    <section class="card" aria-labelledby="verification">
+      <h2 id="verification">검증·제외</h2>
+      <p>Relevance Gate fixture 8건: PASS. 포함 항목은 허용 provenance와 기간 내 changed_at 또는 incident_at을 보존했습니다. 외부 뉴스, 과거 완료·막힘 backlog, silent/no-op Wiki 기록, 근거가 없는 수신 완료 주장은 제외했습니다.</p>
+      <p>이번 산출물은 HTML과 브리핑 색인만 갱신했으며, 배포·공개 전송·메시지 전송은 수행하지 않았습니다.</p>
+    </section>
+
+    <footer>생성 기준: 2026-10-16 06:35:33 KST · 운영 인수인계 전용</footer>
+  </main>
+</body>
+</html>
