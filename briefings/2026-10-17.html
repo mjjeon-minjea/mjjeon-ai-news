@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-10-17 운영 아침 브리핑</title>
+  <style>
+    :root { --ink:#182033; --muted:#65708a; --line:#dde3ee; --paper:#f6f8fc; --blue:#2367d1; --amber:#9a5a00; --red:#b42318; --green:#137333; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:15px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main, header { max-width:960px; margin:auto; }
+    header { padding:44px 28px 24px; }
+    main { padding:0 28px 44px; }
+    .eyebrow { margin:0; color:var(--blue); font-weight:700; letter-spacing:.04em; font-size:.82rem; }
+    h1 { margin:.25rem 0 .45rem; font-size:clamp(1.75rem,4vw,2.5rem); line-height:1.25; }
+    h2 { font-size:1.1rem; margin:0 0 14px; }
+    .meta, .note { color:var(--muted); margin:.2rem 0; }
+    .card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:22px; margin:16px 0; }
+    .lead { border-left:5px solid var(--blue); }
+    .lead strong { display:block; margin-bottom:4px; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .metric { border:1px solid var(--line); border-radius:10px; padding:14px; background:#fff; }
+    .metric b { display:block; font-size:1.4rem; }
+    .good { color:var(--green); } .warn { color:var(--amber); } .bad { color:var(--red); }
+    ol { margin:0; padding-left:1.25rem; }
+    li + li { margin-top:16px; }
+    h3 { font-size:1rem; margin:0 0 4px; }
+    p { margin:.35rem 0; }
+    .evidence { color:var(--muted); font-size:.86rem; }
+    .status-line { margin:.5rem 0; padding:.5rem .65rem; border-radius:8px; background:#f8fafc; }
+    code { font-size:.86em; overflow-wrap:anywhere; }
+    a { color:var(--blue); }
+    footer { color:var(--muted); font-size:.85rem; padding-top:6px; }
+    @media (max-width:650px) { .grid { grid-template-columns:1fr; } header,main { padding-left:16px; padding-right:16px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">운영 아침 브리핑 · 직전 06:30 이후 인수인계</p>
+    <h1>2026-10-17 운영 아침 브리핑</h1>
+    <p class="meta">대상 기간: 2026-10-16 06:30:00 ~ 2026-10-17 06:37:27 KST</p>
+    <p class="meta">범위: 기간 내 전체 프로필 HANDOFF·MEMORY·대화·Wiki 변경분과 Cron·Kanban 현재 읽기값</p>
+  </header>
+
+  <main>
+    <section class="card lead" aria-labelledby="conclusion">
+      <h2 id="conclusion">결론</h2>
+      <strong>Hermes Docker는 v0.22.2로 핵심 교체 검증이 보고됐고, QMS 085 ⑤b 화면·SMTP 시험도 완료됐습니다. 다만 Hostinger 관리화면 확인과 QMS 실제 받은편지함 대조는 아직 미확인입니다.</strong>
+      <p>QMS의 SMTP 250 수락은 실제 받은편지함 도착 증명으로 확대하지 않았습니다. 두 미확인 항목에 대한 재실행·재발송·재배포는 기록되지 않았습니다.</p>
+    </section>
+
+    <section class="grid" aria-label="핵심 지표">
+      <div class="metric"><span>현재 Cron 정상</span><b class="good">15 / 15</b></div>
+      <div class="metric"><span>Kanban 진행</span><b>0</b></div>
+      <div class="metric"><span>Kanban 막힘</span><b class="warn">6</b></div>
+    </section>
+
+    <section class="card" aria-labelledby="handoff">
+      <h2 id="handoff">기간 내 변경·인계</h2>
+      <ol>
+        <li>
+          <h3>Hermes Docker v0.22.2 핵심 교체 검증 보고</h3>
+          <p>10:29 KST 결과 기록에서 Docker 서버의 v0.22.2 교체, 9개 프로필·Discord/Slack·Dashboard/Desktop 통신 및 기존 예약 15건 보존이 보고됐습니다. 현재 설치 조회도 v0.22.2를 가리킵니다. 다만 Hostinger 관리화면의 Running·YAML/환경 편집 화면은 사용자 확인 기록이 없어 전체 마감으로 쓰지 않았습니다.</p>
+          <p class="evidence">근거: <code>8940f0ef7f1cf1d646b96d4936fb5ba5</code> · source_readback · changed_at 2026-10-16 10:29:29 KST</p>
+        </li>
+        <li>
+          <h3>QMS 085 ⑤b: 두 화면 시나리오·SMTP 수락 완료, 받은편지함 대조 대기</h3>
+          <p>11:47 KST 기록에서 종결·무효 두 시나리오의 화면·저장 검증 24단계와 SMTP 250 수락 77통이 보고됐습니다. ⑤b 중 제품 코드·설정·배포 변경은 없었습니다. SMTP 수락은 실제 메일함 도착이나 최종 수락을 뜻하지 않으므로, 실물 받은편지함 대조와 최종 판정은 대기 상태입니다.</p>
+          <p class="evidence">근거: <code>e58ffb0587de97ecf4777511c28df0d8</code> · source_readback · changed_at 2026-10-16 11:47:10 KST</p>
+        </li>
+      </ol>
+      <p class="note">기간 내 새 직접 의사결정 요청은 확인되지 않았습니다. 외부 뉴스, Wiki의 no-op·이력 색인 갱신, 변경 없는 과거 Kanban backlog는 인수인계 항목에서 제외했습니다.</p>
+    </section>
+
+    <section class="card" aria-labelledby="operations">
+      <h2 id="operations">운영 현황</h2>
+      <p class="status-line"><b>Cron 총:</b> 15건</p>
+      <p class="status-line"><b>Cron 정상:</b> 15건 — default/qms-staging-watch; default/MJJEON AI NEWS — Neoguri hourly collector; default/Default+role Gateway supervisor keeper; default/Codex 주간 한도 주의·경고; default/calendar-yesterday-sync; default/MJJEON X — attach Grok originals; default/all-profile-conversation-close; default/Hermes v0.21.0 cutover result relay; default/QMS MAIN 진행상황 — 15분 보고; gwangryeol/고광렬 06:30 KST 아침 브리핑; jjakgwi/jjakgwi-wiki-daily-close-kst; jjakgwi/jjakgwi-wiki-curation-6h-kst; jjakgwi/jjakgwi-conversation-growth-review-6h-kst; neoguri/MJJEON Hermes official update detector; neoguri/MJJEON Drive YouTube web ingest</p>
+      <p class="status-line"><b>Cron 미기록:</b> 0건 — 없음</p>
+      <p class="status-line"><b>Cron 검증 대기:</b> 0건 — 없음</p>
+      <p class="status-line"><b>Cron 실패:</b> 0건 — 없음</p>
+      <p class="status-line"><b>Kanban 진행:</b> 0건</p>
+      <p class="status-line"><b>Kanban 막힘:</b> 6건</p>
+      <p class="note">Cron은 각 작업의 last_status=ok를 정상으로 집계했습니다. 과거 실패 이력은 현재 last_status가 아니므로 실패로 다시 세지 않았습니다. Kanban의 기간 한정 task/event 질의는 읽기 전용 CLI에서 지원되지 않아 카드 수준 인수인계 근거는 fail-closed 처리했습니다.</p>
+    </section>
+
+    <section class="card" aria-labelledby="hermes">
+      <h2 id="hermes">Hermes Agent 버전</h2>
+      <p><b>설치:</b> Hermes Agent v0.22.2 (2026.9.24, Docker, upstream <code>d923a5eb</code>)</p>
+      <p><b>공식 최신:</b> <a href="https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.2">v0.22.2</a> (공식 GitHub release, 2026-10-15 공개)</p>
+      <p class="note">설치본과 공식 최신판이 일치합니다. 이번 브리핑에서 설치·업데이트는 수행하지 않았습니다.</p>
+    </section>
+
+    <section class="card" aria-labelledby="verification">
+      <h2 id="verification">검증·제외</h2>
+      <p>Relevance Gate fixture 8건: PASS. 포함 항목은 허용 provenance와 기간 내 changed_at을 보존했습니다. 외부 뉴스, 과거 완료·막힘 backlog, no-op Wiki 이력, 실제 받은편지함 근거가 없는 완료 주장은 제외했습니다.</p>
+      <p>이번 산출물은 HTML과 브리핑 색인만 갱신했으며, 배포·공개 전송·메시지 전송은 수행하지 않았습니다.</p>
+    </section>
+
+    <footer>생성 기준: 2026-10-17 06:37:27 KST · 운영 인수인계 전용</footer>
+  </main>
+</body>
+</html>
