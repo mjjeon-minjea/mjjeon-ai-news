@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-10-18 운영 아침 브리핑</title>
+  <style>
+    :root { --ink:#182033; --muted:#65708a; --line:#dde3ee; --paper:#f6f8fc; --blue:#2367d1; --amber:#9a5a00; --red:#b42318; --green:#137333; }
+    * { box-sizing:border-box; } body { margin:0; background:var(--paper); color:var(--ink); font:15px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main,header { max-width:960px; margin:auto; } header { padding:44px 28px 24px; } main { padding:0 28px 44px; }
+    .eyebrow { margin:0; color:var(--blue); font-weight:700; letter-spacing:.04em; font-size:.82rem; } h1 { margin:.25rem 0 .45rem; font-size:clamp(1.75rem,4vw,2.5rem); line-height:1.25; } h2 { font-size:1.1rem; margin:0 0 14px; }
+    .meta,.note { color:var(--muted); margin:.2rem 0; } .card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:22px; margin:16px 0; } .lead { border-left:5px solid var(--blue); } .lead strong { display:block; margin-bottom:4px; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; } .metric { border:1px solid var(--line); border-radius:10px; padding:14px; background:#fff; } .metric b { display:block; font-size:1.4rem; } .good { color:var(--green); } .warn { color:var(--amber); } .bad { color:var(--red); }
+    ol { margin:0; padding-left:1.25rem; } li+li { margin-top:16px; } h3 { font-size:1rem; margin:0 0 4px; } p { margin:.35rem 0; } .evidence { color:var(--muted); font-size:.86rem; } .status-line { margin:.5rem 0; padding:.5rem .65rem; border-radius:8px; background:#f8fafc; } code { font-size:.86em; overflow-wrap:anywhere; } a { color:var(--blue); } footer { color:var(--muted); font-size:.85rem; padding-top:6px; }
+    @media (max-width:650px) { .grid { grid-template-columns:1fr; } header,main { padding-left:16px; padding-right:16px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">운영 아침 브리핑 · 직전 06:30 이후 인수인계</p>
+    <h1>2026-10-18 운영 아침 브리핑</h1>
+    <p class="meta">대상 기간: 2026-10-17 06:30:00 ~ 2026-10-18 06:40:55 KST</p>
+    <p class="meta">범위: 기간 내 전체 프로필 HANDOFF·MEMORY·대화·Wiki 변경분과 Cron·Kanban 현재 읽기값</p>
+  </header>
+  <main>
+    <section class="card lead" aria-labelledby="conclusion"><h2 id="conclusion">결론</h2><strong>Google Drive 백업 보관 규칙 1건이 새로 지시되고 반영 보고됐습니다. Cron은 15/15 정상, Kanban은 진행 0·막힘 6입니다. 배포 컨테이너 이미지는 Hermes v0.22.2로 공식 최신과 일치합니다.</strong><p>새 직접 의사결정 요청은 확인되지 않았습니다. 한국어 UI 안내는 실행 결과가 없어, 과거 완료·막힘 Kanban backlog와 함께 인계 항목에서 제외했습니다.</p></section>
+    <section class="grid" aria-label="핵심 지표"><div class="metric"><span>현재 Cron 정상</span><b class="good">15 / 15</b></div><div class="metric"><span>Kanban 진행</span><b>0</b></div><div class="metric"><span>Kanban 막힘</span><b class="warn">6</b></div></section>
+    <section class="card" aria-labelledby="handoff"><h2 id="handoff">기간 내 변경·인계</h2><ol><li><h3>Google Drive 백업 고정 위치 운영 지시</h3><p>사용자는 백업을 지정한 고정 위치 한 곳에만 보관하고 새 폴더·하위 폴더를 만들지 말며, 접근이 안 되면 다른 위치를 만들지 말고 알리도록 지시했습니다.</p><p class="evidence">근거: <code>conversation/default/20261015_073748_8888d8#200701</code> · direct_user · user_directed_at 2026-10-17 20:57:54 KST</p></li>
+<li><h3>규칙 반영 보고</h3><p>같은 대화의 후속 응답은 AGENTS.md 운영 규칙 반영, 파일명으로 날짜·작업 구분, 기존 Drive 폴더·파일의 이동·삭제 없음으로 보고했습니다. 이 보고는 대화 source-readback이며, 해당 문서나 Drive 접근 자체를 이번 브리핑에서 재검사하지 않았습니다.</p><p class="evidence">근거: <code>conversation/default/20261015_073748_8888d8#200717</code> · source_readback · changed_at 2026-10-17 21:00:10 KST</p></li></ol><p class="note">포함 항목은 timestamp와 provenance를 보존했습니다. 새 외부 뉴스, no-op Wiki curation, lifecycle-only 기록은 운영 인수인계가 아니어서 제외했습니다.</p></section>
+    <section class="card" aria-labelledby="operations"><h2 id="operations">운영 현황</h2>
+      <p class="status-line"><b>Cron 총:</b> 15건</p>
+      <p class="status-line good"><b>Cron 정상:</b> 15건 — default/qms-staging-watch; default/MJJEON AI NEWS — Neoguri hourly collector; default/Default+role Gateway supervisor keeper; default/Codex 주간 한도 주의·경고; default/calendar-yesterday-sync; default/MJJEON X — attach Grok originals; default/all-profile-conversation-close; default/Hermes v0.21.0 cutover result relay; default/QMS MAIN 진행상황 — 15분 보고; gwangryeol/고광렬 06:30 KST 아침 브리핑; jjakgwi/jjakgwi-wiki-daily-close-kst; jjakgwi/jjakgwi-wiki-curation-6h-kst; jjakgwi/jjakgwi-conversation-growth-review-6h-kst; neoguri/MJJEON Hermes official update detector; neoguri/MJJEON Drive YouTube web ingest</p>
+      <p class="status-line"><b>Cron 미기록:</b> 0건 — 없음</p>
+      <p class="status-line warn"><b>Cron 검증 대기:</b> 0건 — 없음</p>
+      <p class="status-line bad"><b>Cron 실패:</b> 0건 — 없음</p>
+      <p class="status-line"><b>Kanban 진행:</b> 0건</p>
+      <p class="status-line warn"><b>Kanban 막힘:</b> 6건</p>
+      <p class="note">Cron은 각 작업의 last_status=ok만 정상으로 집계했습니다. last_status가 없는 작업은 미기록, last_error에 REMOTE_UNVERIFIED가 있는 작업은 검증 대기로 분리하며 실패로 쓰지 않습니다. 이번 읽기값에는 두 범주 모두 0건입니다.</p>
+    </section>
+    <section class="card" aria-labelledby="hermes"><h2 id="hermes">Hermes Agent 버전</h2><p><b>설치:</b> 실행 중인 Docker 이미지 <code>nousresearch/hermes-agent:v0.22.2</code> (2026-10-15 생성)</p><p><b>공식 최신:</b> <a href="https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.2">v0.22.2</a> (공식 GitHub release, 2026-10-15 공개)</p><p class="note">이미지 태그와 공식 최신판은 일치합니다. 다만 컨테이너 내부 CLI는 version metadata를 vunknown으로, venv artifact를 out-of-sync으로 경고했으므로 CLI 버전 표시는 이미지 태그로 교차 확인했습니다. 설치·업데이트·재시작은 수행하지 않았습니다.</p></section>
+    <section class="card" aria-labelledby="verification"><h2 id="verification">검증·제외</h2><p>Relevance Gate fixture 8건: PASS. 전체 프로필의 canonical HANDOFF·MEMORY는 기간 내 변경 없음, 대화·Wiki는 위 2건만 범위에 맞게 포함했습니다. Kanban task-event 시간 필터는 읽기 전용 CLI가 지원하지 않아 해당 소스는 fail-closed 처리했습니다.</p><p>이번 산출물은 HTML과 브리핑 색인만 갱신했으며, 배포·index.html 갱신·공개 전송·Discord 전송은 수행하지 않았습니다.</p></section>
+    <footer>생성 기준: 2026-10-18 06:40:55 KST · 운영 인수인계 전용</footer>
+  </main>
+</body>
+</html>
