@@ -2,6 +2,8 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-10-17 14:00 — 새 소식 없음](./2026-10-17-1400.md)
+
 - [2026-10-17 12:00 — 새 소식 없음](./2026-10-17-1200.md)
 
 - [2026-10-17 10:00 — thsottiaux Day 12 Codex & Work 사용량 개선 · ChatGPT Space 소개](./2026-10-17-1000.md)
