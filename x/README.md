@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-10-20 14:00 — 새 소식 없음](./2026-10-20-1400.md)
 - [2026-10-20 12:00 — 새 소식 없음](./2026-10-20-1200.md)
 - [2026-10-20 10:00 — 새 소식 없음](./2026-10-20-1000.md)
 - [2026-10-20 08:00 — OpenAI 저자원 언어 강화 · Gemini Wizard Chess · thsottiaux Day 15](./2026-10-20-0800.md)
