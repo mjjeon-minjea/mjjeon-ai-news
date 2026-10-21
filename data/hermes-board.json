@@ -1,6 +1,17 @@
 {
   "items": [
     {
+      "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.3",
+      "detail_url": "hermes/items/github-release-419468186.html",
+      "judgment": "게시 승인. 지정 후보 ID와 content_hash가 일치하고 공식 릴리스 원문의 제목·버전·발행 시각을 대조했다. 공식 릴리스·저장소·문서 URL은 리디렉션 후에도 동일한 공식 주소이며 모두 HTTP 200을 반환했다. Hermes 운영에 영향을 주는 안정 릴리스이므로 meaningful change와 대표 기사 자격을 인정한다. 조회된 저장소 Releases 요약에는 v0.22.2가 남아 있어 릴리스 상세와 다른 교차신호를 escalation 후보로만 표시하며, v0.22.3 공개 근거는 공식 릴리스 상세를 사용한다. 보안 취약점이나 breaking change는 이 공지만으로 단정하지 않는다.",
+      "published_at": "2026-10-21T12:21:11Z",
+      "source_grade": "official",
+      "source_kind": "release",
+      "stable_id": "github-release:419468186",
+      "status": "active",
+      "title_ko": "Hermes Agent v0.22.3 공식 출시: 누적 변경을 안정 릴리스로 통합"
+    },
+    {
       "canonical_url": "https://hermes-agent.nousresearch.com/docs/llms.txt",
       "detail_url": "hermes/items/official-docs-llms.html",
       "judgment": "공식 문서 색인 갱신 확인 · 운영 참고용 게시 · 개별 기능의 신규 도입 및 릴리스 버전 확정 아님",
