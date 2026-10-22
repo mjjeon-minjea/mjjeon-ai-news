@@ -1,6 +1,17 @@
 {
   "items": [
     {
+      "canonical_url": "https://hermes-agent.nousresearch.com/docs/llms.txt",
+      "detail_url": "hermes/items/official-docs-llms.html",
+      "judgment": "공식 docs 후보로 검토했습니다. 공식 문서 색인과 NousResearch 저장소를 직접 읽었고 두 URL 모두 리다이렉트 후 동일한 공식 주소에서 HTTP 200을 확인했습니다. 운영 참고문서 안내를 담은 색인 갱신으로 게시하되 특정 문서나 기능이 이번에 처음 추가됐다고 단정하지 않습니다. published_at은 후보의 HTTP Last-Modified 시각이며 개별 문서의 최초 발행일은 아닙니다. 보안·breaking·교차신호에 대한 확정 판단은 하지 않습니다.",
+      "published_at": "2026-10-22T18:32:47Z",
+      "source_grade": "official",
+      "source_kind": "docs",
+      "stable_id": "official-docs:llms",
+      "status": "active",
+      "title_ko": "Hermes 공식 문서 색인 갱신: 패키지·릴리스·업데이트 운영 문서 안내"
+    },
+    {
       "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.4",
       "detail_url": "hermes/items/github-release-419822356.html",
       "judgment": "게시 적합: 지정 ID·hash가 일치하는 공식 정식 릴리스이며 구체적인 운영 변경이 확인되어 meaningful change로 판단한다. 대표 기사로 사용할 수 있다. 보안 검토 항목은 escalation 후보로만 남기고 자동 조치하지 않는다.",
@@ -21,17 +32,6 @@
       "stable_id": "github-release:419468186",
       "status": "active",
       "title_ko": "Hermes Agent v0.22.3 공식 출시: 누적 변경을 안정 릴리스로 통합"
-    },
-    {
-      "canonical_url": "https://hermes-agent.nousresearch.com/docs/llms.txt",
-      "detail_url": "hermes/items/official-docs-llms.html",
-      "judgment": "공식 문서 색인 갱신 확인 · 운영 참고용 게시 · 개별 기능의 신규 도입 및 릴리스 버전 확정 아님",
-      "published_at": "2026-10-15T19:16:24Z",
-      "source_grade": "official",
-      "source_kind": "docs",
-      "stable_id": "official-docs:llms",
-      "status": "공식 문서 검토 완료",
-      "title_ko": "Hermes 공식 문서 색인 갱신: 게이트웨이·복구·업데이트 운영 참고"
     },
     {
       "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.2",
