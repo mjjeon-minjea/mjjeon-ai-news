@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-10-24 운영 아침 브리핑</title>
+<style>
+:root{color-scheme:light;--ink:#18212f;--muted:#5c6877;--line:#dce4eb;--blue:#155e9c;--bg:#f5f7fa;--card:#fff;--warn:#9a6700;--bad:#b42318}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{max-width:920px;margin:36px auto;padding:0 20px}header,section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px;margin-bottom:16px}h1{margin:0 0 4px;font-size:28px}h2{margin:0 0 12px;font-size:18px}.meta,.note{color:var(--muted);font-size:13px}.lead{margin:16px 0 0;font-size:17px;font-weight:650}ul{margin:0;padding-left:20px}li{margin:10px 0}.line{border-top:1px solid var(--line);padding:11px 0}.line:first-of-type{border-top:0;padding-top:0}.status{color:var(--warn);font-weight:650}.bad{color:var(--bad);font-weight:650}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.9em}@media(max-width:620px){main{margin:18px auto}}
+</style>
+</head>
+<body><main>
+<header>
+  <h1>2026-10-24 운영 아침 브리핑</h1>
+  <div class="meta">인수인계 범위: 2026-10-23 06:30 KST 이후 · 데이터 기준시각: 2026-10-24 06:30 KST</div>
+  <p class="lead">새 사용자 의사결정 요청은 없습니다. 공식 업데이트 감지 작업에서 원격 검증 실패와 후보 원천 조회 중단이 기록됐고, 뒤이은 문서 색인 공개 검증은 성공했으나 앞선 중단의 복구를 뜻하지 않습니다.</p>
+</header>
+<section>
+  <h2>직전 인수인계</h2>
+  <ul>
+    <li><b>2026-10-23 14:48 KST · 공식 업데이트 감지의 공개 검증 미완료</b> — Hermes Agent <code>v0.22.5</code> 후보의 공개 페이지 검증은 <code>REMOTE_VERIFY_FAILED</code>로 끝났습니다. 재시도·원인 진단·복구는 수행됐다는 근거가 없으며, 이 결과만으로 설치 상태나 수집 원천 장애를 단정하지 않습니다. <span class="note">[source_readback · Wiki work-result 18906f4cf0d1643a21e0a9d55475c9fb · 2026-10-23T14:48:21+09:00]</span></li>
+    <li><b>2026-10-23 19:46 KST · 후보 원천 조회·추출 2건 중단</b> — <code>jq</code> 미설치 보고로 후보 raw lookup 및 별도 extraction이 멈췄고, 원천 검증·검토 파일 저장·공개 검증은 수행되지 않았습니다. 뒤이은 다른 문서 색인 성공은 이 두 중단 건의 수리·회복 증거가 아닙니다. <span class="note">[source_readback · Wiki work-results 52e7fdcacedc4b9acf164ccb1f661e62, 1c0671d05ff4a3ff58660736891ff35e · 2026-10-23T19:46:03~19:46:49+09:00]</span></li>
+    <li><b>2026-10-23 19:51 KST · 공식 문서 색인 revision 20 공개 검증 보고</b> — <code>official-docs:llms</code> revision 20의 지정 URL HTTP 200 및 원격 검증 완료가 보고됐습니다. 설치·자동 업데이트·호환성 확인이나 앞선 중단의 복구를 뜻하지 않습니다. <span class="note">[source_readback · Wiki work-result 337cc9906692ffdfec494cb71f45aa0b · 2026-10-23T19:51:05+09:00]</span></li>
+  </ul>
+</section>
+<section>
+  <h2>운영 수치</h2>
+  <div class="line"><b>Cron 총:</b> 15</div>
+  <div class="line"><b>Cron 정상 (14):</b> jjakgwi/jjakgwi-wiki-daily-close-kst; jjakgwi/jjakgwi-wiki-curation-6h-kst; jjakgwi/jjakgwi-conversation-growth-review-6h-kst; neoguri/MJJEON Hermes official update detector; neoguri/MJJEON Drive YouTube web ingest; default/qms-staging-watch; default/Default+role Gateway supervisor keeper; default/Codex 주간 한도 주의·경고; default/calendar-yesterday-sync; default/MJJEON X — attach Grok originals; default/all-profile-conversation-close; default/Hermes v0.21.0 cutover result relay; default/QMS MAIN 진행상황 — 15분 보고; gwangryeol/고광렬 06:30 KST 아침 브리핑</div>
+  <div class="line"><b>Cron 미기록 (0):</b> 없음</div>
+  <div class="line"><b>Cron 검증 대기 (0):</b> 없음 <span class="note">REMOTE_UNVERIFIED는 실패로 합산하지 않음</span></div>
+  <div class="line"><b class="bad">Cron 실패 (1):</b> default/MJJEON AI NEWS — Neoguri hourly collector <span class="note">현재 last_status 오류이나 기간 내 새 failed execution은 확인되지 않아 새 인수인계 사고로 승격하지 않음</span></div>
+  <div class="line"><b>Kanban 진행:</b> 0</div>
+  <div class="line"><b>Kanban 막힘:</b> 6 <span class="note">기간 내 task event 및 생성·완료 카드 0건; 변경 없는 기존 막힘·완료 backlog는 인계 항목에서 제외</span></div>
+  <div class="line"><b>Hermes:</b> 실행 Docker 설치 <code>v0.22.2</code> / 공식 최신 릴리스 <code>v0.22.5</code> — 업데이트 가능, 설치·재시작은 수행하지 않음</div>
+</section>
+<section>
+  <h2>결정·주의</h2>
+  <p class="status">새 의사결정 요청 없음.</p>
+  <p>후보 원천 조회·추출 중단의 원인 보고는 보존하되, 임의 설치·재시도·복구로 이어가지 않습니다. 최신 Cron 상태의 정상 표기는 두 중단 건이 해결됐다는 증거가 아닙니다.</p>
+  <p class="note">필터 기준: 허용된 직접 지시·읽기 결과·시스템 상태 중 기준시각 창 안의 변경만 반영했습니다. 전 profile HANDOFF·MEMORY에는 기간 내 변경이 없었고, 대화의 예약 작업 제어문은 사용자 신규 지시로 취급하지 않았습니다. Wiki의 no-op·lifecycle-only 기록과 외부 뉴스는 제외했으며, 공식 릴리스는 명시된 버전 비교 요구에만 사용했습니다.</p>
+</section>
+</main></body></html>
