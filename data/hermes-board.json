@@ -1,6 +1,17 @@
 {
   "items": [
     {
+      "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.5",
+      "detail_url": "hermes/items/github-release-421389285.html",
+      "judgment": "지정 ID와 hash가 일치하는 공식 GitHub Releases 후보를 직접 검토했다. 원문 릴리스 조회와 리다이렉트 추적 GET에서 최종 공식 URL 및 HTTP 200을 확인했으며 draft·prerelease가 아닌 정식 패치 공개와 구체적 운영 변경을 근거로 meaningful change 및 대표 기사 적격으로 판단한다. published_at은 후보의 GitHub 공개 시각을 보존했으며 본문 표기 릴리스 날짜는 2026-10-22다. 보안·breaking 검토는 escalation 후보이며 실제 설치 변경은 수행하지 않는다.",
+      "published_at": "2026-10-23T05:28:45Z",
+      "source_grade": "official",
+      "source_kind": "release",
+      "stable_id": "github-release:421389285",
+      "status": "verified",
+      "title_ko": "Hermes Agent v0.22.5 공식 패치 릴리스: 로그인·업데이트 복구 개선과 플러그인 분리"
+    },
+    {
       "canonical_url": "https://hermes-agent.nousresearch.com/docs/llms.txt",
       "detail_url": "hermes/items/official-docs-llms.html",
       "judgment": "공식 docs 후보로 검토했습니다. 공식 문서 색인과 NousResearch 저장소를 직접 읽었고 두 URL 모두 리다이렉트 후 동일한 공식 주소에서 HTTP 200을 확인했습니다. 운영 참고문서 안내를 담은 색인 갱신으로 게시하되 특정 문서나 기능이 이번에 처음 추가됐다고 단정하지 않습니다. published_at은 후보의 HTTP Last-Modified 시각이며 개별 문서의 최초 발행일은 아닙니다. 보안·breaking·교차신호에 대한 확정 판단은 하지 않습니다.",
