@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-10-23 16:00 — 새 소식 없음](./2026-10-23-1600.md)
 - [2026-10-23 14:00 — thsottiaux Day 18 Decisions API GA · OpenResponses LF · Uber Codex 및 리셋](./2026-10-23-1400.md)
 - [2026-10-23 12:00 — Kimi K3.1 티저 및 Kimi Code 데스크톱](./2026-10-23-1200.md)
 - [2026-10-23 10:00 — 새 소식 없음](./2026-10-23-1000.md)
