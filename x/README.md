@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-10-24 14:00 — thsottiaux: 토구를 가지는 것과 토구가 되는 것의 미묘한 차이](./2026-10-24-1400.md)
 - [2026-10-24 12:00 — 새 소식 없음](./2026-10-24-1200.md)
 - [2026-10-24 10:00 — thsottiaux Day 19 소규모 업데이트: dots 연결 가속·Codex 캐시 유지 및 CLI 업데이트](./2026-10-24-1000.md)
 - [2026-10-24 08:00 — OpenAI 연구 환경 보안 강화·Brotli RCE 공개 및 Kimi K3.1 Pro 출시](./2026-10-24-0800.md)
