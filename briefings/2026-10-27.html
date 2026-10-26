@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-10-27 운영 아침 브리핑</title>
+<style>
+:root{color-scheme:light;--ink:#18212f;--muted:#5c6877;--line:#dce4eb;--blue:#155e9c;--bg:#f5f7fa;--card:#fff;--warn:#9a6700;--bad:#b42318}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{max-width:920px;margin:36px auto;padding:0 20px}header,section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px;margin-bottom:16px}h1{margin:0 0 4px;font-size:28px}h2{margin:0 0 12px;font-size:18px}.meta,.note{color:var(--muted);font-size:13px}.lead{margin:16px 0 0;font-size:17px;font-weight:650}ul{margin:0;padding-left:20px}li{margin:10px 0}.line{border-top:1px solid var(--line);padding:11px 0}.line:first-of-type{border-top:0;padding-top:0}.status{color:var(--warn);font-weight:650}.bad{color:var(--bad);font-weight:650}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.9em}@media(max-width:620px){main{margin:18px auto}}
+</style>
+</head>
+<body><main>
+<header>
+  <h1>2026-10-27 운영 아침 브리핑</h1>
+  <div class="meta">인수인계 범위: 2026-10-26 06:30 KST 이후 · 데이터 기준시각: 2026-10-27 07:09 KST</div>
+  <p class="lead">핵심은 Hermes <code>v0.22.5</code>의 canonical DB 배치 정상화가 실행기 가동 단계에 있으며, 종료·복구 검증은 아직 기록되지 않았다는 점입니다. 같은 시각 정기 작업은 다수 지연 실행됐고, Hermes 공식 업데이트 감지기는 설치 기록 불일치로 실패했습니다.</p>
+</header>
+<section>
+  <h2>직전 인수인계</h2>
+  <ul>
+    <li><b>v0.22.5 전환 후 Gateway 호환 사고</b> — DB 실경로와 profile home 불일치로 메신저 Gateway가 부팅을 반복한 것으로 기록됐습니다. 이전 v0.22.2 복구 실행기는 idle guard에서 안전 중단돼 실제 원복되지 않았고, 당시 실행 버전은 v0.22.5로 유지됐습니다. <span class="note">[source_readback · 2026-10-26 23:26:49 KST · handoff/default#v0225-compatibility]</span></li>
+    <li><b>사용자 지시: canonical DB 배치 정상화</b> — 사용자가 v0.22.5 유지와 공식 구조에 맞춘 DB 배치 정리를 지시했습니다. 이는 새 의사결정 요청이 아니라 이미 받은 실행 지시입니다. <span class="note">[direct_user · 2026-10-27 06:52:26 KST · conversation/default/2026-10-27.md#065226]</span></li>
+    <li><b class="status">정상화 실행기 가동, 결과 미확정</b> — 반복 재시작 Gateway를 정지하고 새 snapshot·SQLite 보존 시험·사전 검증 뒤 외부 실행기를 가동한 것으로 기록됐습니다. 실제 DB 이동, 새 Gateway PID 안정, 9 role/10 platform 연결 및 인증 API 검증의 종료 결과는 이 기준시각까지 수신되지 않았습니다. <span class="note">[source_readback · 2026-10-27 06:52:26 KST · handoff/default#canonical-db-layout]</span></li>
+    <li><b>AI NEWS 공식문서 갱신 게시</b> — revision 22 문서 게시와 공식 출처 HTTP 200·공개 Pages 원격 검증이 수신 기록에 있습니다. Hermes 설치·자동 업데이트를 뜻하지는 않습니다. <span class="note">[source_readback · 2026-10-26 16:50:48 KST · wiki/work-results/neoguri/2026/10/094099f3a55c146d9302bcd8c360bf0e]</span></li>
+    <li><b class="bad">Hermes 업데이트 감지기 실패</b> — 실행본은 v0.22.5인데 AI NEWS 설치 기록은 v0.22.2라며 <code>INSTALLATION_MISMATCH</code>로 종료했습니다. 감지기는 안전 차단을 유지했으며 코드·기록·예약 변경은 보고되지 않았습니다. <span class="note">[system_event · 2026-10-27 06:54:42 KST · cron/neoguri/3437d1fe4d01]</span></li>
+    <li><b class="status">정기 작업 지연 실행</b> — 8개 작업이 6시간 23분~9시간 8분 늦게 catch-up 실행됐고, 이 브리핑도 23분 늦게 시작됐습니다. 원인은 이 기록만으로 진단하지 않았습니다. 지연된 7개 catch-up은 마지막 상태가 정상이며, 감지기 1개만 실패했습니다. <span class="note">[system_event · 2026-10-27 06:53~06:58 KST · Cron readback]</span></li>
+  </ul>
+</section>
+<section>
+  <h2>운영 수치</h2>
+  <div class="line"><b>Cron 총:</b> 14</div>
+  <div class="line"><b>Cron 정상 (12):</b> default/qms-staging-watch; default/Default+role Gateway supervisor keeper; default/Codex 주간 한도 주의·경고; default/calendar-yesterday-sync; default/MJJEON X — attach Grok originals; default/all-profile-conversation-close; default/QMS MAIN 진행상황 — 15분 보고; gwangryeol/고광렬 06:30 KST 아침 브리핑; jjakgwi/jjakgwi-wiki-daily-close-kst; jjakgwi/jjakgwi-wiki-curation-6h-kst; jjakgwi/jjakgwi-conversation-growth-review-6h-kst; neoguri/MJJEON Drive YouTube web ingest</div>
+  <div class="line"><b>Cron 미기록 (0):</b> 없음</div>
+  <div class="line"><b>Cron 검증 대기 (0):</b> 없음 <span class="note">REMOTE_UNVERIFIED는 실패로 합산하지 않음</span></div>
+  <div class="line"><b class="bad">Cron 실패 (2):</b> default/MJJEON AI NEWS — Neoguri hourly collector; neoguri/MJJEON Hermes official update detector <span class="note">전자는 2026-10-22의 유지된 오류, 후자는 2026-10-27 06:54 KST의 INSTALLATION_MISMATCH</span></div>
+  <div class="line"><b>Kanban 진행:</b> 0</div>
+  <div class="line"><b>Kanban 막힘:</b> 6 <span class="note">변경 없는 기존 backlog는 인계 항목으로 올리지 않음</span></div>
+  <div class="line"><b>Hermes:</b> 실행 Docker <code>v0.22.5</code> / 공식 최신 릴리스 <code>v0.22.5</code> — 버전은 일치하나 Gateway 정상화 종료 검증은 별도 미확정</div>
+</section>
+<section>
+  <h2>결정·주의</h2>
+  <p class="status">결정 요구로 포함 가능한 새 직접 사용자 증거: 0건.</p>
+  <p>전 profile의 기간 내 HANDOFF·MEMORY·conversation·Wiki 변경분만 읽었습니다. 전일 브리핑 수신증, silent/no-op curation, lifecycle marker, 중복 알림, 미적용 growth 제안과 외부 뉴스는 제외했습니다.</p>
+  <p class="note">Kanban은 시간 제한 전역 카드·event 조회가 지원되지 않아 카드 수준 근거를 fail-closed 처리하고 현재 집계만 사용했습니다. Relevance Gate fixture 8건은 PASS였습니다.</p>
+</section>
+</main></body></html>
