@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-10-28 운영 아침 브리핑</title>
+<style>
+:root{color-scheme:light;--ink:#18212f;--muted:#5c6877;--line:#dce4eb;--blue:#155e9c;--bg:#f5f7fa;--card:#fff;--warn:#9a6700;--bad:#b42318}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{max-width:920px;margin:36px auto;padding:0 20px}header,section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px;margin-bottom:16px}h1{margin:0 0 4px;font-size:28px}h2{margin:0 0 12px;font-size:18px}.meta,.note{color:var(--muted);font-size:13px}.lead{margin:16px 0 0;font-size:17px;font-weight:650}ul{margin:0;padding-left:20px}li{margin:10px 0}.line{border-top:1px solid var(--line);padding:11px 0}.line:first-of-type{border-top:0;padding-top:0}.status{color:var(--warn);font-weight:650}.bad{color:var(--bad);font-weight:650}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.9em}@media(max-width:620px){main{margin:18px auto}}
+</style>
+</head>
+<body><main>
+<header>
+  <h1>2026-10-28 운영 아침 브리핑</h1>
+  <div class="meta">인수인계 범위: 2026-10-27 06:30 ~ 2026-10-28 06:36 KST</div>
+  <p class="lead">Hermes <code>v0.22.5</code> 전환의 9역할 응답·업데이트 감지기 재개 완료 보고가 들어왔습니다. 다만 AI NEWS 신규 게시 1건은 공개 HTTP 원격 검증 실패로 중단됐고, 수리·재시는 기록되지 않았습니다.</p>
+</header>
+<section>
+  <h2>직전 인수인계</h2>
+  <ul>
+    <li><b>Hermes v0.22.5 전환 마감 보고</b> — 9개 역할 응답, Hostinger 관리 화면, 업데이트 감지기 정상 실행·재개 및 설치기록 날짜 정정이 완료됐다는 수신 기록입니다. 이는 해당 시점의 source readback이며, AI NEWS 수집 복구나 향후 업데이트 SLA까지 뜻하지는 않습니다. <span class="note">[source_readback · 2026-10-27 20:48:15 KST · wiki/default#11a063a710708ccc4a384f687524e622]</span></li>
+    <li><b>고니 경로 전환·응답 보고</b> — 고니를 Anthropic Opus 5.5 경로로 전환하고 기존 Discord 방에서 실제 응답을 받았다고 기록됐습니다. 기존 대화·메모리·역할 보존도 함께 보고됐으며, 이전 DirectSDK 경로 자체의 수리를 뜻하지는 않습니다. <span class="note">[source_readback · 2026-10-27 20:04:30 KST · wiki/default#d20e53f2cd2f309e9b9bba5396331bd5]</span></li>
+    <li><b>업데이트 하니스 로컬 통합</b> — 백업·호환성·교체·9역할 점검·감지기 기록 복구·재개 전송 흐름을 묶은 하니스가 로컬 87개 테스트 통과로 보고됐습니다. 운영 서버와 9개 설정은 변경하지 않았고 실제 1시간 내 라이브 업데이트는 측정되지 않았습니다. <span class="note">[source_readback · 2026-10-27 23:28:20 KST · wiki/default#159406618ce6582b69bdbd8bfcbccb8f]</span></li>
+    <li><b class="bad">AI NEWS 게시 원격 검증 실패</b> — 게시 뒤 GitHub Pages 공개 HTTP 검증에서 <code>REMOTE_VERIFY_FAILED</code>가 보고되어 <code>remote_verified</code> 도달 전 중단됐습니다. 재시도·원인진단·수리는 이 기준시각까지 기록되지 않았습니다. <span class="note">[source_readback · incident 2026-10-27 23:48:34 KST · wiki/neoguri#10b21f84fabe1f0dd4cbf86e0563ae1d]</span></li>
+  </ul>
+</section>
+<section>
+  <h2>운영 수치</h2>
+  <div class="line"><b>Cron 총:</b> 15</div>
+  <div class="line"><b>Cron 정상 (14):</b> default/qms-staging-watch; default/Default+role Gateway supervisor keeper; default/Codex 주간 한도 주의·경고; default/calendar-yesterday-sync; default/MJJEON X — attach Grok originals; default/all-profile-conversation-close; default/Hermes v0.21.0 cutover result relay; default/QMS MAIN 진행상황 — 15분 보고; gwangryeol/고광렬 06:30 KST 아침 브리핑; jjakgwi/jjakgwi-wiki-daily-close-kst; jjakgwi/jjakgwi-wiki-curation-6h-kst; jjakgwi/jjakgwi-conversation-growth-review-6h-kst; neoguri/MJJEON Hermes official update detector; neoguri/MJJEON Drive YouTube web ingest</div>
+  <div class="line"><b>Cron 미기록 (0):</b> 없음</div>
+  <div class="line"><b>Cron 검증 대기 (0):</b> 없음 <span class="note">REMOTE_UNVERIFIED는 실패로 합산하지 않음</span></div>
+  <div class="line"><b class="bad">Cron 실패 (1):</b> default/MJJEON AI NEWS — Neoguri hourly collector <span class="note">마지막 실행은 2026-10-22의 유지된 오류이며, 이번 기간 새 실패 실행으로 인계하지 않음</span></div>
+  <div class="line"><b>Kanban 진행:</b> 0</div>
+  <div class="line"><b>Kanban 막힘:</b> 6 <span class="note">기간 내 신규 카드·완료 카드·이벤트 0건; 기존 backlog는 인계 항목에서 제외</span></div>
+  <div class="line"><b>Hermes:</b> 설치 Docker <code>v0.22.5 (2026.9.24)</code> / 공식 최신 릴리스 <code>v0.22.5</code> — 버전 일치</div>
+</section>
+<section>
+  <h2>판단 경계</h2>
+  <p>새 직접 사용자 의사결정 요청은 확인되지 않았습니다. 기간 경계가 정확히 적용되지 않는 all-profile conversation 검색은 fail-closed 처리했으며, 해당 검색 결과는 인계 근거로 사용하지 않았습니다.</p>
+  <p>기간 내 Wiki의 silent/no-op curation·growth marker·session lifecycle과 외부 뉴스는 제외했습니다. Relevance Gate fixture 8건은 PASS했습니다.</p>
+</section>
+</main></body></html>
