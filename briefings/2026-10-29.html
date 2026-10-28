@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-10-29 운영 아침 브리핑</title>
+<style>
+:root{color-scheme:light;--ink:#18212f;--muted:#5c6877;--line:#dce4eb;--blue:#155e9c;--bg:#f5f7fa;--card:#fff;--warn:#9a6700;--bad:#b42318}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{max-width:920px;margin:36px auto;padding:0 20px}header,section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px;margin-bottom:16px}h1{margin:0 0 4px;font-size:28px}h2{margin:0 0 12px;font-size:18px}.meta,.note{color:var(--muted);font-size:13px}.lead{margin:16px 0 0;font-size:17px;font-weight:650}ul{margin:0;padding-left:20px}li{margin:10px 0}.line{border-top:1px solid var(--line);padding:11px 0}.line:first-of-type{border-top:0;padding-top:0}.status{color:var(--warn);font-weight:650}.bad{color:var(--bad);font-weight:650}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.9em}@media(max-width:620px){main{margin:18px auto}}
+</style>
+</head>
+<body><main>
+<header>
+  <h1>2026-10-29 운영 아침 브리핑</h1>
+  <div class="meta">인수인계 범위: 2026-10-28 06:30 ~ 2026-10-29 06:38 KST</div>
+  <p class="lead">Discord <code>/new</code> 실복구, QMS 086 스테이징 검증 종결, 공식 플러그인 2종의 실사용 검증·원복이 기록됐습니다. X 붙이기 예약은 실패 상태를 유지하되, 게시 목록 불일치는 별도로 복구 확인됐습니다.</p>
+</header>
+<section>
+  <h2>직전 인수인계</h2>
+  <ul>
+    <li><b>Discord /new 실제 복구</b> — 승인된 최소 adapter 변경 뒤 10:47 KST 기존 세션 초기화와 새 세션 생성을 확인했습니다. Gateway 재시작·다른 역할 연결 변경은 보고되지 않았습니다. <span class="note">[source_readback · 2026-10-28 10:47:07 KST · conversation/default#discord-new-verified-closeout-20261028]</span></li>
+    <li><b>QMS 086 스테이징 기술 검증 종결</b> — 승인된 트랜잭션·검증 순서를 마쳤고 잔여 실행·승인 대기는 없다고 기록됐습니다. MAIN과 실직원 인증은 변경하지 않았으며 자동 재시험은 허용되지 않습니다. <span class="note">[source_readback · 2026-10-28 23:01:35 KST · default/HANDOFF#2026-10-28-086-closeout]</span></li>
+    <li><b>공식 플러그인 2종 설치·실사용 검증</b> — Memory Wiki와 Advanced Delegation을 default에 설치한 뒤 실제 열람·역할 호출을 확인했습니다. 임시 위임 선택 모드는 제거했고 기존 Default 방식으로 원복했습니다. <span class="note">[source_readback · 2026-10-28 21:56:56 KST · conversation/default#two-plugin-real-feature-acceptance]</span></li>
+    <li><b class="bad">X 붙이기 예약 실패 후 게시 상태 복구</b> — 20:30 예약 실행은 PublisherError로 실패했습니다. 이어 게시 목록 불일치는 복구되어 공개 5경로와 로컬 일치를 확인했지만, 다음 자연 X 붙이기 실행은 아직 관측되지 않았습니다. <span class="note">[source_readback · incident 2026-10-28 20:31:17 KST; changed 20:50:19 KST · conversation/default#x-attach-failure-and-recovery]</span></li>
+    <li><b>다음 작업 정본 동기화</b> — 기존 정본 플랜에 완료 상태·플러그인 운영 경계·다음 통합 한 건과 승인 경계를 반영했습니다. 새 Worker·Cron·재시작·운영 업데이트는 시작하지 않았습니다. <span class="note">[source_readback · 2026-10-28 23:09:26 KST · conversation/default#existing-plan-operating-state-sync]</span></li>
+  </ul>
+</section>
+<section>
+  <h2>운영 수치</h2>
+  <div class="line"><b>Cron 총:</b> 14</div>
+  <div class="line"><b>Cron 정상 (12):</b> default/qms-staging-watch; default/Default+role Gateway supervisor keeper; default/Codex 주간 한도 주의·경고; default/calendar-yesterday-sync; default/all-profile-conversation-close; default/QMS MAIN 진행상황 — 15분 보고; gwangryeol/고광렬 06:30 KST 아침 브리핑; jjakgwi/jjakgwi-wiki-daily-close-kst; jjakgwi/jjakgwi-wiki-curation-6h-kst; jjakgwi/jjakgwi-conversation-growth-review-6h-kst; neoguri/MJJEON Hermes official update detector; neoguri/MJJEON Drive YouTube web ingest</div>
+  <div class="line"><b>Cron 미기록 (0):</b> 없음</div>
+  <div class="line"><b>Cron 검증 대기 (0):</b> 없음 <span class="note">원격 검증 대기는 실패로 합산하지 않음</span></div>
+  <div class="line"><b class="bad">Cron 실패 (2):</b> default/MJJEON AI NEWS — Neoguri hourly collector; default/MJJEON X — attach Grok originals <span class="note">X 게시 상태 복구와 해당 예약의 최신 오류 상태는 별개임</span></div>
+  <div class="line"><b>Kanban 진행:</b> 0</div>
+  <div class="line"><b>Kanban 막힘:</b> 6 <span class="note">기간 내 카드 변경·이벤트 0건; 변경 없는 backlog는 인계 항목에서 제외</span></div>
+  <div class="line"><b>Hermes:</b> 설치 Docker <code>v0.22.5 (2026.9.24)</code> / 공식 최신 릴리스 <code>v0.22.5</code> — 버전 일치</div>
+</section>
+<section>
+  <h2>판단 경계</h2>
+  <p>새 직접 사용자 의사결정 요청은 확인되지 않았습니다. 전체 프로필의 기간 내 HANDOFF·MEMORY·conversation·Wiki 후보만 읽었고, 중복 연구·아카이브 lifecycle·변경 없는 backlog·외부 뉴스는 제외했습니다.</p>
+  <p>Relevance Gate fixture 8건은 PASS했습니다. Kanban은 기간 필터 조회에서 변경 0건·이벤트 0건이며, 현재 집계만 수치로 표시했습니다.</p>
+</section>
+</main></body></html>
