@@ -3,13 +3,13 @@
     {
       "canonical_url": "https://hermes-agent.nousresearch.com/docs/llms.txt",
       "detail_url": "hermes/items/official-docs-llms.html",
-      "judgment": "지정 ID와 content_hash가 일치하는 공식 문서 후보를 검토했습니다. 공식 문서와 공식 저장소를 직접 조회하고 각각 리다이렉트 이후 최종 공식 URL 및 HTTP 200을 확인했습니다. 설치 관리와 다중 프로필 운영에 직접 참고할 수 있는 공식 문서 갱신으로 채택하되, 이번 색인에서 각 항목이 새로 추가되었다거나 새 버전이 출시되었다고 판단하지 않습니다. 보안 수정과 breaking change도 확정하지 않습니다. published_at은 별도 발행일이 아닌 수집 당시 공식 Last-Modified 기준입니다.",
-      "published_at": "2026-10-26T07:20:37Z",
+      "judgment": "공식 docs 후보로 채택한다. 문서와 공식 저장소의 최종 URL은 각각 원래 공식 주소를 유지했고 HTTP 200을 확인했다. 운영 참고 가치가 있는 문서 갱신으로 분류하되, 직전 본문 대비 개별 항목의 추가 시점은 확인하지 못했으므로 신규 기능 출시라고 주장하지 않는다. 대표 릴리스는 대체하지 않는다. published_at은 후보의 HTTP Last-Modified 시각이며 릴리스 발표 시각이 아니다. 원격 설정 관련 저장소 교차신호는 escalation 후보이며 자동 조치 근거가 아니다.",
+      "published_at": "2026-10-28T05:52:39Z",
       "source_grade": "official",
       "source_kind": "docs",
       "stable_id": "official-docs:llms",
-      "status": "active",
-      "title_ko": "Hermes 공식 문서 갱신: PM 설치 관리와 프로필별 게이트웨이 운영 가이드"
+      "status": "공식 문서 갱신·운영 참고, 개별 기능 추가 시점 미확인",
+      "title_ko": "Hermes 공식 문서 갱신: 원격 설정과 다중 게이트웨이 운영 참고"
     },
     {
       "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.5",
