@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-10-29 10:00 — thsottiaux: ChatGPT Chat·Work 통합 신중 진행](./2026-10-29-1000.md)
 - [2026-10-29 08:00 — Claude Legal 아티팩트 갤러리 · Gemini 몰입형 탐험 · thsottiaux poteto.com 3M 뷰](./2026-10-29-0800.md)
 - [2026-10-28 20:00 — 새 소식 없음](./2026-10-28-2000.md)
 - [2026-10-28 18:00 — 새 소식 없음](./2026-10-28-1800.md)
