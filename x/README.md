@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-10-31 10:00 — Gemini Drops 최신 기능 (Gemini 4 Argon · 스킬 · 앱 연결)](./2026-10-31-1000.md)
 - [2026-10-31 08:00 — Claude Max 플랜 리네임 및 Ultra 제한 해제 · OpenAI Private Intelligence 및 미래 영상](./2026-10-31-0800.md)
 - [2026-10-30 20:00 — 새 소식 없음](./2026-10-30-2000.md)
 - [2026-10-30 18:00 — 새 소식 없음](./2026-10-30-1800.md)
