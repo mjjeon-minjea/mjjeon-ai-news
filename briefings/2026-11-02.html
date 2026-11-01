@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-11-02 운영 아침 브리핑</title>
+<style>
+:root{color-scheme:light;--ink:#18212f;--muted:#5c6877;--line:#dce4eb;--bg:#f5f7fa;--card:#fff;--warn:#9a6700;--bad:#b42318}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{max-width:920px;margin:36px auto;padding:0 20px}header,section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px;margin-bottom:16px}h1{margin:0 0 4px;font-size:28px}h2{margin:0 0 12px;font-size:18px}.meta,.note{color:var(--muted);font-size:13px}.lead{margin:16px 0 0;font-size:17px;font-weight:650}ul{margin:0;padding-left:20px}li{margin:10px 0}.line{border-top:1px solid var(--line);padding:11px 0}.line:first-of-type{border-top:0;padding-top:0}.bad{color:var(--bad);font-weight:650}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.9em}@media(max-width:620px){main{margin:18px auto}}
+</style>
+</head>
+<body><main>
+<header>
+  <h1>2026-11-02 운영 아침 브리핑</h1>
+  <div class="meta">인수인계 범위: 2026-11-01 06:30 ~ 2026-11-02 06:36 KST</div>
+  <p class="lead">직전 06:30 이후 확인된 독립 변경은 Wiki 파생 보기 복구 1건입니다. Cron 현재 상태는 정상 14건·검증 대기 0건·실패 1건이며, 실패 1건은 10월 22일 이후 새 실행이 없는 중지 상태 수집 작업입니다. Kanban은 진행 0건·막힘 6건입니다.</p>
+</header>
+<section>
+  <h2>직전 인수인계</h2>
+  <ul>
+    <li><b>Wiki 파생 보기 복구</b> — 00:05 KST 일일 정합 처리 상태가 <code>repaired</code>로 기록됐습니다. 안전 수신 기록 5건을 기준으로 파생 파일 6건을 복구했으며, 원시 기록 변경 및 State DB 접근은 없었습니다. <span class="note">[source_readback · 2026-11-02 00:05:40 KST · wiki/jjakgwi/daily-close-state]</span></li>
+    <li><b>새 직접 지시·현재 사고 없음</b> — 기간 내 all-profile 대화 안전 수신 기록은 새 운영 결과 없이 SILENT였고, HANDOFF·MEMORY의 변경도 없었습니다. <span class="note">[source_readback · 2026-11-01 06:30 ~ 2026-11-02 06:36 KST]</span></li>
+  </ul>
+</section>
+<section>
+  <h2>운영 수치</h2>
+  <div class="line"><b>Cron 총:</b> 15</div>
+  <div class="line"><b>Cron 정상 (14):</b> default/qms-staging-watch; default/Default+role Gateway supervisor keeper; default/Codex 주간 한도 주의·경고; default/calendar-yesterday-sync; default/MJJEON X — attach Grok originals; default/all-profile-conversation-close; default/Hermes v0.21.0 cutover result relay; default/QMS MAIN 진행상황 — 15분 보고; gwangryeol/고광렬 06:30 KST 아침 브리핑; jjakgwi/jjakgwi-wiki-daily-close-kst; jjakgwi/jjakgwi-wiki-curation-6h-kst; jjakgwi/jjakgwi-conversation-growth-review-6h-kst; neoguri/MJJEON Hermes official update detector; neoguri/MJJEON Drive YouTube web ingest</div>
+  <div class="line"><b>Cron 미기록 (0):</b> 없음</div>
+  <div class="line"><b>Cron 검증 대기 (0):</b> 없음 <span class="note">원격 미검증 오류만 검증 대기로 분리하며 실패에 합산하지 않음</span></div>
+  <div class="line"><b class="bad">Cron 실패 (1):</b> default/MJJEON AI NEWS — Neoguri hourly collector <span class="note">최신 오류는 2026-10-22이며, 이번 인수인계 기간의 새 실패로 분류하지 않음</span></div>
+  <div class="line"><b>Kanban 진행:</b> 0</div>
+  <div class="line"><b>Kanban 막힘:</b> 6 <span class="note">상태별 읽기 전용 집계값. 기간 한정 전역 카드 변경 조회가 지원되지 않아 변경 사건은 fail-closed로 제외</span></div>
+  <div class="line"><b>Hermes:</b> 설치 Docker <code>v0.22.5 (2026.9.24, upstream bf0203a7)</code> / 공식 최신 릴리스 <code>v0.22.5</code> — 버전 일치</div>
+</section>
+<section>
+  <h2>판단 경계</h2>
+  <p>전체 profile의 기간 내 HANDOFF·MEMORY·conversation·Wiki 후보만 확인했습니다. timestamped 대화 수신의 SILENT 기록과 이전 상태 재기록은 제외했습니다. 외부 뉴스는 운영 인수인계 범위 밖으로 제외했습니다.</p>
+  <p>Wiki 원본 디렉터리의 기간 한정 변경 질의는 지원되지 않아 해당 원본은 fail-closed 처리했습니다. 위 복구 건은 별도 일일 정합 상태 파일의 시간·변경 수치에 근거합니다. Kanban은 상태별 현재 수치만 집계했으며, unchanged blocked/done backlog를 인수인계 사건이나 의사결정 요청으로 만들지 않았습니다. Relevance Gate fixture 8건은 PASS했습니다.</p>
+</section>
+</main></body></html>
