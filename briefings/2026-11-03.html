@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-11-03 운영 아침 브리핑</title>
+<style>
+:root{color-scheme:light;--ink:#18212f;--muted:#5c6877;--line:#dce4eb;--bg:#f5f7fa;--card:#fff;--warn:#9a6700;--bad:#b42318}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{max-width:920px;margin:36px auto;padding:0 20px}header,section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px;margin-bottom:16px}h1{margin:0 0 4px;font-size:28px}h2{margin:0 0 12px;font-size:18px}.meta,.note{color:var(--muted);font-size:13px}.lead{margin:16px 0 0;font-size:17px;font-weight:650}ul{margin:0;padding-left:20px}li{margin:10px 0}.line{border-top:1px solid var(--line);padding:11px 0}.line:first-of-type{border-top:0;padding-top:0}.bad{color:var(--bad);font-weight:650}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.9em}@media(max-width:620px){main{margin:18px auto}}
+</style>
+</head>
+<body><main>
+<header>
+  <h1>2026-11-03 운영 아침 브리핑</h1>
+  <div class="meta">인수인계 범위: 2026-11-02 06:30 ~ 2026-11-03 06:30 KST</div>
+  <p class="lead">QMS 시험문서 정리와 088 테스트웹·Staging 반영·UAT 통과가 확인됐습니다. 현재 미완료는 QMS 088 차장 최종 판정과 MJJEON 검토·게시 경로의 원격 검증 실패입니다. 신설 승인·재실행은 없습니다.</p>
+</header>
+<section>
+  <h2>직전 인수인계</h2>
+  <ul>
+    <li><b>QMS 087 시험 문서 정리 완료</b> — 시험 NCR 26-001 한 건을 백업 뒤 Testweb·Staging에서만 삭제했습니다. 09:53~09:57 KST 집행 후 09:55 KST 독립 재조회에서 대상 및 NCR 3표는 0건, 계정 34·설정 4·자료실 70개와 보호 지문은 유지됐습니다. 제품 코드·배포·계정·설정 변경은 없었습니다. <span class="note">[source_readback · 2026-11-02 09:55 KST · conversation/default/2026-11-02.md]</span></li>
+    <li><b>QMS 088 기술 반영 및 클로드 UAT 통과</b> — 테스트웹·Staging에만 기술 반영 후 13:54 KST 배포 READY 및 원격 SHA 일치, 전체 144/144·대상 43/43 시험과 빌드를 확인했습니다. 이후 시험계정 화면 UAT의 비밀번호 입력칸 3개와 거부 5종이 통과했습니다. MAIN·계정·권한·설정·비밀번호 리터럴은 변경하지 않았습니다. <span class="note">[source_readback · 2026-11-02 13:54~14:02 KST · conversation/default/2026-11-02.md]</span></li>
+    <li><b>QMS 088은 오늘 종료·차장 판정 대기</b> — 14:37 KST 직접 지시로 추가 시공·배포·계정 변경·리터럴 조치는 중지했습니다. 이 기록은 새 의사결정 요청이 아니라 현 상태 보존 지시입니다. <span class="note">[direct_user · 2026-11-02 14:37 KST · conversation/default/2026-11-02.md]</span></li>
+    <li><b>MJJEON 검토·게시 경로의 검증 미완료</b> — 16:45 예약은 360초 제한 뒤 TLS 오류로 원격 검증·저장을 마치지 못했으며, 공개 경로와 관리 파일의 로컬 일치는 확인됐습니다. 이후 02:48·03:46·04:46 KST 후속 시도도 각각 원격 검증 실패, 도구 미설치, 작업영역 접근 가드로 중단됐고 재시도·게시·원격 검증은 수행하지 않았습니다. <span class="note">[source_readback · 2026-11-02 17:07 / 2026-11-03 02:48~04:46 KST · HANDOFF.md, conventions/neoguri]</span></li>
+  </ul>
+</section>
+<section>
+  <h2>운영 수치</h2>
+  <div class="line"><b>Cron 총:</b> 15</div>
+  <div class="line"><b>Cron 정상 (14):</b> default/qms-staging-watch; default/Default+role Gateway supervisor keeper; default/Codex 주간 한도 주의·경고; default/calendar-yesterday-sync; default/MJJEON X — attach Grok originals; default/all-profile-conversation-close; default/Hermes v0.21.0 cutover result relay; default/QMS MAIN 진행상황 — 15분 보고; gwangryeol/고광렬 06:30 KST 아침 브리핑; jjakgwi/jjakgwi-wiki-daily-close-kst; jjakgwi/jjakgwi-wiki-curation-6h-kst; jjakgwi/jjakgwi-conversation-growth-review-6h-kst; neoguri/MJJEON Hermes official update detector; neoguri/MJJEON Drive YouTube web ingest</div>
+  <div class="line"><b>Cron 미기록 (0):</b> 없음</div>
+  <div class="line"><b>Cron 검증 대기 (0):</b> 없음 <span class="note">REMOTE_UNVERIFIED만 검증 대기로 분리하며 실패에 합산하지 않음</span></div>
+  <div class="line"><b class="bad">Cron 실패 (1):</b> default/MJJEON AI NEWS — Neoguri hourly collector <span class="note">마지막 오류는 이번 인수인계 기간 이전이므로 새 사고로 합산하지 않음</span></div>
+  <div class="line"><b>Kanban 진행:</b> 0</div>
+  <div class="line"><b>Kanban 막힘:</b> 6 <span class="note">기간 내 신규 카드·이벤트는 각각 0건; 기존 막힘 백로그를 인수인계 사건으로 포함하지 않음</span></div>
+  <div class="line"><b>Hermes:</b> 설치 Docker <code>v0.22.5 (2026.9.24, upstream bf0203a7)</code> / 공식 최신 릴리스 <code>v0.22.5</code> — 버전 일치</div>
+</section>
+<section>
+  <h2>판단 경계</h2>
+  <p>전체 profile의 기간 내 HANDOFF·MEMORY·conversation·Wiki 후보만 읽었습니다. 변경 시각과 출처가 있는 QMS·검토/게시 사건만 포함했고, 대화 아카이브 복사·SILENT 기록·제안만 있는 성장 검토·변경 없는 과거 막힘/완료 백로그는 제외했습니다.</p>
+  <p>Kanban은 읽기 전용 기간 질의에서 카드·이벤트 모두 0건이었습니다. 외부 뉴스는 운영 인수인계 범위 밖으로 제외했습니다. Relevance Gate fixture 8건은 PASS했습니다.</p>
+</section>
+</main></body></html>
