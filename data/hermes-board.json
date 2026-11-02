@@ -1,6 +1,17 @@
 {
   "items": [
     {
+      "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.6",
+      "detail_url": "hermes/items/github-release-431662574.html",
+      "judgment": "지정 ID와 해시가 일치하는 수집 후보는 draft=false, prerelease=false인 공식 릴리스다. 공식 태그 URL의 리디렉션 후 최종 주소와 HTTP 200을 확인했다. 수집된 공식 릴리스 본문에 Hermes Agent 운영 변경이 포함되어 meaningful change로 판단하며 공식 대표 기사로 게시한다. 보안·breaking·교차신호 조건은 확정 경보나 자동 조치가 아닌 escalation 후보로만 다룬다.",
+      "published_at": "2026-11-02T17:18:36Z",
+      "source_grade": "official",
+      "source_kind": "release",
+      "stable_id": "github-release:431662574",
+      "status": "active",
+      "title_ko": "Hermes Agent v0.22.6 정식 패치: 웹앱·cron·플러그인 운영 변경 통합"
+    },
+    {
       "canonical_url": "https://hermes-agent.nousresearch.com/docs/llms.txt",
       "detail_url": "hermes/items/official-docs-llms.html",
       "judgment": "공식 Docs의 운영 참고 정보 갱신으로 게시합니다. 공식 문서와 저장소의 최종 URL 및 HTTP 200을 확인했습니다. 보안·breaking·교차신호 조건은 확인 시 escalation 후보로만 표시하며 이번 색인만으로 해당 변경을 확정하지 않습니다.",
