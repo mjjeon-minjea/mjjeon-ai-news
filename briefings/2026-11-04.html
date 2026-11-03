@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-11-04 운영 아침 브리핑</title>
+<style>
+:root{color-scheme:light;--ink:#18212f;--muted:#5c6877;--line:#dce4eb;--bg:#f5f7fa;--card:#fff;--warn:#9a6700;--bad:#b42318}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{max-width:920px;margin:36px auto;padding:0 20px}header,section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px;margin-bottom:16px}h1{margin:0 0 4px;font-size:28px}h2{margin:0 0 12px;font-size:18px}.meta,.note{color:var(--muted);font-size:13px}.lead{margin:16px 0 0;font-size:17px;font-weight:650}ul{margin:0;padding-left:20px}li{margin:10px 0}.line{border-top:1px solid var(--line);padding:11px 0}.line:first-of-type{border-top:0;padding-top:0}.bad{color:var(--bad);font-weight:650}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.9em}@media(max-width:620px){main{margin:18px auto}}
+</style>
+</head>
+<body><main>
+<header>
+  <h1>2026-11-04 운영 아침 브리핑</h1>
+  <div class="meta">인수인계 범위: 2026-11-03 06:30:00 ~ 2026-11-04 06:39:02 KST</div>
+  <p class="lead">QMS OBT 계정 처리와 초기값 확인은 Staging 범위에서 종결됐습니다. AI NEWS는 X 누락 항목의 복구가 GitHub 사전검사에서 보류됐고, 별도 공개 Pages 원격 검증도 실패 기록이 남아 있습니다. Hermes는 설치판보다 공식 최신판이 한 단계 앞섭니다.</p>
+</header>
+<section>
+  <h2>직전 인수인계</h2>
+  <ul>
+    <li><b>QMS 차석 결재는 현행 유지</b> — 09:33 KST 직접 지시로 차석 결재 조건의 사실조회 뒤 현행 구성을 유지했습니다. 코드·DB·결재 실행은 하지 않았습니다. <span class="note">[direct_user · 2026-11-03 09:33:44 KST · conversation/default/2026-11-03.md]</span></li>
+    <li><b>QMS OBT 실직원 계정·이름표 반영</b> — 더미 선시험 8건 통과 뒤 요청 23명 중 Staging 신규 7명만 생성하고 중복 16명은 변경하지 않았습니다. 사용자관리 화면은 이름표 9곳만 변경해 테스트웹 READY를 확인했으며, MAIN·대결·서버 비밀번호 정책은 바꾸지 않았습니다. <span class="note">[source_readback · 2026-11-03 09:58:41 KST · conversation/default/2026-11-03.md, wiki/default/7f52c16c300a62ff79390bd30d50a6fc]</span></li>
+    <li><b>Staging 12명 초기값 확인으로 무변경 종결</b> — 14:08 KST SELECT와 로컬 검증에서 목표 초기값 일치를 확인해 비밀번호 재설정·세션 정리·Auth 변경 API 호출은 모두 0건이었습니다. 제외 대상도 변경하지 않았습니다. <span class="note">[source_readback · 2026-11-03 14:08:30 KST · conversation/default/2026-11-03.md, wiki/default/1c9723b5c71da46e67a6980c18c7b00a]</span></li>
+    <li><b>AI NEWS X 누락 항목 복구 보류</b> — 16:46 KST 사전게시 allowlist에서 <code>GITHUB_API_FAILED</code>가 재현되어 복구를 중단했습니다. 오프라인 표시 검증은 실제 게시가 아니며, 운영 데이터·코드·원격 쓰기는 0건으로 보고됐습니다. <span class="note">[source_readback · 2026-11-03 16:46:28 KST · wiki/neoguri/1b889858392231893254fab48ad65c5e]</span></li>
+    <li><b>QMS staging watcher timeout은 원인 미확정</b> — 16:43 KST 자동 watcher가 360초 제한을 넘겼습니다. 비파괴 Git 조회와 테스트웹 접근은 응답했으나 전체 재실행·로그인/DB 시험·시간제한 변경은 하지 않았습니다. 현재 Cron의 마지막 실행은 06:09 KST <code>ok</code>이나, 과거 timeout의 정확한 원인은 확인되지 않았습니다. <span class="note">[source_readback · 2026-11-03 16:51:09 KST · HANDOFF.md, wiki/default/e66663f64bf5203952d9d9baef7c51df]</span></li>
+    <li><b>AI NEWS 공개 Pages 원격 검증 미완료</b> — 04:48 KST 공개 GitHub Pages 검증에서 <code>REMOTE_VERIFY_FAILED</code>가 기록됐습니다. 검토 적용은 보고됐지만 원격 검증 완료·재시도·진단·복구는 확인되지 않았습니다. <span class="note">[source_readback · 2026-11-04 04:48:37 KST · wiki/neoguri/5ffdf61087a8f6230c4e61a3db643821]</span></li>
+  </ul>
+</section>
+<section>
+  <h2>운영 수치</h2>
+  <div class="line"><b>Cron 총:</b> 15</div>
+  <div class="line"><b>Cron 정상 (14):</b> default/qms-staging-watch; default/Default+role Gateway supervisor keeper; default/Codex 주간 한도 주의·경고; default/calendar-yesterday-sync; default/MJJEON X — attach Grok originals; default/all-profile-conversation-close; default/Hermes v0.21.0 cutover result relay; default/QMS MAIN 진행상황 — 15분 보고; gwangryeol/고광렬 06:30 KST 아침 브리핑; jjakgwi/jjakgwi-wiki-daily-close-kst; jjakgwi/jjakgwi-wiki-curation-6h-kst; jjakgwi/jjakgwi-conversation-growth-review-6h-kst; neoguri/MJJEON Hermes official update detector; neoguri/MJJEON Drive YouTube web ingest</div>
+  <div class="line"><b>Cron 미기록 (0):</b> 없음</div>
+  <div class="line"><b>Cron 검증 대기 (0):</b> 없음 <span class="note">REMOTE_UNVERIFIED만 검증 대기로 분리하며 실패에 합산하지 않음</span></div>
+  <div class="line"><b class="bad">Cron 실패 (1):</b> default/MJJEON AI NEWS — Neoguri hourly collector <span class="note">마지막 오류는 2026-10-22 기록이며 이번 인수인계의 새 실패로 합산하지 않음</span></div>
+  <div class="line"><b>Kanban 진행:</b> 0</div>
+  <div class="line"><b>Kanban 막힘:</b> 6 <span class="note">기간 내 생성 카드·task event는 각각 0건; 변경 없는 막힘/완료 백로그는 인수인계 사건에서 제외</span></div>
+  <div class="line"><b>Hermes:</b> 설치 Docker <code>v0.22.5 (2026.9.24, upstream bf0203a7)</code> / 공식 최신 릴리스 <code>v0.22.6</code> (2026-11-02 17:18 UTC 게시) — 업데이트 가능</div>
+</section>
+<section>
+  <h2>판단 경계·검증</h2>
+  <p>전체 profile의 기간 내 HANDOFF·MEMORY·conversation·Wiki 변경 후보만 시간 경계로 확인했습니다. 포함 항목은 직접 지시, source readback 또는 시스템 사건이며, 각 항목의 시각·출처를 보존했습니다. 이전 브리핑 수령증, SILENT·lifecycle 기록, 제안만 있는 변경, 외부 뉴스 내용과 변경 없는 과거 backlog는 제외했습니다.</p>
+  <p>Kanban은 읽기 전용 SQLite 기간 질의에서 카드·이벤트 모두 0건입니다. Relevance Gate fixture 8건은 PASS했습니다. 산출물 검증: PASS (HTML parser, JSON parse, marker scan, newest index, Cron/Kanban consistency).</p>
+</section>
+</main></body></html>
