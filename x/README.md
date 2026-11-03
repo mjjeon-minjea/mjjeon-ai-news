@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-11-03 12:00 — OpenAI: 내부 보안 스프린트 및 버그 바운티 보상 대폭 인상](./2026-11-03-1200.md)
 - [2026-11-03 10:00 — thsottiaux: Pando Git 백엔드 인용](./2026-11-03-1000.md)
 - [2026-11-03 08:00 — OpenAI LifeVal 벤치마크 · thsottiaux GPT-6 Astra/Terra 확장](./2026-11-03-0800.md)
 - [2026-11-02 20:00 — 새 소식 없음](./2026-11-02-2000.md)
