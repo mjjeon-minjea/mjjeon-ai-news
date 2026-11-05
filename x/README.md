@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-11-05 10:00 — OpenAI: ChatGPT Images 2.6 출시 및 자율 사이버 취약점 파이프라인](./2026-11-05-1000.md)
 - [2026-11-05 08:00 — Kimi K3.1 Pro 웨이트 공개 · thsottiaux: Pierre 컴퓨터 환영](./2026-11-05-0800.md)
 - [2026-11-04 20:00 — 새 소식 없음](./2026-11-04-2000.md)
 - [2026-11-04 18:00 — thsottiaux: ChatBLT](./2026-11-04-1800.md)
