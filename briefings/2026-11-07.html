@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-11-07 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#5e6b80; --line:#d9e0ea; --blue:#174ea6; --bg:#f6f8fb; --ok:#16794b; --warn:#a15c00; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { max-width:900px; margin:32px auto; padding:0 20px 40px; }
+    header, section { background:#fff; border:1px solid var(--line); border-radius:12px; padding:22px; margin-top:16px; }
+    h1 { margin:0 0 4px; font-size:1.6rem; } h2 { margin:0 0 10px; font-size:1.1rem; color:var(--blue); }
+    p { margin:8px 0; } .meta, .note { color:var(--muted); font-size:.92rem; }
+    .lead { font-weight:700; font-size:1.06rem; }
+    .metrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; }
+    .metric { border:1px solid var(--line); border-radius:10px; padding:14px; }
+    .metric strong { display:block; font-size:1.3rem; } .ok { color:var(--ok); } .warn { color:var(--warn); }
+    ul { margin:8px 0 0; padding-left:1.2rem; } li { margin:9px 0; }
+    code { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.9em; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>2026-11-07 운영 아침 브리핑</h1>
+    <p class="meta">인수인계 범위: 2026-11-06 06:30–2026-11-07 06:30 KST · 기준 시각: 06:30 KST</p>
+    <p class="lead">결론: 서버·PC Hermes는 v0.23.0으로 정합하며, 현재 Cron은 모두 정상이고 Kanban 진행·막힘은 모두 0건입니다. 05시 AI News 수집 오류는 06시 자연 회차에서 회복됐습니다.</p>
+  </header>
+
+  <section>
+    <h2>직전 06:30 이후 실제 인수인계</h2>
+    <ul>
+      <li><strong>10:43 KST · Hermes 업데이트 완료</strong> — 승인된 서버 교체와 PC 클라이언트 v0.23.0 확인을 마쳤습니다. 기존 대화, Dashboard, 9개 역할 연결과 18개 예약은 보존됐습니다. Hostinger Docker Manager의 Running 화면 확인은 아직 별도 미확인입니다.</li>
+      <li><strong>17:04 KST · Kanban 정리</strong> — 오래된 차단 카드 6건을 실패 이력 보존 상태로 보관 처리해 차단 0건을 확인했습니다. 운영 재시작·재실행·영구 삭제는 없었습니다.</li>
+      <li><strong>19:46 KST · Cron 수리 종결</strong> — 재개된 웹·X 경로의 자연 예약 성공을 확인했습니다. 내용이 부족한 X 원고 2건은 임의 보완 없이 보류했습니다.</li>
+      <li><strong>23:52 KST · 서버 정리 일마감</strong> — 승인된 r14–r17 결과와 다음 후보만 인수인계에 저장했습니다. 후속 보관·정리·비밀 관련 작업은 자동 재개하지 않습니다.</li>
+      <li><strong>05:00 KST · AI News 수집 단일 오류 후 회복</strong> — 원본 응답 이상으로 05시 회차가 실패했으나, 06시 자연 회차는 정상 완료했습니다. 오류 중에도 공개 화면은 직전 정상 게시본을 유지했고 강제 실행·코드 변경·대체 수집은 하지 않았습니다.</li>
+    </ul>
+    <p class="note">새로운 직접 의사결정 요청은 확인되지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>현재 운영 수치</h2>
+    <div class="metrics">
+      <div class="metric"><span class="meta">Cron</span><strong class="ok">총 18 / 정상 18</strong><span>미기록 0 · 검증 대기 0 · 실패 0</span></div>
+      <div class="metric"><span class="meta">Kanban</span><strong class="ok">진행 0 / 막힘 0</strong><span>완료 149 · 현재 상태 집계</span></div>
+      <div class="metric"><span class="meta">Hermes</span><strong class="ok">v0.23.0</strong><span>설치 버전 = 공식 최신 · 업데이트 불필요</span></div>
+    </div>
+    <p><strong>Cron 분류:</strong> 실패 이름 없음 · 검증 대기 이름 없음. <code>last_status=ok</code>는 정상으로, <code>REMOTE_UNVERIFIED</code>만 검증 대기로 집계했으며 검증 대기를 실패로 계산하지 않았습니다.</p>
+    <p><strong>Kanban:</strong> 진행 0 / 막힘 0. 변경 없는 과거 backlog는 인수인계 항목으로 올리지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>버전·검증 범위</h2>
+    <p><strong>설치:</strong> v0.23.0 (Docker, upstream <code>2bd378ed</code>) · <strong>공식 최신:</strong> NousResearch GitHub Release v0.23.0 · <strong>업데이트 필요:</strong> 아니오.</p>
+    <p class="note">관련성 회귀 검증 8건 통과. 시간 범위가 보장된 profile HANDOFF·MEMORY·conversation만 사용했으며, 시간 한정 조회를 지원하지 않는 Wiki 변경분은 fail-closed로 본문에서 제외했습니다. 외부 뉴스는 포함하지 않았습니다.</p>
+  </section>
+</main>
+</body>
+</html>
