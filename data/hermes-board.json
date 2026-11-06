@@ -1,6 +1,17 @@
 {
   "items": [
     {
+      "canonical_url": "https://hermes-agent.nousresearch.com/docs/llms.txt",
+      "detail_url": "hermes/items/official-docs-llms.html",
+      "judgment": "공식 Docs의 운영 참고 정보 보완으로 게시합니다. 공식 llms.txt와 NousResearch 공식 repository를 직접 조회했으며 리디렉션을 따르는 GET으로 최종 URL https://hermes-agent.nousresearch.com/docs/llms.txt 및 https://github.com/NousResearch/hermes-agent 모두 HTTP 200을 확인했습니다. 기존 게시 요약 대비 관리자 고정 정책과 Docker 외부 통신 격리의 구체적인 참고 경로를 보완하므로 meaningful change로 판단합니다. 이전 원문과의 행 단위 차이는 제공되지 않았고 개별 연결 문서 본문은 이번 검토에서 조회하지 않았으므로 문서 신설 시점·기능 도입 시점·세부 적용 절차는 확정하지 않습니다. 보안 관련 경로는 escalation 검토 후보로만 표시하며 취약점·보안 패치·breaking change나 교차신호 발생을 이번 색인만으로 확정하지 않습니다.",
+      "published_at": "2026-11-06T01:01:54Z",
+      "source_grade": "official",
+      "source_kind": "docs",
+      "stable_id": "official-docs:llms",
+      "status": "active",
+      "title_ko": "Hermes 공식 문서 색인 갱신: 관리자 고정 설정·Docker 외부 통신 격리 참고"
+    },
+    {
       "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.23.0",
       "detail_url": "hermes/items/github-release-435665175.html",
       "judgment": "공식 릴리스 원문과 리디렉션 후 동일한 최종 URL의 HTTP 200을 확인했다. 제공된 후보 snapshot 기준 신규 주요 업데이트로 판단해 게시 승인한다. 보안·breaking 변경은 escalation 후보이며 운영 환경 반영 승인과는 구분한다. 설치된 버전이나 성능 개선의 현장 검증을 완료했다는 의미는 아니다.",
@@ -10,17 +21,6 @@
       "stable_id": "github-release:435665175",
       "status": "available",
       "title_ko": "Hermes Agent v0.23.0 공개: 브라우저 작업공간·단일 게이트웨이·MCP 비용 한도"
-    },
-    {
-      "canonical_url": "https://hermes-agent.nousresearch.com/docs/llms.txt",
-      "detail_url": "hermes/items/official-docs-llms.html",
-      "judgment": "공식 Docs의 운영 참고 정보 갱신으로 게시합니다. 공식 색인과 NousResearch 공식 repository를 직접 조회했고 두 URL 모두 리디렉션 뒤 최종 URL과 HTTP 200을 확인했습니다. 기존 게시 요약 대비 설정 관리·세션 복구·Kanban 전달 운영의 구체적인 참고 경로를 보완하므로 meaningful change로 판단합니다. 이전 원문과의 행 단위 차이는 제공되지 않아 개별 문서의 신설 시점이나 기능 변경 시점은 확정하지 않습니다. 보안·breaking·교차신호 조건은 확인 시 escalation 후보로만 표시하며 이번 색인만으로 해당 변경을 확정하지 않습니다.",
-      "published_at": "2026-11-05T08:34:17Z",
-      "source_grade": "official",
-      "source_kind": "docs",
-      "stable_id": "official-docs:llms",
-      "status": "active",
-      "title_ko": "Hermes 공식 문서 색인 갱신: 원격 설정·세션 복구·Kanban 운영 참고"
     },
     {
       "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.22.7",
