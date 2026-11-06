@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-11-06 12:00 — 새 소식 없음](./2026-11-06-1200.md)
 - [2026-11-06 10:00 — 새 소식 없음](./2026-11-06-1000.md)
 - [2026-11-06 08:00 — Claude Personal Finance 베타 · OpenAI GPT-6 Cyber · Gemini Omni 1.2 Flash · thsottiaux 이미지 통계 및 Cyber 모델](./2026-11-06-0800.md)
 - [2026-11-05 20:00 — 새 소식 없음](./2026-11-05-2000.md)
