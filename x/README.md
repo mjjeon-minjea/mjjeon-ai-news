@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-11-07 12:00 — thsottiaux: It's Friday](./2026-11-07-1200.md)
 - [2026-11-07 10:00 — 새 소식 없음](./2026-11-07-1000.md)
 - [2026-11-07 08:00 — OpenAI: 사이버 위해 평가 프레임워크 및 BioBasicsBench](./2026-11-07-0800.md)
 - [2026-11-06 20:00 — 새 소식 없음](./2026-11-06-2000.md)
