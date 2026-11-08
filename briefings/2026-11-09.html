@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-11-09 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#5f6b7a; --line:#dbe2ea; --panel:#f6f8fb; --warn:#9a3412; }
+    body { margin:0; background:#eef2f7; color:var(--ink); font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { max-width:880px; margin:32px auto; padding:32px; background:#fff; border:1px solid var(--line); border-radius:14px; }
+    h1 { margin:0 0 4px; font-size:28px; }
+    h2 { margin:30px 0 10px; font-size:19px; }
+    p { margin:8px 0; }
+    .meta { color:var(--muted); font-size:14px; }
+    .panel { padding:16px; background:var(--panel); border-left:4px solid #3b82f6; border-radius:6px; }
+    .incident { border-left-color:var(--warn); }
+    .metric { font-variant-numeric:tabular-nums; }
+    footer { margin-top:30px; padding-top:16px; border-top:1px solid var(--line); color:var(--muted); font-size:13px; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>운영 아침 브리핑</h1>
+      <p class="meta">2026-11-09 06:30 KST 기준 · 대상 기간: 2026-11-08 06:30–2026-11-09 06:30 KST</p>
+    </header>
+
+    <section>
+      <h2>결론</h2>
+      <div class="panel incident">
+        <p><strong>새 운영 인수인계 2건:</strong> 11월 8일 19:45 KST Hermes 설치 확인 경로에서 GitHub 태그 API 오류가 보고됐고, 11월 9일 02:00 KST AI NEWS 원본이 HTTP 202 HTML을 반환해 갱신이 실패했습니다. 두 Cron의 현재 마지막 상태는 각각 05:45·06:01 KST <code>ok</code>입니다. 원인 해결을 뜻하지는 않습니다.</p>
+      </div>
+      <p>직접 사용자 의사결정 요청은 이번 기간에 확인되지 않았습니다.</p>
+    </section>
+
+    <section>
+      <h2>근거가 있는 변경·사고</h2>
+      <article class="panel incident">
+        <p class="meta">근거 시각: 2026-11-08 19:53:43 KST · 출처: Neoguri conversation source_readback · ID: cron-alert-f1d799b0dd5a4cf6a99bb55c7ebd5ea0</p>
+        <p>Hermes 설치 확인용 GitHub <code>v0.23.0</code> 태그 API 오류가 보고됐고, 후속 읽기 전용 확인에서 HTTP 504가 재현됐습니다. 최초 19:45 실행의 상세 원인은 기록되지 않았습니다. 강제 재실행·중지·설정 변경은 하지 않았습니다.</p>
+      </article>
+      <article class="panel incident">
+        <p class="meta">근거 시각: 2026-11-09 02:00:48 KST · 출처: Default conversation source_readback · ID: hourly-source-error:d69129d272c1:20261109T020048</p>
+        <p>AI NEWS 02시 갱신이 원본의 HTTP 202 HTML 응답으로 실패했습니다. 같은 수집 경로의 읽기 전용 확인도 같은 응답이었고, 01시 게시본은 공개 홈페이지와 기사 목록에 유지됐습니다. 코드 변경·강제 재실행·대체 수집은 하지 않았습니다.</p>
+      </article>
+    </section>
+
+    <section>
+      <h2>운영 지표</h2>
+      <p class="metric"><strong>Cron</strong>: 총 18 · 정상 18 · 미기록 0 · 검증 대기 0 (이름: 없음) · 실패 0 (이름: 없음)</p>
+      <p class="metric"><strong>Kanban</strong>: 진행 0 · 막힘 0</p>
+      <p class="meta">검증 대기는 현재 <code>last_error</code>에 <code>REMOTE_UNVERIFIED</code>가 있을 때만 분류하며, 실패와 합산하지 않았습니다. Kanban 완료 149건은 현재 집계일 뿐 기간 내 카드 변경 근거로 사용하지 않았습니다.</p>
+    </section>
+
+    <section>
+      <h2>Hermes 버전</h2>
+      <p><strong>설치:</strong> v0.23.0 (2026.9.24, Docker, upstream 2bd378ed)</p>
+      <p><strong>공식 최신:</strong> v0.23.0 · 업데이트 필요: 아니오</p>
+      <p class="meta">확인 출처: 로컬 <code>hermes --version</code>, NousResearch 공식 GitHub 최신 릴리스 API(v0.23.0, 2026-11-05 21:32:33Z).</p>
+    </section>
+
+    <section>
+      <h2>관련성 필터</h2>
+      <p>전 profile HANDOFF·MEMORY에는 기간 내 적격 변경이 없었습니다. 기간 내 conversation 2건은 위 사고 근거로 포함했습니다. Wiki의 12개 시간 필터 결과 중 이전 브리핑 재요약 1건, 무응답·성장 후보 없음 7건, 세션 종료 2건은 독립 운영 변경이 아니어서 제외했고, 두 사고 기록은 대화 근거와 중복돼 별도 항목으로 늘리지 않았습니다.</p>
+      <p>Kanban은 읽기 전용 CLI에 기간 필터 카드·이벤트 조회가 없어 카드 수준 인수인계 근거를 닫힌 방식으로 제외했습니다. 외부 뉴스·시장 동향은 운영 인수인계 범위에서 제외했습니다.</p>
+    </section>
+
+    <footer>관련성 검증 fixture: PASS (8건). 비밀 마커가 포함된 줄은 저장하지 않았습니다.</footer>
+  </main>
+</body>
+</html>
