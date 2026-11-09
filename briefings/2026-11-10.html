@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-11-10 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#5f6b7a; --line:#dbe2ea; --panel:#f6f8fb; --warn:#9a3412; }
+    body { margin:0; background:#eef2f7; color:var(--ink); font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { max-width:880px; margin:32px auto; padding:32px; background:#fff; border:1px solid var(--line); border-radius:14px; }
+    h1 { margin:0 0 4px; font-size:28px; }
+    h2 { margin:30px 0 10px; font-size:19px; }
+    p { margin:8px 0; }
+    .meta { color:var(--muted); font-size:14px; }
+    .panel { padding:16px; background:var(--panel); border-left:4px solid #3b82f6; border-radius:6px; }
+    .incident { border-left-color:var(--warn); }
+    .metric { font-variant-numeric:tabular-nums; }
+    footer { margin-top:30px; padding-top:16px; border-top:1px solid var(--line); color:var(--muted); font-size:13px; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>운영 아침 브리핑</h1>
+      <p class="meta">2026-11-10 06:30 KST 기준 · 대상 기간: 2026-11-09 06:30–2026-11-10 06:30 KST</p>
+    </header>
+
+    <section>
+      <h2>결론</h2>
+      <div class="panel incident">
+        <p><strong>새 운영 인수인계 3건:</strong> AI NEWS 원본 응답 오류 1건, 배포 실패 인지·QA 재작업 연결의 승인된 간이 시험 종결 1건, QMS 090 스테이징 동영상 추가 등록·검증 1건입니다. 직접 사용자 의사결정 요청은 확인되지 않았습니다.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>근거가 있는 변경·사고</h2>
+      <article class="panel incident">
+        <p class="meta">근거 시각: 2026-11-09 08:00:47 KST · 출처: Default conversation source_readback · ID: hourly-source-error:d69129d272c1:20261109T080047</p>
+        <p>AI NEWS 08시 수집이 원본의 HTTP 202 HTML 응답으로 실패했습니다. 같은 경로의 읽기 전용 재확인도 같은 응답이었고, 공개 홈페이지와 기사 목록은 07시 게시본을 유지했습니다. 코드 변경·강제 재실행·우회 수집은 하지 않았습니다. 현재 Cron의 마지막 실행은 11월 10일 06:01 KST <code>ok</code>이나, 이것만으로 원본 오류의 원인 해결을 뜻하지는 않습니다.</p>
+      </article>
+      <article class="panel">
+        <p class="meta">근거 시각: 2026-11-09 16:34:55 KST · 출처: Default conversation/HANDOFF source_readback · ID: deploy-awareness-20261109-closeout</p>
+        <p>배포 실패 인지 경로를 보완하고, 모의 장애 입력에서 실제 예림 수신·단일 Kanban 카드·함대길 반려·너구리 수정·재검사 합격·원래 대화 알림까지 연결한 간이 시험이 종결됐습니다. 운영 홈페이지와 운영 소스는 변경하지 않았습니다. 자연 발생 배포 장애의 실제 대응 실적은 아직 아닙니다.</p>
+      </article>
+      <article class="panel">
+        <p class="meta">근거 시각: 2026-11-10 00:40 KST · 출처: Default HANDOFF source_readback · ID: handoff/default#qms-090-additional-5</p>
+        <p>QMS 090 스테이징 범위에서 추가 동영상 5건의 UI 등록과 검증이 완료됐습니다. 전체 동영상은 6건이며, 코드·스키마·설정·MAIN 변경은 없었습니다. 자동 재등록은 하지 않습니다.</p>
+      </article>
+    </section>
+
+    <section>
+      <h2>운영 지표</h2>
+      <p class="metric"><strong>Cron</strong>: 총 18 · 정상 18 · 미기록 0 · 검증 대기 0 (이름: 없음) · 실패 0 (이름: 없음)</p>
+      <p class="metric"><strong>Kanban</strong>: 진행 0 · 막힘 0</p>
+      <p class="meta">검증 대기는 마지막 오류에 <code>REMOTE_UNVERIFIED</code>가 있을 때만 분류하며 실패와 합산하지 않았습니다. Kanban 현재 수치는 지표이며, 기간 필터가 없는 보드 조회 결과로 과거 backlog를 인수인계 항목으로 올리지 않았습니다.</p>
+    </section>
+
+    <section>
+      <h2>Hermes 버전</h2>
+      <p><strong>설치:</strong> v0.23.0 (2026.9.24, Docker, upstream 2bd378ed)</p>
+      <p><strong>공식 최신:</strong> v0.23.0 · 업데이트 필요: 아니오</p>
+      <p class="meta">확인 출처: 로컬 <code>hermes --version</code>, NousResearch 공식 GitHub 최신 릴리스 API(v0.23.0, 2026-11-05 21:32:33Z).</p>
+    </section>
+
+    <section>
+      <h2>관련성 필터</h2>
+      <p>전 profile HANDOFF·MEMORY에서는 Default HANDOFF의 QMS 090 완료 기록만 기간 내 적격 변경으로 확인했습니다. conversation에서는 위의 원본 오류와 승인된 연결 시험 종결만 독립 운영 변경으로 포함했습니다. 직접 사용자 의사결정 요청은 없었습니다.</p>
+      <p>Wiki의 시간 제한 Git 변경 조회는 해당 경로가 Git 저장소가 아니어서 실패했으므로 이 출처는 닫힌 방식으로 제외했습니다. Kanban은 현재 상태 집계만 사용했고, 외부 뉴스·시장 동향은 운영 인수인계 범위에서 제외했습니다.</p>
+    </section>
+
+    <footer>관련성 검증 fixture: PASS (8건). 비밀 마커가 포함된 줄은 저장하지 않았습니다.</footer>
+  </main>
+</body>
+</html>
