@@ -1,6 +1,17 @@
 {
   "items": [
     {
+      "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.23.1",
+      "detail_url": "hermes/items/github-release-439803874.html",
+      "judgment": "게시 적합 — 공식 안정 릴리스의 플러그인 설치 동작 수정이므로 의미 있는 운영 변경으로 판단한다. 제공된 후보 스냅샷으로 내용을 검토하고 공식 릴리스 URL의 리디렉션 후 최종 HTTP 200을 확인했다. 보안·breaking change를 임의로 확정하거나 자동 업데이트하지 않는다.",
+      "published_at": "2026-11-10T01:42:15Z",
+      "source_grade": "official",
+      "source_kind": "release",
+      "stable_id": "github-release:439803874",
+      "status": "active",
+      "title_ko": "Hermes Agent v0.23.1: 플러그인 최신 카탈로그를 못 읽던 문제 수정"
+    },
+    {
       "canonical_url": "https://hermes-agent.nousresearch.com/docs/llms.txt",
       "detail_url": "hermes/items/official-docs-llms.html",
       "judgment": "공식 Docs의 운영 참고 정보 보완으로 게시합니다. 공식 llms.txt와 NousResearch 공식 repository를 직접 조회했으며, 리디렉션을 따르는 GET으로 최종 URL https://hermes-agent.nousresearch.com/docs/llms.txt 및 https://github.com/NousResearch/hermes-agent 모두 HTTP 200을 확인했습니다. 색인에 연결된 Session Storage Recovery 본문에서 이전 WAL 사본 보유에 따른 쓰기 거부, 관련 프로세스 종료 후 점검하는 복구 순서, WAL·SHM 삭제 금지 및 세션 최적화의 동시 사용 거부 조건을 직접 확인했습니다. 제공된 기존 게시 요약 대비 데이터 보존과 복구 판단에 필요한 구체적 운영 정보를 보완하므로 meaningful change로 판단합니다. 이전 원문과의 행 단위 차이는 제공되지 않았으므로 해당 문서의 신설 시점이나 기능 도입 시점은 확정하지 않습니다. 공식 Releases 본문과 실제 설치 버전은 이번 검토에서 확인하지 않았으며 신규 출시·보안 사고·breaking change를 주장하지 않습니다. 보안·breaking·교차신호 조건은 escalation 검토 후보로만 취급하고 발생을 확정하지 않습니다.",
