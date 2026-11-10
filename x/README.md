@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-11-11 08:00 — Claude Whiteboards/Sheets/Data 출시 · OpenAI ChatGPT Businesses 베타 · Gemini 4 Carbon 롤아웃 · thsottiaux 소규모 비즈니스 및 협업](./2026-11-11-0800.md)
 - [2026-11-10 20:00 — 새 소식 없음](./2026-11-10-2000.md)
 - [2026-11-10 18:00 — 새 소식 없음](./2026-11-10-1800.md)
 - [2026-11-10 16:00 — thsottiaux: Dots가 여러 기계 제어 가능](./2026-11-10-1600.md)
