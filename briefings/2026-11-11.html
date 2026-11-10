@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-11-11 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#5f6b7a; --line:#dbe2ea; --panel:#f6f8fb; --warn:#9a3412; }
+    body { margin:0; background:#eef2f7; color:var(--ink); font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { max-width:880px; margin:32px auto; padding:32px; background:#fff; border:1px solid var(--line); border-radius:14px; }
+    h1 { margin:0 0 4px; font-size:28px; }
+    h2 { margin:30px 0 10px; font-size:19px; }
+    p { margin:8px 0; }
+    .meta { color:var(--muted); font-size:14px; }
+    .panel { padding:16px; background:var(--panel); border-left:4px solid #3b82f6; border-radius:6px; }
+    .incident { border-left-color:var(--warn); }
+    .metric { font-variant-numeric:tabular-nums; }
+    footer { margin-top:30px; padding-top:16px; border-top:1px solid var(--line); color:var(--muted); font-size:13px; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>운영 아침 브리핑</h1>
+      <p class="meta">2026-11-11 06:30 KST 기준 · 대상 기간: 2026-11-10 06:30–2026-11-11 06:30 KST</p>
+    </header>
+
+    <section>
+      <h2>결론</h2>
+      <div class="panel incident">
+        <p><strong>새 운영 인수인계 3건:</strong> Codex 한도 알림 예약이 조회 오류 3회 후 일시 중지됐고, Public Pages 원격 검증은 제한된 범위에서 복구됐으나 다음 정기 실행 성공은 확인되지 않았습니다. GitHub 배포 상태 조회 오류는 같은 읽기 경로의 후속 응답으로 회복됐지만 당시 최신 배포 완료는 검증되지 않았습니다. 새 직접 사용자 의사결정 요청은 확인되지 않았습니다.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>근거가 있는 변경·사고</h2>
+      <article class="panel">
+        <p class="meta">근거 시각: 2026-11-10 07:01:22 KST · 출처: Default conversation · provenance: source_readback · ID: deploy-observation:pages-observation-1-GITHUB_API_FAILED:20261110T070122</p>
+        <p>GitHub 배포 상태 조회가 실패했으나 07:02 KST 같은 읽기 전용 경로는 응답했습니다. 당시 최신 배포는 진행 중이었고 최신 게시본과의 일치는 검증되지 않았습니다. 재배포·강제 실행·설정 변경은 하지 않았습니다.</p>
+      </article>
+      <article class="panel">
+        <p class="meta">근거 시각: 2026-11-10 11:11:49 KST · 출처: Neoguri Wiki work result · provenance: source_readback · ID: d89243daf45c62a233105928227e7cd7 + 66a5c1c7d65d6b911e553b86de69ff2c</p>
+        <p>Public Pages 검증은 10:48 KST에 중단됐으나, 11:11 KST 제한된 원격 검증에서 v0.23.1 기사와 관련 52개 파일의 검증이 완료됐습니다. 원래 실패 이력은 유지되며 다음 정기 실행 성공은 미확인입니다. 재업로드·설치·소스·Cron 변경은 보고되지 않았습니다.</p>
+      </article>
+      <article class="panel incident">
+        <p class="meta">근거 시각: 2026-11-10 11:26:28 KST · 출처: Default conversation/HANDOFF · provenance: source_readback · ID: codex-quota-alert:9b9019b00278:20261110T112542</p>
+        <p>Codex 한도 조회가 3회 연속 실패해 해당 알림 예약 하나가 일시 중지됐습니다. 인증 갱신은 수행되지 않았으며, 중지 동안 10%·5% 자동 경고도 발생하지 않습니다. 마지막 08:22 KST의 잔여 6%는 과거값으로 현재 잔여량은 확인되지 않았습니다.</p>
+      </article>
+    </section>
+
+    <section>
+      <h2>운영 지표</h2>
+      <p class="metric"><strong>Cron</strong>: 총 18 · 정상 17 · 미기록 0 · 검증 대기 0 (이름: 없음) · 실패 1 (이름: Codex 주간 한도 주의·경고)</p>
+      <p class="metric"><strong>Kanban</strong>: 진행 0 · 막힘 0</p>
+      <p class="meta">검증 대기는 마지막 오류에 REMOTE_UNVERIFIED가 있을 때만 분류하며 실패와 합산하지 않았습니다. Kanban 현재 수치는 지표이며, 시간 제한 조회가 지원되지 않아 과거 backlog는 인수인계 항목으로 올리지 않았습니다.</p>
+    </section>
+
+    <section>
+      <h2>Hermes 버전</h2>
+      <p><strong>설치:</strong> v0.23.0 (2026.9.24, Docker, upstream 2bd378ed)</p>
+      <p><strong>공식 최신:</strong> v0.23.1 · 업데이트 필요: 예</p>
+      <p class="meta">확인 출처: 로컬 hermes --version, NousResearch 공식 GitHub 최신 릴리스 API(v0.23.1, published 2026-11-10T01:42:15Z).</p>
+    </section>
+
+    <section>
+      <h2>관련성 필터</h2>
+      <p>전 profile HANDOFF·MEMORY·conversation·Wiki의 기간 내 변경분만 확인했습니다. Wiki의 silent marker, 세션 종료 기록, 적용되지 않은 성장 제안과 외부 뉴스는 제외했습니다. 직접 사용자 의사결정 요청은 없었습니다.</p>
+    </section>
+
+    <footer>관련성 검증 fixture: PASS (8건). 비밀 마커가 포함된 줄은 저장하지 않았습니다.</footer>
+  </main>
+</body>
+</html>
