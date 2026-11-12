@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-11-13 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#5f6b7a; --line:#dbe2ea; --panel:#f6f8fb; --warn:#9a3412; }
+    body { margin:0; background:#eef2f7; color:var(--ink); font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { max-width:880px; margin:32px auto; padding:32px; background:#fff; border:1px solid var(--line); border-radius:14px; }
+    h1 { margin:0 0 4px; font-size:28px; }
+    h2 { margin:30px 0 10px; font-size:19px; }
+    p { margin:8px 0; }
+    .meta { color:var(--muted); font-size:14px; }
+    .panel { padding:16px; background:var(--panel); border-left:4px solid #3b82f6; border-radius:6px; margin:10px 0; }
+    .incident { border-left-color:var(--warn); }
+    .metric { font-variant-numeric:tabular-nums; }
+    footer { margin-top:30px; padding-top:16px; border-top:1px solid var(--line); color:var(--muted); font-size:13px; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>운영 아침 브리핑</h1>
+      <p class="meta">2026-11-13 06:30 KST 기준 · 대상 기간: 2026-11-12 06:30–2026-11-13 06:30 KST</p>
+    </header>
+
+    <section>
+      <h2>결론</h2>
+      <div class="panel incident">
+        <p><strong>새 인수인계 5건:</strong> Hermes 서버는 v0.23.1로 실제 교체·핵심 연결 확인까지 끝났습니다. QMS 테스트웹에서는 통합 매뉴얼 전환, 공지·개발자 노트 게시, 개발자 노트 쓰기 권한 제한, 직원 안내 19통 발송이 완료됐습니다. Hermes 공식 업데이트 감지 경로는 360초 제한 초과가 한 번 있었지만 기존 후보의 원격 검증으로 종결됐고 설정 변경은 없었습니다. 새 직접 사용자 의사결정 요청은 확인되지 않았습니다.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>근거가 있는 변경·사고</h2>
+      <article class="panel">
+        <p class="meta">근거 시각: 2026-11-12 14:41 KST · 출처: Default HANDOFF 및 conversation · provenance: source_readback · ID: conversation/default/2026-11-12.md#hermes-v0231-apply</p>
+        <p>Hermes Docker 서버가 v0.23.1로 적용됐습니다. Dashboard·Desktop·9개 Gateway 프로필 연결과 Cron 등록 보존을 확인했고, 이후 Kanban 스모크·호스트 측 compose 상태·Slack 발신 확인도 기록됐습니다. QMS·PC·모델 설정 변경은 이 적용 범위에 없었습니다.</p>
+      </article>
+      <article class="panel">
+        <p class="meta">근거 시각: 2026-11-12 16:10:36 KST · 출처: Default conversation · provenance: source_readback · ID: conversation/default/2026-11-12.md#account-mail-send-1559</p>
+        <p>승인 명단 19명에게 계정 안내를 1인 1통으로 발송했고 SMTP 250 수락 19건을 확인했습니다. CC·BCC·첨부·계정·비밀번호·권한·DB 변경은 없으며, 실제 받은편지함 도착·열람은 확인하지 않았습니다.</p>
+      </article>
+      <article class="panel">
+        <p class="meta">근거 시각: 2026-11-12 17:18 KST · 출처: Default conversation · provenance: source_readback · ID: conversation/default/2026-11-12.md#qms-unified-manual-posts</p>
+        <p>QMS 테스트웹 자료실은 통합 매뉴얼 1권 등록과 기존 역할별 5종 숨김으로 전환됐고, 공지 13건·개발자 노트 15건이 게시됐습니다. 4부서 다운로드와 게시물 재조회로 확인했으며 MAIN·코드·배포·메일 발송은 변경하지 않았습니다.</p>
+      </article>
+      <article class="panel">
+        <p class="meta">근거 시각: 2026-11-12 17:58:20 KST · 출처: Default conversation · provenance: source_readback · ID: conversation/default/2026-11-12.md#dev-notes-policy</p>
+        <p>QMS 테스트웹의 개발자 노트 INSERT·UPDATE·DELETE 정책을 Active 품질보증부 인증 계정으로 제한했습니다. SELECT는 공개 상태를 유지했고, 격리 RED→GREEN 9건과 적용 후 100행 보존·화면 조회를 확인했습니다.</p>
+      </article>
+      <article class="panel incident">
+        <p class="meta">근거 시각: 2026-11-12 12:56:04 KST · 출처: Neoguri conversation · provenance: source_readback · ID: conversation/neoguri/2026-11-12.md#cron-alert-951d1a595638480d80bb3bbaf6d5ac57</p>
+        <p>Hermes 공식 업데이트 감지 경로가 12:45 회차에서 360초 제한을 초과했습니다. 기존 실행 소유권을 존중해 중복 실행하지 않았고, 같은 후보의 공개 원격 검증과 커서 일치가 확인돼 종결됐습니다. 신규 기사·설정·예약·설치 변경은 없었습니다.</p>
+      </article>
+    </section>
+
+    <section>
+      <h2>운영 지표</h2>
+      <p class="metric"><strong>Cron 총:</strong> 16 (active 11 · paused 4 · completed 1)</p>
+      <p class="metric"><strong>Cron 정상:</strong> 15 — qms-staging-watch, MJJEON AI NEWS — Neoguri hourly collector, Default+role Gateway supervisor keeper, calendar-yesterday-sync, MJJEON X — attach Grok originals, all-profile-conversation-close, Hermes v0.21.0 cutover result relay, QMS MAIN 진행상황 — 15분 보고, v0227-progress-5m, 고광렬 06:30 KST 아침 브리핑, jjakgwi-wiki-daily-close-kst, jjakgwi-wiki-curation-6h-kst, jjakgwi-conversation-growth-review-6h-kst, MJJEON Hermes official update detector, MJJEON Drive YouTube web ingest</p>
+      <p class="metric"><strong>Cron 검증 대기:</strong> 0 (이름: 없음)</p>
+      <p class="metric"><strong>Cron 실패:</strong> 1 (이름: Codex 주간 한도 주의·경고)</p>
+      <p class="metric"><strong>Kanban 진행:</strong> 0</p>
+      <p class="metric"><strong>Kanban 막힘:</strong> 0</p>
+      <p class="meta">Cron은 마지막 상태가 ok면 정상, 마지막 상태가 없으면 미기록, 마지막 오류에 REMOTE_UNVERIFIED가 있을 때만 검증 대기로 분류했습니다. 검증 대기는 실패에 합산하지 않았습니다. Kanban은 시간 제한 카드·이벤트 조회가 지원되지 않아 현재 수치를 지표로만 보았습니다.</p>
+    </section>
+
+    <section>
+      <h2>Hermes 버전</h2>
+      <p><strong>설치:</strong> v0.23.1 (2026.9.24, Docker, upstream 3b421578)</p>
+      <p><strong>공식 최신:</strong> v0.23.1 · 업데이트 필요: 아니오</p>
+      <p class="meta">확인 출처: 로컬 hermes --version, NousResearch 공식 GitHub latest release API v0.23.1 (2026-11-10T01:42:15Z).</p>
+    </section>
+
+    <section>
+      <h2>관련성 필터</h2>
+      <p>전 profile HANDOFF·MEMORY·conversation과 Wiki raw manifest의 기간 내 변경분만 확인했습니다. Default HANDOFF·MEMORY는 위 QMS·Hermes 변경의 보조 근거였고, 시간 경계 Wiki 원문은 포함 항목을 보강하거나 외부 뉴스·세션 종료·무결과 기록이었습니다. 상태만 남은 과거 보류·완료 백로그, 자기소개성 상태 보고, 외부 뉴스는 인수인계에서 제외했습니다.</p>
+    </section>
+
+    <footer>관련성 검증 fixture: PASS (8건). 비밀 마커가 포함된 줄은 저장하지 않았습니다.</footer>
+  </main>
+</body>
+</html>
