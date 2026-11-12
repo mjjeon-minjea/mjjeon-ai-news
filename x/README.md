@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-11-13 08:00 — Claude Meetings 베타 · Gemini 4 Hydrogen 3D 시각화 · thsottiaux Dots 업데이트](./2026-11-13-0800.md)
 - [2026-11-12 20:00 — 새 소식 없음](./2026-11-12-2000.md)
 - [2026-11-12 18:00 — 새 소식 없음](./2026-11-12-1800.md)
 - [2026-11-12 16:00 — 새 소식 없음](./2026-11-12-1600.md)
