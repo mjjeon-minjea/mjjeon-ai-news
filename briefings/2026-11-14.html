@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-11-14 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#5f6b7a; --line:#dbe2ea; --panel:#f6f8fb; --warn:#9a3412; }
+    body { margin:0; background:#eef2f7; color:var(--ink); font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { max-width:880px; margin:32px auto; padding:32px; background:#fff; border:1px solid var(--line); border-radius:14px; }
+    h1 { margin:0 0 4px; font-size:28px; }
+    h2 { margin:30px 0 10px; font-size:19px; }
+    p { margin:8px 0; }
+    .meta { color:var(--muted); font-size:14px; }
+    .panel { padding:16px; background:var(--panel); border-left:4px solid #3b82f6; border-radius:6px; margin:10px 0; }
+    .incident { border-left-color:var(--warn); }
+    .metric { font-variant-numeric:tabular-nums; }
+    footer { margin-top:30px; padding-top:16px; border-top:1px solid var(--line); color:var(--muted); font-size:13px; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>운영 아침 브리핑</h1>
+      <p class="meta">2026-11-14 06:30 KST 기준 · 대상 기간: 2026-11-13 06:30–2026-11-14 06:30 KST</p>
+    </header>
+
+    <section>
+      <h2>결론</h2>
+      <div class="panel incident">
+        <p><strong>새 인수인계 4건:</strong> AI NEWS 원본은 10시에 HTTP 202로 한 번 실패했으나 11/14 06:01 자연 회차의 현재 상태는 정상입니다. QMS 테스트웹 동영상 순서 반영과 직원 로그인 지원 안내 발송이 기록됐습니다. Hermes 공식 업데이트 감지기는 canary prerelease 선택으로 4회 실패 후 해당 예약만 일시중지됐으며, 수정안과 시간제한안은 미승인·미시공입니다. 새 직접 사용자 의사결정 요청은 확인되지 않았습니다.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>근거가 있는 변경·사고</h2>
+      <article class="panel incident">
+        <p class="meta">근거 시각: 2026-11-13 10:00:46 KST · 출처: Default conversation 및 Wiki work-result · provenance: source_readback · ID: wiki/work-results/default/2026/11/8d1a76d67fb019a5111fc325614b113b</p>
+        <p>AI NEWS 10시 수집은 원본의 HTTP 202 응답으로 실패했습니다. 강제 재실행·원본 전환·코드·설정·예약 변경은 없었습니다. 현재 Cron 읽기 결과 다음 날 06:01 자연 회차는 정상이며, 이 복구 상태는 당시 원본 장애의 근본 원인 규명이 아닙니다.</p>
+      </article>
+      <article class="panel">
+        <p class="meta">근거 시각: 2026-11-13 10:07:26 KST · 출처: Default conversation 및 Wiki work-result · provenance: source_readback · ID: wiki/work-results/default/2026/11/1c4e58172f1b5601c5787ec070a2bc85</p>
+        <p>QMS 테스트웹 자료실 동영상은 기존 UI로 재등록·기존 항목 숨김을 통해 1부→①→②→③→④ 순서로 반영됐습니다. 4부서 화면 순서·재생과 파일 크기/SHA 대조가 보고됐고, 코드·배포·MAIN·계정·권한·메일은 변경하지 않았습니다.</p>
+      </article>
+      <article class="panel">
+        <p class="meta">근거 시각: 2026-11-13 14:04:10 KST · 출처: Default conversation 및 Wiki work-result · provenance: source_readback · ID: wiki/work-results/default/2026/11/669cf026890080b4c4f1edcfe7a0d2e4</p>
+        <p>QMS 로그인 지원 안내 1통이 SMTP 수락됐고 숨은참조 사본 도착을 확인했습니다. 주수신자의 받은편지함 도착·열람은 확인되지 않았으며, 계정·비밀번호·DB 변경은 없었습니다.</p>
+      </article>
+      <article class="panel incident">
+        <p class="meta">근거 시각: 2026-11-13 20:51:02 KST · 출처: Default HANDOFF, Neoguri conversation 및 Wiki work-result · provenance: source_readback · ID: wiki/work-results/neoguri/2026/11/f1cab6ce0ea28eab3927a11fad431288</p>
+        <p>Hermes 공식 업데이트 감지기는 release 목록의 canary prerelease 선택으로 SOURCE_INVALID 4회가 누적된 뒤 해당 예약만 일시중지됐습니다. 공식 최신 stable과 공개 경로의 접근 가능 관측은 감지 복구가 아닙니다. stable endpoint 전환 2파일 수정과 별도 시간제한 조정은 모두 미승인·미시공이며, 명시 승인 뒤 회귀와 실제 감지 확인을 거쳐야 재개할 수 있습니다.</p>
+      </article>
+    </section>
+
+    <section>
+      <h2>운영 지표</h2>
+      <p class="metric"><strong>Cron 총:</strong> 16 (active 10 · paused 5 · completed 1)</p>
+      <p class="metric"><strong>Cron 정상:</strong> 14</p>
+      <p class="metric"><strong>Cron 미기록:</strong> 0 (이름: 없음)</p>
+      <p class="metric"><strong>Cron 검증 대기:</strong> 0 (이름: 없음)</p>
+      <p class="metric"><strong>Cron 실패:</strong> 2 — default/Codex 주간 한도 주의·경고, neoguri/MJJEON Hermes official update detector</p>
+      <p class="metric"><strong>Kanban 진행:</strong> 0</p>
+      <p class="metric"><strong>Kanban 막힘:</strong> 0</p>
+      <p class="meta">Cron은 마지막 상태가 ok면 정상, 마지막 상태가 없으면 미기록, 마지막 오류에 REMOTE_UNVERIFIED가 있을 때만 검증 대기로 분류했습니다. 검증 대기는 실패에 합산하지 않았습니다. Kanban은 현재 상태 집계(done 152)만 제공하며, 기간 필터가 없어 카드별 인수인계 근거는 제외했습니다.</p>
+    </section>
+
+    <section>
+      <h2>Hermes 버전</h2>
+      <p><strong>설치:</strong> v0.23.1 (2026.9.24, Docker, upstream 3b421578)</p>
+      <p><strong>공식 최신:</strong> v0.23.1 · 업데이트 필요: 아니오</p>
+      <p class="meta">확인 출처: 로컬 hermes --version, NousResearch 공식 GitHub latest release API v0.23.1 (2026-11-10T01:42:15Z).</p>
+    </section>
+
+    <section>
+      <h2>관련성 필터</h2>
+      <p>전 profile HANDOFF·MEMORY·conversation과 Wiki raw manifest의 기간 내 변경분만 확인했습니다. Wiki manifest 26건(turn 22·session finalization 4) 중 위 항목의 보강 근거만 채택했습니다. 수명주기·무결과·중복 알림·직전 브리핑·문서화만의 기록, 상태만 남은 과거 보류·완료 백로그, 외부 뉴스는 인수인계에서 제외했습니다.</p>
+    </section>
+
+    <footer>관련성 검증 fixture: PASS (8건). 저장 대상 HTML과 색인은 민감 표식 검사 결과 0건입니다.</footer>
+  </main>
+</body>
+</html>
