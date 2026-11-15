@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-11-16 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#5f6b7a; --line:#dbe2ea; --panel:#f6f8fb; --warn:#9a3412; }
+    body { margin:0; background:#eef2f7; color:var(--ink); font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { max-width:880px; margin:32px auto; padding:32px; background:#fff; border:1px solid var(--line); border-radius:14px; }
+    h1 { margin:0 0 4px; font-size:28px; }
+    h2 { margin:30px 0 10px; font-size:19px; }
+    p { margin:8px 0; }
+    .meta { color:var(--muted); font-size:14px; }
+    .panel { padding:16px; background:var(--panel); border-left:4px solid #3b82f6; border-radius:6px; margin:10px 0; }
+    .metric { font-variant-numeric:tabular-nums; }
+    footer { margin-top:30px; padding-top:16px; border-top:1px solid var(--line); color:var(--muted); font-size:13px; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>운영 아침 브리핑</h1>
+      <p class="meta">2026-11-16 06:30 KST 기준 · 대상 기간: 2026-11-15 06:30–2026-11-16 06:30 KST</p>
+    </header>
+
+    <section>
+      <h2>결론</h2>
+      <div class="panel">
+        <p><strong>새 인수인계 없음:</strong> 직전 06:30 이후 전 profile의 canonical HANDOFF·MEMORY·일자별 conversation과 시간 제한 Wiki 기록에서 새 운영 변경, 직접 사용자 지시, 현재 사고를 확인하지 못했습니다. Wiki 후보 5건은 silent turn 4건과 session-lifecycle 1건으로, 운영 근거로 채택하지 않았습니다. 새 의사결정 요청도 없습니다.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>운영 지표</h2>
+      <p class="metric"><strong>Cron 총:</strong> 16 (active 10 · paused 5 · completed 1)</p>
+      <p class="metric"><strong>Cron 정상:</strong> 14</p>
+      <p class="metric"><strong>Cron 미기록:</strong> 0 (이름: 없음)</p>
+      <p class="metric"><strong>Cron 검증 대기:</strong> 0 (이름: 없음)</p>
+      <p class="metric"><strong>Cron 실패:</strong> 2 — default/Codex 주간 한도 주의·경고, neoguri/MJJEON Hermes official update detector</p>
+      <p class="metric"><strong>Kanban 진행:</strong> 0</p>
+      <p class="metric"><strong>Kanban 막힘:</strong> 0</p>
+      <p class="meta">Cron은 마지막 상태가 ok면 정상, 마지막 상태가 없으면 미기록, 마지막 오류에 REMOTE_UNVERIFIED가 있을 때만 검증 대기로 분류했습니다. 검증 대기는 실패에 합산하지 않았습니다. Kanban은 현재 상태 집계(done 152)만 제공하며 기간 필터가 없어 카드별 인수인계 근거는 제외했습니다.</p>
+    </section>
+
+    <section>
+      <h2>Hermes 버전</h2>
+      <p><strong>설치:</strong> v0.23.1 (2026.9.24, Docker, upstream 3b421578)</p>
+      <p><strong>공식 최신:</strong> v0.23.1 · 업데이트 필요: 아니오</p>
+      <p class="meta">확인 출처: 로컬 hermes --version, NousResearch 공식 GitHub releases/latest API (v0.23.1, 2026-11-10T01:42:15Z).</p>
+    </section>
+
+    <section>
+      <h2>관련성 필터</h2>
+      <p>기간 내 후보만 확인했습니다. 기존 보류·완료 백로그와 외부 뉴스는 제외했습니다. profile HANDOFF·MEMORY는 모두 기간 이전 기록이었고, 일자별 conversation 파일도 없었습니다. Wiki raw manifest의 5건은 silent/lifecycle 기록이어서 새 운영 근거가 아니며, Kanban 카드 단위는 시간 필터 미지원으로 fail-closed 처리했습니다.</p>
+    </section>
+
+    <footer>관련성 검증 fixture: PASS (8건). 저장 대상 HTML과 색인은 민감 표식 검사 결과 0건입니다.</footer>
+  </main>
+</body>
+</html>
