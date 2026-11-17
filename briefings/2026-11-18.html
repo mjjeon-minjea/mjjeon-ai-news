@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-11-18 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme:light; --ink:#172033; --muted:#5e6b82; --line:#dce3ef; --panel:#f7f9fc; --blue:#1f5fbf; --warn:#9d5c00; --bad:#b42318; --ok:#18794e; }
+    * { box-sizing:border-box; } body { margin:0; background:#eef2f8; color:var(--ink); font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main { max-width:920px; margin:32px auto; padding:32px; background:#fff; border:1px solid var(--line); border-radius:16px; box-shadow:0 8px 24px rgba(23,32,51,.08); }
+    h1 { margin:0; font-size:26px; letter-spacing:-.03em; } h2 { margin:30px 0 10px; font-size:18px; } p { margin:8px 0; } .meta,.note,.evidence { color:var(--muted); font-size:13px; }
+    .summary { margin:22px 0; padding:16px 18px; background:#edf5ff; border-left:4px solid var(--blue); border-radius:8px; font-weight:650; }
+    .grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin:12px 0; } .metric { padding:13px; background:var(--panel); border:1px solid var(--line); border-radius:10px; } .metric b { display:block; font-size:22px; } .metric span { color:var(--muted); font-size:12px; }
+    .alert { color:var(--bad); font-weight:650; } .pending { color:var(--warn); font-weight:650; } .ok { color:var(--ok); font-weight:650; } ul { padding-left:21px; } li { margin:10px 0; } code { background:#f1f4f8; padding:1px 4px; border-radius:4px; font-size:.9em; }
+    table { width:100%; border-collapse:collapse; } th,td { padding:10px; text-align:left; vertical-align:top; border-bottom:1px solid var(--line); } th { width:150px; color:var(--muted); font-weight:600; }
+    @media (max-width:620px) { main { margin:0; border-radius:0; border:0; padding:22px; } .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>운영 아침 브리핑</h1>
+    <p class="meta">2026-11-18 06:30 KST · 대상 기간: 2026-11-17 06:30–2026-11-18 06:30 KST</p>
+  </header>
+
+  <p class="summary">결론: NCR r2 시험자료 정리와 Hermes v0.23.2 후속 종결이 완료됐습니다. Cron은 11건 중 10건 정상·1건 실패, Kanban 진행·막힘은 모두 0건이며 Hermes는 공식 최신과 일치합니다.</p>
+
+  <section>
+    <h2>직전 06:30 이후 인수인계</h2>
+    <ul>
+      <li><strong>02:00 KST · NCR r2 시험자료 정리 완료</strong> — 최신 정리 승인 뒤 PostgreSQL 구문 검증(read-only/rollback 포함)을 통과하고 단일 트랜잭션으로 보고서 5건·이력 19건·첨부 2건을 정리했습니다. 01:59 readback에서 대상은 0건, legacy 743건·원본 PDF 743건·Storage 삭제 0건·기존 객체/정책/설정 보존을 확인했습니다. 배포·업무 시험 재실행은 하지 않았습니다.</li>
+      <li><strong>11/17 10:48 KST · Hermes v0.23.2 교체 완료</strong> — 신규 컨테이너와 버전, Compose/helper 종료 상태를 확인했고 9개 프로필 설정·Cron 보존 및 연결 상태를 확인했습니다.</li>
+      <li><strong>03:20 KST · Hermes v0.23.2 후속 종결</strong> — Slack 표시 설정 보정 및 실제 사람 왕복 확인을 완료했습니다. Wiki curation 예약은 enabled/scheduled·last_status=ok로 보존됐으며, 미도래 예약 강제 실행은 하지 않았습니다.</li>
+    </ul>
+    <p class="evidence">근거: source_readback · changed_at: 2026-11-18T02:00:00+09:00 · HANDOFF/default#ncr-r2-final</p>
+    <p class="evidence">근거: source_readback · changed_at: 2026-11-17T10:48:10.535808+09:00 · conversation/default/2026-11-17.md#hermes-v0.23.2-complete</p>
+    <p class="evidence">근거: source_readback · changed_at: 2026-11-18T03:20:00+09:00 · HANDOFF/default#v0.23.2-final-closeout</p>
+  </section>
+
+  <section>
+    <h2>Cron 현황</h2>
+    <div class="grid">
+      <div class="metric"><b>11</b><span>총 작업</span></div>
+      <div class="metric"><b class="ok">10</b><span>정상</span></div>
+      <div class="metric"><b class="pending">0</b><span>검증 대기</span></div>
+      <div class="metric"><b class="alert">1</b><span>실패</span></div>
+    </div>
+    <p>총: 11건</p>
+    <p>정상: 10건 (<code>last_status=ok</code>)</p>
+    <p>검증 대기: 0건 (<code>REMOTE_UNVERIFIED</code> 해당 없음)</p>
+    <p class="alert">실패 이름: default/Codex 주간 한도 주의·경고 (1건)</p>
+    <p class="note">미기록: 0건. 분류 기준: <code>last_status=ok</code>만 정상, 상태 없음은 미기록, <code>REMOTE_UNVERIFIED</code>는 검증 대기이며 실패로 집계하지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>Kanban 현황</h2>
+    <p>진행: 0건</p>
+    <p>막힘: 0건</p>
+    <p class="note">현재 read-only 통계: done 153건. 시간 경계 카드·이벤트 질의가 제공되지 않아 과거 완료·막힘 백로그는 인수인계에 포함하지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>Hermes 버전</h2>
+    <table>
+      <tr><th>설치</th><td>v0.23.2 (2026.9.24, Docker, upstream ae2a81cc)</td></tr>
+      <tr><th>공식 최신</th><td>v0.23.2</td></tr>
+      <tr><th>판정</th><td class="ok">업데이트 필요 없음 (false)</td></tr>
+      <tr><th>확인 출처</th><td><code>hermes --version</code>; NousResearch 공식 GitHub <a href="https://github.com/NousResearch/hermes-agent/releases/tag/v0.23.2">release v0.23.2</a> (2026-11-17 05:59:18 KST)</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>관련성·검증</h2>
+    <p>기간 내 default HANDOFF와 canonical conversation의 위 3건만 운영 변경으로 포함했습니다. 다른 프로필의 HANDOFF·MEMORY는 기간 전 기록이라 제외했습니다. Wiki의 기간 내 curation 기록은 RETAIN_ONLY/NO_CHANGE 성격으로 새 운영 변경·사고·사용자 결정이 아니어서 제외했습니다. 외부 뉴스는 포함하지 않았습니다.</p>
+    <p class="note">Daily Briefing Relevance Gate: PASS (8 fixtures). decision_required: false. 저장된 비밀 마커 줄: 0.</p>
+  </section>
+</main>
+</body>
+</html>
