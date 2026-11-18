@@ -2,6 +2,7 @@
 
 08:00–20:00 KST, 2시간 주기. **원글만** (`@claudeai` `@OpenAI` `@GeminiApp` `@Kimi_Moonshot` `@thsottiaux`). 답글·리포스트 제외. `index.html`, `briefings/`, `hermes/`, `data/` 는 덮어쓰지 않습니다.
 
+- [2026-11-18 12:00 — 새 소식 없음](./2026-11-18-1200.md)
 - [2026-11-18 10:00 — Gemini: Tasks로 할 일 목록 빠르게 처리](./2026-11-18-1000.md)
 - [2026-11-18 08:00 — OpenAI: GPT-6.2 Astra·Sol 출시 · thsottiaux: Pro 200 확장 및 일상 추천](./2026-11-18-0800.md)
 - [2026-11-17 20:00 — 새 소식 없음](./2026-11-17-2000.md)
