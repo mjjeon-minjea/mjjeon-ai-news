@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-11-20 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#5e6b82; --line:#dce3ef; --panel:#f7f9fc; --blue:#1f5fbf; --warn:#9d5c00; --bad:#b42318; --ok:#18794e; }
+    * { box-sizing:border-box; } body { margin:0; background:#eef2f8; color:var(--ink); font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main { max-width:920px; margin:32px auto; padding:32px; background:#fff; border:1px solid var(--line); border-radius:16px; box-shadow:0 8px 24px rgba(23,32,51,.08); }
+    h1 { margin:0; font-size:26px; letter-spacing:-.03em; } h2 { margin:30px 0 10px; font-size:18px; } p { margin:8px 0; } .meta,.note,.evidence { color:var(--muted); font-size:13px; }
+    .summary { margin:22px 0; padding:16px 18px; background:#edf5ff; border-left:4px solid var(--blue); border-radius:8px; font-weight:650; }
+    .grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin:12px 0; } .metric { padding:13px; background:var(--panel); border:1px solid var(--line); border-radius:10px; } .metric b { display:block; font-size:22px; } .metric span { color:var(--muted); font-size:12px; }
+    .alert { color:var(--bad); font-weight:650; } .pending { color:var(--warn); font-weight:650; } .ok { color:var(--ok); font-weight:650; } ul { padding-left:21px; } li { margin:10px 0; } code { background:#f1f4f8; padding:1px 4px; border-radius:4px; font-size:.9em; }
+    table { width:100%; border-collapse:collapse; } th,td { padding:10px; text-align:left; vertical-align:top; border-bottom:1px solid var(--line); } th { width:150px; color:var(--muted); font-weight:600; }
+    @media (max-width:620px) { main { margin:0; border-radius:0; border:0; padding:22px; } .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>운영 아침 브리핑</h1>
+    <p class="meta">2026-11-20 06:38 KST · 대상 기간: 2026-11-19 06:30–2026-11-20 06:30 KST</p>
+  </header>
+
+  <p class="summary">결론: 운영 규칙 정리와 QMS 테스트웹 v2.4.0 통합·동영상 바로가기 반영은 완료됐습니다. 05:44 KST 디스크 사용률은 83.66%로, 이관은 권한 제약으로 0건입니다. Cron은 17건 중 15건 정상·2건 실패, Kanban 진행·막힘은 모두 0건이며 Hermes는 공식 최신과 일치합니다.</p>
+
+  <section>
+    <h2>직전 06:30 이후 인수인계</h2>
+    <ul>
+      <li><strong>06:48 KST · 운영 규칙 정리 완료</strong> — 전역·default 운영 지침과 사용자·기억 기록의 중복 규칙을 정리하고, Hermes Docker 업데이트 체크리스트를 반영했습니다. 정해진 범위의 재시작 승인 기준과 같은 턴 Gateway 재시작 금지는 유지했습니다. 실제 재시작·Hook 변경·외부 보고는 없었습니다.</li>
+      <li><strong>10:07 KST · QMS 테스트웹 v2.4.0 통합 완료</strong> — 공지 1건과 개발자 노트 1건을 새로 게시하고 지정 기존 공지 3건·노트 7건만 사본 후 삭제했습니다. 동영상 바로가기 변경은 staging에만 반영됐으며, 162 통과·0 실패·4 스킵, 빌드 성공, 테스트웹 배포 Ready와 두 주소의 탭 동작을 확인했습니다. main·PDF·영상 자료·메일·알림은 변경하지 않았습니다.</li>
+      <li><strong>19:48 KST · Ponytail 기본값 변경</strong> — default의 플러그인 기본값을 ultra에서 full로 바꾸고 새 프로세스 Hook 주입을 확인했습니다. 이 시점의 보호 지침 파일 반영은 승인 시간 초과로 완료되지 않아, 기준 시각 06:30 현재 해당 문구 정합성은 이 항목만으로 확정하지 않았습니다.</li>
+      <li><strong>05:44 KST · 디스크 용량 주의</strong> — 실측 사용률 83.66%(사용 86.06 GB, 가용 16.81 GB)입니다. 접근 불가한 10월 백업 후보는 권한 변경 없이 이관을 보류했고, 신규 Drive 이관·원격 검증·서버 사본 회수는 모두 0건입니다. 60 GB 목표까지 26.06 GB 추가 감축이 필요합니다.</li>
+    </ul>
+    <p class="evidence">근거: source_readback · changed_at: 2026-11-19T06:48:25+09:00 · wiki/raw/agent-output/default/2026-11-18/fe59087245fea3f0cc12e34968746f51.json</p>
+    <p class="evidence">근거: source_readback · changed_at: 2026-11-19T10:07:32+09:00 · conversation/default/conversations 2026-11-19 and wiki/raw/agent-output/default/2026-11-19/b0ea82228775015331e2d71302aaa56d.json</p>
+    <p class="evidence">근거: source_readback · changed_at: 2026-11-19T19:48:01+09:00 · conversation/default/2026-11-19.md and wiki/raw/agent-output/default/2026-11-19/e714fbbba921b2401504c3dee7363ae9.json</p>
+    <p class="evidence">근거: source_readback · incident_at: 2026-11-20T05:44:37+09:00 · wiki/raw/agent-output/default/2026-11-19/664eda4156b52fa2edbe9d9784d19e46.json</p>
+  </section>
+
+  <section>
+    <h2>Cron 현황</h2>
+    <div class="grid">
+      <div class="metric"><b>17</b><span>총 작업</span></div>
+      <div class="metric"><b class="ok">15</b><span>정상</span></div>
+      <div class="metric"><b class="pending">0</b><span>검증 대기</span></div>
+      <div class="metric"><b class="alert">2</b><span>실패</span></div>
+    </div>
+    <p>총: 17건</p>
+    <p>정상: 15건 (<code>last_status=ok</code>)</p>
+    <p>검증 대기: 0건 (<code>REMOTE_UNVERIFIED</code> 해당 없음)</p>
+    <p class="alert">실패: 2건 — <code>default/Codex 주간 한도 주의·경고</code>, <code>neoguri/MJJEON Hermes official update detector</code></p>
+    <p class="note">미기록: 0건. 분류 기준: <code>last_status=ok</code>만 정상, 상태 없음은 미기록, <code>REMOTE_UNVERIFIED</code>는 검증 대기이며 실패로 집계하지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>Kanban 현황</h2>
+    <p>진행: 0건</p>
+    <p>막힘: 0건</p>
+    <p class="note">현재 read-only 통계: done 155건, archived 28건. CLI에 기간 필터가 없어 카드·이벤트 수준의 과거 백로그는 관련성 규칙에 따라 제외했습니다.</p>
+  </section>
+
+  <section>
+    <h2>Hermes 버전</h2>
+    <table>
+      <tr><th>설치</th><td>v0.23.2 (2026.9.24, Docker, upstream ae2a81cc)</td></tr>
+      <tr><th>공식 최신</th><td>v0.23.2</td></tr>
+      <tr><th>판정</th><td class="ok">업데이트 필요 없음 (false)</td></tr>
+      <tr><th>확인 출처</th><td><code>hermes --version</code>; NousResearch 공식 GitHub <a href="https://github.com/NousResearch/hermes-agent/releases/tag/v0.23.2">release v0.23.2</a> (Latest)</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>관련성·검증</h2>
+    <p>기간 내 timestamp·provenance가 확인된 운영 변경과 현재 용량 주의만 포함했습니다. 이전 브리핑·세션 종료·SILENT·미적용 제안·외부 뉴스는 제외했고, fresh direct-user decision request는 없었습니다.</p>
+    <p class="note">Daily Briefing Relevance Gate: PASS (8 fixtures). decision_required: false. 저장된 비밀 마커 줄: 0.</p>
+  </section>
+</main>
+</body>
+</html>
