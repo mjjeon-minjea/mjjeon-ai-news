@@ -1,1 +1,5 @@
-PLACEHOLDER_FULL
+# X Five-Account Originals
+
+매시각 슬롯의 원글 요지 목록 (비트코인 제외)
+
+- [2026-11-19 10:00](2026-11-19-1000.md) - OpenAI, 연구 내 AI 사용 증가 및 RSI 지표 공개
