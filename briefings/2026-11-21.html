@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-11-21 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme:light; --ink:#172033; --muted:#5e6b82; --line:#dce3ef; --panel:#f7f9fc; --blue:#1f5fbf; --warn:#9d5c00; --bad:#b42318; --ok:#18794e; }
+    * { box-sizing:border-box; } body { margin:0; background:#eef2f8; color:var(--ink); font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main { max-width:920px; margin:32px auto; padding:32px; background:#fff; border:1px solid var(--line); border-radius:16px; box-shadow:0 8px 24px rgba(23,32,51,.08); }
+    h1 { margin:0; font-size:26px; letter-spacing:-.03em; } h2 { margin:30px 0 10px; font-size:18px; } p { margin:8px 0; } .meta,.note,.evidence { color:var(--muted); font-size:13px; }
+    .summary { margin:22px 0; padding:16px 18px; background:#edf5ff; border-left:4px solid var(--blue); border-radius:8px; font-weight:650; }
+    .grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin:12px 0; } .metric { padding:13px; background:var(--panel); border:1px solid var(--line); border-radius:10px; } .metric b { display:block; font-size:22px; } .metric span { color:var(--muted); font-size:12px; }
+    .alert { color:var(--bad); font-weight:650; } .pending { color:var(--warn); font-weight:650; } .ok { color:var(--ok); font-weight:650; } ul { padding-left:21px; } li { margin:10px 0; } code { background:#f1f4f8; padding:1px 4px; border-radius:4px; font-size:.9em; }
+    table { width:100%; border-collapse:collapse; } th,td { padding:10px; text-align:left; vertical-align:top; border-bottom:1px solid var(--line); } th { width:150px; color:var(--muted); font-weight:600; }
+    @media (max-width:620px) { main { margin:0; border-radius:0; border:0; padding:22px; } .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>운영 아침 브리핑</h1>
+    <p class="meta">2026-11-21 06:34 KST · 대상 기간: 2026-11-20 06:30–2026-11-21 06:30 KST</p>
+  </header>
+
+  <p class="summary">결론: 예림 Gateway의 지정 플러그인은 재시작 없이 비활성화됐고, QMS r2 공지 메일 25통은 SMTP 수락으로 완료됐습니다. 21시 AI News 원본 연결 오류는 1회 발생했으나 최신 Cron 상태는 정상입니다. Cron은 16건 중 14건 정상·검증 대기 0건·실패 2건, Kanban 진행·막힘은 모두 0건입니다. Hermes는 v0.23.2 설치 상태이며 공식 최신 v0.23.3으로 업데이트가 필요합니다.</p>
+
+  <section>
+    <h2>직전 06:30 이후 인수인계</h2>
+    <ul>
+      <li><strong>09:47 KST · 지정 플러그인 비활성화</strong> — 예림 Gateway의 <code>harness-prerequisite</code>만 공식 명령으로 비활성화했습니다. 같은 PID 정상 실행을 확인했고 재시작은 없었으며, 플러그인 파일과 다른 설정은 변경하지 않았습니다.</li>
+      <li><strong>15:45–15:47 KST · QMS r2 공지 메일 발송 완료</strong> — 승인된 테스트웹 직원 25명에게 1인 1통씩 발송했습니다. SMTP 수락 25통·거부 0통·결과 불명 0통이며, 받은편지함 도착 여부는 확인하지 않았습니다.</li>
+      <li><strong>21:00 KST · AI News 원본 연결 오류 1회</strong> — 상세 원인은 기록되지 않았습니다. 21:01 KST 읽기 전용 재확인에서 기사 10건 파싱과 공개 홈·목록 HTTP 200을 확인했고, 강제 실행·코드·예약 변경은 없었습니다. 현재 수집 Cron의 마지막 상태는 정상입니다.</li>
+    </ul>
+    <p class="evidence">근거: source_readback · changed_at: 2026-11-20T09:47:28.422030+09:00 · wiki/raw/agent-output/default/2026-11-20/9c92f1f31d9cd2dccc9402bfc9bdc515.json</p>
+    <p class="evidence">근거: source_readback · changed_at: 2026-11-20T15:48:06.426168+09:00 · wiki/raw/agent-output/default/2026-11-20/c8e455c72a8213327e755f6de3f09f0e.json</p>
+    <p class="evidence">근거: source_readback · incident_at: 2026-11-20T21:02:08.646805+09:00 · conversation/default/2026-11-20.md 및 wiki/raw/agent-output/default/2026-11-20/09f884e56b130e495cc50ebb91d6873e.json</p>
+  </section>
+
+  <section>
+    <h2>Cron 현황</h2>
+    <div class="grid">
+      <div class="metric"><b>16</b><span>총 작업</span></div>
+      <div class="metric"><b class="ok">14</b><span>정상</span></div>
+      <div class="metric"><b class="pending">0</b><span>검증 대기</span></div>
+      <div class="metric"><b class="alert">2</b><span>실패</span></div>
+    </div>
+    <p>총: 16건</p>
+    <p>정상: 14건 (<code>last_status=ok</code>)</p>
+    <p>검증 대기: 0건 (<code>REMOTE_UNVERIFIED</code> 해당 없음)</p>
+    <p class="alert">실패: 2건 — <code>default/Codex 주간 한도 주의·경고</code>, <code>neoguri/MJJEON Hermes official update detector</code></p>
+    <p class="note">미기록: 0건. 분류 기준: <code>last_status=ok</code>만 정상, 상태 없음은 미기록, <code>REMOTE_UNVERIFIED</code>는 검증 대기이며 실패로 집계하지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>Kanban 현황</h2>
+    <p>진행: 0건</p>
+    <p>막힘: 0건</p>
+    <p class="note">현재 read-only 통계: done 155건. 기간 필터가 없어 카드·이벤트 수준의 과거 백로그는 관련성 규칙에 따라 제외했습니다.</p>
+  </section>
+
+  <section>
+    <h2>Hermes 버전</h2>
+    <table>
+      <tr><th>설치</th><td>v0.23.2 (2026.9.24, Docker, upstream ae2a81cc)</td></tr>
+      <tr><th>공식 최신</th><td>v0.23.3</td></tr>
+      <tr><th>판정</th><td class="pending">업데이트 필요 (true)</td></tr>
+      <tr><th>확인 출처</th><td><code>hermes --version</code>; NousResearch 공식 GitHub <a href="https://github.com/NousResearch/hermes-agent/releases/tag/v0.23.3">release v0.23.3</a> (2026-11-20T00:34:38Z 게시)</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>관련성·검증</h2>
+    <p>기간 내 timestamp·provenance가 확인된 운영 변경과 사고만 포함했습니다. 변경 없는 HANDOFF·MEMORY, 세션 종료, SILENT, 미적용 제안, 외부 뉴스, 기간 필터 없는 Kanban 백로그는 제외했습니다. fresh direct-user decision request는 없었습니다.</p>
+    <p class="note">Daily Briefing Relevance Gate: PASS (8 fixtures). decision_required: false. 저장된 비밀 마커 줄: 0.</p>
+  </section>
+</main>
+</body>
+</html>
