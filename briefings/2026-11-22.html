@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-11-22 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#5e6b82; --line:#dce3ef; --panel:#f7f9fc; --blue:#1f5fbf; --warn:#9d5c00; --bad:#b42318; --ok:#18794e; }
+    * { box-sizing:border-box; } body { margin:0; background:#eef2f8; color:var(--ink); font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main { max-width:920px; margin:32px auto; padding:32px; background:#fff; border:1px solid var(--line); border-radius:16px; box-shadow:0 8px 24px rgba(23,32,51,.08); }
+    h1 { margin:0; font-size:26px; letter-spacing:-.03em; } h2 { margin:30px 0 10px; font-size:18px; } p { margin:8px 0; } .meta,.note { color:var(--muted); font-size:13px; }
+    .summary { margin:22px 0; padding:16px 18px; background:#edf5ff; border-left:4px solid var(--blue); border-radius:8px; font-weight:650; }
+    .grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin:12px 0; } .metric { padding:13px; background:var(--panel); border:1px solid var(--line); border-radius:10px; } .metric b { display:block; font-size:22px; } .metric span { color:var(--muted); font-size:12px; }
+    .alert { color:var(--bad); font-weight:650; } .pending { color:var(--warn); font-weight:650; } .ok { color:var(--ok); font-weight:650; } ul { padding-left:21px; } li { margin:10px 0; } code { background:#f1f4f8; padding:1px 4px; border-radius:4px; font-size:.9em; }
+    table { width:100%; border-collapse:collapse; } th,td { padding:10px; text-align:left; vertical-align:top; border-bottom:1px solid var(--line); } th { width:150px; color:var(--muted); font-weight:600; }
+    @media (max-width:620px) { main { margin:0; border-radius:0; border:0; padding:22px; } .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>운영 아침 브리핑</h1>
+    <p class="meta">2026-11-22 06:36 KST · 대상 기간: 2026-11-21 06:30–2026-11-22 06:30 KST</p>
+  </header>
+
+  <p class="summary">결론: 직전 06:30 이후 확인된 새 운영 변경·지시·사고는 없습니다. Cron은 17건 중 15건 정상·검증 대기 0건·실패 2건이며, Kanban 진행·막힘은 모두 0건입니다. Hermes는 v0.23.2 설치 상태이고 공식 최신 v0.23.3 대비 업데이트가 필요합니다.</p>
+
+  <section>
+    <h2>직전 06:30 이후 인수인계</h2>
+    <p><strong>적격 신규 항목 없음.</strong> 기간 내 Wiki 원문은 이전 브리핑 기록 1건과 무변경 결과만 확인됐으며, 이전 브리핑에 포함된 사건은 이번 기간의 새 증거가 아니므로 제외했습니다.</p>
+    <p class="note">근거: source_readback · Wiki 기록시각 2026-11-21T06:37:57+09:00 및 2026-11-21T12:21:37+09:00–2026-11-22T06:20:23+09:00. canonical profile HANDOFF·MEMORY 및 기간 대상 conversation에서 새 적격 이벤트와 fresh direct-user decision request는 확인되지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>Cron 현황</h2>
+    <div class="grid">
+      <div class="metric"><b>17</b><span>총 작업</span></div>
+      <div class="metric"><b class="ok">15</b><span>정상</span></div>
+      <div class="metric"><b class="pending">0</b><span>검증 대기</span></div>
+      <div class="metric"><b class="alert">2</b><span>실패</span></div>
+    </div>
+    <p>총: 17건</p>
+    <p>정상: 15건 (<code>last_status=ok</code>)</p>
+    <p>검증 대기: 0건 (<code>REMOTE_UNVERIFIED</code> 해당 없음)</p>
+    <p class="alert">실패: 2건 — <code>default/Codex 주간 한도 주의·경고</code>, <code>neoguri/MJJEON Hermes official update detector</code></p>
+    <p class="note">미기록: 0건. 분류 기준: <code>last_status=ok</code>만 정상, 상태 없음은 미기록, <code>REMOTE_UNVERIFIED</code>는 검증 대기이며 실패로 집계하지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>Kanban 현황</h2>
+    <p>진행: 0건</p>
+    <p>막힘: 0건</p>
+    <p class="note">현재 read-only 통계: done 155건, archived 28건. 시간 필터가 가능한 카드·이벤트 조회가 없어 과거 백로그는 인수인계 증거에서 제외했습니다.</p>
+  </section>
+
+  <section>
+    <h2>Hermes 버전</h2>
+    <table>
+      <tr><th>설치</th><td>v0.23.2 (2026.9.24, Docker, upstream ae2a81cc)</td></tr>
+      <tr><th>공식 최신</th><td>v0.23.3</td></tr>
+      <tr><th>판정</th><td class="pending">업데이트 필요 (true)</td></tr>
+      <tr><th>확인 출처</th><td><code>hermes --version</code>; NousResearch 공식 GitHub <a href="https://github.com/NousResearch/hermes-agent/releases/tag/v0.23.3">release v0.23.3</a> (2026-11-20T00:34:38Z 게시)</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>관련성·검증</h2>
+    <p>기간 내 timestamp·provenance가 확인된 운영 변경과 사고만 포함하는 규칙을 적용했습니다. 과거 브리핑, 무변경 결과, 외부 뉴스, 시간 필터 없는 Kanban 백로그는 제외했습니다. decision_required: false.</p>
+    <p class="note">Daily Briefing Relevance Gate: PASS (8 fixtures). 저장된 비밀 마커 줄: 0.</p>
+  </section>
+</main>
+</body>
+</html>
