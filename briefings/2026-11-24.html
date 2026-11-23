@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-11-24 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#5e6b82; --line:#dce3ef; --panel:#f7f9fc; --blue:#1f5fbf; --warn:#9d5c00; --bad:#b42318; --ok:#18794e; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#eef2f8; color:var(--ink); font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main { max-width:920px; margin:32px auto; padding:32px; background:#fff; border:1px solid var(--line); border-radius:16px; box-shadow:0 8px 24px rgba(23,32,51,.08); }
+    h1 { margin:0; font-size:26px; letter-spacing:-.03em; }
+    h2 { margin:30px 0 10px; font-size:18px; }
+    p { margin:8px 0; }
+    .meta,.note { color:var(--muted); font-size:13px; }
+    .summary { margin:22px 0; padding:16px 18px; background:#edf5ff; border-left:4px solid var(--blue); border-radius:8px; font-weight:650; }
+    .grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin:12px 0; }
+    .metric { padding:13px; background:var(--panel); border:1px solid var(--line); border-radius:10px; }
+    .metric b { display:block; font-size:22px; }
+    .metric span { color:var(--muted); font-size:12px; }
+    .alert { color:var(--bad); font-weight:650; }
+    .pending { color:var(--warn); font-weight:650; }
+    .ok { color:var(--ok); font-weight:650; }
+    ul { padding-left:21px; }
+    li { margin:10px 0; }
+    code { background:#f1f4f8; padding:1px 4px; border-radius:4px; font-size:.9em; }
+    table { width:100%; border-collapse:collapse; }
+    th,td { padding:10px; text-align:left; vertical-align:top; border-bottom:1px solid var(--line); }
+    th { width:150px; color:var(--muted); font-weight:600; }
+    @media (max-width:620px) { main { margin:0; border-radius:0; border:0; padding:22px; } .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>운영 아침 브리핑</h1>
+    <p class="meta">2026-11-24 06:30 KST · 대상 기간: 2026-11-23 06:30–2026-11-24 06:30 KST</p>
+  </header>
+
+  <p class="summary">결론: Hermes v0.23.3 교체·용량 정리·QMS Testweb 반영과 안내 발송이 완료됐습니다. 현재 유일한 미해결 운영 이슈는 QMS Staging 린트 경고 124건(허용 50건) 재발입니다. Cron은 17건 중 16건 정상·검증 대기 0건·실패 1건이며, Kanban 진행·막힘은 모두 0건입니다.</p>
+
+  <section>
+    <h2>직전 06:30 이후 인수인계</h2>
+    <ul>
+      <li><strong>07:39 KST · source_readback:</strong> Hermes v0.23.3 교체가 정상 기동했고, Cron 등록과 Kanban 스모크를 확인했습니다. 이후 Slack 4채널 왕복과 공개 설치기록 v0.23.3도 확인됐습니다.</li>
+      <li><strong>08:34 KST · source_readback:</strong> 승인된 용량 정리 2단계가 끝나 디스크 사용률이 67%→55%로 내려갔습니다. 보호 복구자료와 운영 데이터는 유지했고 Gateway·Docker 재시작은 없었습니다.</li>
+      <li><strong>09:01 KST · source_readback:</strong> MJJEON 공개 운영현황 카드를 배포·재조회해 원본 지표와 일치를 확인했습니다. 새 예약·실행기·재시작은 추가하지 않았습니다.</li>
+      <li><strong>09:45 KST · source_readback:</strong> 요청된 QMS Staging 사용자 1건의 계정 초기화·인증 확인·안내 메일 서버 수락을 완료했습니다. MAIN 및 다른 계정은 변경하지 않았습니다.</li>
+      <li><strong>12:06 KST · source_readback:</strong> QMS v2.4.1 r2를 Testweb에만 반영했습니다. 지정 시험과 전체 시험·빌드가 통과했고 MAIN·통합 매뉴얼은 변경하지 않았습니다.</li>
+      <li><strong>13:07 KST · source_readback:</strong> Hermes 업데이트 감지 예약을 재개했고 보충 실행이 정상 완료됐습니다. 원격 검증도 완료됐으며 재시작·신규 예약은 없었습니다.</li>
+      <li><strong>13:01 KST · source_readback:</strong> AI News 원본 1곳 연결 오류가 있었으나 읽기 전용 재확인에서 기사 10건과 공개 홈·목록 정상을 확인했습니다. 강제 재실행·설정 변경은 없었습니다.</li>
+      <li><strong>16:19–17:02 KST · source_readback:</strong> QMS 안내지 탭 바로가기를 Testweb에만 배포했고, 승인된 v2.4.1 공지 r1은 25명에게 개별 발송되어 서버가 25통 모두 수락했습니다. 받은편지함 도착·열람은 미확인입니다.</li>
+      <li><strong>16:38 KST · source_readback · 현재 이슈:</strong> QMS Staging 자동검증이 린트 경고 124건(허용 50건)으로 재불합격했습니다. 린트 오류는 0건이고 로그인·구조 검사는 통과했으며, 기준과 예약은 변경하지 않았습니다.</li>
+    </ul>
+    <p class="note">모든 포함 항목은 대상 기간의 timestamp와 source_readback provenance가 있는 운영 변경 또는 사고입니다. fresh direct-user decision request는 확인되지 않아 decision_required는 false입니다.</p>
+  </section>
+
+  <section>
+    <h2>Cron 현황</h2>
+    <div class="grid">
+      <div class="metric"><b>17</b><span>총 작업</span></div>
+      <div class="metric"><b class="ok">16</b><span>정상</span></div>
+      <div class="metric"><b class="pending">0</b><span>검증 대기</span></div>
+      <div class="metric"><b class="alert">1</b><span>실패</span></div>
+    </div>
+    <p>총: 17건</p>
+    <p>정상: 16건 (<code>last_status=ok</code>)</p>
+    <p>검증 대기: 0건</p>
+    <p class="alert">실패: 1건 — <code>default/Codex 주간 한도 주의·경고</code></p>
+    <p class="note">미기록: 0건. <code>REMOTE_UNVERIFIED</code>는 검증 대기로만 분류하며 실패에 넣지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>Kanban 현황</h2>
+    <p>진행: 0건</p>
+    <p>막힘: 0건</p>
+    <p class="note">현재 read-only 통계는 done 157건입니다. 시간 범위 카드·이벤트 조회가 없어 기존 backlog는 인수인계 증거로 포함하지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>Hermes 버전</h2>
+    <table>
+      <tr><th>설치</th><td>v0.23.3 (2026.9.24, Docker, upstream caafe538)</td></tr>
+      <tr><th>공식 최신</th><td>v0.23.3</td></tr>
+      <tr><th>판정</th><td class="ok">업데이트 필요 없음 (false)</td></tr>
+      <tr><th>확인 출처</th><td><code>hermes --version</code>; NousResearch 공식 GitHub <a href="https://github.com/NousResearch/hermes-agent/releases/tag/v0.23.3">release v0.23.3</a> (2026-11-20T00:34:38Z 게시)</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>관련성·검증</h2>
+    <p>기간 내 timestamp와 provenance가 확인된 운영 변경·사고만 포함했습니다. 무변경 표식, 세션 수명주기, 과거 backlog, 외부 뉴스, 그리고 이후 정상화된 중간 검증 실패는 제외했습니다.</p>
+    <p class="note">Daily Briefing Relevance Gate: PASS (8 fixtures). 저장된 비밀 마커 줄: 0.</p>
+  </section>
+</main>
+</body>
+</html>
