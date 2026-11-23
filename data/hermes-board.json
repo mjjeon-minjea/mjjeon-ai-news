@@ -1,6 +1,17 @@
 {
   "items": [
     {
+      "canonical_url": "https://hermes-agent.nousresearch.com/docs/llms.txt",
+      "detail_url": "hermes/items/official-docs-llms.html",
+      "judgment": "공식 Docs의 실질적인 운영 참고 정보 보완으로 게시합니다. 공식 llms.txt와 NousResearch 공식 repository를 직접 조회했고 리디렉션을 따르는 GET의 최종 URL https://hermes-agent.nousresearch.com/docs/llms.txt 및 https://github.com/NousResearch/hermes-agent 에서 각각 HTTP 200을 확인했습니다. llms.txt에 연결된 Running Many Gateways at Once 본문에서 설정 미지정 시의 다중화 사전 점검, 명시적 true의 차이, false 폐기 안내, 임시 standalone 호환 수단, 프로필 parking과 이후 cron 실행 제외, 이미 실행된 cron의 비종료 및 기본 프로필·--all의 호스트 전체 범위를 확인했습니다. 제공된 기존 게시 요약은 세션 DB 복구와 WAL 보존을 중심으로 하므로 이 운영 판단 정보의 보완을 meaningful change로 판단합니다. 이전 원문과 행 단위 비교를 하지 않았으므로 해당 문서나 기능의 신설·도입 시점을 확정하지 않습니다. repository의 릴리스 링크 표시는 확인했지만 공식 Releases 본문과 실제 설치 버전은 이번 검토에서 확인하지 않았으며 신규 출시나 버전별 적용을 주장하지 않습니다. 보안·breaking·교차신호 조건은 escalation 검토 후보로만 취급하고 발생을 확정하지 않습니다. 지정 후보 snapshot과 제공된 기존 게시 항목만 비교 입력으로 사용했습니다.",
+      "published_at": "2026-11-22T18:38:32Z",
+      "source_grade": "official",
+      "source_kind": "docs",
+      "stable_id": "official-docs:llms",
+      "status": "active",
+      "title_ko": "Hermes 공식 문서: 다중 프로필 Gateway의 기본 다중화·정지 범위 확인"
+    },
+    {
       "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.23.3",
       "detail_url": "hermes/items/github-release-451960128.html",
       "judgment": "게시 승인: 제공된 후보와 공식 GitHub 릴리스의 제목·태그·변경 설명이 일치하고, 공식 문서의 저장소 연결 및 저장소의 최신 릴리스 링크로 출처를 교차 확인했다. 문서·저장소·후보 릴리스의 최종 URL과 HTTP 200을 확인했다. 기존 게시 비교 항목은 없으며 안정판 배포와 운영 동작 변경을 meaningful change로 판단한다. official/release 대표 후보로 적격이다. 보안 의존성 변경은 escalation 후보일 뿐이며 breaking change나 긴급 운영 변경은 확정하지 않는다.",
@@ -21,17 +32,6 @@
       "stable_id": "github-release:439803874",
       "status": "active",
       "title_ko": "Hermes Agent v0.23.1: 플러그인 최신 카탈로그를 못 읽던 문제 수정"
-    },
-    {
-      "canonical_url": "https://hermes-agent.nousresearch.com/docs/llms.txt",
-      "detail_url": "hermes/items/official-docs-llms.html",
-      "judgment": "공식 Docs의 운영 참고 정보 보완으로 게시합니다. 공식 llms.txt와 NousResearch 공식 repository를 직접 조회했으며, 리디렉션을 따르는 GET으로 최종 URL https://hermes-agent.nousresearch.com/docs/llms.txt 및 https://github.com/NousResearch/hermes-agent 모두 HTTP 200을 확인했습니다. 색인에 연결된 Session Storage Recovery 본문에서 이전 WAL 사본 보유에 따른 쓰기 거부, 관련 프로세스 종료 후 점검하는 복구 순서, WAL·SHM 삭제 금지 및 세션 최적화의 동시 사용 거부 조건을 직접 확인했습니다. 제공된 기존 게시 요약 대비 데이터 보존과 복구 판단에 필요한 구체적 운영 정보를 보완하므로 meaningful change로 판단합니다. 이전 원문과의 행 단위 차이는 제공되지 않았으므로 해당 문서의 신설 시점이나 기능 도입 시점은 확정하지 않습니다. 공식 Releases 본문과 실제 설치 버전은 이번 검토에서 확인하지 않았으며 신규 출시·보안 사고·breaking change를 주장하지 않습니다. 보안·breaking·교차신호 조건은 escalation 검토 후보로만 취급하고 발생을 확정하지 않습니다.",
-      "published_at": "2026-11-07T05:06:09Z",
-      "source_grade": "official",
-      "source_kind": "docs",
-      "stable_id": "official-docs:llms",
-      "status": "active",
-      "title_ko": "Hermes 공식 문서 색인: 세션 DB 복구·WAL 보존 지침 확인"
     },
     {
       "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.23.0",
