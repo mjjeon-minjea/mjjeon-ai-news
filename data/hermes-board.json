@@ -1,6 +1,17 @@
 {
   "items": [
     {
+      "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.23.3",
+      "detail_url": "hermes/items/github-release-451960128.html",
+      "judgment": "게시 승인: 제공된 후보와 공식 GitHub 릴리스의 제목·태그·변경 설명이 일치하고, 공식 문서의 저장소 연결 및 저장소의 최신 릴리스 링크로 출처를 교차 확인했다. 문서·저장소·후보 릴리스의 최종 URL과 HTTP 200을 확인했다. 기존 게시 비교 항목은 없으며 안정판 배포와 운영 동작 변경을 meaningful change로 판단한다. official/release 대표 후보로 적격이다. 보안 의존성 변경은 escalation 후보일 뿐이며 breaking change나 긴급 운영 변경은 확정하지 않는다.",
+      "published_at": "2026-11-20T00:34:38Z",
+      "source_grade": "official",
+      "source_kind": "release",
+      "stable_id": "github-release:451960128",
+      "status": "available",
+      "title_ko": "Hermes Agent v0.23.3 안정판 공개…프롬프트 캐시·대화 압축 개선 통합"
+    },
+    {
       "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.23.1",
       "detail_url": "hermes/items/github-release-439803874.html",
       "judgment": "게시 적합 — 공식 안정 릴리스의 플러그인 설치 동작 수정이므로 의미 있는 운영 변경으로 판단한다. 제공된 후보 스냅샷으로 내용을 검토하고 공식 릴리스 URL의 리디렉션 후 최종 HTTP 200을 확인했다. 보안·breaking change를 임의로 확정하거나 자동 업데이트하지 않는다.",
