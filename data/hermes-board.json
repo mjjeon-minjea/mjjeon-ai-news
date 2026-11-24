@@ -1,6 +1,17 @@
 {
   "items": [
     {
+      "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.23.4",
+      "detail_url": "hermes/items/github-release-456412256.html",
+      "judgment": "게시 승인. 제공된 후보의 ID·해시를 유지하고 공식 GitHub 릴리스 원문에서 제목·태그·주요 내용의 일치를 직접 확인했으며, 리디렉션 확인 후 최종 공식 URL의 HTTP 200도 확인했다. 기존 게시 항목은 제공된 비교 입력상 없고, 신규 안정판 배포는 의미 있는 운영 변경이므로 공식 대표 항목 자격을 부여한다. 본문 Release Date는 2026-11-23이지만 published_at은 후보의 GitHub 공개 시각 2026-11-24T08:17:06Z를 보존한다. 보안 취약점 수정이나 breaking change를 확정하지 않으며, 보안·breaking·추가 교차신호 조건은 확인될 경우에만 escalation 후보로 다룬다.",
+      "published_at": "2026-11-24T08:17:06Z",
+      "source_grade": "official",
+      "source_kind": "release",
+      "stable_id": "github-release:456412256",
+      "status": "active",
+      "title_ko": "Hermes Agent v0.23.4 안정판 공개…229개 PR 통합, 설치 방식별 업데이트 경로 구분"
+    },
+    {
       "canonical_url": "https://hermes-agent.nousresearch.com/docs/llms.txt",
       "detail_url": "hermes/items/official-docs-llms.html",
       "judgment": "공식 Docs의 실질적인 운영 참고 정보 보완으로 게시합니다. 공식 llms.txt와 NousResearch 공식 repository를 직접 조회했고 리디렉션을 따르는 GET의 최종 URL https://hermes-agent.nousresearch.com/docs/llms.txt 및 https://github.com/NousResearch/hermes-agent 에서 각각 HTTP 200을 확인했습니다. llms.txt에 연결된 Running Many Gateways at Once 본문에서 설정 미지정 시의 다중화 사전 점검, 명시적 true의 차이, false 폐기 안내, 임시 standalone 호환 수단, 프로필 parking과 이후 cron 실행 제외, 이미 실행된 cron의 비종료 및 기본 프로필·--all의 호스트 전체 범위를 확인했습니다. 제공된 기존 게시 요약은 세션 DB 복구와 WAL 보존을 중심으로 하므로 이 운영 판단 정보의 보완을 meaningful change로 판단합니다. 이전 원문과 행 단위 비교를 하지 않았으므로 해당 문서나 기능의 신설·도입 시점을 확정하지 않습니다. repository의 릴리스 링크 표시는 확인했지만 공식 Releases 본문과 실제 설치 버전은 이번 검토에서 확인하지 않았으며 신규 출시나 버전별 적용을 주장하지 않습니다. 보안·breaking·교차신호 조건은 escalation 검토 후보로만 취급하고 발생을 확정하지 않습니다. 지정 후보 snapshot과 제공된 기존 게시 항목만 비교 입력으로 사용했습니다.",
