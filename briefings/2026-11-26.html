@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-11-26 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#5e6b82; --line:#dce3ef; --panel:#f7f9fc; --blue:#1f5fbf; --warn:#9d5c00; --bad:#b42318; --ok:#18794e; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#eef2f8; color:var(--ink); font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main { max-width:920px; margin:32px auto; padding:32px; background:#fff; border:1px solid var(--line); border-radius:16px; box-shadow:0 8px 24px rgba(23,32,51,.08); }
+    h1 { margin:0; font-size:26px; letter-spacing:-.03em; }
+    h2 { margin:30px 0 10px; font-size:18px; }
+    p { margin:8px 0; }
+    .meta,.note { color:var(--muted); font-size:13px; }
+    .summary { margin:22px 0; padding:16px 18px; background:#edf5ff; border-left:4px solid var(--blue); border-radius:8px; font-weight:650; }
+    .grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin:12px 0; }
+    .metric { padding:13px; background:var(--panel); border:1px solid var(--line); border-radius:10px; }
+    .metric b { display:block; font-size:22px; }
+    .metric span { color:var(--muted); font-size:12px; }
+    .alert { color:var(--bad); font-weight:650; }
+    .pending { color:var(--warn); font-weight:650; }
+    .ok { color:var(--ok); font-weight:650; }
+    ul { padding-left:21px; }
+    li { margin:10px 0; }
+    code { background:#f1f4f8; padding:1px 4px; border-radius:4px; font-size:.9em; }
+    table { width:100%; border-collapse:collapse; }
+    th,td { padding:10px; text-align:left; vertical-align:top; border-bottom:1px solid var(--line); }
+    th { width:150px; color:var(--muted); font-weight:600; }
+    @media (max-width:620px) { main { margin:0; border-radius:0; border:0; padding:22px; } .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>운영 아침 브리핑</h1>
+    <p class="meta">2026-11-26 06:37 KST · 대상 기간: 2026-11-25 06:30–2026-11-26 06:37 KST</p>
+  </header>
+
+  <p class="summary">결론: 01시 MJJEON AI NEWS 수집이 GitHub API 요청 오류로 실패했으나, 읽기 전용 재확인에서는 공개 경로·최신 Pages main·공개 홈 및 목록의 일치를 확인했습니다. 다만 01시에 서버에서 생성된 새 홈은 공개본에 반영되지 않았고, 강제 재실행·재배포·설정 변경은 없었습니다. Cron은 총 17건 중 정상 16·검증 대기 0·실패 1건이며, Kanban 진행·막힘은 모두 0건입니다. Hermes는 설치 v0.23.3, 공식 최신 v0.23.4로 업데이트가 필요합니다.</p>
+
+  <section>
+    <h2>직전 06:30 이후 인수인계</h2>
+    <ul>
+      <li><strong>2026-11-26 01:00:46 KST · source_readback:</strong> MJJEON AI NEWS 수집이 GitHub API 요청 오류로 실패했습니다. 읽기 전용 재확인에서 공개 경로 검사, 최신 Pages main 성공, 공개 홈·목록과 GitHub의 일치를 확인했지만 01시에 서버에서 생성된 새 홈은 공개본에 반영되지 않았습니다. 강제 재실행·재배포·설정 변경은 수행하지 않았습니다.</li>
+    </ul>
+    <p class="note">이번 기간의 fresh direct-user decision request는 확인되지 않아 decision_required는 false입니다.</p>
+  </section>
+
+  <section>
+    <h2>Cron 현황</h2>
+    <div class="grid">
+      <div class="metric"><b>17</b><span>총 작업</span></div>
+      <div class="metric"><b class="ok">16</b><span>정상</span></div>
+      <div class="metric"><b class="pending">0</b><span>검증 대기</span></div>
+      <div class="metric"><b class="alert">1</b><span>실패</span></div>
+    </div>
+    <p>총: 17건</p>
+    <p>정상: 16건 (<code>last_status=ok</code>)</p>
+    <p>검증 대기: 0건</p>
+    <p class="alert">실패: 1건 — <code>default/Codex 주간 한도 주의·경고</code></p>
+    <p class="note">미기록: 0건. 원격 미검증 표식은 검증 대기로만 분류하며 실패에 넣지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>Kanban 현황</h2>
+    <p>진행: 0건</p>
+    <p>막힘: 0건</p>
+    <p class="note">현재 read-only 통계는 done 157건입니다. 시간 범위 카드·이벤트 필터가 제공되지 않아 기존 backlog는 인수인계 증거로 포함하지 않았습니다.</p>
+  </section>
+
+  <section>
+    <h2>Hermes 버전</h2>
+    <table>
+      <tr><th>설치</th><td>v0.23.3 (2026.9.24, Docker, upstream caafe538)</td></tr>
+      <tr><th>공식 최신</th><td>v0.23.4</td></tr>
+      <tr><th>판정</th><td class="alert">업데이트 필요 (true)</td></tr>
+      <tr><th>확인 출처</th><td><code>hermes --version</code>; NousResearch 공식 GitHub <a href="https://github.com/NousResearch/hermes-agent/releases/tag/v0.23.4">release v0.23.4</a> (2026-11-24T08:17:06Z 게시)</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>관련성·검증</h2>
+    <p>기간 내 timestamp와 source_readback provenance가 있는 운영 사고·변경만 포함했습니다. canonical HANDOFF에서는 정확히 ‘지금 상태’ 또는 ‘현재 상태’ 제목 절만 확인했으며 해당 절이 없어 전체와 과거 이력은 읽지 않았습니다. MEMORY·conversation·Wiki는 기간 변경분만 확인했고, prior briefing·SILENT·세션 수명주기·제안 미적용·과거 backlog·외부 뉴스는 제외했습니다.</p>
+    <p class="note">Daily Briefing Relevance Gate: PASS (8 fixtures). 저장된 민감 표식 줄: 0.</p>
+  </section>
+</main>
+</body>
+</html>
