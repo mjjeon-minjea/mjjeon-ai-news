@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-11-27 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#5e6a7d; --line:#dce3ec; --card:#f8fafc; --navy:#133b66; --warn:#a45500; --danger:#a61b29; --ok:#17603a; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:#eef3f8; color:var(--ink); font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { max-width:900px; margin:32px auto; padding:0 20px 36px; }
+    article { background:#fff; border:1px solid var(--line); border-radius:16px; overflow:hidden; box-shadow:0 8px 24px #17314a12; }
+    header { padding:30px 34px 24px; background:linear-gradient(135deg,#10365e,#1c557e); color:#fff; }
+    h1 { margin:0 0 8px; font-size:28px; letter-spacing:-.04em; }
+    .window { margin:0; opacity:.84; font-size:14px; }
+    .lead { margin:18px 0 0; font-size:18px; font-weight:650; }
+    section { padding:24px 34px; border-top:1px solid var(--line); }
+    h2 { margin:0 0 14px; font-size:18px; letter-spacing:-.02em; color:var(--navy); }
+    p { margin:0 0 12px; }
+    ol,ul { margin:0; padding-left:22px; }
+    li { margin:8px 0; }
+    .evidence { margin:10px 0 0; color:var(--muted); font-size:14px; }
+    .metrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:10px; list-style:none; padding:0; }
+    .metrics li { margin:0; padding:12px 14px; border:1px solid var(--line); border-radius:10px; background:var(--card); }
+    .ok { color:var(--ok); font-weight:700; }
+    .warn { color:var(--warn); font-weight:700; }
+    .danger { color:var(--danger); font-weight:700; }
+    .note { color:var(--muted); font-size:14px; }
+    footer { padding:18px 34px 24px; background:#fbfcfe; color:var(--muted); font-size:13px; }
+    a { color:#0e5689; }
+    @media (max-width:600px) { main { margin:0; padding:0; } article { border-radius:0; border-width:0; } header,section,footer { padding-left:20px; padding-right:20px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <article>
+      <header>
+        <h1>2026-11-27 운영 아침 브리핑</h1>
+        <p class="window">대상 기간: 2026-11-26 06:30 KST ~ 2026-11-27 06:36 KST</p>
+        <p class="lead">결론: 22시 AI News 원본 장애 1건은 읽기 전용 재확인 뒤 강제 조치 없이 예약을 유지했습니다. 새 의사결정 요청은 없습니다.</p>
+      </header>
+
+      <section>
+        <h2>직전 브리핑 이후 운영 인수인계</h2>
+        <ol>
+          <li>
+            <strong>22:01 KST · MJJEON AI News 원본 HTTP 500</strong><br>
+            정기 수집 1건이 원본 서버 오류로 실패했습니다. 같은 경로의 읽기 전용 재확인에서는 기사 10건과 공개 홈·목록을 확인했습니다. 강제 실행·게시·설정 변경 없이 23시 예약을 유지했습니다.
+            <p class="evidence">근거 ID: conversation/default/2026-11-26#22-ai-news-http-500 · provenance: source_readback · 사건 2026-11-26 22:01:03 KST · 확인 기록 22:02:03 KST</p>
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Cron · Kanban 현재 지표</h2>
+        <ul class="metrics">
+          <li>Cron 총 <strong>18</strong></li>
+          <li>Cron 정상 <strong class="ok">16</strong></li>
+          <li>Cron 미기록 <strong class="warn">1</strong> · default/헤르메스 에이전트팀 일일보고 Gmail</li>
+          <li>Cron 검증 대기 <strong>0</strong> · 없음</li>
+          <li>Cron 실패 <strong class="danger">1</strong> · default/Codex 주간 한도 주의·경고</li>
+          <li>Kanban 진행 <strong>0</strong></li>
+          <li>Kanban 막힘 <strong>0</strong></li>
+        </ul>
+        <p class="note">분류 기준: last_status=ok는 정상, last_status가 없으면 미기록, last_error에 REMOTE_UNVERIFIED가 있으면 검증 대기, 그 밖의 error만 실패로 계산했습니다.</p>
+      </section>
+
+      <section>
+        <h2>Hermes 버전</h2>
+        <p>설치 <strong>v0.23.3</strong> (Docker, upstream caafe538) · 공식 최신 <strong>v0.23.4</strong> · <strong class="warn">업데이트 필요: 예</strong></p>
+        <p class="note">설치 근거: <code>hermes --version</code>. 최신 근거: NousResearch 공식 <a href="https://github.com/NousResearch/hermes-agent/releases/tag/v0.23.4">GitHub Releases latest API</a> (2026-11-24 08:17:06Z).</p>
+      </section>
+
+      <section>
+        <h2>관련성·범위 확인</h2>
+        <ul>
+          <li>Canonical profile HANDOFF는 제목이 정확히 ‘지금 상태’ 또는 ‘현재 상태’인 절만 조회했고, 해당 절이 없어 전체 HANDOFF와 과거 이력은 읽지 않았습니다.</li>
+          <li>기간 내 변경된 canonical MEMORY는 없었습니다. 대화와 Wiki는 기간 내 기록만 확인했으며, session lifecycle·SILENT·제안 전용 기록과 외부 뉴스 후보는 제외했습니다.</li>
+          <li>Kanban은 시간 범위 카드·이벤트 조회를 지원하지 않아 카드 단위 인수인계 근거는 fail closed 처리했고, 현재 진행·막힘 숫자만 사용했습니다.</li>
+          <li>관련성 검증 fixtures 8건 통과. fresh direct-user decision request는 없어 의사결정 필요 항목은 없습니다.</li>
+        </ul>
+      </section>
+
+      <footer>생성 시각: 2026-11-27 06:36:49 KST · 파일 기록 전용 · 외부 전송 없음</footer>
+    </article>
+  </main>
+</body>
+</html>
