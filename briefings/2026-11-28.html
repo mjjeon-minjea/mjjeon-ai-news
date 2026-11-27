@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026-11-28 운영 아침 브리핑</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#596579; --line:#dce3ec; --panel:#f6f8fb; --accent:#0f766e; --warn:#9a5b00; --danger:#b42318; }
+    body { margin:0; background:#edf1f6; color:var(--ink); font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif; line-height:1.65; }
+    main { max-width:820px; margin:32px auto; padding:38px; background:#fff; box-shadow:0 12px 38px rgba(28,42,62,.10); border-radius:16px; }
+    h1 { margin:0 0 4px; font-size:1.8rem; } h2 { margin-top:30px; font-size:1.1rem; border-bottom:1px solid var(--line); padding-bottom:8px; }
+    .meta, small { color:var(--muted); } .summary { background:#eaf7f4; border-left:4px solid var(--accent); padding:14px 16px; border-radius:6px; }
+    .metric { margin:8px 0; padding:11px 14px; border:1px solid var(--line); background:var(--panel); border-radius:8px; } .warning { color:var(--warn); } .danger { color:var(--danger); }
+    li { margin:9px 0; } code { background:#f0f3f7; padding:1px 5px; border-radius:4px; font-size:.92em; } footer { margin-top:32px; padding-top:16px; border-top:1px solid var(--line); color:var(--muted); font-size:.9rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>운영 아침 브리핑</h1>
+      <p class="meta">대상: 전민재 차장님 · 범위: 2026-11-27 06:30 ~ 2026-11-28 06:39 KST</p>
+      <p class="summary"><strong>결론:</strong> Hermes는 설치본과 공식 최신본이 모두 v0.23.4로 일치하며 업데이트가 필요하지 않습니다. Kanban 진행·막힘은 모두 0건입니다. Cron에는 중지 상태의 실패 1건이 남아 있습니다.</p>
+    </header>
+
+    <section aria-labelledby="handoff">
+      <h2 id="handoff">직전 브리핑 이후 인수인계</h2>
+      <ul>
+        <li data-evidence-id="wiki-a69f7997ffde0b5d9d38431a85bd65cd"><strong>Hermes v0.23.4 교체 마감 보고:</strong> 11월 27일 12:48 KST의 원문 읽기 결과는 9개 점검 확인, PC 앱 재연결 1개 미확인을 기록했습니다. 이는 확인 보류이며 실패로 분류하지 않았습니다.<br><small>근거: source_readback · 2026-11-27 12:48 KST · Wiki event <code>a69f7997ffde0b5d9d38431a85bd65cd</code></small></li>
+        <li data-evidence-id="hermes-version-20261128t063859"><strong>현재 버전:</strong> 설치본 <code>v0.23.4 (2026.9.24)</code>, 공식 최신 릴리스 <code>v0.23.4</code>로 일치합니다. 업데이트 필요 없음입니다.<br><small>근거: source_readback · 2026-11-28 06:39 KST · 로컬 버전 조회 및 NousResearch 공식 GitHub Releases</small></li>
+      </ul>
+      <p><strong>권고:</strong> 중지된 Cron 실패 건은 재개하지 말고, 필요성이 확인될 때만 승인 후 원인 점검과 재개 여부를 결정합니다.</p>
+    </section>
+
+    <section aria-labelledby="metrics">
+      <h2 id="metrics">운영 수치</h2>
+      <p class="metric" data-evidence-id="cron-snapshot-20261128t063859"><strong>Cron</strong> — 총 17 · 정상 16 · 미기록 0 (없음) · 검증 대기 0 (없음) · <span class="danger">실패 1: Codex 주간 한도 주의·경고</span><br><small>근거: system_event · 2026-11-28 06:39 KST · 전 프로필 Cron 상태 조회. 검증 대기는 실패에 합산하지 않음.</small></p>
+      <p class="metric" data-evidence-id="kanban-snapshot-20261128t063859"><strong>Kanban</strong> — 진행 0 · 막힘 0<br><small>근거: system_event · 2026-11-28 06:39 KST · default 보드 running/blocked 재조회</small></p>
+    </section>
+
+    <section aria-labelledby="scope">
+      <h2 id="scope">관련성 판정</h2>
+      <p>허용된 현재 시스템 조회와 기간 내 원문 읽기만 반영했습니다. 제목이 허용된 상태 절이 없는 프로필 HANDOFF는 본문을 읽지 않았고, 변경 없는 과거 막힘·완료 백로그와 외부 뉴스는 제외했습니다. 직접 사용자 결정 요청은 확인되지 않았습니다.</p>
+    </section>
+
+    <footer>생성: 2026-11-28 06:39 KST · 운영 인수인계 전용</footer>
+  </main>
+</body>
+</html>
