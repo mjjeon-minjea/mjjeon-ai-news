@@ -1,6 +1,17 @@
 {
   "items": [
     {
+      "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.23.5",
+      "detail_url": "hermes/items/github-release-461234317.html",
+      "judgment": "게시 적합. 제공된 후보 snapshot의 제목·태그·변경 내용이 공식 릴리스 원문과 일치하며, 릴리스·저장소·공식 문서 URL의 최종 HTTP 200을 확인했다. 신규 안정 릴리스와 운영 변경이 있어 meaningful change 및 공식 대표 항목 자격을 인정한다. 원문에 보안 취약점이나 breaking 변경이 명시되지는 않았으며, 이후 보안·breaking·교차신호 조건이 확인되면 escalation 후보로만 표시한다. 원문 Release Date는 2026-11-27이고 게시시각은 후보의 2026-11-28T03:20:13Z를 보존한다.",
+      "published_at": "2026-11-28T03:20:13Z",
+      "source_grade": "official",
+      "source_kind": "release",
+      "stable_id": "github-release:461234317",
+      "status": "confirmed",
+      "title_ko": "Hermes Agent v0.23.5 공개: 게이트웨이·도구·프로필 운영 변경 통합"
+    },
+    {
       "canonical_url": "https://github.com/NousResearch/hermes-agent/releases/tag/v0.23.4",
       "detail_url": "hermes/items/github-release-456412256.html",
       "judgment": "게시 승인. 제공된 후보의 ID·해시를 유지하고 공식 GitHub 릴리스 원문에서 제목·태그·주요 내용의 일치를 직접 확인했으며, 리디렉션 확인 후 최종 공식 URL의 HTTP 200도 확인했다. 기존 게시 항목은 제공된 비교 입력상 없고, 신규 안정판 배포는 의미 있는 운영 변경이므로 공식 대표 항목 자격을 부여한다. 본문 Release Date는 2026-11-23이지만 published_at은 후보의 GitHub 공개 시각 2026-11-24T08:17:06Z를 보존한다. 보안 취약점 수정이나 breaking change를 확정하지 않으며, 보안·breaking·추가 교차신호 조건은 확인될 경우에만 escalation 후보로 다룬다.",
